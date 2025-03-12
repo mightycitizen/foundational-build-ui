@@ -6,19 +6,19 @@ import breakpoints from './src/stories/global/base/breakpoints.json';
 let colors = {
   transparent: 'transparent',
   current: 'currentColor',
-  inherit: 'inherit',  
+  inherit: 'inherit',
 };
 
 let brandPalette = {};
 
 
-Object.keys(palettes).forEach(key => {  
+Object.keys(palettes).forEach(key => {
   const palette = palettes[key];
   const brandColors = palette.variants ? {
-    DEFAULT: palette.default,      
+    DEFAULT: palette.default,
     ...palette.variants,
   } : {
-    DEFAULT: palette,      
+    DEFAULT: palette,
   };
   brandPalette[key] = brandColors;
 });
@@ -34,13 +34,13 @@ colors = {
 
 
 module.exports = {
-  content: ['./src/assets/js/**/*.js', './src/stories/{components,layout,pages}/**/*.{twig,js,css}','../templates/**/*.twig'],  
+  content: ['./src/assets/js/**/*.js', './src/stories/{components,layout,pages}/**/*.{twig,js,css}','../templates/**/*.twig'],
   safelist: [
     'mb-1',
     'font-display',
     'font-body',
     'bg-secondary-100',
-    'aspect-video',    
+    'aspect-video',
   ],
   theme: {
     container: {
@@ -52,13 +52,17 @@ module.exports = {
         xl: '5rem',
         '2xl': '6rem',
       },
-
+    },
+    extend: {
+      border: {
+        '6': '6px',
+      }
     },
     screens: breakpoints,
     colors: colors,
     fontFamily: fonts,
-  
-   
+
+
   },
   plugins: [
     require('@tailwindcss/forms')({
