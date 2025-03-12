@@ -1,0 +1,42 @@
+
+{% if section_heading | default %}
+  <div class="section_intro {{ intro_class }} {% if divider %}border-b-4 border-primary-500 pb-3{% endif %}">
+    {% if section_label %}
+      <span class="section_label font-medium text-xs mb-5 inline-block">
+          <span class="icon-{{ section_label.icon }} text-2xl mr-1 align-middle"></span>
+          {{ section_label.text  }}
+        </span>
+    {% endif %}
+    <div class="grid {% if (section_image | default) or (intro_class != 'text-center') %}grid-cols-12{% endif %} gap-y-6 gap-x-10 justify-center">
+      {% if section_image | default %}
+        <div class="col-span-12 md:col-span-5 lg:col-span-6" >
+          <div class="image-size--landscapeCroppedMedium">
+            <img loading="lazy" src="{{ section_image.src }}" alt="{{ section_image.alt }}" class="w-full">
+          </div>
+        </div>
+      {% endif %}
+      <div class="col-span-12 {% if section_image | default %}md:col-span-7 lg:col-span-6{% elseif section_style | default is empty %}md:col-span-8{% elseif intro_class != 'text-center' %}lg:col-span-8{% endif %}">
+        <h2 class="section_heading">{{ section_heading }}</h2>
+        {% if section_subheading | default %}
+          <h3 class="section_subheading">{{ section_subheading }}</h3>
+        {% endif %}
+        {% if section_description | default %}
+          <p class="lead {{ section_description_size | default('text-xl') }}">{{ section_description }}</p>
+        {% endif %}
+        {# Add column wrapper for button and link if intro is not center #}
+        {% if intro_class != 'text-center' %}
+        </div>
+        <div class="col-span-12 md:col-span-4 md:ml-auto">
+        {% endif %}
+        {% if section_button | default %}
+          {% include '@components/links/button/button.twig' with section_button | merge({
+            color: 'secondary'
+          }) only %}
+        {% endif %}
+        {% if section_link | default %}
+          {% include '@components/links/read-more/read-more.twig' with section_link only %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
