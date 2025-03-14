@@ -1,9 +1,12 @@
-<div class="statistic text-center px-3">
+<div class="statistic">
+
   {% include '@components/inline-text/large-value/large-value.twig' with {
     value: value
   } %}
+  <p class="font-bold">
+    {{ caption }}
+  </p>
   <p class="text-lg lg:text-2xl mb-0">
-    {{ text }}
-
+    {{ description }}
   </p>
 </div>

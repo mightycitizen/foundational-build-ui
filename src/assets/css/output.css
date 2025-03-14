@@ -1541,6 +1541,10 @@ input[type="radio"]:focus:not(:checked).custom,
   margin-bottom: 1rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mb-9 {
   margin-bottom: 2.25rem;
 }
@@ -1587,14 +1591,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.ml-auto {
-  margin-left: auto;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
 }
 
 .block {
@@ -1827,16 +1823,8 @@ input[type="radio"]:focus:not(:checked).custom,
   flex-wrap: wrap;
 }
 
-.content-end {
-  align-content: flex-end;
-}
-
 .items-start {
   align-items: flex-start;
-}
-
-.items-end {
-  align-items: flex-end;
 }
 
 .items-center {
@@ -1979,6 +1967,10 @@ input[type="radio"]:focus:not(:checked).custom,
   border-radius: 9999px;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1999,6 +1991,10 @@ input[type="radio"]:focus:not(:checked).custom,
   border-bottom-width: 1px;
 }
 
+.border-b-4 {
+  border-bottom-width: 4px;
+}
+
 .border-l-\[6px\] {
   border-left-width: 6px;
 }
@@ -2009,14 +2005,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .border-t-0 {
   border-top-width: 0px;
-}
-
-.border-b-2 {
-  border-bottom-width: 2px;
-}
-
-.border-b-4 {
-  border-bottom-width: 4px;
 }
 
 .border-black {
@@ -2037,11 +2025,6 @@ input[type="radio"]:focus:not(:checked).custom,
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(204 204 204 / var(--tw-border-opacity, 1));
-}
-
-.border-primary-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(24 48 118 / var(--tw-border-opacity, 1));
 }
 
 .border-primary-500 {
@@ -2290,6 +2273,10 @@ input[type="radio"]:focus:not(:checked).custom,
   padding-bottom: 0px;
 }
 
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -2324,10 +2311,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .pt-4 {
   padding-top: 1rem;
-}
-
-.pb-3 {
-  padding-bottom: 0.75rem;
 }
 
 .text-left {
@@ -2647,12 +2630,12 @@ input[type="radio"]:focus:not(:checked).custom,
     grid-column: span 8 / span 8;
   }
 
-  .md\:mt-8 {
-    margin-top: 2rem;
-  }
-
   .md\:ml-auto {
     margin-left: auto;
+  }
+
+  .md\:mt-8 {
+    margin-top: 2rem;
   }
 
   .md\:hidden {

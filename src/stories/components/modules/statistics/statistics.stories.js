@@ -42,19 +42,22 @@ const defaultArgs = {
   section_description: 'Description',
   statistics: [
     {
+      icon: 'buildings',
       value: 200,
-      text: 'Lorem ipsum dolor sit amet',
-      link: 'test'
+      caption: 'Lorem ipsum dolor sit amet',
+      description: 'test'
     },
     {
+      icon: 'buildings',
       value: 200,
-      text: 'Lorem ipsum dolor sit amet',
-      statistic_link: 'test'
+      caption: 'Lorem ipsum dolor sit amet',
+      description: 'test'
     },
     {
+      icon: 'buildings',
       value: 200,
-      text: 'Lorem ipsum dolor sit amet',
-      statistic_link: 'test'
+      caption: 'Lorem ipsum dolor sit amet',
+      description: 'test'
     }
   ]
 };
