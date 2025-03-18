@@ -37,11 +37,30 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
 
-export const Link = Template.bind({});
+export const List = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Link.args = Object.assign(
+List.args = Object.assign(
   { ...defaultArgs },
   {
-    link: '#'
+    style: "list"
+  }
+);
+
+export const Background = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Background.args = Object.assign(
+  { ...defaultArgs },
+  {
+    stat_bg: "primary-50"
+  }
+);
+
+export const ListBg = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+ListBg.args = Object.assign(
+  { ...defaultArgs },
+  {
+    style: "list",
+    stat_bg: "primary-50"
   }
 );

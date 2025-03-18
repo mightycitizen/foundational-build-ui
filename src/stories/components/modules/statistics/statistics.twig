@@ -1,5 +1,4 @@
 {% embed '@components/sections/section.twig' with {
-    intro_class: 'text-center ' ~ (section_style | default == 'side' ? 'lg:text-left' : ''),
     section_class: section_class | default,
     section_heading: section_heading | default,
     section_description:  section_description | default,
@@ -8,7 +7,7 @@
 %}
   {% block section_content %}
 
-    <div class="grid grid-cols-12 gap-6">
+    <div class="grid grid-cols-12 gap-5">
       {% for statistic in statistics %}
         <div class="col-span-12 md:col-span-4 {% if section_style | default == 'side' %}lg:col-span-12{% endif %}">
           {% include '@components/informational/statistic/statistic.twig' with {
@@ -16,6 +15,7 @@
             value: statistic.value,
             caption: statistic.caption,
             description: statistic.description,
+            stat_bg: statistic.stat_bg
           }%}
         </div>
       {% endfor %}

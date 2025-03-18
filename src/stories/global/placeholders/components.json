@@ -13,8 +13,13 @@
     }
   ],
   "statistic": {
-    "value": 9,
-    "text": "Lorem ipsum"
+    "icon": {
+      "name": "check",
+      "background": "primary-50"
+    },
+    "value": "#1 Best Value",
+    "caption": "of private universities in Kansas",
+    "description": "Accordion to <a href='https://google.com'>US News & World Report, Best Colleges of 2025</a>"
   },
   "links": [
     {
@@ -24,7 +29,7 @@
     {
       "text": "Link",
       "url": "#"
-    },    
+    },
     {
       "text": "Link",
       "url": "#"
@@ -170,7 +175,7 @@
     }
   },
   "hero": {
-    "heading": "Hero",    
+    "heading": "Hero",
     "subheading": "Subheading"
   },
   "card": {

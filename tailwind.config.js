@@ -40,6 +40,7 @@ module.exports = {
     'font-display',
     'font-body',
     'bg-secondary-100',
+    'bg-primary-50',
     'aspect-video',
   ],
   theme: {

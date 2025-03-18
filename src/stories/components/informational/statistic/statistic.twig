@@ -1,12 +1,30 @@
-<div class="statistic">
+<div class="statistic flex {% if style == 'list' %}flex-row items-center gap-x-4 {% if stat_bg %} py-7 px-6{% endif %}{% else %}flex-col {% if stat_bg %} py-8 px-5{% endif %}{% endif %}{% if stat_bg %} bg-{{ stat_bg }}{% endif %}">
+  {% if icon %}
+    <div class="mb-4">
+      {% include '@components/inline-text/icon/icon.twig' with {
+        name: name,
+        background: background
+      } %}
+    </div>
+  {% endif %}
 
-  {% include '@components/inline-text/large-value/large-value.twig' with {
-    value: value
-  } %}
-  <p class="font-bold">
-    {{ caption }}
-  </p>
-  <p class="text-lg lg:text-2xl mb-0">
-    {{ description }}
-  </p>
+  {% if value %}
+    <p class="text-4xl font-bold mb-3">{{ value }}</p>
+  {% endif %}
+
+  {% if caption or description %}
+    <div class="text-group">
+      {% if caption %}
+      <p class="font-bold text-lg mb-3">
+        {{ caption }}
+      </p>
+      {% endif %}
+
+      {% if description %}
+      <p class="text-lg mb-0">
+        {{ description }}
+      </p>
+      {% endif %}
+    </div>
+  {% endif %}
 </div>
