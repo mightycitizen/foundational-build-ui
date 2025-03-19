@@ -6,6 +6,7 @@ if (import.meta.hot) {
 }
 
 import.meta.glob('../../stories/components/**/*.css', { eager: true }); // Or .scss
+const globalCSS = import.meta.glob('../../stories/global/**/*.css', { eager: true }); // Or .scss
 const componentModules = import.meta.glob('../../stories/components/**/!(*.stories).js', { eager: true }); // Or .scss
 
 
@@ -16,7 +17,7 @@ import Alpine from 'alpinejs'
 import focus from '@alpinejs/focus'
 import intersect from '@alpinejs/intersect';
 
-Alpine.plugin(focus); 
+Alpine.plugin(focus);
 Alpine.plugin(intersect);
 window.Alpine = Alpine
 Alpine.start()
@@ -75,7 +76,7 @@ const initTableScroll = () => {
 const onDocumentReady = () => {
   initTableScroll();
   initSmoothScroll();
-  
+
   Object.values(componentModules).forEach(module => {
     if (typeof module.default === 'function') {
       module.default();
@@ -87,7 +88,7 @@ const onDocumentReady = () => {
 document.addEventListener('DOMContentLoaded', () => {
   const event = new Event('_page_ready');
   document.dispatchEvent(event);
-  
+
 });
 
 document.addEventListener('_page_ready', onDocumentReady);

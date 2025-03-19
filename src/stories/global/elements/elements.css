@@ -1,0 +1,30 @@
+table {
+  box-shadow: 0px 5px 15px 0px rgba(16, 24, 40, 0.12);
+  overflow: hidden;
+
+  thead th,
+  tbody th,
+  tbody td,
+  tfoot th {
+    @apply px-6 py-4;
+  }
+  caption {
+    @apply py-4;
+    caption-side: bottom;
+    font-size: 1rem !important;
+    font-weight: normal !important;
+    text-align: left;
+  }
+}
+
+figure figcaption {
+  @apply bg-black text-white p-2;
+  font-size: 1rem;
+  margin-top: 0 !important;
+}
+
+.video_wrapper .icon-play:before {
+  filter: drop-shadow(-1px 4px 8px rgba(16, 24, 40, 0.3));
+
+}
+
