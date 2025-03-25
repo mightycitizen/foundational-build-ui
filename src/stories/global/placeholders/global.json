@@ -1,30 +1,58 @@
 {
   "footer_links": [
     {
-      "text": "Privacy Policy",
-      "url": "#"
+      "text": "Sub-footer link",
+      "url": "#",
+      "modifier": "text-black font-semibold"
     },
     {
-      "text": "Terms of Use",
-      "url": "#"
+      "text": "Sub-footer link",
+      "url": "#",
+      "modifier": "text-black font-semibold"
+    },
+    {
+      "text": "Sub-footer link",
+      "url": "#",
+      "modifier": "text-black font-semibold"
+    },
+    {
+      "text": "Sub-footer link",
+      "url": "#",
+      "modifier": "text-black font-semibold"
     }
-  ],  
+  ],
   "address": "5555 Street 1\r\nUnit B\r\nAustin, TX 78702",
   "site_name": "Mighty Citizen",
   "social": [
     {
-      "handle": "youtube",
-      "icon": "youtube-play",
+      "handle": "facebook",
+      "icon": "facebook",
       "url": "#"
     },
     {
-      "handle": "facebook",
+      "handle": "instagram",
+      "icon": "instagram",
+      "url": "#"
+    },
+    {
+      "handle": "twitter",
+      "icon": "x-logo",
+      "url": "#"
+    },
+    {
+      "handle": "linkedin",
+      "icon": "linkedin",
+      "url": "#"
+    },
+    {
+      "handle": "youtube",
+      "icon": "youtube",
       "url": "#"
     }
   ],
   "logo": {
     "logo": {
-      "src": "/images/logos/logo.png",
+      "src": "/images/logos/mc-logo.png",
       "alt": "Logo Alt Text"
     }
   },
@@ -448,6 +476,28 @@
           "url": "#"
         }
       ]
+    }
+  ],
+  "menu_column": [
+    {
+      "text": "Example menu sublink",
+      "url": "#"
+    },
+    {
+      "text": "Example menu sublink",
+      "url": "#"
+    },
+    {
+      "text": "Example menu sublink",
+      "url": "#"
+    },
+    {
+      "text": "Example menu sublink",
+      "url": "#"
+    },
+    {
+      "text": "Example menu sublink",
+      "url": "#"
     }
   ]
 }

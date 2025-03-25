@@ -1,6 +1,6 @@
 import twig from './home.twig';
 
-import { menu, social, logo } from '../../global/placeholders/global.json';
+import { menu, social, logo, address, footer_links, site_name } from '../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/Home'
@@ -20,7 +20,10 @@ const defaultArgs = {
   label: 'Alert',
   menu,
   social,
-  logo
+  logo,
+  address,
+  footer_links,
+  site_name
 };
 // export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

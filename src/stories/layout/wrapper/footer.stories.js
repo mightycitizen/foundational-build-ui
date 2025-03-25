@@ -4,7 +4,9 @@ import {
   social,
   footer_links,
   logo,
-  address
+  address,
+  menu_column,
+  site_name
 } from '../../global/placeholders/global.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
@@ -60,5 +62,7 @@ Footer.args = {
   social,
   footer_links,
   logo,
-  address
+  address,
+  menu_column,
+  site_name
 };

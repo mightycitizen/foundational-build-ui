@@ -33,7 +33,7 @@
     "del": "^4.1.1",
     "drupal-twig-extensions": "1.0.0-beta.5",
     "postcss-import": "^16.1.0",
-    "raw-loader": "^4.0.2",    
+    "raw-loader": "^4.0.2",
     "sharp": "^0.33.5",
     "storybook": "^8.5.8",
     "storybook-addon-run-script": "^0.1.4",
@@ -68,5 +68,6 @@
     "vite-plugin-image-optimizer": "^1.1.8",
     "vite-tsconfig-paths": "^5.1.4",
     "yargs": "^16.2.0"
-  }
+  },
+  "type": "module"
 }

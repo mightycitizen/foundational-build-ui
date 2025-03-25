@@ -1,17 +1,17 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('/fonts/icomoon.eot?xzjph7');
-  src:  url('/fonts/icomoon.eot?xzjph7#iefix') format('embedded-opentype'),
-    url('/fonts/icomoon.ttf?xzjph7') format('truetype'),
-    url('/fonts/icomoon.woff?xzjph7') format('woff'),
-    url('/fonts/icomoon.svg?xzjph7#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?rhg7hz');
+  src:  url('fonts/icomoon.eot?rhg7hz#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?rhg7hz') format('truetype'),
+    url('fonts/icomoon.woff?rhg7hz') format('woff'),
+    url('fonts/icomoon.svg?rhg7hz#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change /fonts */
+  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
@@ -25,132 +25,84 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-x:before {
-  content: "\e902";
-}
-.icon-quotes-left:before {
+.icon-instagram:before {
   content: "\e900";
 }
-.icon-search:before {
-  content: "\f002";
+.icon-youtube:before {
+  content: "\e901";
 }
-.icon-check:before {
-  content: "\f00c";
-}
-.icon-close-2:before {
-  content: "\f00d";
-}
-.icon-home:before {
-  content: "\f015";
-}
-.icon-book:before {
-  content: "\f02d";
-}
-.icon-pencil:before {
-  content: "\f040";
-}
-.icon-edit:before {
-  content: "\f044";
-}
-.icon-play:before {
-  content: "\f04b";
-}
-.icon-pause:before {
-  content: "\f04c";
-}
-.icon-chevron-left:before {
-  content: "\f053";
-}
-.icon-chevron-right:before {
-  content: "\f054";
-}
-.icon-times-circle:before {
-  content: "\f057";
-}
-.icon-check-circle:before {
-  content: "\f058";
-}
-.icon-question-circle:before {
-  content: "\f059";
-}
-.icon-info-circle:before {
-  content: "\f05a";
-}
-.icon-plus:before {
-  content: "\f067";
-}
-.icon-minus:before {
-  content: "\f068";
-}
-.icon-exclamation-circle:before {
-  content: "\f06a";
-}
-.icon-exclamation-triangle:before {
-  content: "\f071";
-}
-.icon-comment:before {
-  content: "\f075";
-}
-.icon-chevron-up:before {
-  content: "\f077";
-}
-.icon-chevron-down:before {
-  content: "\f078";
-}
-.icon-comments:before {
-  content: "\f086";
-}
-.icon-external-link:before {
-  content: "\f08e";
-}
-.icon-phone:before {
-  content: "\f095";
-}
-.icon-twitter:before {
-  content: "\f099";
+.icon-x-logo:before {
+  content: "\e902";
 }
 .icon-facebook:before {
-  content: "\f09a";
-}
-.icon-envelope:before {
-  content: "\f0e0";
+  content: "\e903";
 }
 .icon-linkedin:before {
-  content: "\f0e1";
+  content: "\e904";
 }
-.icon-bell:before {
-  content: "\f0f3";
+.icon-at:before {
+  content: "\e905";
 }
-.icon-question:before {
-  content: "\f128";
+.icon-map-pin-line:before {
+  content: "\e906";
 }
-.icon-file:before {
-  content: "\f15b";
+.icon-arrow-circle-right:before {
+  content: "\e907";
 }
-.icon-file-text:before {
-  content: "\f15c";
-}
-.icon-youtube-play:before {
-  content: "\f16a";
-}
-.icon-instagram:before {
-  content: "\f16d";
-}
-.icon-tumblr:before {
-  content: "\f173";
-}
-.icon-pinterest-p:before {
-  content: "\f231";
-}
-.icon-commenting:before {
-  content: "\f27a";
-}
-.icon-vimeo:before {
-  content: "\f27d";
+.icon-arrow-circle-left:before {
+  content: "\e908";
 }
 .icon-user-circle:before {
-  content: "\f2bd";
+  content: "\e909";
 }
-.icon-close:before {
-  content: "\e901";
+.icon-magnifying-glass:before {
+  content: "\e90a";
+}
+.icon-list:before {
+  content: "\e90b";
+}
+.icon-x:before {
+  content: "\e90c";
+}
+.icon-x-circle:before {
+  content: "\e90d";
+}
+.icon-arrow-right:before {
+  content: "\e90e";
+}
+.icon-house:before {
+  content: "\e90f";
+}
+.icon-buildings:before {
+  content: "\e910";
+}
+.icon-play:before {
+  content: "\e911";
+}
+.icon-moon:before {
+  content: "\e912";
+}
+.icon-plus:before {
+  content: "\e913";
+}
+.icon-minus:before {
+  content: "\e914";
+}
+.icon-caret-down:before {
+  content: "\e915";
+}
+.icon-caret-left:before {
+  content: "\e916";
+}
+.icon-caret-right:before {
+  content: "\e917";
+}
+.icon-caret-up:before {
+  content: "\e918";
+}
+.icon-phone-call:before {
+  content: "\e919";
+}
+.icon-lightning-fill:before {
+  content: "\e91a";
 }
