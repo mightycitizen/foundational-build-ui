@@ -7,6 +7,7 @@ if (import.meta.hot) {
 
 import.meta.glob('../../stories/components/**/*.css', { eager: true }); // Or .scss
 const globalCSS = import.meta.glob('../../stories/global/**/*.css', { eager: true }); // Or .scss
+const layoutCSS = import.meta.glob('../../stories/layout/**/*.css', { eager: true });
 const componentModules = import.meta.glob('../../stories/components/**/!(*.stories).js', { eager: true }); // Or .scss
 
 

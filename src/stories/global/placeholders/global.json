@@ -500,9 +500,31 @@
       "url": "#"
     }
   ],
+  "header_dropdown": [
+    {
+      "text": "Example menu sublink",
+      "url": "#"
+    },
+    {
+      "text": "Example menu sublink",
+      "url": "#"
+    },
+    {
+      "text": "Example menu sublink",
+      "url": "#"
+    },
+    {
+      "text": "Example menu sublink",
+      "url": "#"
+    },
+    {
+      "text": "Example menu sublink",
+      "url": "#"
+    }
+  ],
   "utility_menu": {
     "menu_id": "eyebrow-menu",
-    "menu_wrapper_modifiers": "z-30 bg-primary w-full py-4 lg:mt-4 lg:relative lg:block shadow-md lg:shadow-none lg:py-0",
+    "menu_wrapper_modifiers": "z-40 bg-primary w-full py-4 lg:mt-4 lg:relative lg:block shadow-md lg:shadow-none lg:py-0",
     "menu_bar_modifiers": "flex flex-col justify-end gap-x-1 list-none lg:-mx-1 lg:flex-row",
     "parent_link_mobile_button_modifiers": "py-3 text-white no-underline w-full font-bold flex items-center gap-2 justify-between leading-5 lg:hidden",
     "parent_link_mobile_button_icon_modifiers": "icon-caret-down text-xs text-primary",
@@ -632,20 +654,6 @@
     "parent_link_hover_modifiers": "bg-primary hover text-white",
     "parent_link_icon_modifiers": "icon-caret-down text-lg text-white",
     "links": [
-      {
-        "text": "CTA Link",
-        "url": "#",
-        "children": [
-          {
-            "text": "Item 1",
-            "url": "#"
-          },
-          {
-            "text": "Item 2",
-            "url": "#"
-          }
-        ]
-      },
       {
         "text": "CTA Link",
         "url": "#",

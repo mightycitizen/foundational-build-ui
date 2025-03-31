@@ -42,6 +42,7 @@ module.exports = {
     'bg-secondary-100',
     'bg-primary-50',
     'aspect-video',
+    'z-40',
   ],
   theme: {
     container: {

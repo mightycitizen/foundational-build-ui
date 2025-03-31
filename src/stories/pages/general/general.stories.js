@@ -17,7 +17,7 @@ import {
   links
 } from '../../global/placeholders/components.json';
 
-import { menu, social, logo, address, utility_menu, cta_menu, footer_links, site_name } from '../../global/placeholders/global.json';
+import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, footer_links, site_name } from '../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/General'
@@ -35,6 +35,7 @@ const defaultArgs = {
   menu,
   utility_menu,
   cta_menu,
+  header_dropdown,
   logo,
   social,
   address,
