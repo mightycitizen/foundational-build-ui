@@ -12,7 +12,7 @@
 <header class="l-header bg-primary lg:pt-0" id="header" x-data="{{'{'}} mainMenu: false, dropdownOpen: {sm: null, lg: null} {{'}'}}">
   <div class="container relative">
     <div class="grid grid-cols-12 gap-6 items-center align-middle justify-between">
-      <div class="col-span-12">
+      <div class="col-span-12 lg:block hidden">
         {% include '@components/navigation/utility-menu/utility-menu.twig' with {
           menu: utility_menu
         } %}

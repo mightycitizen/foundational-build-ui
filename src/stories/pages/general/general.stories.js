@@ -6,7 +6,8 @@ import {
   accordion,
   tabs,
   breadcrumbs,
-  hero,
+  hero_primary,
+  hero_secondary,
   card,
   contact,
   testimonial,
@@ -30,7 +31,6 @@ const Template = (args) => {
 
 const Default = Template.bind({});
 const defaultArgs = {
-  hero,
   breadcrumbs,
   menu,
   utility_menu,
@@ -41,6 +41,7 @@ const defaultArgs = {
   address,
   footer_links,
   site_name,
+  hero: hero_primary,
   modules: [
     {
       module_type: 'wysiwyg',
@@ -393,4 +394,11 @@ Sidebar.args = {
 };
 Sidebar.parameters = parameters;
 
-export { Default, Cookies, AnchorMenu, SectionTest, Sidebar };
+const SecondaryHero = Template.bind({});
+SecondaryHero.args = {
+  ...defaultArgs,
+  hero: hero_secondary
+};
+SecondaryHero.parameters = parameters;
+
+export { Default, Cookies, AnchorMenu, SectionTest, Sidebar, SecondaryHero };

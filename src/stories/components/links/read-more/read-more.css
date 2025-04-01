@@ -1,11 +1,10 @@
 
 .read-more {
-    @apply font-bold no-underline;
 
     &:after {
         font-family: 'icomoon';
-        content: "\f054";
-        @apply ml-2 text-xs;
+        content: "\e90e";
+        @apply ml-2 no-underline;
     }
 
     &:hover,
