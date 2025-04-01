@@ -1,0 +1,5 @@
+import{t as a}from"./footer-BrzSdeet.js";import{a as i,b as n,c as m,l as p,f as c,s as u,m as l}from"./global-DVjLYK61.js";import"./twig-BXd3Gfe2.js";import"./_commonjsHelpers-BosuxZz1.js";import"./twig-foVUGi9y.js";import"./social-media-BBQJ4pE2.js";import"./logo-AYNrM0QZ.js";import"./back-to-top-Bf3x7Log.js";import"./link-CIbey7wG.js";const O={title:"Layout/Wrapper/Footer"},d=s=>a(s),r=d.bind({});r.args={menu:l,social:u,footer_links:c,logo:p,address:m,menu_column:n,site_name:i};var o,t,e;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`args => {
+  // You can either use a function to create DOM elements or use a plain html string!
+  // return \`<div>\${label}</div>\`;
+  return twig(args);
+}`,...(e=(t=r.parameters)==null?void 0:t.docs)==null?void 0:e.source}}};const k=["Footer"];export{r as Footer,k as __namedExportsOrder,O as default};

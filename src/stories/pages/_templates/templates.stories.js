@@ -6,7 +6,7 @@ import {
   accordion,
   tabs,
   breadcrumbs,
-  hero,
+  hero_primary,
   card,
   contact,
   testimonial,
@@ -86,7 +86,7 @@ const templates = [
 
 const defaultArgs = {
   templates,
-  hero,
+  hero_primary,
   breadcrumbs,
   menu,
   logo,
