@@ -30,8 +30,8 @@ Icons.args = {
   ...defaultArgs,
   accordion_id: 'accordion_icons',
   items: [
-    { heading: 'Heading', content: 'Content', icon: 'icon-bell' },
-    { heading: 'Heading', content: 'Content', icon: 'icon-search' }
+    { heading: 'Heading', content: 'Content', icon: 'icon-moon' },
+    { heading: 'Heading', content: 'Content', icon: 'icon-moon' }
   ]
 };
 

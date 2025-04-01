@@ -21,7 +21,7 @@ const Default = Template.bind({});
 const defaultArgs = {
   intro_class: 'text-left',
   section_label: {
-    icon: 'home',
+    icon: 'buildings',
     text: 'Example label goes here'
   },
   section_heading: '[h2, optional] Modular Component Intro, Label type',

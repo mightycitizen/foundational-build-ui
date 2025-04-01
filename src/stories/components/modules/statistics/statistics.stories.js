@@ -54,7 +54,7 @@ const defaultArgs = {
     {
       stat_bg: 'primary-50',
       icon: {
-        name: 'check',
+        name: 'moon',
         background: 'primary'
       },
       value: '#1 Best Value',
@@ -64,7 +64,7 @@ const defaultArgs = {
     {
       stat_bg: 'primary-50',
       icon: {
-        name: 'check',
+        name: 'moon',
         background: 'primary'
       },
       value: '#1 Best Value',
@@ -74,7 +74,7 @@ const defaultArgs = {
     {
       stat_bg: 'primary-50',
       icon: {
-        name: 'check',
+        name: 'moon',
         background: 'primary'
       },
       value: '#1 Best Value',
@@ -84,7 +84,7 @@ const defaultArgs = {
     {
       stat_bg: 'primary-50',
       icon: {
-        name: 'check',
+        name: 'moon',
         background: 'primary'
       },
       value: '#1 Best Value',
@@ -94,7 +94,7 @@ const defaultArgs = {
     {
       stat_bg: 'primary-50',
       icon: {
-        name: 'check',
+        name: 'moon',
         background: 'primary'
       },
       value: '#1 Best Value',
@@ -104,7 +104,7 @@ const defaultArgs = {
     {
       stat_bg: 'primary-50',
       icon: {
-        name: 'check',
+        name: 'moon',
         background: 'primary'
       },
       value: '#1 Best Value',
