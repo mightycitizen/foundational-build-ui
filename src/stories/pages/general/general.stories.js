@@ -321,6 +321,24 @@ const parameters = {
   layout: 'fullscreen'
 };
 
+const hero_secondary_background = {
+  background_color: true,
+  image: {
+    src: "/images/hero-secondary.jpg",
+    alt: "University view"
+  },
+  heading: "Hero title goes here",
+  summary: "[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. ",
+  hero_button: {
+    text: "Primary Button",
+    url: "#"
+  },
+  readmore_link: {
+    text: "Optional Link",
+    url: "#"
+  }
+};
+
 // console.log(defaultArgs);
 Default.args = defaultArgs;
 Default.parameters = parameters;
@@ -402,4 +420,13 @@ SecondaryHero.args = {
 };
 SecondaryHero.parameters = parameters;
 
-export { Default, Cookies, AnchorMenu, SectionTest, Sidebar, SecondaryHero };
+const SecondaryHeroBackground = Template.bind({});
+SecondaryHeroBackground.args = {
+  ...defaultArgs,
+  hero: hero_secondary_background
+};
+SecondaryHeroBackground.parameters = parameters;
+
+export { Default, Cookies, AnchorMenu, SectionTest, Sidebar, SecondaryHero, SecondaryHeroBackground };
+
+

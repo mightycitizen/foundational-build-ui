@@ -1,6 +1,5 @@
 .accordion-title {
-  &:hover,
-  &:focus {
+  &:hover {
     .accordion-title-icon {
       @apply text-white;
     }

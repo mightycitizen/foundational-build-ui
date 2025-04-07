@@ -2,16 +2,16 @@
 
 {% if breadcrumbs %}
   <nav role="navigation" aria-label="You are here:">
-    <ul class="breadcrumbs mb-0 flex gap-2 list-none text-xs font-bold">
+    <ul class="breadcrumbs mb-0 flex gap-2 list-none">
       {% for item in breadcrumbs %}
         <li>
           {% if item.url %}
-            <a href="{{ item.url }}">{{ item.text }}</a>
+            <a class="font-bold" href="{{ item.url }}">{{ item.text }}</a>
           {% else %}
-            <span class="breadcrumb__current">{{ item.text }}</span>            
+            <span class="breadcrumb__current">{{ item.text }}</span>
           {% endif %}
           {% if loop.last == false %}
-              <span aria-hidden="true" class="icon-chevron-right text-xs ml-2 inline-block align-middle"></span>
+              <span aria-hidden="true" class="icon-caret-right text-xs ml-2 inline-block align-middle"></span>
             {% endif %}
         </li>
       {% endfor %}

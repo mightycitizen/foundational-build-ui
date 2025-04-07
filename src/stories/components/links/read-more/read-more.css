@@ -4,12 +4,15 @@
     &:after {
         font-family: 'icomoon';
         content: "\e90e";
+        display: inline-block;
         @apply ml-2 no-underline;
+        text-decoration: none;
     }
 
     &:hover,
     &:focus-visible {
         @apply underline;
+        text-decoration-line: none;
     }
 
     &.text-2xl {

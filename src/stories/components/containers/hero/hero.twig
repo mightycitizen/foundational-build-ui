@@ -1,4 +1,4 @@
-<div class="hero{% if background_image %} hero--background-image{% endif %}{% if background_color %} text-white bg-primary {% endif%} relative">
+<div class="hero{% if background_image %} hero--background-image{% endif %}{% if background_color %} text-white bg-primary-800 {% endif%} relative">
   {% if background_image %}
   <div class="inset-0 w-full h-full max-h-[600px] overflow-hidden">
     <img src="{{ background_image.src }}" alt="{{ background_image.alt }}" class="w-full h-full object-cover object-center">
@@ -10,7 +10,7 @@
         <div class="col-span-12 md:order-3">
           <div class="hero_content">
             <div class="grid grid-cols-12 gap-6 items-center">
-              <div class="col-span-12 {% if image | default %}md:col-span-6{% endif %}">
+              <div class="col-span-12 {% if image | default %}md:col-span-6 order-2 md:order-1{% endif %}">
                 <div class="mb-4">
                   {% include '@components/navigation/breadcrumbs/breadcrumbs.twig' with breadcrumbs %}
                 </div>
@@ -62,7 +62,7 @@
                 {% endif %}
               </div>
               {% if image | default %}
-                <div class="col-span-12 md:col-span-6">
+                <div class="col-span-12 md:col-span-6 order-1 md:order-2 -mx-4 md:mx-0">
                   <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy"/>
                 </div>
               {% endif %}
