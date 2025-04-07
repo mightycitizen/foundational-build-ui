@@ -1976,6 +1976,12 @@ input[type="radio"]:focus:not(:checked).custom,
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2553,6 +2559,11 @@ input[type="radio"]:focus:not(:checked).custom,
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-primary-900 {
+  --tw-text-opacity: 1;
+  color: rgb(7 14 36 / var(--tw-text-opacity, 1));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -2992,13 +3003,28 @@ input[type="radio"]:focus:not(:checked).custom,
     justify-content: center;
   }
 
+  .lg\:justify-between {
+    justify-content: space-between;
+  }
+
   .lg\:gap-8 {
     gap: 2rem;
+  }
+
+  .lg\:gap-x-3 {
+    -moz-column-gap: 0.75rem;
+         column-gap: 0.75rem;
   }
 
   .lg\:gap-x-8 {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
+  }
+
+  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
   .lg\:space-y-10 > :not([hidden]) ~ :not([hidden]) {
@@ -3070,6 +3096,11 @@ input[type="radio"]:focus:not(:checked).custom,
     padding-bottom: 0.75rem;
   }
 
+  .lg\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .lg\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -3110,6 +3141,11 @@ input[type="radio"]:focus:not(:checked).custom,
   .lg\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .lg\:text-gray {

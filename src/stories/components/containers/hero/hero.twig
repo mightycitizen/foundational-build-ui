@@ -78,4 +78,16 @@
       </div>
     </div>
   </div>
+  <div class="links-bar {% if background_color %}bg-white text-primary-500 shadow{% else %}bg-primary-500 text-white{% endif %}">
+    <div class="container">
+      <ul class="menu lg:flex lg:gap-x-3 py-4 lg:py-4 space-y-3 lg:space-y-0 list-none lg:justify-between lg:text-lg items-center">
+        {% for item in links_bar_menu %}
+          <li class="shrink-0">
+            <span class="icon-{{ item.icon }} text-xl align-middle"></span>
+            <a class="no-underline hover:underline" href="{{ item.url }}">{{ item.text }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 </div>

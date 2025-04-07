@@ -522,6 +522,33 @@
       "url": "#"
     }
   ],
+  "links_bar_menu": [
+    {
+      "text": "Eyebrow menu item",
+      "url": "#",
+      "icon": "user-circle"
+    },
+    {
+      "text": "Eyebrow menu item",
+      "url": "#",
+      "icon": "user-circle"
+    },
+    {
+      "text": "Eyebrow menu item",
+      "url": "#",
+      "icon": "user-circle"
+    },
+    {
+      "text": "Eyebrow menu item",
+      "url": "#",
+      "icon": "user-circle"
+    },
+    {
+      "text": "Eyebrow menu item",
+      "url": "#",
+      "icon": "user-circle"
+    }
+  ],
   "utility_menu": {
     "menu_id": "eyebrow-menu",
     "menu_wrapper_modifiers": "z-40 bg-primary w-full py-4 lg:mt-4 lg:relative lg:block shadow-md lg:shadow-none lg:py-0",
