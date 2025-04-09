@@ -14,6 +14,12 @@ table {
     font-size: 1rem !important;
     font-weight: normal !important;
     text-align: left;
+    &.top {
+      @apply pb-3;
+      caption-side: top;
+      font-weight: bold !important;
+      font-size: 1.5rem !important;
+    }
   }
 }
 
