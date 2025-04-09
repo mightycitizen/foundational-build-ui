@@ -5,6 +5,16 @@
 {% block main %}
   {% if narrow_modules | default | length > 0 %}
     {% set content %}
+      <div class="anchor-nav bg-primary-50 px-6 py-5">
+        <p class="uppercase text-primary-900 font-bold text-sm mb-5">Table of Contents (Editable title)</p>
+        <ul class="list-none font-semibold space-y-2">
+          {% for item in anchor_nav %}
+            <li>
+              <a class="" href="{{ item.url }}">{{ item.text }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
       {% for module in narrow_modules %}
       {% if module.module_type == 'wysiwyg' %}
         {{ module.wysiwyg }}
@@ -13,10 +23,11 @@
     {% endset %}
     {% if sidebar_modules | default | length > 0 %}
       {% set sidebar %}
+        {% include '@components/navigation/local-nav/local-nav.twig' with local_nav %}
         {% for module in sidebar_modules %}
-          {% if module.module_type == 'card' %}
-            {% include "@components/teasers/card/card.twig" with module only %}
-          {% endif %}
+{#          {% if module.module_type == 'card' %}#}
+{#            {% include "@components/teasers/card/card.twig" with module only %}#}
+{#          {% endif %}#}
         {% endfor %}
       {% endset %}
     {% endif %}

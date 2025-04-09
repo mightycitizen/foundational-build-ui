@@ -1,0 +1,31 @@
+<div class="local-nav lg:hidden" x-data="{ open: false }">
+  <button x-on:click="open = ! open" class="bg-neutrals-50 border border-neutrals-200 border-l-[6px] border-l-primary-500 w-full flex justify-between items-center py-3 px-3">
+    <span class="icon-list text-primary-500 text-3xl"></span>
+    <span class="font-bold">In this section</span>
+    <span class="icon-plus text-2xl text-primary-500" :class="{ 'icon-minus': open, 'icon-plus' : !open }"></span>
+  </button>
+  <div class="lg:shadow px-6 py-5" x-show="open" >
+    <p class="text-primary-900 font-bold text-2xl mb-5"><a href="#">Parent Page Link</a></p>
+    <ul class="list-none font-semibold space-y-2">
+      {% for item in local_nav %}
+        <li>
+          {% if item.url %}<a class="font-medium text-neutrals-800" href="{{ item.url }}">{% endif %}
+            {{ item.text }}
+          {% if item.url %}</a>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<div class="lg:shadow px-6 py-5 hidden lg:block">
+  <p class="text-primary-900 font-bold text-2xl mb-5"><a href="#">Parent Page Link</a></p>
+  <ul class="list-none font-semibold space-y-2">
+    {% for item in local_nav %}
+      <li>
+        {% if item.url %}<a class="font-medium text-neutrals-800" href="{{ item.url }}">{% endif %}
+          {{ item.text }}
+          {% if item.url %}</a>{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

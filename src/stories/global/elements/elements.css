@@ -23,11 +23,19 @@ table {
   }
 }
 
+blockquote p:before {
+  @media (max-width: 639px) {
+    display: block;
+  }
+}
+
 figure figcaption {
   @apply bg-black text-white p-2;
   font-size: 1rem;
   margin-top: 0 !important;
 }
+
+
 
 .video_wrapper .icon-play:before {
   filter: drop-shadow(-1px 4px 8px rgba(16, 24, 40, 0.3));

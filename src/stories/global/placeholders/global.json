@@ -549,6 +549,69 @@
       "icon": "user-circle"
     }
   ],
+  "anchor_nav": [
+    {
+      "text": "Getting started",
+      "url": "#"
+    },
+    {
+      "text": "Another link goes here",
+      "url": "#"
+    },
+    {
+      "text": "Requesting transcripts",
+      "url": "#"
+    },
+    {
+      "text": "Paying your enrollment deposit",
+      "url": "#"
+    },
+    {
+      "text": "Attending orientation",
+      "url": "#"
+    },
+    {
+      "text": "Directions to campus",
+      "url": "#"
+    },
+    {
+      "text": "Link goes here",
+      "url": "#"
+    }
+  ],
+  "local_nav": [
+    {
+      "text": "Current Page Title"
+    },
+    {
+      "text": "Eyebrow menu item",
+      "url": "#"
+    },
+    {
+      "text": "Eyebrow menu item",
+      "url": "#"
+    },
+    {
+      "text": "Eyebrow menu item",
+      "url": "#"
+    },
+    {
+      "text": "Eyebrow menu item",
+      "url": "#"
+    },
+    {
+      "text": "Eyebrow menu item",
+      "url": "#"
+    },
+    {
+      "text": "Eyebrow menu item",
+      "url": "#"
+    },
+    {
+      "text": "Eyebrow menu item",
+      "url": "#"
+    }
+  ],
   "utility_menu": {
     "menu_id": "eyebrow-menu",
     "menu_wrapper_modifiers": "z-40 bg-primary w-full py-4 lg:mt-4 lg:relative lg:block shadow-md lg:shadow-none lg:py-0",
