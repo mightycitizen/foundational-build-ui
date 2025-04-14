@@ -25,6 +25,7 @@ table {
 
 .table-scroll table {
   @media (max-width: 639px) {
+    margin-left: 0;
     min-width: 250% !important;
   }
 }
