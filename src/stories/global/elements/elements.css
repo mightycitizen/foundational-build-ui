@@ -25,7 +25,7 @@ table {
 
 .table-scroll table {
   @media (max-width: 639px) {
-    margin-left: 0;
+    margin-left: 0 !important;
     min-width: 250% !important;
   }
 }
@@ -33,6 +33,7 @@ table {
 blockquote p:before {
   @media (max-width: 639px) {
     display: block;
+    position: relative;
   }
 }
 
