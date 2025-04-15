@@ -1,11 +1,11 @@
   <div id="body" class="{{ wrapper_class | default }}">
-    <div class="grid grid-cols-12 gap-6">
-      <div class=" md:col-span-3">
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-12 md:col-span-3">
         <div data-sticky data-anchor="body" data-sticky-on="medium">
           {{ sidebar }}
         </div>
       </div>
-      <div class=" md:col-span-9 l-content" id="content">
+      <div class="col-span-12 md:col-span-9 lg:pl-10 l-content" id="content">
           {{ content }}
       </div>
 

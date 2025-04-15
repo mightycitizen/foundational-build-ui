@@ -1,12 +1,12 @@
-<div class="l-wrapper no-js" x-data="{backToTop: false}" 
+<div class="l-wrapper no-js" x-data="{backToTop: false}"
     @scroll.window="backToTop = window.scrollY > 100">
 
   {% include "@layout/wrapper/header.twig" %}
   <main class="l-main" id="main">
-    {% include '@components/informational/alert/alert.twig' with {
-      alert_label: "Alert",
-      text: "Important message goes here and is an optional link lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    }%}
+{#    {% include '@components/informational/alert/alert.twig' with {#}
+{#      alert_label: "Alert",#}
+{#      text: "Important message goes here and is an optional link lorem ipsum dolor sit amet, consectetur adipiscing elit."#}
+{#    }%}#}
     <div class="l-top" id="top">
       {% block top %}
       {% endblock %}

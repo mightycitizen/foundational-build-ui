@@ -400,17 +400,49 @@ SectionTest.parameters = parameters;
 
 const Sidebar = Template.bind({});
 Sidebar.args = {
-  ...defaultArgs,
+  breadcrumbs,
+  menu,
+  utility_menu,
+  links_bar_menu,
+  anchor_nav,
+  local_nav,
+  cta_menu,
+  header_dropdown,
+  logo,
+  social,
+  address,
+  footer_links,
+  site_name,
+  menu_column,
+  hero: hero_primary,
   narrow_modules: [
     {
       module_type: 'wysiwyg',
       wysiwyg
+    },
+    {
+      module_type: 'accordion',
+      exclude_container: true,
+      section_id: 'section-2',
+      ...accordion
     }
   ],
   sidebar_modules: [
     {
       module_type: 'card',
       ...card
+    }
+  ],
+  modules: [
+    {
+      module_type: 'cta',
+      section_heading: 'Default CTA',
+      section_description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      section_button: {
+        url: '#',
+        text: 'Text'
+      }
     }
   ]
 };

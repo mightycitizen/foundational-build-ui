@@ -50,9 +50,9 @@ module.exports = {
       padding: {
         DEFAULT: '1rem',
         sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-        '2xl': '6rem',
+        lg: '2rem',
+        xl: '2rem',
+        '2xl': '2rem',
       },
     },
     extend: {
@@ -72,6 +72,25 @@ module.exports = {
 
     }),
     // require('@tailwindcss/typography'),
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          '@screen sm': {
+            maxWidth: '100%',
+          },
+          '@screen md': {
+            maxWidth: '100%',
+          },
+          '@screen lg': {
+            maxWidth: '1362px',
+          },
+          '@screen xl': {
+            maxWidth: '1362px',
+          },
+        }
+      })
+    }
   ]
 }
 

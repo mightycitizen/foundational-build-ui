@@ -1,12 +1,14 @@
 
 .read-more {
-
+  @apply text-lg;
     &:after {
-        font-family: 'icomoon';
         content: "\e90e";
         display: inline-block;
+        font-family: 'icomoon';
+        font-size: 1.35rem;
         @apply ml-2 no-underline;
         text-decoration: none;
+        vertical-align: middle;
     }
 
     &:hover,

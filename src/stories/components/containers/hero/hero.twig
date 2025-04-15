@@ -11,7 +11,7 @@
           <div class="hero_content">
             <div class="grid grid-cols-12 gap-6 items-center">
               <div class="col-span-12 {% if image | default %}md:col-span-6 order-2 md:order-1{% endif %}">
-                <div class="mb-4">
+                <div class="{% if image | default %}mb-8{% else %}mb-8 lg:mb-4{% endif %}">
                   {% include '@components/navigation/breadcrumbs/breadcrumbs.twig' with breadcrumbs %}
                 </div>
 
@@ -22,7 +22,7 @@
                     endDate: endDate
                   } only %}
                 {% endif %}
-                <h1>{{ heading }}</h1>
+                <h1 class="text-5xl">{{ heading }}</h1>
 
                 {% if subheading | default %}
                   <p class="text-2xl">{{ subheading }}</p>
@@ -35,13 +35,13 @@
                   </ul>
                 {% endif %}
                 {% if summary | default %}
-                  <p>{{ summary }}</p>
+                  <p class="text-lg">{{ summary }}</p>
                 {% endif %}
 
                 <div class="flex flex-wrap flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-8 pb-5 lg:pb-0">
                   {% if hero_button | default %}
                     {% include '@components/links/button/button.twig' with hero_button | merge({
-                      class: '',
+                      classes: 'text-lg items-center',
                       icon: 'arrow-circle-right'
                     }) only %}
                   {% endif %}
