@@ -13,10 +13,10 @@
 
     {% set output = 2 %}
     {% if breadcrumbs|length > 0 %}
-      <span class="icon-house text-lg"></span> <a class="inline-block text-inherit" href="{{ root.url }}">{{ root.text }}</a>
+      <span class="icon-house text-lg"></span> <a class="inline-block font-bold text-inherit" href="{{ root.url }}">{{ root.text }}</a>
       <span aria-hidden="true" class="icon-caret-right text-xs ml-2 mr-2 inline-block align-middle"></span>
       <div class="inline-block relative{% if breadcrumbs|length == 1 %} lg:hidden{% endif %}" x-on:mouseleave.debounce.300="breadcrumbsOpen = false">
-        <button class="text-white hover:text-underline bg-transparent border-0 cursor-pointer text-inherit" x-on:mouseover="breadcrumbsOpen = true" x-on:touchstart="breadcrumbsOpen = !breadcrumbsOpen">
+        <button class="hover:text-underline bg-transparent border-0 cursor-pointer text-inherit" x-on:mouseover="breadcrumbsOpen = true" x-on:touchstart="breadcrumbsOpen = !breadcrumbsOpen">
           ..... <span aria-hidden="true" class="icon-caret-down text-xs ml-2 inline-block align-middle"></span>
         </button>
         <span aria-hidden="true" class="icon-caret-right text-xs ml-2 mr-2 inline-block align-middle"></span>
@@ -35,7 +35,7 @@
 
     {% for item in last_two %}
       {% if loop.last == false %}
-        <a class="text-inherit" href="{{ item.url }}">{{ item.text }}</a>
+        <a class="text-inherit font-bold" href="{{ item.url }}">{{ item.text }}</a>
         <span aria-hidden="true" class="icon-caret-right text-xs ml-2 inline-block align-middle"></span>
       {% else %}
         <span aria-current="page" class="hidden lg:inline-block">
