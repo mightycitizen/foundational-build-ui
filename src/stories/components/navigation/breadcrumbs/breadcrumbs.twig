@@ -20,8 +20,8 @@
           ..... <span aria-hidden="true" class="icon-caret-down text-xs ml-2 inline-block align-middle"></span>
         </button>
         <span aria-hidden="true" class="icon-caret-right text-xs ml-2 mr-2 inline-block align-middle"></span>
-        <div class="absolute left-neg-1 mt-4 lg:mt-2 shadow-3 width-15 z-100 bg-white text-black px-5 py-5" x-show="breadcrumbsOpen">
-          <ul class="list-none m-0 p-0">
+        <div class="absolute left-neg-1 shadow-3 w-[250px] z-100 bg-white text-black px-5 py-5" x-show="breadcrumbsOpen">
+          <ul class="list-none m-0 p-0 space-y-2">
             {% set spacer = 2 %}
             {% for item in breadcrumbs %}
               <li class="c-breadcrumb__item {% if loop.first %}lg:hidden{% endif %} {% if loop.last == false %}pb-{{ spacer }} {% endif %} {% if loop.index0 == 1 %}lg:pt-0{% elseif loop.first %}pt-0{% endif %} pt-{{ spacer }}">

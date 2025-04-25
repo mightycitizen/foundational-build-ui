@@ -1794,6 +1794,10 @@ input[type="radio"]:focus:not(:checked).custom,
   width: 2rem;
 }
 
+.w-\[250px\] {
+  width: 250px;
+}
+
 .w-\[315px\] {
   width: 315px;
 }
@@ -3023,10 +3027,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
   .lg\:mr-3 {
     margin-right: 0.75rem;
-  }
-
-  .lg\:mt-2 {
-    margin-top: 0.5rem;
   }
 
   .lg\:mt-4 {
