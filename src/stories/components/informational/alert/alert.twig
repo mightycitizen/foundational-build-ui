@@ -1,17 +1,26 @@
-<div class="alert-bar bg-secondary py-4 {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
-  <div class="container flex gap-3 justify-center">
-    {% if label | default %}
-      <span class="alert-bar_label font-bold">{{ label }}:</span>
-    {% endif %}
-    {% if link | default %}
-      <a href="{{ link.url }}" {% if link.target %}target="{{ link.target }}"{% endif %}>{{ text }}</a>
-    {% else %}
-      <span>{{ text }}</span>      
-    {% endif %}
+<div class="alert-bar bg-white py-6 px-6 shadow {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
+  <div class="flex gap-6 justify-center items-center">
+    <div class="alert-type-icon">
+      <span class="bg-tertiary-100 inline-block w-[56px] h-[56px] rounded-full flex items-center justify-center">
+        <i class="icon-lightning-fill text-tertiary-600 text-2xl"></i>
+      </span>
+    </div>
+    <div class="">
+      {% if link | default %}
+        <a class="text-lg font-bold text-black" href="{{ link.url }}" {% if link.target %}target="{{ link.target }}"{% endif %}>{{ alert_type }}: {{ title }}</a>
+      {% else %}
+        <span class="alert-bar_label font-bold text-lg">{{ alert_type }}: {{ title }}</span>
+      {% endif %}
+      {% if text | default %}
+        <span class="block text-neutrals-800">{{ text }}</span>
+      {% endif %}
+    </div>
     {% if closable | default %}
-      <button class="{% if closable_text | default is empty %}close-button{% else %}button{% endif %}" aria-label="Dismiss alert" type="button" data-close>
-        <span aria-hidden="true">{% if closable_text | default %}{{ closable_text }}{% else %}&times;{% endif %}</span>
-      </button>
+      <div>
+        <button class="{% if closable_text | default is empty %}close-button{% else %}button{% endif %}" aria-label="Dismiss alert" type="button" data-close>
+          <span class="text-3xl" aria-hidden="true">{% if closable_text | default %}{{ closable_text }}{% else %}&times;{% endif %}</span>
+        </button>
+      </div>
     {% endif %}
   </div>
 </div>
