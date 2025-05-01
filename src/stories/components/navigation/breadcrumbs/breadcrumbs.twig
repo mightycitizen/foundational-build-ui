@@ -13,14 +13,14 @@
 
     {% set output = 2 %}
     {% if breadcrumbs|length > 0 %}
-      <span class="icon-house text-lg"></span> <a class="inline-block font-bold text-inherit" href="{{ root.url }}">{{ root.text }}</a>
-      <span aria-hidden="true" class="icon-caret-right text-xs ml-2 mr-2 inline-block align-middle"></span>
+      <span class="icon-house text-lg py-6"></span> <a class="inline-block font-bold text-inherit py-6" href="{{ root.url }}">{{ root.text }}</a>
+      <span aria-hidden="true" class="icon-caret-right text-xs ml-2 mr-2 py-6 inline-block align-middle"></span>
       <div class="inline-block relative{% if breadcrumbs|length == 1 %} lg:hidden{% endif %}" x-on:mouseleave.debounce.300="breadcrumbsOpen = false">
-        <button class="hover:text-underline bg-transparent border-0 cursor-pointer text-inherit" x-on:mouseover="breadcrumbsOpen = true" x-on:touchstart="breadcrumbsOpen = !breadcrumbsOpen">
+        <button class="hover:text-underline bg-transparent border-0 cursor-pointer text-inherit py-6 px-2 hover:bg-primary-50" x-on:mouseover="breadcrumbsOpen = true" x-on:touchstart="breadcrumbsOpen = !breadcrumbsOpen">
           ..... <span aria-hidden="true" class="icon-caret-down text-xs ml-2 inline-block align-middle"></span>
         </button>
         <span aria-hidden="true" class="icon-caret-right text-xs ml-2 mr-2 inline-block align-middle"></span>
-        <div class="absolute left-neg-1 shadow-3 w-[250px] z-100 bg-white text-black px-5 py-5" x-show="breadcrumbsOpen">
+        <div class="absolute left-neg-1 shadow w-[250px] z-100 bg-white text-black px-5 py-5 border-t-2 border-t-primary-500" x-show="breadcrumbsOpen">
           <ul class="list-none m-0 p-0 space-y-2">
             {% set spacer = 2 %}
             {% for item in breadcrumbs %}
@@ -35,8 +35,8 @@
 
     {% for item in last_two %}
       {% if loop.last == false %}
-        <a class="text-inherit font-bold" href="{{ item.url }}">{{ item.text }}</a>
-        <span aria-hidden="true" class="icon-caret-right text-xs ml-2 inline-block align-middle"></span>
+        <a class="text-inherit font-bold py-6" href="{{ item.url }}">{{ item.text }}</a>
+        <span aria-hidden="true" class="icon-caret-right text-xs py-6 ml-2 inline-block align-middle"></span>
       {% else %}
         <span aria-current="page" class="hidden lg:inline-block">
               {{ item.text }}
@@ -46,7 +46,7 @@
 
   </nav>
 {% elseif breadcrumb_back %}
-  <a href="{{ breadcrumb_back.url }}" class="text-semibold display-inline-flex flex-align-center gx-05">
+  <a href="{{ breadcrumb_back.url }}" class="text-semibold display-inline-flex flex-align-center py-6 gx-05">
     {% include '@components/inline-text/icon/icon.twig' with {
       icon_name: 'angle-left',
       stroke_width: 2

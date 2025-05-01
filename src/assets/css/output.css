@@ -1738,6 +1738,10 @@ input[type="radio"]:focus:not(:checked).custom,
   height: 3px;
 }
 
+.h-\[40px\] {
+  height: 40px;
+}
+
 .h-\[56px\] {
   height: 56px;
 }
@@ -1748,10 +1752,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .h-full {
   height: 100%;
-}
-
-.h-\[40px\] {
-  height: 40px;
 }
 
 .max-h-48 {
@@ -1810,6 +1810,10 @@ input[type="radio"]:focus:not(:checked).custom,
   width: 315px;
 }
 
+.w-\[40px\] {
+  width: 40px;
+}
+
 .w-\[56px\] {
   width: 56px;
 }
@@ -1828,10 +1832,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .w-full {
   width: 100%;
-}
-
-.w-\[40px\] {
-  width: 40px;
 }
 
 .max-w-full {
@@ -2131,6 +2131,10 @@ input[type="radio"]:focus:not(:checked).custom,
   border-top-width: 0px;
 }
 
+.border-t-2 {
+  border-top-width: 2px;
+}
+
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
@@ -2181,6 +2185,11 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .border-t-transparent {
   border-top-color: transparent;
+}
+
+.border-t-primary-500 {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(41 83 204 / var(--tw-border-opacity, 1));
 }
 
 .bg-black {
@@ -2278,6 +2287,11 @@ input[type="radio"]:focus:not(:checked).custom,
   background-color: rgb(244 188 188 / var(--tw-bg-opacity, 1));
 }
 
+.bg-tertiary-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 27 27 / var(--tw-bg-opacity, 1));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -2285,11 +2299,6 @@ input[type="radio"]:focus:not(:checked).custom,
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-tertiary-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 27 27 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-30 {
@@ -2805,6 +2814,16 @@ input[type="radio"]:focus:not(:checked).custom,
   background-color: rgb(29 59 145 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-primary-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(189 202 239 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-primary-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 238 250 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:bg-opacity-100:hover {
   --tw-bg-opacity: 1;
 }
@@ -2961,6 +2980,22 @@ input[type="radio"]:focus:not(:checked).custom,
 
   .md\:pt-10 {
     padding-top: 2.5rem;
+  }
+
+  .md\:pl-4 {
+    padding-left: 1rem;
+  }
+
+  .md\:pl-6 {
+    padding-left: 1.5rem;
+  }
+
+  .md\:pl-8 {
+    padding-left: 2rem;
+  }
+
+  .md\:pl-9 {
+    padding-left: 2.25rem;
   }
 
   .md\:text-left {
