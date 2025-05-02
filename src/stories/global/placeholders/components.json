@@ -214,6 +214,15 @@
       "url": "#"
     }
   },
+  "alert_teaser": {
+    "heading": {
+      "text": "Alert title goes here lorem ipsum dolor site amet",
+      "url": "#"
+    },
+    "alert_type": "Emergency",
+    "last_updated": "Tuesday, March 11, 5:07 PM CT",
+    "alert_message": "[Alert Message] Notice: Due to an unforeseen meteorological anomaly involving sharks and tornadoes, a temporary suspension of all outdoor activities is advised. Please consult your local shark-weather index for further instructions."
+  },
   "card": {
     "heading": {
       "text": "Heading",

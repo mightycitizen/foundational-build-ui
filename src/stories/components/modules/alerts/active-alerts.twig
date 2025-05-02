@@ -1,0 +1,12 @@
+{% embed '@components/sections/section.twig' with {
+  section_class: section_class | default,
+  section_style: "narrow"
+} %}
+  {% block section_content %}
+    <div class="flex flex-col gap-4 md:gap-6 md:pt-3">
+      {% for alert_teaser in alert_teasers %}
+        {% include '@components/teasers/alert/alert-teaser.twig' with alert_teaser only %}
+      {% endfor %}
+    </div>
+  {% endblock %}
+{% endembed %}

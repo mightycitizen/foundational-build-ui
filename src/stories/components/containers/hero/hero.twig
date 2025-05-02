@@ -7,7 +7,7 @@
   <div class="hero--inner-wrapper pb-4 lg:py-11">
     <div class="container">
       <div class="grid grid-cols-12 gap-6 gap-y-8 lg:g-y-0">
-        <div class="col-span-12 md:order-3">
+        <div class="{% if content_type == 'alert' %}col-span-10{% else %}col-span-12{% endif%} md:order-3">
           <div class="hero_content">
             <div class="grid grid-cols-12 gap-6 items-center">
               <div class="col-span-12 {% if image | default %}md:col-span-6 order-2 md:order-1{% endif %}">
@@ -26,10 +26,11 @@
                 {% if alert_type %}
                   <div class="flex items-center gap-x-4 mb-5">
                     <span class="bg-tertiary-100 inline-block w-[40px] h-[40px] rounded-full flex items-center justify-center">
-                    <i class="icon-lightning-fill text-tertiary-600 text-xl"></i>
+                    <i class="icon-warning-fill text-tertiary-600 text-xl"></i>
                   </span>
                     <span class="font-bold text-lg">{{ alert_type }}</span>
-                    <span class="bg-tertiary-700 text-white px-3 py-1 rounded-full">Status: {{ alert_status }}</span>
+                    <span class="border-r-2 border-r-neutrals-900">&nbsp;</span>
+                    <span class="bg-tertiary-700 text-white px-3 py-1 rounded-full text-xs">Status: {{ alert_status }}</span>
                   </div>
                 {% endif %}
 
@@ -53,7 +54,7 @@
                   <p class="text-lg font-bold">Last Updated: {{ last_updated }}</p>
                 {% endif %}
                 {% if alert_message %}
-                  <p class="">{{ alert_message }}</p>
+                  <p class="text-lg text-neutrals-900">{{ alert_message }}</p>
                 {% endif %}
 
                 <div class="flex flex-wrap flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-8 pb-5 lg:pb-0">
