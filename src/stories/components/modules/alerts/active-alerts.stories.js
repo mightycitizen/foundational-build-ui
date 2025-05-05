@@ -1,4 +1,4 @@
-import twig from './alerts-module.twig';
+import twig from './active-alerts.twig';
 import { alert_teaser } from '../../../global/placeholders/components.json';
 import { sizes } from '../../../global/placeholders/images.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
