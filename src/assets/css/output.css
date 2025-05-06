@@ -2474,6 +2474,11 @@ input[type="radio"]:focus:not(:checked).custom,
   padding-bottom: 2rem;
 }
 
+.py-\[0\.688rem\] {
+  padding-top: 0.688rem;
+  padding-bottom: 0.688rem;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }
