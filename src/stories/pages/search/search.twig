@@ -1,0 +1,73 @@
+{% extends '@wrappers/default.twig' %}
+{% set type = {
+  label: 'Search',
+  handle: 'search'
+}%}
+{% block top %}
+  {% include '@components/containers/hero/hero-search.twig'  with {
+    heading: '[h1 - main site search] Results for search term.'
+  } %}
+{% endblock %}
+{% block main %}
+  {% set sidebar %}
+    {% include '@components/listing/filter/filter.twig' with {
+      ajax: true
+    }%}
+  {% endset %}
+
+  {% set content %}
+    {% include '@components/listing/list/list.twig' with
+      {
+        "list": [
+        {
+          "type": 'search',
+          "heading": "Page title for search result goes here lorem ipsum",
+          "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+        },
+        {
+          "type": 'search',
+          "heading": "Page title for search result goes here lorem ipsum",
+          "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+        },
+        {
+          "type": 'search',
+          "heading": "Page title for search result goes here lorem ipsum",
+          "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+        },
+        {
+          "type": 'search',
+          "heading": "Page title for search result goes here lorem ipsum",
+          "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+        },
+        {
+          "type": 'search',
+          "heading": "Page title for search result goes here lorem ipsum",
+          "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+        },
+        {
+          "type": 'search',
+          "heading": "Page title for search result goes here lorem ipsum",
+          "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+        },
+        {
+          "type": 'search',
+          "heading": "Page title for search result goes here lorem ipsum",
+          "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+        },
+      ]
+      }
+
+    %}
+    {% include '@components/listing/pagination/pagination.twig' with pagination %}
+  {% endset %}
+
+  {% embed '@components/sections/section.twig' with {
+    section_class: 'pt-0 lg:pt-11',
+    padding: 'tight',
+  } %}
+    {% block section_content %}
+      {% include '@layout/structure/content-with-sidebar.twig' %}
+    {% endblock %}
+  {% endembed %}
+
+{% endblock %}
