@@ -7,11 +7,5 @@
   {# {% if required | default %}
     <span class="form-error block">{{ label }} is required</span>
   {% endif %} #}
-  <div x-data="{ expanded: false }">
-    <button @click="expanded = ! expanded">Toggle Content</button>
 
-    <p x-show="expanded" x-collapse>
-      this is the paragraph
-    </p>
-  </div>
 </div>

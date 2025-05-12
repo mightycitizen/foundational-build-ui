@@ -951,7 +951,7 @@ ul {
 ol {
   list-style-type: decimal;
   /* ol{
-            @apply list-lower-alpha;            
+            @apply list-lower-alpha;
         } */
 }
 
@@ -1145,11 +1145,14 @@ label,
       width: 16px;
     }
     &:before {
-      border-width: 2px;
+      border-radius: 4px;
+    }
+    &:before {
+      border-width: 1px;
     }
     &:before {
       --tw-border-opacity: 1;
-      border-color: rgb(41 83 204 / var(--tw-border-opacity, 1));
+      border-color: rgb(155 155 155 / var(--tw-border-opacity, 1));
     }
     &:before {
       --tw-bg-opacity: 1;
@@ -1167,7 +1170,7 @@ label,
             &:focus {
       &:before {
         --tw-border-opacity: 1;
-        border-color: rgb(41 83 204 / var(--tw-border-opacity, 1));
+        border-color: rgb(55 55 55 / var(--tw-border-opacity, 1));
       }
     }
   }
@@ -2137,6 +2140,10 @@ input[type="radio"]:focus:not(:checked).custom,
   border-width: 8px;
 }
 
+.border-\[1px\] {
+  border-width: 1px;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -2188,6 +2195,11 @@ input[type="radio"]:focus:not(:checked).custom,
 .border-neutrals-200 {
   --tw-border-opacity: 1;
   border-color: rgb(198 198 198 / var(--tw-border-opacity, 1));
+}
+
+.border-neutrals-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(155 155 155 / var(--tw-border-opacity, 1));
 }
 
 .border-primary-500 {
@@ -2440,6 +2452,11 @@ input[type="radio"]:focus:not(:checked).custom,
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.px-\[0\.75rem\] {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .py-1 {

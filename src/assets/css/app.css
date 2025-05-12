@@ -1,6 +1,6 @@
 @tailwind base;
 
-@layer base {    
+@layer base {
     h1,
     h2,
     h3,
@@ -138,7 +138,7 @@
     ol {
         @apply list-decimal;
         /* ol{
-            @apply list-lower-alpha;            
+            @apply list-lower-alpha;
         } */
 
     }
@@ -205,7 +205,7 @@
     .fui-input {
         &[type="checkbox"], &[type="radio"]{
             @apply opacity-0 absolute;
-        }        
+        }
 
 
         +label {
@@ -217,7 +217,7 @@
             }
 
             &:before {
-                @apply border-2 border-primary h-[16px] w-[16px] top-[8px] bg-white;
+                @apply border-[1px] border-neutrals-400 rounded-[4px] h-[16px] w-[16px] top-[8px] bg-white;
             }
 
             &:hover,
@@ -225,13 +225,13 @@
                 @apply cursor-pointer underline;
 
                 &:before {
-                    @apply border-primary;
+                    @apply border-neutrals-900;
                 }
             }
         }
 
         &:checked {
-            +label {                
+            +label {
                 &:after {
                     @apply !opacity-100;
                 }
@@ -242,7 +242,7 @@
 
     input[type="checkbox"].custom,
     input[type="checkbox"].fui-input {
-        
+
             &+label {
                 &:after {
                     @apply absolute left-[2px] top-[2px] mt-0 text-white font-normal opacity-0 content-['\f00c'] font-icomoon text-[12px];
@@ -256,12 +256,12 @@
                     }
                 }
             }
-        
+
     }
 
     input[type="radio"].custom,
     input[type="radio"].fui-input {
-        
+
             &+label {
                 &:after {
                     @apply opacity-0 bg-primary h-[8px] w-[8px] top-[12px] left-[4px];
@@ -272,16 +272,16 @@
                     @apply rounded-full;
                 }
             }
-        
+
     }
 
     input[type="radio"]:focus:not(:checked).custom,
     input[type="checkbox"]:focus:not(:checked).custom {
-        
+
             &+label {
                 @apply text-primary underline;
             }
-        
+
     }
 
     /* TABLE SCROLL */

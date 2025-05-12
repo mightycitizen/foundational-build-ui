@@ -1,3 +1,11 @@
+.custom, .fui-input {
+  & + label {
+    &:before {
+      border-color: #828282;
+    }
+  }
+}
+
 form {
   fieldset {
     margin-bottom: 0.5rem;
@@ -47,6 +55,22 @@ form {
   }
   .webform-flexbox {
     margin-bottom: 1.5rem;
+  }
+}
+fieldset {
+  legend {
+    @apply py-[0.688rem] rounded-[4px] cursor-pointer mb-0 border-[1px] border-neutrals-400 w-full text-sm;
+    padding-left: 0.75rem;
+    padding-right: 1.2rem;
+    span.icon-caret-down {
+      float: right;
+    }
+  }
+  .collapsible-group {
+    @apply py-[0.688rem] px-[0.75rem] rounded-[4px] border-[1px] border-neutrals-400 w-full text-sm;
+  }
+  label {
+    @apply text-sm;
   }
 }
 input[type=text] {
