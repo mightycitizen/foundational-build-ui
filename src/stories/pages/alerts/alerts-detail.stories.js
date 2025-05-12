@@ -1,5 +1,5 @@
 import twig from './alerts-detail.twig';
-import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, links_bar_menu, footer_links, site_name } from '../../global/placeholders/global.json';
+import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, footer_links, site_name } from '../../global/placeholders/global.json';
 
 import { placeholder, sizes } from '../../global/placeholders/images.json';
 
@@ -24,7 +24,6 @@ const defaultArgs = {
   breadcrumbs,
   menu,
   utility_menu,
-  links_bar_menu,
   anchor_nav,
   local_nav,
   cta_menu,

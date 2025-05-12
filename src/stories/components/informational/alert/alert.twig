@@ -1,11 +1,11 @@
 <div class="alert-bar bg-white py-6 px-6 shadow {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
-  <div class="flex gap-6 justify-center items-center">
-    <div class="alert-type-icon">
+  <div class="flex gap-6 justify-between md:justify-center flex-wrap md:flex-nowrap items-center">
+    <div class="alert-type-icon order-1">
       <span class="bg-tertiary-100 inline-block w-[56px] h-[56px] rounded-full flex items-center justify-center">
         <i class="icon-lightning-fill text-tertiary-600 text-2xl"></i>
       </span>
     </div>
-    <div class="">
+    <div class="basis-full md:basis-auto order-3 md:order-1">
       {% if link | default %}
         <a class="text-lg font-bold text-black" href="{{ link.url }}" {% if link.target %}target="{{ link.target }}"{% endif %}>{{ alert_type }}: {{ title }}</a>
       {% else %}
@@ -16,7 +16,7 @@
       {% endif %}
     </div>
     {% if closable | default %}
-      <div>
+      <div class="order-2 md:order-3">
         <button class="{% if closable_text | default is empty %}close-button{% else %}button{% endif %}" aria-label="Dismiss alert" type="button" data-close>
           <span class="text-3xl" aria-hidden="true">{% if closable_text | default %}{{ closable_text }}{% else %}&times;{% endif %}</span>
         </button>

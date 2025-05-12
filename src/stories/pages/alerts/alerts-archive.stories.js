@@ -92,7 +92,7 @@ const defaultArgs = {
       module_type: 'alerts_list',
       section_id: 'section-2',
       section_class: 'bg-neutrals-50',
-      section_heading: 'Active Alerts & Notice',
+      section_heading: 'Past Alerts (Inactive)',
       section_description:
         '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
       divider: true,

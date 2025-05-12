@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@alpinejs/collapse':
+    specifier: ^3.14.9
+    version: 3.14.9
   '@alpinejs/focus':
     specifier: ^3.14.8
     version: 3.14.8
@@ -167,6 +170,10 @@ packages:
   /@alloc/quick-lru@5.2.0:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
+
+  /@alpinejs/collapse@3.14.9:
+    resolution: {integrity: sha512-cUjbBVo4KR/CfFg0cLB+Q7a8SnjmD4MdxmtZvFjh25Dlf/ZWYPSPx/28b+aAykuX/SUoDPQRmdFiVVvq+iILHw==}
+    dev: false
 
   /@alpinejs/focus@3.14.8:
     resolution: {integrity: sha512-lTeU4lyifIL4h2nGf2BHKSX3d8lT7mPn3phR5Yu497ub+al9W2eKXVc42MVm1piY3l6KiYCdNXZTcHaTEm78Kg==}
