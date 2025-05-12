@@ -1862,14 +1862,6 @@ input[type="radio"]:focus:not(:checked).custom,
   flex-basis: 100%;
 }
 
-.basis-\[50\%\] {
-  flex-basis: 50%;
-}
-
-.basis-\[100\%\] {
-  flex-basis: 100%;
-}
-
 .origin-center {
   transform-origin: center;
 }
@@ -3027,10 +3019,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:flex-col {
-    flex-direction: column;
   }
 
   .md\:flex-nowrap {
