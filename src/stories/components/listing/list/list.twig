@@ -15,14 +15,14 @@
           <div class="flex gap-x-6 items-start">
 
             {% if item.start_date | default is not empty %}
-              
+
               {% include '@components/inline-text/date/date.twig' with item.start_date %}
 
-            
+
             {% endif %}
 
             <div>
-              <h2><a href="{{ item.url }}">{{ item.heading }}</a></h2>
+              <h2><a class="text-black text-2xl" href="{{ item.url }}">{{ item.heading }}</a></h2>
               {% if item_type | default != 'events' and item.date.full | default %}
                 {% include '@components/inline-text/meta/meta.twig' with {
                   date: item.date,
@@ -30,7 +30,10 @@
                 } %}
               {% endif %}
               {% if item.summary | default %}
-                <p class="{% if item.categories | default | length %}mb-4{% else %}mb-0{% endif %}">{{ item.summary }}</p>
+                <p class="{% if item.categories | default | length %}mb-4{% elseif item.url | default %}mb-2{% else %}mb-0{% endif %}">{{ item.summary }}</p>
+              {% endif %}
+              {% if item.url | default %}
+                <p class="mb-0"><a class="text-lg" href="{{ item.url }}">{{ item.url }}</a></p>
               {% endif %}
               {% if item.categories | default | length %}
                 {% include '@components/inline-text/meta/meta.twig' with {
@@ -39,7 +42,6 @@
                     date: null
 
                 } %}
-
               {% endif %}
             </div>
 

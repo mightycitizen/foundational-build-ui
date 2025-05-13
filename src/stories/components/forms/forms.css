@@ -67,7 +67,7 @@ fieldset {
     }
   }
   .collapsible-group {
-    @apply py-[0.688rem] px-[0.75rem] rounded-[4px] border-[1px] border-neutrals-400 w-full text-sm;
+    @apply py-[0.688rem] px-[0.75rem] rounded-[4px] border-[1px] border-neutrals-400 w-full text-sm border-t-0;
   }
   label {
     @apply text-sm;
@@ -75,4 +75,16 @@ fieldset {
 }
 input[type=text] {
   @apply py-[0.688rem] rounded-[4px];
+}
+
+.active-filters__list {
+  @apply flex gap-x-3 items-center;
+}
+
+.active-filters__title h2 {
+  @apply text-base mb-0;
+}
+
+.active-filters__button {
+  @apply bg-neutrals-50 border-[1px] border-neutrals-300 rounded-[4px] px-2 py-2 text-xs;
 }

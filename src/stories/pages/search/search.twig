@@ -10,12 +10,35 @@
 {% endblock %}
 {% block main %}
   {% set sidebar %}
+    <h2>Filter results</h2>
+    <div>
+      <button class="bg-primary border-[1px] border-neutrals-300 rounded-[4px] px-2 py-2 text-xs text-white hover:bg-primary-700">Clear All Filters</button>
+    </div>
     {% include '@components/listing/filter/filter.twig' with {
       ajax: true
     }%}
   {% endset %}
 
   {% set content %}
+
+    <div data-active-filters="" data-active-filters-clearable="" class="active-filters" data-once="active-filters-removable active-filters-clear-all">
+
+      <dl class="active-filters__list">
+        <dt class="active-filters__title"><h2>Filters Applied:</h2></dt>
+        <dl class="active-filters__item">
+          <button data-active-filter-name="field_feature_type_target_id" data-active-filter-value="26" aria-label="Remove filter Topics value Effective Instruction" data-active-filter-removable="" class="active-filters__button">Category <span class="icon-x"></span></button>
+        </dl>
+        <dl class="active-filters__item">
+          <button data-active-filter-name="field_feature_type_target_id" data-active-filter-value="28" aria-label="Remove filter Topics value Family Engagement" data-active-filter-removable="" class="active-filters__button">Category <span class="icon-x"></span></button>
+        </dl>
+        <dl class="active-filters__item">
+          <button data-active-filter-name="field_feature_type_target_id" data-active-filter-value="28" aria-label="Remove filter Topics value Family Engagement" data-active-filter-removable="" class="active-filters__button">Category <span class="icon-x"></span></button>
+        </dl>
+
+      </dl>
+    </div>
+
+
     {% include '@components/listing/list/list.twig' with
       {
         "list": [
@@ -23,36 +46,43 @@
           "type": 'search',
           "heading": "Page title for search result goes here lorem ipsum",
           "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+          "url": "https://exampleurl.mightycitizen.com"
         },
         {
           "type": 'search',
           "heading": "Page title for search result goes here lorem ipsum",
           "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+          "url": "https://exampleurl.mightycitizen.com"
         },
         {
           "type": 'search',
           "heading": "Page title for search result goes here lorem ipsum",
           "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+          "url": "https://exampleurl.mightycitizen.com"
         },
         {
           "type": 'search',
           "heading": "Page title for search result goes here lorem ipsum",
           "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+          "url": "https://exampleurl.mightycitizen.com"
         },
         {
           "type": 'search',
           "heading": "Page title for search result goes here lorem ipsum",
           "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+          "url": "https://exampleurl.mightycitizen.com"
         },
         {
           "type": 'search',
           "heading": "Page title for search result goes here lorem ipsum",
           "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+          "url": "https://exampleurl.mightycitizen.com"
         },
         {
           "type": 'search',
           "heading": "Page title for search result goes here lorem ipsum",
           "summary": "[Page excerpt or description, depending on site] Lorem ipsum dolor sit amet, search result term highlighed, in bold or otherwise distinguished sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+          "url": "https://exampleurl.mightycitizen.com"
         },
       ]
       }

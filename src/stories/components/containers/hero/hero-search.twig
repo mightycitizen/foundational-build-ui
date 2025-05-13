@@ -29,15 +29,15 @@
 
                 <h1 class="text-5xl">{{ heading }}</h1>
 
-                <div class="flex justify-between items-center">
-                  <div>
+                <div class="md:flex justify-between items-center">
+                  <div class="mb-4 md:mb-0">
                     1 -8 of 40 search results for “phrase.”
                   </div>
                   <div>
                     {% include '@components/forms/select/select.twig' with {
                       label: "Sort By",
                       id: "dropdown",
-                      input_class: "w-full",
+                      input_class: "md:w-full",
                       name: "dropdown",
                       placeholder: 'Relevance',
                       options: [

@@ -1,5 +1,5 @@
 import twig from './search.twig';
-import { menu, social, logo } from '../../global/placeholders/global.json';
+import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, footer_links, site_name } from '../../global/placeholders/global.json';
 
 import { placeholder, sizes } from '../../global/placeholders/images.json';
 import {
@@ -9,41 +9,6 @@ import {
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/Search'
-  // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  // argTypes: {
-  //   heading: {
-  //     control: 'text'
-  //   },
-  //   subheading: {
-  //     control: 'text'
-  //   },
-  //   description: {
-  //     control: 'text'
-  //   },
-  //   intro_class: {
-  //     control: 'text'
-  //   },
-  //   class: {
-  //     control: 'text'
-  //   },
-  //   style: {
-  //     control: {
-  //       type: 'select',
-  //     },
-  //     options: [
-  //       'side',
-  //       ''
-  //     ]
-  //   },
-  //   // backgroundColor: { control: 'color' },
-  //   // label: { control: 'text' },
-  //   // onClick: { action: 'onClick' },
-  //   // primary: { control: 'boolean' },
-  //   // size: {
-  //   //   control: { type: 'select' },
-  //   //   options: ['small', 'medium', 'large'],
-  //   // },
-  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -52,16 +17,31 @@ const Template = (args) => {
   // return `<div>${label}</div>`;
   return twig(args);
 };
-export const NewsListing = Template.bind({});
-NewsListing.args = {
-  menu,
-  logo,
+
+const defaultArgs = {
   breadcrumbs,
+  menu,
+  utility_menu,
+  anchor_nav,
+  local_nav,
+  cta_menu,
+  header_dropdown,
+  logo,
   social,
+  address,
+  footer_links,
+  site_name,
+  menu_column,
   image_sizes: sizes,
   image_placeholder: placeholder,
   pagination
 };
-NewsListing.parameters = {
+const parameters = {
   layout: 'fullscreen'
 };
+
+const Default = Template.bind({});
+Default.args = defaultArgs;
+Default.parameters = parameters;
+
+export { Default };

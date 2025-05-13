@@ -2,7 +2,7 @@
   <fieldset class="options my-4 collapsible"  x-data="{ expanded: true }">
     <legend @click="expanded = ! expanded">
       {{ label }} {% if required | default %}<span class="form-required">*</span>{% endif %}
-      <span class="icon-caret-down" :class="{ 'rotate-180': expanded }"></span>
+      <span class="icon-caret-down-fill text-lg float-right" :class="{ 'rotate-180': expanded }"></span>
     </legend>
     <div class="collapsible-group" x-show="expanded" x-collapse>
       <ul class="checkbox-group list-none">
