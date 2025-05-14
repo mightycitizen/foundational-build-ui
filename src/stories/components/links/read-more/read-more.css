@@ -2,7 +2,7 @@
 .read-more {
   @apply text-lg;
     &:after {
-        content: "\e911";
+        content: "\e912";
         display: inline-block;
         font-family: 'icomoon';
         font-size: 1.35rem;

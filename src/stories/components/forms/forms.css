@@ -37,6 +37,16 @@ form {
   .form-type-checkbox {
     margin-bottom: 1.5rem;
   }
+
+  [type='checkbox'] {
+    border-radius: 4px;
+    .section--form & {
+      + label {
+        margin-left: 5px;
+      }
+    }
+  }
+
   @media (min-width: 768px) {
     .webform-flexbox {
       display: flex;
@@ -57,7 +67,7 @@ form {
     margin-bottom: 1.5rem;
   }
 }
-fieldset {
+.view-filter fieldset {
   legend {
     @apply py-[0.688rem] rounded-[4px] cursor-pointer mb-0 border-[1px] border-neutrals-400 w-full text-sm;
     padding-left: 0.75rem;

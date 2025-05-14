@@ -2201,6 +2201,11 @@ input[type="radio"]:focus:not(:checked).custom,
   border-color: rgb(198 198 198 / var(--tw-border-opacity, 1));
 }
 
+.border-neutrals-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(171 171 171 / var(--tw-border-opacity, 1));
+}
+
 .border-neutrals-400 {
   --tw-border-opacity: 1;
   border-color: rgb(155 155 155 / var(--tw-border-opacity, 1));
@@ -2214,16 +2219,6 @@ input[type="radio"]:focus:not(:checked).custom,
 .border-tertiary-700 {
   --tw-border-opacity: 1;
   border-color: rgb(156 27 27 / var(--tw-border-opacity, 1));
-}
-
-.border-neutrals-50 {
-  --tw-border-opacity: 1;
-  border-color: rgb(248 248 248 / var(--tw-border-opacity, 1));
-}
-
-.border-neutrals-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(171 171 171 / var(--tw-border-opacity, 1));
 }
 
 .border-b-transparent {
@@ -2671,6 +2666,11 @@ input[type="radio"]:focus:not(:checked).custom,
   font-size: 32px;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2689,11 +2689,6 @@ input[type="radio"]:focus:not(:checked).custom,
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .font-bold {
