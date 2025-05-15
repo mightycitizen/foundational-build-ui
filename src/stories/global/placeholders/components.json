@@ -123,7 +123,7 @@
   },
   "contact": {
     "heading": "Heading",
-    "subheading": "Subheading",
+    "subheading": null,
     "description": "Description",
     "link": {
       "text": "Link",
@@ -132,16 +132,36 @@
     "items": [
       {
         "label": "Phone",
-        "value": "(###) ### - ####"
+        "number": "(###) ### - ####",
+        "icon": "phone-call",
+        "secondary": [
+          {
+            "label": "Phone",
+            "number": "(###) ### - ####"
+          },
+          {
+            "label": "Phone",
+            "number": "(###) ### - ####"
+          }
+        ]
       },
       {
         "label": "Email",
-        "url": "mailto:example@domain.com",
-        "value": "example@domain.com"
+        "email": "example@domain.com",
+        "secondary": [
+          {
+            "label": "Email",
+            "email": "(###) ### - ####"
+          },
+          {
+            "label": "Email",
+            "email": "(###) ### - ####"
+          }
+        ]
       },
       {
         "label": "Location",
-        "value": "Address here\r\nRoom\r\n"
+        "address": "Address here\r\nRoom\r\n"
       }
     ]
   },

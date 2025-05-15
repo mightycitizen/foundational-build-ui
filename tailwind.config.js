@@ -2,6 +2,7 @@
 import palettes from './src/stories/global/base/colors.json';
 import fonts from './src/stories/global/base/fonts.json';
 import breakpoints from './src/stories/global/base/breakpoints.json';
+import phosphorIcons from "phosphor-icons-tailwindcss";
 
 let colors = {
   transparent: 'transparent',
@@ -70,6 +71,7 @@ module.exports = {
 
   },
   plugins: [
+    phosphorIcons(),
     require('@tailwindcss/forms')({
       strategy: 'base', // only generate global styles
 
@@ -96,4 +98,3 @@ module.exports = {
     }
   ]
 }
-
