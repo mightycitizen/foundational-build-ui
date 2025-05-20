@@ -122,46 +122,97 @@
     ]
   },
   "contact": {
-    "heading": "Heading",
+    "heading": "[h2] Contact Us",
     "subheading": null,
-    "description": "Description",
+    "description": "Get in touch lorem ipsum dolor sit amet",
     "link": {
-      "text": "Link",
+      "text": "Link text",
       "url": "#"
     },
     "items": [
       {
         "label": "Phone",
-        "number": "(###) ### - ####",
-        "icon": "phone-call",
+        "number": "123-456-7890",
+        "icon": "phone-call--fill",
         "secondary": [
           {
             "label": "Phone",
-            "number": "(###) ### - ####"
+            "number": "123-456-7890"
           },
           {
             "label": "Phone",
-            "number": "(###) ### - ####"
+            "number": "123-456-7890"
           }
         ]
       },
       {
         "label": "Email",
         "email": "example@domain.com",
+        "icon": "at--fill",
         "secondary": [
           {
             "label": "Email",
-            "email": "(###) ### - ####"
+            "email": "example@domain.com"
           },
           {
             "label": "Email",
-            "email": "(###) ### - ####"
+            "email": "example@domain.com"
           }
         ]
       },
       {
         "label": "Location",
-        "address": "Address here\r\nRoom\r\n"
+        "icon": "map-pin-line--fill",
+        "secondary": [
+          {
+            "address": "Address here\r\nRoom\r\n"
+          }
+        ]
+      },
+      {
+        "label": "Phone",
+        "number": "123-456-7890",
+        "icon": "phone-call--fill",
+        "secondary": [
+          {
+            "label": "Phone",
+            "number": "123-456-7890"
+          },
+          {
+            "label": "Phone",
+            "number": "123-456-7890"
+          }
+        ]
+      },
+      {
+        "label": "Phone",
+        "number": "123-456-7890",
+        "icon": "phone-call--fill",
+        "secondary": [
+          {
+            "label": "Phone",
+            "number": "123-456-7890"
+          },
+          {
+            "label": "Phone",
+            "number": "123-456-7890"
+          }
+        ]
+      },
+      {
+        "label": "Phone",
+        "number": "123-456-7890",
+        "icon": "phone-call--fill",
+        "secondary": [
+          {
+            "label": "Phone",
+            "number": "123-456-7890"
+          },
+          {
+            "label": "Phone",
+            "number": "123-456-7890"
+          }
+        ]
       }
     ]
   },

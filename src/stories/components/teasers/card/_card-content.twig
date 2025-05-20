@@ -1,17 +1,29 @@
+{% if label | default %}
+  <span>{{ label }}</span>
+{% endif %}
+
 {% set heading_level = heading.level | default ? heading.level : 3 %}
 <h{{ heading_level }} class="card_title {{ heading.modifier | default }}">{{ heading.text }}</h{{ heading_level }}>
-    {% if summary | default %}
-      <p class="card_summary mb-4 {{ summary_modifier | default }}">{{ summary }}</p>
-    {% endif %}
-     {% if link | default %}
 
-        {% include '@components/links/read-more/read-more.twig' with {
-          class: 'h4',
-          text: link.text,
-          url: link.url,
-          target: link.target | default
-        } %}
-        {% if clickCard | default %}
-          <a href="{{ link.url }}" class="card_click">{{ link.text }}</a>
-        {% endif %}
-    {% endif %}
+{% if summary | default %}
+  <p class="card_summary mb-4 {{ summary_modifier | default }}">{{ summary }}</p>
+{% endif %}
+
+{% if button | default %}
+  {% include '@components/links/button/button.twig' with {
+    text: button.text,
+    url: button.url
+  } %}
+{% endif %}
+
+{% if link | default %}
+  {% include '@components/links/read-more/read-more.twig' with {
+    class: 'h4',
+    text: link.text,
+    url: link.url,
+    target: link.target | default
+  } %}
+  {% if clickCard | default %}
+    <a href="{{ link.url }}" class="card_click">{{ link.text }}</a>
+  {% endif %}
+{% endif %}
