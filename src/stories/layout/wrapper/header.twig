@@ -17,9 +17,11 @@
           menu: utility_menu
         } %}
       </div>
-      <div class="col-span-10 lg:col-span-3">
-        {% include '@components/logo/logo.twig' with logo %}
-      </div>
+      {% if logo %}
+        <div class="col-span-10 lg:col-span-3">
+          {% include '@components/logo/logo.twig' with logo %}
+        </div>
+      {% endif %}
       <div class="col-span-12 lg:col-span-9 lg:block hidden">
         <div class="flex justify-end">
           {% include '@components/navigation/utility-menu/utility-menu.twig' with {
@@ -85,5 +87,7 @@
     </div>
 
   </div>
-  {% include '@components/navigation/menu/menu.twig' with menu %}
+  {% if menu %}
+    {% include '@components/navigation/menu/menu.twig' with menu %}
+  {% endif %}
 </header>
