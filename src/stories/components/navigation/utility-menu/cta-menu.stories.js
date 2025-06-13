@@ -1,8 +1,8 @@
 import twig from './utility-menu.twig';
-import { utility_menu, social } from '../../../global/placeholders/global.json';
+import { cta_menu, social } from '../../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Navigation/Utility Menu'
+  title: 'Components/Navigation/CTA Menu'
   // argTypes: {
 
   // }
@@ -17,6 +17,7 @@ const Template = (args) => {
 
 export const Menu = Template.bind({});
 Menu.args = {
-  links: utility_menu
+  menu_type: 'cta',
+  links: cta_menu
 };
 //
