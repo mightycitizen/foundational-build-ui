@@ -1,6 +1,5 @@
 import twig from './footer.twig';
 import {
-  menu,
   social,
   footer_links,
   logo,
@@ -55,6 +54,75 @@ const Template = (args) => {
   // return `<div>${label}</div>`;
   return twig(args);
 };
+
+const menu = [
+  {
+    "text": "Optional Label",
+    "url": "",
+    "children": [
+      {
+        "text": "Item 1",
+        "url": "#"
+      },
+      {
+        "text": "Item 2",
+        "url": "#"
+      },
+      {
+        "text": "Item 3",
+        "url": "#"
+      },
+      {
+        "text": "Item 4",
+        "url": "#"
+      },
+    ],
+  },
+  {
+    "text": "Optional Label",
+    "url": "",
+    "children": [
+      {
+        "text": "Item 1",
+        "url": "#"
+      },
+      {
+        "text": "Item 2",
+        "url": "#"
+      },
+      {
+        "text": "Item 3",
+        "url": "#"
+      },
+      {
+        "text": "Item 4",
+        "url": "#"
+      },
+    ],
+  },
+  {
+    "text": "Optional Label",
+    "url": "",
+    "children": [
+      {
+        "text": "Item 1",
+        "url": "#"
+      },
+      {
+        "text": "Item 2",
+        "url": "#"
+      },
+      {
+        "text": "Item 3",
+        "url": "#"
+      },
+      {
+        "text": "Item 4",
+        "url": "#"
+      },
+    ],
+  },
+];
 
 export const Footer = Template.bind({});
 Footer.args = {

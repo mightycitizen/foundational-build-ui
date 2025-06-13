@@ -1,5 +1,27 @@
-
-<div id="{{ utility_menu.menu_id }}" x-data="{
+{% if menu_type == 'cta' %}
+  {% set menu_options = {
+    menu_id: "cta-menu",
+    menu_wrapper_modifiers: "z-30 bg-primary lg:relative inline-block shadow-md lg:shadow-none lg:py-0 pr-4",
+    menu_bar_modifiers: "flex flex-col justify-end gap-x-8 list-none lg:-mx-1 lg:flex-row",
+    parent_link_mobile_button_modifiers: "py-3 text-white no-underline w-full font-bold flex items-center gap-2 justify-between leading-5 lg:hidden",
+    parent_link_mobile_button_icon_modifiers: "icon-caret-down text-xs text-primary",
+    parent_link_modifiers: "text-white text-2xl font-bold pl-4 py-3 gap-2 leading-5 items-center lg:inline-flex no-underline",
+    parent_link_hover_modifiers: "bg-primary hover text-white",
+    parent_link_icon_modifiers: "icon-caret-down text-lg text-white",
+  } %}
+{% else %}
+  {% set menu_options = {
+    menu_id: "eyebrow-menu",
+    menu_wrapper_modifiers: "z-40 bg-primary w-full py-4 lg:mt-4 lg:relative lg:block shadow-md lg:shadow-none lg:py-0",
+    menu_bar_modifiers: "flex flex-col justify-end gap-x-1 list-none lg:-mx-1 lg:flex-row",
+    parent_link_mobile_button_modifiers: "py-3 text-white no-underline w-full font-bold flex items-center gap-2 justify-between leading-5 lg:hidden",
+    parent_link_mobile_button_icon_modifiers: "icon-caret-down text-xs text-primary",
+    parent_link_modifiers: "text-white pl-4 py-3 gap-2 leading-5 items-center lg:inline-flex no-underline",
+    parent_link_hover_modifiers: "bg-primary hover text-white",
+    parent_link_icon_modifiers: "icon-caret-down text-xs text-white",
+  } %}
+{% endif %}
+<div id="{{ menu_options.menu_id }}" x-data="{
 	    breakpoint: 1024,
 	    dropdownOpen: { sm: null, lg: null },
       align: 'left',
@@ -72,14 +94,14 @@
         }
         $refs.topbar.children[this.dropdownOpen.lg].querySelector('a').focus();
       }
-	  }" class="absolute {{ utility_menu.menu_wrapper_modifiers }}" :class="(mainMenu ? '' : '')">
+	  }" class="absolute {{ menu_options.menu_wrapper_modifiers }}" :class="(mainMenu ? '' : '')">
 
     <ul role="menubar"
         x-ref="topbar"
         @keydown.left="handleDirection('left')"
         @keydown.right="handleDirection('right')"
-        class="{{ utility_menu.menu_bar_modifiers }}">
-      {% for link in utility_menu.links %}
+        class="{{ menu_options.menu_bar_modifiers }}">
+      {% for link in links %}
         <li
           @focusin="if (window.innerWidth > this.breakpoint) dropdownOpen.lg = {{ loop.index0 }}"
           role="presentation" class="relative lg:border-0 {{ loop.last == false ? 'border-b border-gray-200' : '' }}"
@@ -92,16 +114,16 @@
           {% if link.children | length %}
             <button
               @click="toggleDropdown({{ loop.index0 }})"
-              class="{{ utility_menu.parent_link_mobile_button_modifiers }} " {% if link.new_window | default %} target="_blank" rel="noopener" {% endif %} role="menuitem">
+              class="{{ menu_options.parent_link_mobile_button_modifiers }} " {% if link.new_window | default %} target="_blank" rel="noopener" {% endif %} role="menuitem">
               {{ link.parent_text | default is not empty ? link.parent_text : link.text }}
-              <span :class="(dropdownOpen.sm === {{ loop.index0 }} ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === {{ loop.index0 }} ? 'lg:text-gray' : 'lg:text-white')" class="{{ utility_menu.parent_link_mobile_button_icon_modifiers }}"></span>
+              <span :class="(dropdownOpen.sm === {{ loop.index0 }} ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === {{ loop.index0 }} ? 'lg:text-gray' : 'lg:text-white')" class="{{ menu_options.parent_link_mobile_button_icon_modifiers }}"></span>
             </button>
           {% endif %}
 
-          <a @keydown.enter="toggleDropdown({{ loop.index0 }})"  role="menuitem" :class="dropdownOpen.lg === {{ loop.index0 }} ? '{{ utility_menu.parent_link_hover_modifiers }}' : ''" class="{{ link.children ? 'hidden lg:inline-flex' : 'inline-flex' }} {{ utility_menu.parent_link_modifiers}} {% if link.url and link.children is empty %}hover:underline{% endif %}" {% if link.url %} href="{{ link.url }}"{% endif %}>
+          <a @keydown.enter="toggleDropdown({{ loop.index0 }})"  role="menuitem" :class="dropdownOpen.lg === {{ loop.index0 }} ? '{{ menu_options.parent_link_hover_modifiers }}' : ''" class="{{ link.children ? 'hidden lg:inline-flex' : 'inline-flex' }} {{ menu_options.parent_link_modifiers}} {% if link.url and link.children is empty %}hover:underline{% endif %}" {% if link.url %} href="{{ link.url }}"{% endif %}>
             {{ link.text }}
             {% if link.children %}
-              <span :class="(dropdownOpen.sm === {{ loop.index0 }} ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === {{ loop.index0 }} ? 'lg:text-white' : 'lg:text-white')" class="{{ utility_menu.parent_link_icon_modifiers }}"></span>
+              <span :class="(dropdownOpen.sm === {{ loop.index0 }} ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === {{ loop.index0 }} ? 'lg:text-white' : 'lg:text-white')" class="{{ menu_options.parent_link_icon_modifiers }}"></span>
             {% endif %}
           </a>
 

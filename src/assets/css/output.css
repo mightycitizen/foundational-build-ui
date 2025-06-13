@@ -2083,6 +2083,16 @@ input[type="radio"]:focus:not(:checked).custom,
   row-gap: 2rem;
 }
 
+.gap-x-1 {
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
+}
+
+.gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2676,6 +2686,14 @@ input[type="radio"]:focus:not(:checked).custom,
   padding-top: 2rem;
 }
 
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2780,6 +2798,10 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .leading-6 {
   line-height: 1.5rem;
+}
+
+.leading-\[0\] {
+  line-height: 0;
 }
 
 .tracking-wide {
@@ -3376,6 +3398,11 @@ input[type="radio"]:focus:not(:checked).custom,
   .lg\:my-0 {
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+
+  .lg\:-mx-1 {
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
   }
 
   .lg\:-ml-3 {

@@ -2,10 +2,13 @@
   <div class="l-footer-top text-white bg-primary-800 pt-8 pb-10 md:py-8">
     <div class="container">
       <div class="grid grid-cols-12 gap-6">
-        <div class="col-span-12 md:col-span-6 mb-4">
-          <span class="font-bold block md:inline-block align-top mb-2 md:mb-0 md:mr-4">Connect with us:</span>
-          {% include '@components/utils/social-media/social-media.twig' %}
-        </div>
+
+          <div class="col-span-12 md:col-span-6 mb-4">
+            {% if social %}
+              <span class="font-bold block md:inline-block align-top mb-2 md:mb-0 md:mr-4">Connect with us:</span>
+              {% include '@components/utils/social-media/social-media.twig' %}
+            {% endif %}
+          </div>
 
         <div class="col-span-12 md:col-span-6 md:text-right mb-11 md:mb-0">
           <ul class="menu flex gap-x-3 list-none md:justify-end">
@@ -15,9 +18,11 @@
         </div>
 
         <div class="col-span-12 md:col-span-3 mb-12 md:mb-0 md:text-left">
-          <div class="mb-4">
-            {% include '@components/logo/logo.twig' with logo %}
-          </div>
+          {% if logo %}
+            <div class="mb-4">
+              {% include '@components/logo/logo.twig' with logo %}
+            </div>
+          {% endif %}
           <ul class="list-none space-y-5 flex flex-col">
             <li>
               <span class="icon icon-phone-call text-2xl md:text-[32px] align-middle mr-2"></span>
@@ -36,38 +41,34 @@
           </ul>
         </div>
 
-        <div class="col-span-12 md:col-span-3">
-          <span class="h5 block mb-4">Example Label - Optional</span>
-          <ul class="menu flex flex-col gap-x-3 gap-y-3 list-none mb-3 md:mb-0">
-            {% for item in menu_column %}
-              <li>
-                <a class="font-bold no-underline hover:underline" href="{{ item.url }}">{{ item.text }}</a>
-              </li>
+        {% if menu %}
+          {% set menu_item_col_size = (menu|length in [1, 2, 4]) ? '6' : '4'  %}
+          <div class="col-span-12 md:col-span-9 grid grid-cols-12">
+            {% for link in menu %}
+              <div class="col-span-12 md:col-span-{{menu_item_col_size}}">
+                {% if link.url is empty %}
+                  <span class="h5 block mb-4">{{ link.text }}</span>
+                {% else %}
+                  {% include '@components/links/link.twig' with link|merge({ modifier: 'font-bold no-underline hover:underline' }) %}
+                {% endif %}
+                {% if link.children %}
+                  <ul class="menu flex flex-col gap-x-3 gap-y-3 list-none mb-3 md:mb-0">
+                    {% for child_link in link.children %}
+                      <li>
+                        {% if child_link.url is empty %}
+                          <span class="h5 block mb-4">{{ child_link.text }}</span>
+                        {% else %}
+                          {% include '@components/links/link.twig' with child_link|merge({ modifier: 'font-bold no-underline hover:underline' }) %}
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
             {% endfor %}
-          </ul>
-        </div>
+          </div>
+        {% endif %}
 
-        <div class="col-span-12 md:col-span-3">
-          <span class="h5 block mb-4">Example Label - Optional</span>
-          <ul class="menu flex flex-col gap-x-3 gap-y-3 list-none mb-3 md:mb-0">
-            {% for item in menu_column %}
-              <li>
-                <a class="font-bold no-underline hover:underline" href="{{ item.url }}">{{ item.text }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-
-        <div class="col-span-12 md:col-span-3">
-          <span class="h5 block mb-4">Example Label - Optional</span>
-          <ul class="menu flex flex-col gap-x-3 gap-y-3 list-none">
-            {% for item in menu_column %}
-              <li>
-                <a class="font-bold no-underline hover:underline" href="{{ item.url }}">{{ item.text }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
       </div>
     </div>
   </div>
@@ -75,14 +76,14 @@
   <div class="l-footer-bottom py-6">
     <div class="container">
       <div class="grid grid-cols-12 gap-6">
-        <div class="col-span-12 md:col-span-6">
+        <div class="col-span-12 md:col-span-4">
           <p class="text-lg font-bold">&copy; Copyright {{ copyright_year | default(2025) }} {{ site_name | default }}</p>
         </div>
-        <div class="col-span-12 md:col-span-6">
-          <ul class="list-none flex flex-col md:flex-row gap-4 justify-center mb-2">
+        <div class="col-span-12 md:col-span-8">
+          <ul class="list-none flex flex-col flex-wrap md:flex-row gap-4 justify-end mb-2">
             {% for link in footer_links | default %}
               <li>
-                {% include '@components/links/link.twig' with link %}
+                {% include '@components/links/link.twig' with link|merge({ modifier: 'text-black font-semibold' }) %}
               </li>
             {% endfor %}
           </ul>
