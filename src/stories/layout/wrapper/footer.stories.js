@@ -137,11 +137,36 @@ const ctas = [
   }
 ];
 
+const contact = [
+  {
+    "type": "phone",
+    "icon": "icon-phone-call",
+    "label": "Phone",
+    "text": "123-456-7890",
+    "url": "tel:1234567890"
+  },
+  {
+    "type": "address",
+    "icon": "icon-map-pin-line",
+    "label": "Get Directions",
+    "text": "123 Main St, City, State 12345",
+    "url": "https://www.google.com/maps/place/123+Main+St,+City,+State+12345"
+  },
+  {
+    "type": "email",
+    "icon": "icon-at",
+    "label": "Email",
+    "text": "info@mightyuniversity.edu",
+    "url": "mailto:info@mightyuniversity.edu"
+  },
+];
+
 export const Footer = Template.bind({});
 Footer.args = {
   menu,
   social,
   ctas,
+  contact,
   footer_links,
   logo,
   address,
