@@ -124,10 +124,24 @@ const menu = [
   },
 ];
 
+const ctas = [
+  {
+    "text": "Primary CTA",
+    "url": "#",
+    'modifier': 'button primary',
+  },
+  {
+    "text": "Secondary CTA",
+    "url": "#",
+    'modifier': 'button secondary',
+  }
+];
+
 export const Footer = Template.bind({});
 Footer.args = {
   menu,
   social,
+  ctas,
   footer_links,
   logo,
   address,

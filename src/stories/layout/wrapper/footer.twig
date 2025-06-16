@@ -1,22 +1,28 @@
 <footer class="l-footer bg-primary-200">
   <div class="l-footer-top text-white bg-primary-800 pt-8 pb-10 md:py-8">
     <div class="container">
-      <div class="grid grid-cols-12 gap-6">
 
-          <div class="col-span-12 md:col-span-6 mb-4">
-            {% if social %}
-              <span class="font-bold block md:inline-block align-top mb-2 md:mb-0 md:mr-4">Connect with us:</span>
+      {% if social or ctas %}
+        <div class="grid grid-cols-12 gap-6 mb-8">
+          {% if social %}
+            <div class="col-span-12 md:col-span-6 mb-0 self-center flex flex-col md:flex-row md:items-center">
+              <span class="font-bold align-top mb-2 md:mb-0 md:mr-4">Connect with us:</span>
               {% include '@components/utils/social-media/social-media.twig' %}
-            {% endif %}
-          </div>
-
-        <div class="col-span-12 md:col-span-6 md:text-right mb-11 md:mb-0">
-          <ul class="menu flex gap-x-3 list-none md:justify-end">
-            <li><a class="button" href="#">Apply Now</a></li>
-            <li><a class="button secondary" href="#">Take Virtual Tour</a></li>
-          </ul>
+            </div>
+          {% endif %}
+          {% if ctas %}
+            <div class="col-span-12 md:col-span-6 mb-11 md:mb-0">
+              <ul class="menu flex gap-x-3 list-none md:justify-{{ social ? 'end' : 'start' }}">
+                {% for cta in ctas %}
+                  <li>{% include '@components/links/link.twig' with cta %}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
         </div>
+      {% endif %}
 
+      <div class="grid grid-cols-12 gap-6">
         <div class="col-span-12 md:col-span-3 mb-12 md:mb-0 md:text-left">
           {% if logo %}
             <div class="mb-4">
