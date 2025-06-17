@@ -1,8 +1,10 @@
 import twig from './hero.twig';
+import breadcrumbs_twig from '../../navigation/breadcrumbs/breadcrumbs.twig';
 import {
   hero_primary,
-  breadcrumbs
+  breadcrumbs as breadcrumb_data
 } from '../../../global/placeholders/components.json';
+
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Components/Containers/Hero'
@@ -15,9 +17,12 @@ const Template = (args) => {
   return twig(args);
 };
 
-const defaultArgs = { ...hero_primary, breadcrumbs };
-export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
+const defaultArgs = {
+  ...hero_primary,
+  breadcrumbs: breadcrumbs_twig({ breadcrumbs: breadcrumb_data }),
+};
+export const Default = Template.bind({});
 Default.args = defaultArgs;
 
 export const Image = Template.bind({});
