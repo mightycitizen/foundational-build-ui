@@ -27,7 +27,7 @@ const Template = (args) => {
 
 const defaultArgs = {
   icon: {
-    name: 'check',
+    name: 'ph ph-[building]',
 
   }
 };
@@ -41,7 +41,7 @@ Background.args = Object.assign(
   { ...defaultArgs },
   {
     icon: {
-      name: 'check',
+      name: 'ph ph-[building]',
       background: 'primary-500',
     }
   }
