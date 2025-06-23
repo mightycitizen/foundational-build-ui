@@ -14,9 +14,12 @@
   {% endif %}
 {% endif %}
 
-{% set intro %}
-  {% include '@components/sections/intro/section_intro.twig' %}
-{% endset %}
+{% if intro is empty %}
+  {% set intro %}
+    {% include '@components/sections/intro/section_intro.twig' %}
+  {% endset %}
+{% endif %}
+
 {% set content %}
   {% if block('section_content') | trim is not empty%}
     <div class="section_content" >
