@@ -22,13 +22,19 @@
       <div class="col-span-12 {% if media | default %}md:col-span-7 lg:col-span-6{% elseif section_style | default is empty %}md:col-span-8{% elseif intro_class != 'text-center' %}lg:col-span-8{% endif %}">
         {% if section_label %}
           <span class="section_label font-medium mb-5 inline-flex items-center gap-1.5">
-            {% include '@components/inline-text/icon/icon.twig' with {
-              icon: section_label.icon,
-            } %}
-            <span class="font-bold">{{ section_label.text }}</span>
+            {% if section_label.icon %}
+              {% include '@components/inline-text/icon/icon.twig' with {
+                icon: section_label.icon,
+              } %}
+            {% endif %}
+            {% if section_label.text %}
+              <span class="font-bold">{{ section_label.text }}</span>
+            {% endif %}
           </span>
         {% endif %}
-        <h2 class="section_heading !mt-0">{{ section_heading }}</h2>
+        {% if section_heading | default %}
+          <h2 class="section_heading !mt-0">{{ section_heading }}</h2>
+        {% endif %}
         {% if section_subheading | default %}
           <h3 class="section_subheading">{{ section_subheading }}</h3>
         {% endif %}
