@@ -2,7 +2,7 @@
   {% set menu_options = {
     menu_id: "cta-menu",
     menu_wrapper_modifiers: "z-30 bg-primary lg:relative inline-block shadow-md lg:shadow-none lg:py-0 pr-4",
-    menu_bar_modifiers: "flex flex-col justify-end gap-x-8 list-none lg:-mx-1 lg:flex-row",
+    menu_bar_modifiers: "flex flex-col justify-end items-center gap-x-8 list-none lg:-mx-1 lg:flex-row",
     parent_link_mobile_button_modifiers: "py-3 text-white no-underline w-full font-bold flex items-center gap-2 justify-between leading-5 lg:hidden",
     parent_link_mobile_button_icon_modifiers: "icon-caret-down text-xs text-primary",
     parent_link_modifiers: "text-white text-2xl font-bold pl-4 py-3 gap-2 leading-5 items-center lg:inline-flex no-underline",
@@ -13,7 +13,7 @@
   {% set menu_options = {
     menu_id: "eyebrow-menu",
     menu_wrapper_modifiers: "z-40 bg-primary w-full py-4 lg:mt-4 lg:relative lg:block shadow-md lg:shadow-none lg:py-0",
-    menu_bar_modifiers: "flex flex-col justify-end gap-x-1 list-none lg:-mx-1 lg:flex-row",
+    menu_bar_modifiers: "flex flex-col justify-end items-center gap-x-1 list-none lg:-mx-1 lg:flex-row",
     parent_link_mobile_button_modifiers: "py-3 text-white no-underline w-full font-bold flex items-center gap-2 justify-between leading-5 lg:hidden",
     parent_link_mobile_button_icon_modifiers: "icon-caret-down text-xs text-primary",
     parent_link_modifiers: "text-white pl-4 py-3 gap-2 leading-5 items-center lg:inline-flex no-underline",
@@ -121,6 +121,9 @@
           {% endif %}
 
           <a @keydown.enter="toggleDropdown({{ loop.index0 }})"  role="menuitem" :class="dropdownOpen.lg === {{ loop.index0 }} ? '{{ menu_options.parent_link_hover_modifiers }}' : ''" class="{{ link.children ? 'hidden lg:inline-flex' : 'inline-flex' }} {{ menu_options.parent_link_modifiers}} {% if link.url and link.children is empty %}hover:underline{% endif %}" {% if link.url %} href="{{ link.url }}"{% endif %}>
+            {% if link.icon %}
+              {% include '@components/inline-text/icon/icon.twig' with { icon: link.icon } %}
+            {% endif %}
             {{ link.text }}
             {% if link.children %}
               <span :class="(dropdownOpen.sm === {{ loop.index0 }} ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === {{ loop.index0 }} ? 'lg:text-white' : 'lg:text-white')" class="{{ menu_options.parent_link_icon_modifiers }}"></span>

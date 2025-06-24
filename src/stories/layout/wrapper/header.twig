@@ -53,13 +53,15 @@
             <div class="header-menu-popup-wrapper bg-white w-[315px] shadow absolute absolute z-30 top-[81px] right-0 lg:px-12 lg:pt-9 lg:pb-7 z-30" x-show="open">
               <span class="h5 block mb-4">Sample Dropdown</span>
               <p>This menu is for demonstration purposes only and will require custom development per project.</p>
-              <ul class="menu flex flex-col gap-x-3 gap-y-3 list-none">
-                {% for item in header_dropdown %}
-                  <li>
-                    <a class="font-bold no-underline hover:underline" href="{{ item.url }}">{{ item.text }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
+              {% if header_dropdown %}
+                <ul class="menu flex flex-col gap-x-3 gap-y-3 list-none">
+                  {% for item in header_dropdown %}
+                    <li>
+                      <a class="font-bold no-underline hover:underline" href="{{ item.url }}">{{ item.text }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </div>
           </div>
 
