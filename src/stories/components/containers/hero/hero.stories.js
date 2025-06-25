@@ -21,6 +21,7 @@ const Template = (args) => {
 const defaultArgs = {
   ...hero_primary,
   breadcrumbs: breadcrumbs_twig({ breadcrumbs: breadcrumb_data }),
+  eyebrow: 'Label Text',
 };
 export const Default = Template.bind({});
 Default.args = defaultArgs;
@@ -31,7 +32,7 @@ Image.args = Object.assign(
   { ...defaultArgs },
   {
     image: {
-      src: 'https:https://placehold.co/1600x900',
+      src: 'https://placehold.co/1600x900',
       alt: 'Placeholder Image'
     }
   }
