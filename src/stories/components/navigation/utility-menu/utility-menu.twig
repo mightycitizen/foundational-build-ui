@@ -104,7 +104,7 @@
       {% for link in links %}
         <li
           @focusin="if (window.innerWidth > this.breakpoint) dropdownOpen.lg = {{ loop.index0 }}"
-          role="presentation" class="relative lg:border-0 {{ loop.last == false ? 'border-b border-gray-200' : '' }}"
+          role="presentation" class="lg:inline-flex relative lg:border-0 {{ loop.last == false ? 'border-b border-gray-200' : '' }}"
           {% if link.children %}
             @mouseenter="handleMouseEnter({{ loop.index0 }})"
             @mouseleave="handleMouseLeave()"
