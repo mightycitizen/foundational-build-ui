@@ -2701,6 +2701,10 @@ input[type="radio"]:focus:not(:checked).custom,
   vertical-align: middle;
 }
 
+.align-text-top {
+  vertical-align: text-top;
+}
+
 .font-body {
   font-family: Georgia, serif;
 }
