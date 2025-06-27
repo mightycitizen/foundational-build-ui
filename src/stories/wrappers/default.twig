@@ -1,7 +1,10 @@
 <div class="l-wrapper no-js" x-data="{backToTop: false}"
     @scroll.window="backToTop = window.scrollY > 100">
 
-  {% include "@layout/wrapper/header.twig" %}
+  {% block header %}
+    {% include "@layout/wrapper/header.twig" %}
+  {% endblock %}
+
   <main class="l-main" id="main">
 {#    {% include '@components/informational/alert/alert.twig' with {#}
 {#      alert_label: "Alert",#}
@@ -16,7 +19,11 @@
       {% endblock %}
     </div>
   </main>
-  {% include "@layout/wrapper/footer.twig" %}
+
+  {% block footer %}
+    {% include "@layout/wrapper/footer.twig" %}
+  {% endblock %}
+
   {% if cookie | default %}
     {% include '@components/informational/alert/alert.twig' with {
       text: cookie,
