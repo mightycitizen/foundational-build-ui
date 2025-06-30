@@ -1,5 +1,0 @@
-import{t as s}from"./video-module-tGo6Iv3v.js";import"./twig-BXd3Gfe2.js";import"./_commonjsHelpers-BosuxZz1.js";import"./twig-foVUGi9y.js";import"./section-CG09TUCZ.js";import"./section_intro-CzjC--dT.js";import"./video-yAPYN-oC.js";import"./loader-E1_xi_18.js";import"./button-Cwvs5uTH.js";import"./read-more-C-Kgb2FQ.js";import"./link-CIbey7wG.js";const x={title:"Components/Modules/Video",argTypes:{}},a=i=>s(i),n={section_heading:"Heading",section_description:"Description",video_type:"youtube",video_id:"gJ6APKIjFQY",image:{src:"https://placehold.co/430x230",alt:"Alt Text"}},e=a.bind({});e.args=n;var t,o,r;e.parameters={...e.parameters,docs:{...(t=e.parameters)==null?void 0:t.docs,source:{originalSource:`args => {
-  // You can either use a function to create DOM elements or use a plain html string!
-  // return \`<div>\${label}</div>\`;
-  return twig(args);
-}`,...(r=(o=e.parameters)==null?void 0:o.docs)==null?void 0:r.source}}};const b=["Video"];export{e as Video,b as __namedExportsOrder,x as default};
