@@ -152,12 +152,14 @@
       <ul class="menu lg:flex lg:gap-x-3 py-4 lg:py-4 space-y-3 lg:space-y-0 list-none lg:justify-between lg:text-lg items-center">
         {% for item in links_bar_menu %}
           <li class="shrink-0">
-            <span class="icon-{{ item.icon }} text-xl align-middle"></span>
+            {% if item.icon %}
+              {% include '@components/inline-text/icon/icon.twig' with { icon: item.icon, modifiers: 'text-xl align-middle' }%}
+            {% endif %}
             <a class="no-underline hover:underline" href="{{ item.url }}">{{ item.text }}</a>
           </li>
         {% endfor %}
       </ul>
     </div>
   </div>
-  {% endif %}
+{% endif %}
 </div>
