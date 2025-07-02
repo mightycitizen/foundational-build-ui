@@ -23,6 +23,10 @@ export const Click = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Click.args = Object.assign({ ...defaultArgs }, { clickCard: true });
 
+export const NoOutline = Template.bind({});
+// More on args: https://storybook.js.org/doOs/html/writing-stories/args
+NoOutline.args = Object.assign({ ...defaultArgs }, { no_outline: true });
+
 export const Event = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Event.args = Object.assign(

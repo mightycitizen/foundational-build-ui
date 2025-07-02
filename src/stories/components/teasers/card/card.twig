@@ -1,12 +1,12 @@
 
-<div class="card bg-{{ background_color | default('white')}} shadow-md {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }} {% if clickCard | default %}card--click{% endif %}" >
+<div class="card {% if no_outline is empty | default %}bg-{{ background_color | default('white')}} shadow-md{% endif%} {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }} {% if clickCard | default %}card--click{% endif %}" >
   {% if header | default %}
   <div class="card_divider">
     {{ header }}
   </div>
   {% endif %}
   {% if image | default %}
-    <div class="card_image w-full relative">      
+    <div class="card_image w-full relative">
       <img {% if lazyload_attr | default %}{{ lazyload_attr }}="{{ image.src }}"{% else %}src="{{ image.src }}" {% if disable_lazy | default != true %}loading="lazy"{% endif %}{% endif %}  alt="{{ image.alt }}" class="w-full ">
 
       {% if type.handle | default == 'events' and date | default %}

@@ -18,9 +18,10 @@ const Template = (args) => {
 
 const defaultArgs = {
   section_label: {
-    icon: 'buildings',
-    icon_background: true,
-    text: 'Eyebrow text goes here'
+    icon: {
+      name: 'ph ph-[buildings]',
+    },
+    text: 'Example label goes here'
   },
   section_heading: '[h2] Call to Action Heading',
   section_description: '[200 char, text + links allowed] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel, porta et eros.',
@@ -80,6 +81,7 @@ export const BlockLinks = Template.bind({});
 BlockLinks.args = Object.assign(
   { ...defaultArgs },
   {
+    intro_class: 'text-center',
     section_label: null,
     section_button: null,
     section_button_tertiary: null,
