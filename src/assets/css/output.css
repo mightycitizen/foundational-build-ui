@@ -1980,6 +1980,10 @@ input[type="radio"]:focus:not(:checked).custom,
   flex-wrap: wrap;
 }
 
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -3362,6 +3366,26 @@ input[type="radio"]:focus:not(:checked).custom,
     grid-column: span 9 / span 9;
   }
 
+  .lg\:col-auto {
+    grid-column: auto;
+  }
+
+  .lg\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .lg\:col-span-10 {
+    grid-column: span 10 / span 10;
+  }
+
+  .lg\:col-start-auto {
+    grid-column-start: auto;
+  }
+
+  .lg\:col-end-auto {
+    grid-column-end: auto;
+  }
+
   .lg\:-mx-1 {
     margin-left: -0.25rem;
     margin-right: -0.25rem;
@@ -3511,6 +3535,21 @@ input[type="radio"]:focus:not(:checked).custom,
 
   .lg\:gap-y-6 {
     row-gap: 1.5rem;
+  }
+
+  .lg\:gap-x-2 {
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+  }
+
+  .lg\:gap-x-12 {
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
+
+  .lg\:gap-x-0 {
+    -moz-column-gap: 0px;
+         column-gap: 0px;
   }
 
   .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {

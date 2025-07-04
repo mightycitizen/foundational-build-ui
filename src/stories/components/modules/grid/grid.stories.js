@@ -1,8 +1,8 @@
-import twig from './card-group-module.twig';
+import twig from './grid.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Cards/Card Group'
+  title: 'Components/Modules/Content Group/Grid'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 
@@ -16,7 +16,8 @@ const Template = (args) => {
   return twig(args);
 };
 
-const cards = [...Array(3)].map((_, i) => ({
+const cards = [...Array(9)].map((_, i) => ({
+  no_outline: true,
   image: {
     src: 'https://placehold.co/430x230',
     alt: 'Alt Text'
@@ -27,45 +28,33 @@ const cards = [...Array(3)].map((_, i) => ({
     level: 3
   },
   summary: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
-  link: {
-    text: 'Link',
-    url: '#'
-  },
+  badges: [
+    {
+      icon: 'icon-lightning-fill',
+      text: 'Badge 1'
+    },
+    {
+      icon: 'icon-lightning-fill',
+      text: 'Badge 2'
+    }
+  ]
 }));
 
 const defaultArgs = {
-  section_heading: 'Heading',
-  section_description: 'Description',
+  intro_class: 'text-left',
+  section_label: {
+    icon: 'buildings',
+    text: 'Example label goes here'
+  },
+  section_heading: '[h2, optional] Modular Component Intro, Label type',
+  section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+  section_link: {
+    url: '#',
+    text: 'Optional Link'
+  },
+  divider: true,
   cards: cards
 };
-const Default = Template.bind({});
+export const Grid = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = defaultArgs;
-
-const Events = Template.bind({});
-
-const eventCards = cards.map((card, i) =>
-  Object.assign(
-    { ...card },
-    {
-      date: {
-        unformatted: '2020-01-01',
-        full: 'January 1, 2020',
-        day: 1,
-        month_short: 'Jan',
-        year: 2020
-      },
-      type: {
-        handle: 'events',
-        label: 'Events'
-      }
-    }
-  )
-);
-
-Events.args = {
-  ...defaultArgs,
-  cards: eventCards
-};
-
-export { Default, Events };
+Grid.args = defaultArgs;

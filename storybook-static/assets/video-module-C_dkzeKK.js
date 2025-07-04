@@ -6,7 +6,7 @@ import{t as i,T as a}from"./twig-BXd3Gfe2.js";import{D as n,a as p}from"./twig-f
 	    videoId: '`,position:{start:0,end:128}},{type:"output",position:{start:128,end:142},stack:[{type:"Twig.expression.type.variable",value:"video_id",match:["video_id"],position:{start:128,end:142}}]},{type:"raw",value:`',
 	    trigger: '`,position:{start:142,end:160}},{type:"output",position:{start:160,end:192},stack:[{type:"Twig.expression.type.variable",value:"trigger",match:["trigger"],position:{start:160,end:192}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:160,end:192},params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("],position:{start:160,end:192}},{type:"Twig.expression.type.string",value:"click",position:{start:160,end:192}},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:160,end:192},expression:!1}]}]},{type:"raw",value:`',
 	    videoType: '`,position:{start:192,end:212}},{type:"output",position:{start:212,end:249},stack:[{type:"Twig.expression.type.variable",value:"video_type",match:["video_type"],position:{start:212,end:249}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:212,end:249},params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("],position:{start:212,end:249}},{type:"Twig.expression.type.string",value:"youtube",position:{start:212,end:249}},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:212,end:249},expression:!1}]}]},{type:"raw",value:`',
-	
+
 	    init() {
 	      if (window.videoPlayers === undefined) {
 	        window.videoPlayers = [];
@@ -15,23 +15,23 @@ import{t as i,T as a}from"./twig-BXd3Gfe2.js";import{D as n,a as p}from"./twig-f
 	        return;
 	      }
 	      window.videoPlayers.push(this.videoId);
-	
+
 	      this.videoType === 'youtube' ? this.loadYouTubeAPI() : this.setupVimeoPlayer();
 	    },
-	
+
 	    loadYouTubeAPI() {
 	      // load script instead
 	      const tag = document.createElement('script');
 	      tag.src = 'https://www.youtube.com/iframe_api';
 	      document.body.appendChild(tag);
-	
+
 	      if (!window.YT) {
 	        window.onYouTubeIframeAPIReady = this.onYouTubeIframeAPIReady.bind(this);
 	      } else {
 	        this.onYouTubeIframeAPIReady();
 	      }
 	    },
-	
+
 	    onYouTubeIframeAPIReady() {
 	      this.player = new YT.Player(this.$refs.player, {
 	        videoId: this.videoId,
@@ -53,21 +53,21 @@ import{t as i,T as a}from"./twig-BXd3Gfe2.js";import{D as n,a as p}from"./twig-f
 	        }
 	      });
 	    },
-	
+
 	    setupVimeoPlayer() {
 	      const tag = document.createElement('script');
 	      tag.src = 'https://player.vimeo.com/api/player.js';
 	      tag.onload = this.onVimeoAPIReady.bind(this);
 	      document.body.appendChild(tag);
 	    },
-	
+
 	    onVimeoAPIReady() {
 	      const vid = this.$refs.player;
 	      const playerId = 'vimeo_' + this.videoId;
 	      vid.setAttribute('id', playerId);
-	
+
 	      const player = new Vimeo.Player(playerId, { id: this.videoId });
-	
+
 	      player.ready().then(() => {
 	        this.loading = false;
 	        this.setVideoSize();
@@ -79,44 +79,44 @@ import{t as i,T as a}from"./twig-BXd3Gfe2.js";import{D as n,a as p}from"./twig-f
 	        // set tabindex to -1
 	        iframe.setAttribute('tabindex', '-1');
 	        `,position:{start:249,end:2367}},{type:"raw",value:`
-	
-	
+
+
 	      }).catch(error => {
 	        console.error('Error with Vimeo player:', error);
 	      });
-	
+
 	      player.on('play', () => { this.playing = true; });
 	      player.on('pause', () => { this.playing = false; });
 	    },
-	
+
 	    handleClick() {
 	      if (!this.player) return;
-	
+
 	      if (this.playing) {
 	        this.player.pause();
 	      } else {
 	        this.player.play();
 	      }
-	
+
 	      this.playing = !this.playing; // Toggle playing state
 	    },
-	
+
 	    onPlayerReady() {
 	      this.loading = false;
 	      this.setVideoSize();
 	      if (this.firstPlay && this.trigger !== 'background') {
 	        setTimeout(() => { this.player.pauseVideo(); }, 5);
 	      }
-	
+
 	      this.firstPlay = false;
 	      const iframe = this.player.g;
 	      // set tabindex to -1
 	      iframe.setAttribute('tabindex', '-1');
-	
+
 	      this.player.play = () => { this.player.playVideo(); };
 	      this.player.pause = () => { this.player.pauseVideo(); };
 	    },
-	
+
 	    onPlayerStateChange(event) {
 	      clearTimeout(this.timeout);
             if (this.firstPlay){
@@ -126,17 +126,17 @@ import{t as i,T as a}from"./twig-BXd3Gfe2.js";import{D as n,a as p}from"./twig-f
                 }, 5);
               }
 
-            }            
+            }
             switch (event.data){
               case 2:
                 this.timeout = setTimeout(() => {
                   switch (event.data){
                     case 2:
-                      
-                      this.playing = false;                      
+
+                      this.playing = false;
                       break;
                     case 1:
-                      this.playing = true;                      
+                      this.playing = true;
                       break;
                   }
                 }, 300);
@@ -150,7 +150,7 @@ import{t as i,T as a}from"./twig-BXd3Gfe2.js";import{D as n,a as p}from"./twig-f
 
             this.firstPlay = false;
 	    },
-	
+
 	    setVideoSize() {
 	      const width = this.$el.clientWidth;
 	      const height = this.$el.clientHeight;
@@ -199,7 +199,7 @@ import{t as i,T as a}from"./twig-BXd3Gfe2.js";import{D as n,a as p}from"./twig-f
       `,position:{start:1533,end:1572}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"section_background",match:["section_background"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:1572,end:1609},output:[{type:"raw",value:'<img class=" section_background absolute object-cover left-0 h-full w-full top-0 opacity-30" src="',position:{start:1609,end:1707}},{type:"output",position:{start:1707,end:1735},stack:[{type:"Twig.expression.type.variable",value:"section_background",match:["section_background"],position:{start:1707,end:1735}},{type:"Twig.expression.type.key.period",position:{start:1707,end:1735},key:"src"}]},{type:"raw",value:'" alt="" loading="lazy"/>',position:{start:1735,end:1760}}]},position:{open:{start:1572,end:1609},close:{start:1760,end:1771}}},{type:"raw",value:"      ",position:{start:1772,end:1778}},{type:"raw",value:`
     </div>
   `,position:{start:1929,end:1943}}]},position:{open:{start:1495,end:1532},close:{start:1943,end:1954}}},{type:"raw",value:'  <div class="',position:{start:1955,end:1969}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"exclude_container",match:["exclude_container"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:1969,end:2005},output:[{type:"raw",value:"max-w-full lg:px-0",position:{start:2005,end:2023}}]},position:{open:{start:1969,end:2005},close:{start:2023,end:2034}}},{type:"raw",value:" ",position:{start:2034,end:2035}},{type:"output",position:{start:2035,end:2062},stack:[{type:"Twig.expression.type.variable",value:"width_class",match:["width_class"],position:{start:2035,end:2062}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:2035,end:2062}}]},{type:"raw",value:" container ",position:{start:2062,end:2073}},{type:"output",position:{start:2073,end:2099},stack:[{type:"Twig.expression.type.variable",value:"grid_class",match:["grid_class"],position:{start:2073,end:2099}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:2073,end:2099}}]},{type:"raw",value:` relative z-10" >
-    `,position:{start:2099,end:2121}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"section_style",match:["section_style"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]},{type:"Twig.expression.type.subexpression.end",value:")",match:[")"],expression:!0,params:[{type:"Twig.expression.type.variable",value:"section_style",match:["section_style"]},{type:"Twig.expression.type.string",value:"side"},{type:"Twig.expression.type.operator.binary",value:"==",precidence:9,associativity:"leftToRight",operator:"=="}]},{type:"Twig.expression.type.operator.binary",value:"and",precidence:13,associativity:"leftToRight",operator:"and"}],position:{start:2121,end:2183},output:[{type:"raw",value:'      <div class="grid grid-cols-12 items-center justify-center gap-y-8',position:{start:2184,end:2255}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"section_style",match:["section_style"]},{type:"Twig.expression.type.string",value:"side"},{type:"Twig.expression.type.operator.binary",value:"==",precidence:9,associativity:"leftToRight",operator:"=="}],position:{start:2255,end:2287},output:[{type:"raw",value:" gap-x-10",position:{start:2287,end:2296}}]},position:{open:{start:2255,end:2287},close:{start:2296,end:2307}}},{type:"raw",value:`">
+    `,position:{start:2099,end:2121}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"section_style",match:["section_style"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]},{type:"Twig.expression.type.subexpression.end",value:")",match:[")"],expression:!0,params:[{type:"Twig.expression.type.variable",value:"section_style",match:["section_style"]},{type:"Twig.expression.type.string",value:"side"},{type:"Twig.expression.type.operator.binary",value:"==",precidence:9,associativity:"leftToRight",operator:"=="}]},{type:"Twig.expression.type.operator.binary",value:"and",precidence:13,associativity:"leftToRight",operator:"and"}],position:{start:2121,end:2183},output:[{type:"raw",value:'      <div class="grid.twig grid.twig-cols-12 items-center justify-center gap-y-8',position:{start:2184,end:2255}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"section_style",match:["section_style"]},{type:"Twig.expression.type.string",value:"side"},{type:"Twig.expression.type.operator.binary",value:"==",precidence:9,associativity:"leftToRight",operator:"=="}],position:{start:2255,end:2287},output:[{type:"raw",value:" gap-x-10",position:{start:2287,end:2296}}]},position:{open:{start:2255,end:2287},close:{start:2296,end:2307}}},{type:"raw",value:`">
         <div class="col-span-12 lg:col-span-8">
           `,position:{start:2307,end:2368}},{type:"output",position:{start:2368,end:2379},stack:[{type:"Twig.expression.type.variable",value:"intro",match:["intro"],position:{start:2368,end:2379}}]},{type:"raw",value:`
         </div>

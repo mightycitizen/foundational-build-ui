@@ -17,7 +17,7 @@ import{t as i,T as p}from"./twig-BXd3Gfe2.js";import{D as o,a as n}from"./twig-f
 	    videoId: '`,position:{start:0,end:128}},{type:"output",position:{start:128,end:142},stack:[{type:"Twig.expression.type.variable",value:"video_id",match:["video_id"],position:{start:128,end:142}}]},{type:"raw",value:`',
 	    trigger: '`,position:{start:142,end:160}},{type:"output",position:{start:160,end:192},stack:[{type:"Twig.expression.type.variable",value:"trigger",match:["trigger"],position:{start:160,end:192}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:160,end:192},params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("],position:{start:160,end:192}},{type:"Twig.expression.type.string",value:"click",position:{start:160,end:192}},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:160,end:192},expression:!1}]}]},{type:"raw",value:`',
 	    videoType: '`,position:{start:192,end:212}},{type:"output",position:{start:212,end:249},stack:[{type:"Twig.expression.type.variable",value:"video_type",match:["video_type"],position:{start:212,end:249}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:212,end:249},params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("],position:{start:212,end:249}},{type:"Twig.expression.type.string",value:"youtube",position:{start:212,end:249}},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:212,end:249},expression:!1}]}]},{type:"raw",value:`',
-	
+
 	    init() {
 	      if (window.videoPlayers === undefined) {
 	        window.videoPlayers = [];
@@ -26,23 +26,23 @@ import{t as i,T as p}from"./twig-BXd3Gfe2.js";import{D as o,a as n}from"./twig-f
 	        return;
 	      }
 	      window.videoPlayers.push(this.videoId);
-	
+
 	      this.videoType === 'youtube' ? this.loadYouTubeAPI() : this.setupVimeoPlayer();
 	    },
-	
+
 	    loadYouTubeAPI() {
 	      // load script instead
 	      const tag = document.createElement('script');
 	      tag.src = 'https://www.youtube.com/iframe_api';
 	      document.body.appendChild(tag);
-	
+
 	      if (!window.YT) {
 	        window.onYouTubeIframeAPIReady = this.onYouTubeIframeAPIReady.bind(this);
 	      } else {
 	        this.onYouTubeIframeAPIReady();
 	      }
 	    },
-	
+
 	    onYouTubeIframeAPIReady() {
 	      this.player = new YT.Player(this.$refs.player, {
 	        videoId: this.videoId,
@@ -64,21 +64,21 @@ import{t as i,T as p}from"./twig-BXd3Gfe2.js";import{D as o,a as n}from"./twig-f
 	        }
 	      });
 	    },
-	
+
 	    setupVimeoPlayer() {
 	      const tag = document.createElement('script');
 	      tag.src = 'https://player.vimeo.com/api/player.js';
 	      tag.onload = this.onVimeoAPIReady.bind(this);
 	      document.body.appendChild(tag);
 	    },
-	
+
 	    onVimeoAPIReady() {
 	      const vid = this.$refs.player;
 	      const playerId = 'vimeo_' + this.videoId;
 	      vid.setAttribute('id', playerId);
-	
+
 	      const player = new Vimeo.Player(playerId, { id: this.videoId });
-	
+
 	      player.ready().then(() => {
 	        this.loading = false;
 	        this.setVideoSize();
@@ -90,44 +90,44 @@ import{t as i,T as p}from"./twig-BXd3Gfe2.js";import{D as o,a as n}from"./twig-f
 	        // set tabindex to -1
 	        iframe.setAttribute('tabindex', '-1');
 	        `,position:{start:249,end:2367}},{type:"raw",value:`
-	
-	
+
+
 	      }).catch(error => {
 	        console.error('Error with Vimeo player:', error);
 	      });
-	
+
 	      player.on('play', () => { this.playing = true; });
 	      player.on('pause', () => { this.playing = false; });
 	    },
-	
+
 	    handleClick() {
 	      if (!this.player) return;
-	
+
 	      if (this.playing) {
 	        this.player.pause();
 	      } else {
 	        this.player.play();
 	      }
-	
+
 	      this.playing = !this.playing; // Toggle playing state
 	    },
-	
+
 	    onPlayerReady() {
 	      this.loading = false;
 	      this.setVideoSize();
 	      if (this.firstPlay && this.trigger !== 'background') {
 	        setTimeout(() => { this.player.pauseVideo(); }, 5);
 	      }
-	
+
 	      this.firstPlay = false;
 	      const iframe = this.player.g;
 	      // set tabindex to -1
 	      iframe.setAttribute('tabindex', '-1');
-	
+
 	      this.player.play = () => { this.player.playVideo(); };
 	      this.player.pause = () => { this.player.pauseVideo(); };
 	    },
-	
+
 	    onPlayerStateChange(event) {
 	      clearTimeout(this.timeout);
             if (this.firstPlay){
@@ -137,17 +137,17 @@ import{t as i,T as p}from"./twig-BXd3Gfe2.js";import{D as o,a as n}from"./twig-f
                 }, 5);
               }
 
-            }            
+            }
             switch (event.data){
               case 2:
                 this.timeout = setTimeout(() => {
                   switch (event.data){
                     case 2:
-                      
-                      this.playing = false;                      
+
+                      this.playing = false;
                       break;
                     case 1:
-                      this.playing = true;                      
+                      this.playing = true;
                       break;
                   }
                 }, 300);
@@ -161,7 +161,7 @@ import{t as i,T as p}from"./twig-BXd3Gfe2.js";import{D as o,a as n}from"./twig-f
 
             this.firstPlay = false;
 	    },
-	
+
 	    setVideoSize() {
 	      const width = this.$el.clientWidth;
 	      const height = this.$el.clientHeight;
@@ -195,7 +195,7 @@ import{t as i,T as p}from"./twig-BXd3Gfe2.js";import{D as o,a as n}from"./twig-f
 	`,position:{start:6010,end:6025}}]},position:{open:{start:5944,end:5960},close:{start:6025,end:6036}}},{type:"raw",value:`</figure>
 `,position:{start:6037,end:6037}}],precompiled:!0});const a=t=>t,g=(t={})=>{const s=i.twig({id:"/Users/jabelmunoz/Documents/projects/foundational-build/src/stories/components/sections/intro/section_intro.twig",data:[{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.subexpression.end",value:")",match:[")"],expression:!0,params:[{type:"Twig.expression.type.variable",value:"section_image",match:["section_image"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}]},{type:"Twig.expression.type.subexpression.end",value:")",match:[")"],expression:!0,params:[{type:"Twig.expression.type.variable",value:"section_video",match:["section_video"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}]},{type:"Twig.expression.type.operator.binary",value:"or",precidence:14,associativity:"leftToRight",operator:"or"}],position:{start:0,end:63},output:[{type:"raw",value:"  ",position:{start:64,end:66}},{type:"logic",token:{type:"Twig.logic.type.set",key:"media",expression:[{type:"Twig.expression.type.bool",value:!0}],position:{start:66,end:88}},position:{start:66,end:88}}]},position:{open:{start:0,end:63},close:{start:89,end:100}}},{type:"raw",value:`
 `,position:{start:101,end:102}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"section_heading",match:["section_heading"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:102,end:136},output:[{type:"raw",value:'  <div class="section_intro ',position:{start:137,end:165}},{type:"output",position:{start:165,end:182},stack:[{type:"Twig.expression.type.variable",value:"intro_class",match:["intro_class"],position:{start:165,end:182}}]},{type:"raw",value:" ",position:{start:182,end:183}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"divider",match:["divider"]}],position:{start:183,end:199},output:[{type:"raw",value:"border-b-4 border-primary-500 pb-3",position:{start:199,end:233}}]},position:{open:{start:183,end:199},close:{start:233,end:244}}},{type:"raw",value:`">
-    <div class="grid `,position:{start:244,end:268}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.subexpression.end",value:")",match:[")"],expression:!0,params:[{type:"Twig.expression.type.variable",value:"media",match:["media"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}]},{type:"Twig.expression.type.subexpression.end",value:")",match:[")"],expression:!0,params:[{type:"Twig.expression.type.variable",value:"intro_class",match:["intro_class"]},{type:"Twig.expression.type.string",value:"text-center"},{type:"Twig.expression.type.operator.binary",value:"!=",precidence:9,associativity:"leftToRight",operator:"!="}]},{type:"Twig.expression.type.operator.binary",value:"or",precidence:14,associativity:"leftToRight",operator:"or"}],position:{start:268,end:328},output:[{type:"raw",value:"grid-cols-12 items-center",position:{start:328,end:353}}]},position:{open:{start:268,end:328},close:{start:353,end:364}}},{type:"raw",value:` gap-y-6 gap-x-10 justify-center">
+    <div class="grid `,position:{start:244,end:268}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.subexpression.end",value:")",match:[")"],expression:!0,params:[{type:"Twig.expression.type.variable",value:"media",match:["media"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}]},{type:"Twig.expression.type.subexpression.end",value:")",match:[")"],expression:!0,params:[{type:"Twig.expression.type.variable",value:"intro_class",match:["intro_class"]},{type:"Twig.expression.type.string",value:"text-center"},{type:"Twig.expression.type.operator.binary",value:"!=",precidence:9,associativity:"leftToRight",operator:"!="}]},{type:"Twig.expression.type.operator.binary",value:"or",precidence:14,associativity:"leftToRight",operator:"or"}],position:{start:268,end:328},output:[{type:"raw",value:"grid.twig-cols-12 items-center",position:{start:328,end:353}}]},position:{open:{start:268,end:328},close:{start:353,end:364}}},{type:"raw",value:` gap-y-6 gap-x-10 justify-center">
       `,position:{start:364,end:405}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"media",match:["media"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:405,end:429},output:[{type:"raw",value:`        <div class="col-span-12 md:col-span-5 lg:col-span-6" >
           `,position:{start:430,end:503}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"section_image",match:["section_image"]}],position:{start:503,end:525},output:[{type:"raw",value:`          <div class="image-size--landscapeCroppedMedium">
             <img loading="lazy" src="`,position:{start:526,end:622}},{type:"output",position:{start:622,end:645},stack:[{type:"Twig.expression.type.variable",value:"section_image",match:["section_image"],position:{start:622,end:645}},{type:"Twig.expression.type.key.period",position:{start:622,end:645},key:"src"}]},{type:"raw",value:'" alt="',position:{start:645,end:652}},{type:"output",position:{start:652,end:675},stack:[{type:"Twig.expression.type.variable",value:"section_image",match:["section_image"],position:{start:652,end:675}},{type:"Twig.expression.type.key.period",position:{start:652,end:675},key:"alt"}]},{type:"raw",value:`" class="w-full">

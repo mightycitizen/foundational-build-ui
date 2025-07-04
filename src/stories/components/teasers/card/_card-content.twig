@@ -1,9 +1,28 @@
 {% if label | default %}
-  <span>{{ label }}</span>
+  <span class="text-sm uppercase text-neutrals-800 font-bold mb-3 block">{{ label }}</span>
+{% endif %}
+
+{% if badges %}
+  <ul class="list-none flex gap-x-2 mb-3">
+  {% for item in badges %}
+    <li>
+      {% include '@components/inline-text/badge/badge.twig' with item %}
+    </li>
+  {% endfor %}
+  </ul>
 {% endif %}
 
 {% set heading_level = heading.level | default ? heading.level : 3 %}
-<h{{ heading_level }} class="card_title {{ heading.modifier | default }}">{{ heading.text }}</h{{ heading_level }}>
+
+<h{{ heading_level }} class="card_title {{ heading.modifier | default }}">
+  {% if heading.url | default %}
+    <a class="text-black" href="{{ heading.url }}">
+  {% endif %}
+      {{ heading.text }}
+  {% if heading.url | default %}
+    </a>
+  {% endif %}
+</h{{ heading_level }}>
 
 {% if summary | default %}
   <p class="card_summary mb-4 {{ summary_modifier | default }}">{{ summary }}</p>

@@ -34,10 +34,8 @@ const Template = (args) => {
 const defaultArgs = {
   // section_heading: 'Heading',
   // section_description: 'Description',
-  badge: {
-    icon: 'icon-lightning-fill',
-    text: 'Badge'
-  }
+  icon: 'icon-lightning-fill',
+  text: 'Badge'
 };
 export const Badge = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

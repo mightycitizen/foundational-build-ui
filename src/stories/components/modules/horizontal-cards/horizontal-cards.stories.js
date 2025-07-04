@@ -37,7 +37,7 @@ Image.args = {
 
 const ImageFlush = Template.bind({});
 ImageFlush.args = {
-  ...Image.args,  
+  ...Image.args,
   image_position: 'flush'
 };
 
