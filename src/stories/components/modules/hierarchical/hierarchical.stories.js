@@ -1,11 +1,12 @@
-import twig from './step-list-module.twig';
+import twig from './hierarchical.twig';
 
-import { steps } from '../../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Step List',
+  title: 'Components/Modules/Content Group/Hierarchical'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {}
+  // argTypes: {
+
+  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -15,21 +16,21 @@ const Template = (args) => {
   return twig(args);
 };
 
-// const cards = [...Array(5)].map((_, i) => ( {
-//   heading: {
-//     text: 'Heading',
-//     url: '#',
-//     level: 3
-//   },
-//   image: {
-//     src: 'https://placehold.co/430x230',
-//     alt: 'Alt Text'
-//   },
-//   link: {
-//     text: 'Link',
-//     url: '#'
-//   },
-// }));
+const cards = [...Array(4)].map((_, i) => ({
+  no_outline: true,
+  var: 'short',
+  image: {
+    src: 'https://placehold.co/120x120',
+    alt: 'Alt Text'
+  },
+  label: 'Optional Label / TBD',
+  heading: {
+    text: '[h3] Heading example lorem ipsum',
+    url: '#',
+    level: 3
+  },
+  summary: null
+}));
 
 const defaultArgs = {
   intro_class: 'text-left',
@@ -44,8 +45,19 @@ const defaultArgs = {
     text: 'Optional Link'
   },
   divider: true,
-  steps
+  cards: cards,
+  featured_card: {
+    heading: {
+      text: 'Heading',
+      url: '#',
+      level: 3
+    },
+    image: {
+      src: '/images/featured_image.jpg',
+      alt: 'Alt Text'
+    },
+  }
 };
-export const StepList = Template.bind({});
+export const Hierarchical = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-StepList.args = defaultArgs;
+Hierarchical.args = defaultArgs;

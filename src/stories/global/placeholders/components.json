@@ -77,28 +77,28 @@
   ],
   "steps": [
     {
-      "heading": "Heading",
-      "description": "Description",
+      "heading": "[h3] Step goes here",
+      "description": "[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.",
       "link": {
-        "text": "Link",
+        "text": "Optional styled link",
         "url": "#",
         "target": "_blank"
       }
     },
     {
-      "heading": "Heading",
-      "description": "Description",
+      "heading": "[h3] Step goes here",
+      "description": "[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.",
       "link": {
-        "text": "Link",
+        "text": "Optional styled link",
         "url": "#",
         "target": "_blank"
       }
     },
     {
-      "heading": "Heading",
-      "description": "Description",
+      "heading": "[h3] Step goes here",
+      "description": "[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.",
       "link": {
-        "text": "Link",
+        "text": "Optional styled link",
         "url": "#",
         "target": "_blank"
       }

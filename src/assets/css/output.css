@@ -1544,6 +1544,18 @@ input[type="radio"]:focus:not(:checked).custom,
   grid-column: span 2 / span 2;
 }
 
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.col-span-9 {
+  grid-column: span 9 / span 9;
+}
+
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
+
 .float-right {
   float: right;
 }
@@ -3188,6 +3200,10 @@ input[type="radio"]:focus:not(:checked).custom,
     flex-wrap: nowrap;
   }
 
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
   .md\:items-center {
     align-items: center;
   }
@@ -3311,6 +3327,12 @@ input[type="radio"]:focus:not(:checked).custom,
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .md\:shadow-lg {
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -3364,26 +3386,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
   .lg\:col-span-9 {
     grid-column: span 9 / span 9;
-  }
-
-  .lg\:col-auto {
-    grid-column: auto;
-  }
-
-  .lg\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
-  .lg\:col-span-10 {
-    grid-column: span 10 / span 10;
-  }
-
-  .lg\:col-start-auto {
-    grid-column-start: auto;
-  }
-
-  .lg\:col-end-auto {
-    grid-column-end: auto;
   }
 
   .lg\:-mx-1 {
@@ -3510,6 +3512,11 @@ input[type="radio"]:focus:not(:checked).custom,
     gap: 2rem;
   }
 
+  .lg\:gap-x-0 {
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+
   .lg\:gap-x-3 {
     -moz-column-gap: 0.75rem;
          column-gap: 0.75rem;
@@ -3535,21 +3542,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
   .lg\:gap-y-6 {
     row-gap: 1.5rem;
-  }
-
-  .lg\:gap-x-2 {
-    -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
-  }
-
-  .lg\:gap-x-12 {
-    -moz-column-gap: 3rem;
-         column-gap: 3rem;
-  }
-
-  .lg\:gap-x-0 {
-    -moz-column-gap: 0px;
-         column-gap: 0px;
   }
 
   .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
