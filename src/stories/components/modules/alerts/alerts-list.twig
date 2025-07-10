@@ -3,6 +3,10 @@
   section_style: "narrow"
 } %}
   {% block section_content %}
-    {% include '@components/listing/alerts/alerts-list.twig' %}
+    {% if rendered_view is defined %}
+      {{ rendered_view }}
+    {% else %}
+      {% include '@components/listing/alerts/alerts-list.twig' %}
+    {% endif %}
   {% endblock %}
 {% endembed %}

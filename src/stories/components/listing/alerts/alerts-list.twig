@@ -6,6 +6,7 @@
     <hr class="my-0">
   {% endfor %}
 </div>
+{% block pagination %}
 {% include '@components/listing/pagination/pagination.twig' with {
   "previous": null,
   "pages": [
@@ -33,4 +34,4 @@
   "next": "#"
   }
 %}
-
+{% endblock %}

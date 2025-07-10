@@ -27,7 +27,12 @@ const Template = (args) => {
 };
 
 const defaultArgs = {
-  alert_type: 'Emergency',
+  alert_type: {
+    type: 'emergency',
+    label: 'Emergency Alert',
+    icon: { name: 'icon-lightning-fill' },
+    icon_colors: 'bg-tertiary-100 text-tertiary-600',
+  },
   title: 'Alert title',
   text: '[Text goes here]  Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
   link: {
