@@ -39,7 +39,7 @@
           <h3 class="section_subheading">{{ section_subheading }}</h3>
         {% endif %}
         {% if section_description | default %}
-          <p class="lead {{ section_description_size | default('text-xl') }}">{{ section_description }}</p>
+          <div class="lead {{ section_description_size | default('text-xl mb-8') }}">{{ section_description }}</div>
         {% endif %}
 
         {# Add column wrapper for button and link if intro is not center #}
