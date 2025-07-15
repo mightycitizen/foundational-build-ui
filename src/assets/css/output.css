@@ -1552,10 +1552,6 @@ input[type="radio"]:focus:not(:checked).custom,
   grid-column: span 9 / span 9;
 }
 
-.col-span-6 {
-  grid-column: span 6 / span 6;
-}
-
 .float-right {
   float: right;
 }
@@ -1998,6 +1994,10 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .items-start {
   align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
 }
 
 .items-center {
@@ -3233,6 +3233,10 @@ input[type="radio"]:focus:not(:checked).custom,
          column-gap: 1rem;
   }
 
+  .md\:gap-y-9 {
+    row-gap: 2.25rem;
+  }
+
   .md\:border-0 {
     border-width: 0px;
   }
@@ -3506,6 +3510,14 @@ input[type="radio"]:focus:not(:checked).custom,
 
   .lg\:justify-between {
     justify-content: space-between;
+  }
+
+  .lg\:gap-10 {
+    gap: 2.5rem;
+  }
+
+  .lg\:gap-14 {
+    gap: 3.5rem;
   }
 
   .lg\:gap-8 {

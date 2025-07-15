@@ -1,12 +1,23 @@
-import twig from './hierarchical.twig';
+import twig from './split-content.twig';
+import { wysiwyg } from '../../../global/placeholders/components.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Content Group/Hierarchical'
+  title: 'Components/Modules/Split Content',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
-
-  // },
+  //   section_class: {
+  //     control: {
+  //       type: 'select',
+  //       options: [
+  //         '',
+  //         'bg-solid-primary text-white',
+  //         'bg-solid-secondary text-white',
+  //         'bg-solid-tertiary text-white'
+  //       ]
+  //     }
+  //   }
+  // }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -16,24 +27,8 @@ const Template = (args) => {
   return twig(args);
 };
 
-const cards = [...Array(4)].map((_, i) => ({
-  no_outline: true,
-  var: 'short',
-  image: {
-    src: 'https://placehold.co/120x120',
-    alt: 'Alt Text'
-  },
-  label: 'Optional Label / TBD',
-  heading: {
-    text: '[h3] Heading example lorem ipsum',
-    url: '#',
-    level: 3
-  },
-  summary: null
-}));
-
 const defaultArgs = {
-  intro_class: 'text-left',
+  intro_class: 'text-center',
   section_label: {
     icon: 'buildings',
     text: 'Example label goes here'
@@ -44,22 +39,9 @@ const defaultArgs = {
     url: '#',
     text: 'Optional Link'
   },
-  divider: true,
-  cards: cards,
-  featured_card: {
-    clickCard: true,
-    featured: true,
-    heading: {
-      text: '[h3] General content goes here - short name only, e.g. for categories',
-      url: '#',
-      level: 3
-    },
-    image: {
-      src: '/images/featured-card.jpg',
-      alt: 'Alt Text'
-    },
-  }
+  column_left: wysiwyg,
+  column_right: wysiwyg
 };
-export const Hierarchical = Template.bind({});
+export const SplitContent = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Hierarchical.args = defaultArgs;
+SplitContent.args = defaultArgs;

@@ -16,7 +16,7 @@
 
 <h{{ heading_level }} class="card_title {{ heading.modifier | default }}">
   {% if heading.url | default %}
-    <a class="text-black" href="{{ heading.url }}">
+    <a class="{% if clickCard | default %}card_click {% endif %}{% if featured | default is empty %}text-black{% endif %}" href="{{ heading.url }}">
   {% endif %}
       {{ heading.text }}
   {% if heading.url | default %}
