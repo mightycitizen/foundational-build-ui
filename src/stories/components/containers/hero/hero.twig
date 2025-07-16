@@ -44,10 +44,12 @@
     - media
 #}
 
-{% set background_color = background_color|default('light') %}
 
-<div class="hero{% if background_image %} hero--background-image{% endif %}{% if background_color == 'dark' %} text-white bg-primary-800 {% endif%}{% if content_type == 'alert' %} bg-neutrals-50{% endif%} relative">
-  {% if background_image %}
+{% set background_color = background_color|default('light') %}
+{% if image | default %}{% set split_content = true %}{% endif %}
+
+<div class="hero{% if background_image | default %} hero--background-image{% endif %}{% if background_color == 'dark' %} text-white bg-primary-800 {% endif%}{% if content_type == 'alert' %} bg-neutrals-50{% endif%} relative">
+  {% if background_image | default %}
   <div class="inset-0 w-full h-full max-h-[600px] overflow-hidden">
     <img src="{{ background_image.src }}" alt="{{ background_image.alt }}" class="w-full h-full object-cover object-center">
   </div>
@@ -136,7 +138,7 @@
                   } only %}
                 {% endif %}
               </div>
-              {% if split_content %}
+              {% if split_content | default %}
                 <div class="col-span-12 md:col-span-6 order-1 md:order-2 -mx-4 md:mx-0 md:pl-9">
                   {% if image | default %}
                     <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy"/>

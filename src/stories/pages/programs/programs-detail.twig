@@ -42,7 +42,14 @@
     {% endembed %}
   {% endif %}
 
+  {% for module in modules %}
+    {% if module.module_type == 'glance_list' %}
+      {% include '@components/modules/glance-list/glance-list.twig' with module only %}
+    {% endif %}
+  {% endfor %}
+
   {% include '@components/navigation/anchor/anchor.twig' %}
+
   {% for module in modules %}
     {% if module.module_type == 'wysiwyg' %}
       {% include '@components/modules/wysiwyg/wysiwyg.twig' with module only %}
