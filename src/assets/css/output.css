@@ -1388,6 +1388,14 @@ input[type="radio"]:focus:not(:checked).custom,
   border-width: 0;
 }
 
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 .collapse {
   visibility: collapse;
 }

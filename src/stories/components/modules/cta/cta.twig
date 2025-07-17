@@ -9,11 +9,13 @@
 {% embed '@components/sections/section.twig' with {
   section_class: "cta " ~ class | default ~ (section_image | default ? ' cta--horizontal': ''),
 }%}
-  {% if block_links %}
-    {% block section_content %}
+  {% block section_content %}
+    {% if block_links %}
       <section class="prose">
         {% include '@components/links/block-links/block-links.twig' %}
       </section>
-    {% endblock %}
-  {% endif %}
+    {% else %}
+      {{ section_content }}
+    {% endif %}
+  {% endblock %}
 {% endembed %}
