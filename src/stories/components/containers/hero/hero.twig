@@ -99,10 +99,22 @@
                   <p class="text-2xl">{{ subheading }}</p>
                 {% endif %}
 
+                {% if jobtitle | default %}
+                  <p class="text-xl md:text-2xl font-bold mb-3">{{ jobtitle }}</p>
+                {% endif %}
+
                 {% if list | default %}
                   <ul class="list-none flex gap-4 list-divided font-bold text-sm mb-3">
                     {% for item in list %}
                       <li>{{ item }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+
+                {% if organizations | default %}
+                  <ul class="list-none">
+                    {% for item in organizations %}
+                      <li class="inline-block"><a class="text-neutrals-800 md:text-lg" href="{{ item.url }}">{{ item.text }}</a>{{ not loop.last ? ',' }}</li>
                     {% endfor %}
                   </ul>
                 {% endif %}

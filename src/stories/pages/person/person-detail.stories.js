@@ -34,7 +34,21 @@ const hero_secondary = {
     "alt": "University view"
   },
   heading: "Hon. prefix Firstname lastname hon. suffix",
-  subheading: '[Organization type] Academic Department'
+  jobtitle: 'Job title lorem ipsum',
+  organizations: [
+    {
+      text: 'Primary organization',
+      url: '#'
+    },
+    {
+      text: 'Secondary organization',
+      url: '#'
+    },
+    {
+      text: 'Secondary organization',
+      url: '#'
+    }
+  ],
 }
 
 const Default = Template.bind({});
@@ -89,63 +103,27 @@ const defaultArgs = {
   },
   modules: [
     {
-      module_type: 'glance_list',
-      section_class: 'bg-primary-800 text-white',
-      heading: 'Program at a Glance',
-      items: [
+      module_type: 'contact-block',
+      contact_email: 'example@mightyu.edu',
+      contact_phone: '123-456-7890',
+      contact_fax: '123-456-7890',
+      contact_locations: [
         {
-          label: 'College/School',
-          content: '<a href="#">College of Arts & Sciences, College of Business</a>'
+          address: '1234 Mighty Building</br>Austin, TX 78745'
+        }
+      ],
+      contact_information: [
+        {
+          icon: 'link--fill',
+          text: 'Faculty Website',
+          url: '#'
         },
         {
-          label: 'Program Type',
-          content: "Undergraduate - Bachelor's"
-        },
-        {
-          label: 'Credential',
-          content: "Bachelor of Science (BS) or Bachelor of Arts (BA)"
-        },
-        {
-          label: 'Formats',
-          content: "Online, Campus, *format caveat goes here if applied"
-        },
-        {
-          label: 'Campus / Location',
-          content: "Campus value goes here"
-        },
-        {
-          label: 'Accelerated',
-          content: "Yes"
-        },
-        {
-          label: 'Specializations',
-          content: '<a href="#">Specialization name</a>, <a href="#">Specialization name</a>,<br/><a href="#">Specialization name</a>, <a href="#">Specialization name</a>'
-        },
-        {
-          label: 'Est. time to completion',
-          content: "4 semesters"
-        },
-        {
-          label: 'Next start date',
-          content: "Date goes here"
-        },
-        {
-          label: 'Application Deadline',
-          content: "Deadline goes here"
-        },
-        {
-          label: 'Cost per credit',
-          content: "$120"
-        },
-        {
-          label: 'Total Credits',
-          content: "24"
-        },
-        {
-          label: 'Estimated total cost',
-          content: "$2880"
-        },
-      ]
+          icon: 'file-doc--fill',
+          text: 'Curriculum Vitae',
+          url: '#'
+        }
+      ],
     },
     {
       module_type: 'wysiwyg',
