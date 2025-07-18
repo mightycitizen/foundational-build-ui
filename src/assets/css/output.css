@@ -2742,6 +2742,10 @@ input[type="radio"]:focus:not(:checked).custom,
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .align-top {
   vertical-align: top;
 }

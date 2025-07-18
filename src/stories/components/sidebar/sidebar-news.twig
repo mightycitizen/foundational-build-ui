@@ -1,0 +1,51 @@
+<div class="bg-neutrals-50 lg:shadow px-6 py-5">
+  <div class="text-right">
+    {% include '@components/utils/add2any/add2any.twig' with {
+      class: 'mb-0'
+    } %}
+  </div>
+  {% if topics | default %}
+  <div class="topics">
+    <h2>Topics</h2>
+    <ul class="list-none">
+    {% for item in topics %}
+      <li>
+        <a href="{{ item.url }}">{{ item.text }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  {% if publication | default %}
+  <div class="publication">
+    <h2>Publication</h2>
+    <a href="{{ publication.url }}">{{ publication.text }}</a>
+  </div>
+  {% endif %}
+  {% if authors | default %}
+  <ul class="list-none">
+    {% for item in authors %}
+      <li>
+        <img src="{{ item.thumbnail.src }}" alt="{{ item.thumbnail.alt }}" />
+        <a href="{{ item.url }}">{{ item.name }}</a>
+        <p>{{ item.org_name }}</p>
+        <p>{{ item.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if media_name | default %}
+    <div class="media-contact">
+      <h2>Media contact</h2>
+      <ul class="list-none">
+        <li>{{ media_name }}</li>
+        {% if media_email | default %}
+          <li><a href="mailto:{{ media_email }}">{{ media_email }}</a></li>
+        {% endif %}
+        {% if media_phone | default %}
+        <li>{{ media_phone }}</li>
+        {% endif %}
+      </ul>
+    </div>
+  {% endif %}
+</div>
