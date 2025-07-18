@@ -99,6 +99,10 @@
                   <p class="text-2xl">{{ subheading }}</p>
                 {% endif %}
 
+                {% if organization_type | default %}
+                  <p class="text-xl md:text-2xl font-bold mb-3">{{ organization_type }}</p>
+                {% endif %}
+
                 {% if jobtitle | default %}
                   <p class="text-xl md:text-2xl font-bold mb-3">{{ jobtitle }}</p>
                 {% endif %}

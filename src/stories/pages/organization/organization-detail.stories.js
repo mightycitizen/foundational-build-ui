@@ -33,8 +33,14 @@ const hero_secondary = {
     "src": "/images/hero-secondary.jpg",
     "alt": "University view"
   },
-  heading: "[Dept display name] Department of English (Acronym if appl.)",
-  subheading: '[Organization type] Academic Department'
+  heading: "Hon. prefix Firstname lastname hon. suffix",
+  organization_type: '[Organization type] Academic Department',
+  organizations: [
+    {
+      text: 'Parent organization (if applicable)',
+      url: '#'
+    }
+  ],
 }
 
 const Default = Template.bind({});
@@ -53,111 +59,36 @@ const defaultArgs = {
   site_name,
   menu_column,
   hero: hero_secondary,
-  anchor_items: [
-    {
-      text: 'Anchor #1',
-      anchor: '#section-1'
-    },
-    {
-      text: 'Anchor #2',
-      anchor: '#section-2'
-    },
-    {
-      text: 'Anchor #3',
-      anchor: '#section-2'
-    },
-    {
-      text: 'Anchor #4',
-      anchor: '#section-2'
-    },
-    {
-      text: 'Anchor #5',
-      anchor: '#section-2'
-    },
-    {
-      text: 'Anchor #6',
-      anchor: '#section-2'
-    }
-  ],
-  anchor_button: {
-    text: 'CTA Primary',
-    url: '#'
-  },
-  anchor_button_two: {
-    text: 'CTA Primary',
-    url: '#'
-  },
   modules: [
     {
-      module_type: 'glance_list',
-      section_class: 'bg-primary-800 text-white',
-      heading: 'Program at a Glance',
-      items: [
+      module_type: 'contact-block',
+      contact_email: 'example@mightyu.edu',
+      contact_phone: '123-456-7890',
+      contact_fax: '123-456-7890',
+      contact_locations: [
         {
-          label: 'College/School',
-          content: '<a href="#">College of Arts & Sciences, College of Business</a>'
+          text: 'Location: North Campus',
+          url: '#',
+          address: '1234 Mighty Building</br>Austin, TX 78745'
         },
         {
-          label: 'Program Type',
-          content: "Undergraduate - Bachelor's"
+          text: 'Location: South Campus',
+          url: '#',
+          address: '1234 Mighty Building</br>Austin, TX 78745'
+        }
+      ],
+      contact_information: [
+        {
+          icon: 'link--fill',
+          text: 'Faculty Website',
+          url: '#'
         },
         {
-          label: 'Credential',
-          content: "Bachelor of Science (BS) or Bachelor of Arts (BA)"
-        },
-        {
-          label: 'Formats',
-          content: "Online, Campus, *format caveat goes here if applied"
-        },
-        {
-          label: 'Campus / Location',
-          content: "Campus value goes here"
-        },
-        {
-          label: 'Accelerated',
-          content: "Yes"
-        },
-        {
-          label: 'Specializations',
-          content: '<a href="#">Specialization name</a>, <a href="#">Specialization name</a>,<br/><a href="#">Specialization name</a>, <a href="#">Specialization name</a>'
-        },
-        {
-          label: 'Est. time to completion',
-          content: "4 semesters"
-        },
-        {
-          label: 'Next start date',
-          content: "Date goes here"
-        },
-        {
-          label: 'Application Deadline',
-          content: "Deadline goes here"
-        },
-        {
-          label: 'Cost per credit',
-          content: "$120"
-        },
-        {
-          label: 'Total Credits',
-          content: "24"
-        },
-        {
-          label: 'Estimated total cost',
-          content: "$2880"
-        },
-      ]
-    },
-    {
-      module_type: 'wysiwyg',
-      section_id: 'section-1',
-      wysiwyg
-    },
-    {
-      module_type: 'step-list',
-      section_heading: 'Step List',
-      section_description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      steps
+          icon: 'file-doc--fill',
+          text: 'Curriculum Vitae',
+          url: '#'
+        }
+      ],
     }
   ]
 };

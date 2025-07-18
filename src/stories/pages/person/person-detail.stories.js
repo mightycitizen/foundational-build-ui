@@ -67,40 +67,6 @@ const defaultArgs = {
   site_name,
   menu_column,
   hero: hero_secondary,
-  anchor_items: [
-    {
-      text: 'Anchor #1',
-      anchor: '#section-1'
-    },
-    {
-      text: 'Anchor #2',
-      anchor: '#section-2'
-    },
-    {
-      text: 'Anchor #3',
-      anchor: '#section-2'
-    },
-    {
-      text: 'Anchor #4',
-      anchor: '#section-2'
-    },
-    {
-      text: 'Anchor #5',
-      anchor: '#section-2'
-    },
-    {
-      text: 'Anchor #6',
-      anchor: '#section-2'
-    }
-  ],
-  anchor_button: {
-    text: 'CTA Primary',
-    url: '#'
-  },
-  anchor_button_two: {
-    text: 'CTA Primary',
-    url: '#'
-  },
   modules: [
     {
       module_type: 'contact-block',
@@ -109,6 +75,13 @@ const defaultArgs = {
       contact_fax: '123-456-7890',
       contact_locations: [
         {
+          text: 'Location: North Campus',
+          url: '#',
+          address: '1234 Mighty Building</br>Austin, TX 78745'
+        },
+        {
+          text: 'Location: South Campus',
+          url: '#',
           address: '1234 Mighty Building</br>Austin, TX 78745'
         }
       ],
@@ -129,13 +102,6 @@ const defaultArgs = {
       module_type: 'wysiwyg',
       section_id: 'section-1',
       wysiwyg
-    },
-    {
-      module_type: 'step-list',
-      section_heading: 'Step List',
-      section_description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      steps
     }
   ]
 };
