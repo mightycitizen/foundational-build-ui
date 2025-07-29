@@ -9,12 +9,15 @@
         {{ breadcrumbs }}
         <h1>{{ page_title }}</h1>
         {% if page_subheading | default %}
-        <div>{{ page_subheading }}</div>
+        <div class="mb-4">{{ page_subheading }}</div>
         {% endif %}
-        <ul class="list-none">
-          <li><a href="{{ page_author_url }}">{{ page_author }}</a></li>
+        <ul class="list-none flex font-semibold mb-12 gap-x-10">
+          <li>By <a class="text-black" href="{{ page_author_url }}">{{ page_author }}</a></li>
           <li>{{ page_date }}</li>
         </ul>
+        {% if page_image | default %}
+          <img src="{{ page_image.src }}" alt="{{ page_image.alt }}" />
+        {% endif %}
       </div>
       {% for module in narrow_modules %}
         {% if module.module_type == 'wysiwyg' %}

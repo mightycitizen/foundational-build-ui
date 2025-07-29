@@ -46,13 +46,13 @@ const defaultArgs = {
   site_name,
   menu_column,
   page_title: 'Article title / headline goes here - lorem ipsum dolor sit amet',
-  page_subheading: '',
+  page_subheading: 'Subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel, porta et eros.',
   page_date: 'May 9, 2025',
   page_author: 'Firstname Lastname',
   page_author_url: '#',
   page_image: {
-    src: '',
-    alt: ''
+    src: '/images/news-detail-featured.jpg',
+    alt: 'group of students'
   },
   page_sidebar: {
     topics: [
