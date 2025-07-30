@@ -1,37 +1,46 @@
 {% extends '@wrappers/default.twig' %}
-{% set type = {
-  label: 'Event',
-  handle: 'events'
-}%}
 {% block top %}
 
-  {% include '@components/containers/hero/hero.twig' with {
-    date: {
-      unformatted: '2022-06-01',
-      full: 'June 1'
-    },
-    endDate:  {
-      unformatted: '2022-06-05',
-      full: '5, 2022'
-    },
-    heading: 'Event Title',
-    subheading: '',
-    categories: [{
-      title: 'Category 1',
-      url: 'category-1'
-    }, {
-      title: 'Category 2',
-      url: 'category-2'
-    }],
-    hero_button:{
-      url: '#',
-      text: 'Test',
-      target: '_blank'
-    },
-    list: ['10am - 12pm','Location'],
-    image: featured_image | default
-  }%}
 {% endblock %}
 {% block main %}
-  {% include '@components/modules/wysiwyg/wysiwyg.twig' %}
+  {% if narrow_modules | default | length > 0 %}
+    {% set content %}
+      <div>
+        {{ breadcrumbs }}
+        <p class="font-bold text-sm uppercase mb-1">{{ page_type }}</p>
+        <h1>{{ page_title }}</h1>
+        {% if page_subheading | default %}
+          <div class="mb-4">{{ page_subheading }}</div>
+        {% endif %}
+        
+        {% if page_image | default %}
+          <img src="{{ page_image.src }}" alt="{{ page_image.alt }}" />
+        {% endif %}
+      </div>
+      {% for module in narrow_modules %}
+        {% if module.module_type == 'wysiwyg' %}
+          {{ module.wysiwyg }}
+        {% endif %}
+      {% endfor %}
+    {% endset %}
+    {% if sidebar_modules | default | length > 0 %}
+      {% set sidebar %}
+        {% include '@components/sidebar/sidebar-events.twig' with page_sidebar %}
+
+        {% for module in sidebar_modules %}
+          {% if module.module_type == 'accordion' %}
+            {% include '@components/modules/accordion/accordion-module.twig' with module only %}
+          {% endif %}
+        {% endfor %}
+      {% endset %}
+    {% endif %}
+    {% embed '@components/sections/section.twig' with {
+      padding: 'tight',
+    } %}
+      {% block section_content %}
+        {% include '@layout/structure/content-with-sidebar.twig' %}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+
 {% endblock %}

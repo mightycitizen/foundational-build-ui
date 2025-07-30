@@ -3,48 +3,15 @@ import { placeholder, sizes } from '../../global/placeholders/images.json';
 import {
   pagination,
   breadcrumbs,
-  wysiwyg
+  wysiwyg,
+  card,
+  accordion
 } from '../../global/placeholders/components.json';
-import { menu, social, logo } from '../../global/placeholders/global.json';
+import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, links_bar_menu, footer_links, site_name } from '../../global/placeholders/global.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/Events/Events Detail'
-  // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  // argTypes: {
-  //   heading: {
-  //     control: 'text'
-  //   },
-  //   subheading: {
-  //     control: 'text'
-  //   },
-  //   description: {
-  //     control: 'text'
-  //   },
-  //   intro_class: {
-  //     control: 'text'
-  //   },
-  //   class: {
-  //     control: 'text'
-  //   },
-  //   style: {
-  //     control: {
-  //       type: 'select',
-  //     },
-  //     options: [
-  //       'side',
-  //       ''
-  //     ]
-  //   },
-  //   // backgroundColor: { control: 'color' },
-  //   // label: { control: 'text' },
-  //   // onClick: { action: 'onClick' },
-  //   // primary: { control: 'boolean' },
-  //   // size: {
-  //   //   control: { type: 'select' },
-  //   //   options: ['small', 'medium', 'large'],
-  //   // },
-  // },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -57,10 +24,103 @@ const Template = (args) => {
 const defaultArgs = {
   breadcrumbs,
   logo,
-  pagination,
   menu,
+  utility_menu,
+  links_bar_menu,
+  anchor_nav,
+  local_nav,
+  cta_menu,
+  header_dropdown,
   social,
-  wysiwyg
+  address,
+  footer_links,
+  site_name,
+  menu_column,
+  wysiwyg,
+  page_type: 'Event',
+  page_title: 'Event Title goes here - lorem ipsum dolor sit amet',
+  page_subheading: 'Subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel, porta et eros.',
+  page_date: 'May 9, 2025',
+  page_author: 'Firstname Lastname',
+  page_author_url: '#',
+  page_image: {
+    src: '/images/news-detail-featured.jpg',
+    alt: 'group of students'
+  },
+  page_sidebar: {
+    register_button: {
+      text: 'Register now',
+      url: '#'
+    },
+    event_website: {
+      text: 'Event Website',
+      url: '#'
+    },
+    event_date: 'March 4, 2025',
+    event_time: '4:30am - 5:30pm CT',
+    event_location: 'Address line 1 goes here</br>Address line 2 goes here</br>Address line 3 goes here',
+    event_directions_url: {
+      text: 'Get Directions',
+      url: '#',
+    },
+    event_virtual_meeting_url: {
+      text: 'Virtual Meeting Link',
+      url: '#',
+    },
+    topics: [
+      {
+        text: 'Alumni',
+        url: '#'
+      },
+      {
+        text: 'Topic name here',
+        url: '#'
+      },
+      {
+        text: 'Topic name here',
+        url: '#'
+      },
+      {
+        text: 'Topic name here',
+        url: '#'
+      },
+    ],
+    who_its_for: [
+      {
+        text: 'Current Students',
+        url: '#'
+      },
+      {
+        text: 'Alumni',
+        url: '#'
+      }
+    ],
+    event_series: {
+      text: 'Portuguese Literature Speaker Series',
+      url: '#'
+    },
+    media_name: 'Firstname Lastname',
+    media_email: 'email@mightyu.edu',
+    media_phone: '512-555-1234'
+  },
+  narrow_modules: [
+    {
+      module_type: 'wysiwyg',
+      wysiwyg
+    },
+    {
+      module_type: 'accordion',
+      exclude_container: true,
+      section_id: 'section-2',
+      ...accordion
+    }
+  ],
+  sidebar_modules: [
+    {
+      module_type: 'card',
+      ...card
+    }
+  ],
 };
 
 const parameters = {
@@ -71,15 +131,4 @@ const Default = Template.bind({});
 Default.args = defaultArgs;
 Default.parameters = parameters;
 
-const FeaturedImage = Template.bind({});
-FeaturedImage.args = {
-  ...defaultArgs,
-  featured_image: {
-    src: 'https://placehold.co/430x230',
-    alt: ''
-  }
-};
-
-FeaturedImage.parameters = parameters;
-
-export { Default, FeaturedImage };
+export { Default};
