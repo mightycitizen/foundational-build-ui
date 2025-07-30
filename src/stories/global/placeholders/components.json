@@ -133,7 +133,9 @@
       {
         "label": "Phone",
         "number": "123-456-7890",
-        "icon": "phone-call--fill",
+        "icon": {
+          "name": "ph ph-[phone-call--fill]"
+        },
         "secondary": [
           {
             "label": "Phone",
@@ -148,7 +150,9 @@
       {
         "label": "Email",
         "email": "example@domain.com",
-        "icon": "at--fill",
+        "icon": {
+          "name": "ph ph-[at--fill]"
+        },
         "secondary": [
           {
             "label": "Email",
@@ -162,7 +166,9 @@
       },
       {
         "label": "Location",
-        "icon": "map-pin-line--fill",
+        "icon": {
+          "name": "ph ph-[map-pin-line--fill]"
+        },
         "secondary": [
           {
             "address": "Address here\r\nRoom\r\n"
@@ -172,7 +178,9 @@
       {
         "label": "Phone",
         "number": "123-456-7890",
-        "icon": "phone-call--fill",
+        "icon": {
+          "name": "ph ph-[phone-call--fill]"
+        },
         "secondary": [
           {
             "label": "Phone",
@@ -187,7 +195,9 @@
       {
         "label": "Phone",
         "number": "123-456-7890",
-        "icon": "phone-call--fill",
+        "icon": {
+          "name": "ph ph-[phone-call--fill]"
+        },
         "secondary": [
           {
             "label": "Phone",
@@ -202,7 +212,9 @@
       {
         "label": "Phone",
         "number": "123-456-7890",
-        "icon": "phone-call--fill",
+        "icon": {
+          "name": "ph ph-[phone-call--fill]"
+        },
         "secondary": [
           {
             "label": "Phone",
