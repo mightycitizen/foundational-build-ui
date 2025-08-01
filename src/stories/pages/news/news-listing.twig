@@ -5,18 +5,15 @@
 }%}
 {% block top %}
   {% include '@components/containers/hero/hero.twig'  with {
-    heading: 'Mighty University News',
-    subheading: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.'
+    heading: 'Search all news Stories'
   } %}
 {% endblock %}
 {% block main %}
 
-  {% include '@components/modules/hierarchical/hierarchical-horizontal.twig'  with hierarchical_news %}
-
-  <div class="">
+  <div class="md:border-b md:pt-9 pb-8 mb-16">
     <div class="container">
       <div class="bg-neutrals-50 grid grid-cols-12 gap-6 items-center justify-center">
-        <div class="col-span-12 md:col-span-8 md:pt-9 pb-8 px-10">
+        <div class="col-span-12 md:col-span-8 md:pt-8 pb-5">
           <h1 class="h2">Site Search</h1>
           {% include '@components/forms/hero-search-form/hero-search-form.twig' %}
         </div>
@@ -24,118 +21,96 @@
     </div>
   </div>
 
-  <div class="topics-filter py-8">
-    <div class="container">
-      <div class="grid grid-cols-12 gap-6 items-center justify-center">
-        <div class="col-span-12">
-          <div class="flex gap-4 flex-wrap items-center">
-            <label>Explore topics:</label>
-            {% for topic in topics %}
-              <button class="filter-button">{{ topic.title }}</button>
-            {% endfor %}
+  {% embed '@components/sections/section.twig' %}
+    {% set listing_image_transform = image_sizes.landscapeCroppedMedium %}
+    {% block section_content %}
 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      {% include '@components/listing/filter/filter.twig' with {
+        ajax: true
+      }%}
+      {% include '@components/listing/list/list.twig' with
+      {
+          "list": [
+            {
+              "type": type,
+              "image": {
+                "src":image_placeholder ~ listing_image_transform.width ~ "x"~ listing_image_transform.height,
+                "alt": "Alt Text"
+              },
+              "heading": "Item Title",
+              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+              "date": {
+                month_short: "Dec",
+                day: 20,
+                unformatted: "2020-12-20",
+                full: "December 20, 2020",
+              },
+              "categories": [
+                {
+                  "url": "#",
+                  "title": "Category A"
+                },
+                {
+                  "url": "#",
+                  "title": "Category B"
+                }
+              ]
+            },
+            {
+              "type": type,
+              "heading": "Item Title",
+              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+              "date": {
+                month_short: "Dec",
+                day: 20,
+                unformatted: "2020-12-20",
+                full: "December 20, 2020",
+              },
+              "categories": [
+                {
+                  "url": "#",
+                  "title": "Category"
+                }
+              ]
+            },
+            {
+              "type": type,
+              "heading": "Item Title",
+              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+              "date": {
+                month_short: "Dec",
+                day: 20,
+                full: "December 20, 2020",
+              },
+              "categories": [
+                {
+                  "url": "#",
+                  "title": "Category"
+                }
+              ]
+            },
+            {
+              "type": type,
+              "heading": "Item Title",
+              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
+              "date": {
+                month_short: "Dec",
+                day: 20,
+                unformatted: "2020-12-20",
+                full: "December 20, 2020",
+              },
+              "categories": [
+                {
+                  "url": "#",
+                  "title": "Category"
+                }
+              ]
+            }
+          ]
+        }
 
-  {% include '@components/modules/hierarchical/hierarchical.twig'  with hierarchical_news_two %}
-
-  {% include '@components/modules/card-group/card-group-module.twig' with card_group only %}
-
-  {% include '@components/modules/short-list/short-list.twig' with short_list only %}
-
-{#  {% embed '@components/sections/section.twig' %}#}
-{#    {% set listing_image_transform = image_sizes.landscapeCroppedMedium %}#}
-{#    {% block section_content %}#}
-
-{#      {% include '@components/listing/filter/filter.twig' with {#}
-{#        ajax: true#}
-{#      }%}#}
-{#      {% include '@components/listing/list/list.twig' with#}
-{#      {#}
-{#          "list": [#}
-{#            {#}
-{#              "type": type,#}
-{#              "image": {#}
-{#                "src":image_placeholder ~ listing_image_transform.width ~ "x"~ listing_image_transform.height,#}
-{#                "alt": "Alt Text"#}
-{#              },#}
-{#              "heading": "Item Title",#}
-{#              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",#}
-{#              "date": {#}
-{#                month_short: "Dec",#}
-{#                day: 20,#}
-{#                unformatted: "2020-12-20",#}
-{#                full: "December 20, 2020",#}
-{#              },#}
-{#              "categories": [#}
-{#                {#}
-{#                  "url": "#",#}
-{#                  "title": "Category A"#}
-{#                },#}
-{#                {#}
-{#                  "url": "#",#}
-{#                  "title": "Category B"#}
-{#                }#}
-{#              ]#}
-{#            },#}
-{#            {#}
-{#              "type": type,#}
-{#              "heading": "Item Title",#}
-{#              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",#}
-{#              "date": {#}
-{#                month_short: "Dec",#}
-{#                day: 20,#}
-{#                unformatted: "2020-12-20",#}
-{#                full: "December 20, 2020",#}
-{#              },#}
-{#              "categories": [#}
-{#                {#}
-{#                  "url": "#",#}
-{#                  "title": "Category"#}
-{#                }#}
-{#              ]#}
-{#            },#}
-{#            {#}
-{#              "type": type,#}
-{#              "heading": "Item Title",#}
-{#              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",#}
-{#              "date": {#}
-{#                month_short: "Dec",#}
-{#                day: 20,#}
-{#                full: "December 20, 2020",#}
-{#              },#}
-{#              "categories": [#}
-{#                {#}
-{#                  "url": "#",#}
-{#                  "title": "Category"#}
-{#                }#}
-{#              ]#}
-{#            },#}
-{#            {#}
-{#              "type": type,#}
-{#              "heading": "Item Title",#}
-{#              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",#}
-{#              "date": {#}
-{#                month_short: "Dec",#}
-{#                day: 20,#}
-{#                unformatted: "2020-12-20",#}
-{#                full: "December 20, 2020",#}
-{#              },#}
-{#              "categories": [#}
-{#                {#}
-{#                  "url": "#",#}
-{#                  "title": "Category"#}
-{#                }#}
-{#              ]#}
-{#            }#}
-{#          ]#}
-{#        }#}
-
-{#       %}#}
-{#      {% include '@components/listing/pagination/pagination.twig' with pagination %}#}
-{#    {% endblock %}#}
-{#  {% endembed %}#}
+       %}
+      {% include '@components/listing/pagination/pagination.twig' with pagination %}
+    {% endblock %}
+  {% endembed %}
 {% endblock %}
