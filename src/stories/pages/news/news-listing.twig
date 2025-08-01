@@ -10,6 +10,7 @@
   } %}
 {% endblock %}
 {% block main %}
+
   {% include '@components/modules/hierarchical/hierarchical-horizontal.twig'  with hierarchical_news %}
 
   <div class="">
@@ -41,96 +42,100 @@
 
   {% include '@components/modules/hierarchical/hierarchical.twig'  with hierarchical_news_two %}
 
-  {% embed '@components/sections/section.twig' %}
-    {% set listing_image_transform = image_sizes.landscapeCroppedMedium %}
-    {% block section_content %}
+  {% include '@components/modules/card-group/card-group-module.twig' with card_group only %}
 
-      {% include '@components/listing/filter/filter.twig' with {
-        ajax: true
-      }%}
-      {% include '@components/listing/list/list.twig' with
-      {
-          "list": [
-            {
-              "type": type,
-              "image": {
-                "src":image_placeholder ~ listing_image_transform.width ~ "x"~ listing_image_transform.height,
-                "alt": "Alt Text"
-              },
-              "heading": "Item Title",
-              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
-              "date": {
-                month_short: "Dec",
-                day: 20,
-                unformatted: "2020-12-20",
-                full: "December 20, 2020",
-              },
-              "categories": [
-                {
-                  "url": "#",
-                  "title": "Category A"
-                },
-                {
-                  "url": "#",
-                  "title": "Category B"
-                }
-              ]
-            },
-            {
-              "type": type,
-              "heading": "Item Title",
-              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
-              "date": {
-                month_short: "Dec",
-                day: 20,
-                unformatted: "2020-12-20",
-                full: "December 20, 2020",
-              },
-              "categories": [
-                {
-                  "url": "#",
-                  "title": "Category"
-                }
-              ]
-            },
-            {
-              "type": type,
-              "heading": "Item Title",
-              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
-              "date": {
-                month_short: "Dec",
-                day: 20,
-                full: "December 20, 2020",
-              },
-              "categories": [
-                {
-                  "url": "#",
-                  "title": "Category"
-                }
-              ]
-            },
-            {
-              "type": type,
-              "heading": "Item Title",
-              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",
-              "date": {
-                month_short: "Dec",
-                day: 20,
-                unformatted: "2020-12-20",
-                full: "December 20, 2020",
-              },
-              "categories": [
-                {
-                  "url": "#",
-                  "title": "Category"
-                }
-              ]
-            }
-          ]
-        }
+  {% include '@components/modules/short-list/short-list.twig' with short_list only %}
 
-       %}
-      {% include '@components/listing/pagination/pagination.twig' with pagination %}
-    {% endblock %}
-  {% endembed %}
+{#  {% embed '@components/sections/section.twig' %}#}
+{#    {% set listing_image_transform = image_sizes.landscapeCroppedMedium %}#}
+{#    {% block section_content %}#}
+
+{#      {% include '@components/listing/filter/filter.twig' with {#}
+{#        ajax: true#}
+{#      }%}#}
+{#      {% include '@components/listing/list/list.twig' with#}
+{#      {#}
+{#          "list": [#}
+{#            {#}
+{#              "type": type,#}
+{#              "image": {#}
+{#                "src":image_placeholder ~ listing_image_transform.width ~ "x"~ listing_image_transform.height,#}
+{#                "alt": "Alt Text"#}
+{#              },#}
+{#              "heading": "Item Title",#}
+{#              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",#}
+{#              "date": {#}
+{#                month_short: "Dec",#}
+{#                day: 20,#}
+{#                unformatted: "2020-12-20",#}
+{#                full: "December 20, 2020",#}
+{#              },#}
+{#              "categories": [#}
+{#                {#}
+{#                  "url": "#",#}
+{#                  "title": "Category A"#}
+{#                },#}
+{#                {#}
+{#                  "url": "#",#}
+{#                  "title": "Category B"#}
+{#                }#}
+{#              ]#}
+{#            },#}
+{#            {#}
+{#              "type": type,#}
+{#              "heading": "Item Title",#}
+{#              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",#}
+{#              "date": {#}
+{#                month_short: "Dec",#}
+{#                day: 20,#}
+{#                unformatted: "2020-12-20",#}
+{#                full: "December 20, 2020",#}
+{#              },#}
+{#              "categories": [#}
+{#                {#}
+{#                  "url": "#",#}
+{#                  "title": "Category"#}
+{#                }#}
+{#              ]#}
+{#            },#}
+{#            {#}
+{#              "type": type,#}
+{#              "heading": "Item Title",#}
+{#              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",#}
+{#              "date": {#}
+{#                month_short: "Dec",#}
+{#                day: 20,#}
+{#                full: "December 20, 2020",#}
+{#              },#}
+{#              "categories": [#}
+{#                {#}
+{#                  "url": "#",#}
+{#                  "title": "Category"#}
+{#                }#}
+{#              ]#}
+{#            },#}
+{#            {#}
+{#              "type": type,#}
+{#              "heading": "Item Title",#}
+{#              "summary": "Lorem ipsum dolor sit amet consectetur adipiscing.",#}
+{#              "date": {#}
+{#                month_short: "Dec",#}
+{#                day: 20,#}
+{#                unformatted: "2020-12-20",#}
+{#                full: "December 20, 2020",#}
+{#              },#}
+{#              "categories": [#}
+{#                {#}
+{#                  "url": "#",#}
+{#                  "title": "Category"#}
+{#                }#}
+{#              ]#}
+{#            }#}
+{#          ]#}
+{#        }#}
+
+{#       %}#}
+{#      {% include '@components/listing/pagination/pagination.twig' with pagination %}#}
+{#    {% endblock %}#}
+{#  {% endembed %}#}
 {% endblock %}

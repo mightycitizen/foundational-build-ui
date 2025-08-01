@@ -1,7 +1,5 @@
 {% embed '@components/sections/section.twig' with {
-  padding: 'tight',
-  section_class: "section--form " ~ section_class | default,
-  section_style: "narrow"
+  section_class: "section--heirarchical " ~ section_class | default,
 } %}
   {% block section_content %}
     <div class="grid grid-cols-12 gap-6 lg:gap-10">

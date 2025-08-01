@@ -57,6 +57,22 @@ const topic = {
   title: 'Category Name Goes Here'
 };
 
+const short_list_cards = [...Array(8)].map((_, i) => ({
+  no_outline: true,
+  var: 'short',
+  image: {
+    src: 'https://placehold.co/120x120',
+    alt: 'Alt Text'
+  },
+  label: 'Optional Label / TBD',
+  heading: {
+    text: '[h3] Heading example lorem ipsum',
+    url: '#',
+    level: 3
+  },
+  summary: null
+}));
+
 export const NewsListing = Template.bind({});
 NewsListing.args = {
   menu,
@@ -226,6 +242,93 @@ NewsListing.args = {
         alt: 'Alt Text'
       },
     }
+  },
+  card_group: {
+    intro_class: 'text-left',
+    section_heading: 'Related Articles',
+    section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+    section_link: {
+      url: '#',
+      text: 'Optional Link'
+    },
+    cards: [
+      {
+        badges: [
+          {
+            icon: 'icon-lightning-fill',
+            text: 'Announcement'
+          },
+          {
+            icon: 'icon-lightning-fill',
+            text: 'Featured'
+          }
+        ],
+        image: {
+          src: 'https://placehold.co/430x230',
+          alt: 'Alt Text'
+        },
+        heading: {
+          text: '[h3] Heading example lorem ipsum',
+          url: '#',
+          level: 3
+        },
+        summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+      },
+      {
+        badges: [
+          {
+            icon: 'icon-lightning-fill',
+            text: 'Announcement'
+          },
+          {
+            icon: 'icon-lightning-fill',
+            text: 'Featured'
+          }
+        ],
+        image: {
+          src: 'https://placehold.co/430x230',
+          alt: 'Alt Text'
+        },
+        heading: {
+          text: '[h3] Heading example lorem ipsum',
+          url: '#',
+          level: 3
+        },
+        summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+      },
+      {
+        badges: [
+          {
+            icon: 'icon-lightning-fill',
+            text: 'Announcement'
+          },
+          {
+            icon: 'icon-lightning-fill',
+            text: 'Featured'
+          }
+        ],
+        image: {
+          src: 'https://placehold.co/430x230',
+          alt: 'Alt Text'
+        },
+        heading: {
+          text: '[h3] Heading example lorem ipsum',
+          url: '#',
+          level: 3
+        },
+        summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+      }
+    ]
+  },
+  short_list: {
+    intro_class: 'text-left',
+    section_heading: '[h2, optional] Modular Component Intro, Label type',
+    section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+    section_link: {
+      url: '#',
+      text: 'Optional Link'
+    },
+    cards: short_list_cards
   }
 };
 NewsListing.parameters = {

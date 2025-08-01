@@ -1,7 +1,5 @@
 {% embed '@components/sections/section.twig' with {
-  padding: 'tight',
-  section_class: "section--form " ~ section_class | default,
-  section_style: "narrow"
+  section_class: "section--short-list " ~ section_class | default,
 } %}
   {% block section_content %}
     {% include '@components/listing/thumbnail-list/thumbnail-list.twig' %}
