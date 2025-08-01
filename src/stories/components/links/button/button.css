@@ -32,3 +32,7 @@
     @apply bg-primary-200
   }
 }
+
+.filter-button {
+  @apply bg-primary-50 border-[1px] border-primary rounded-[4px] px-2 py-2 text-xs text-primary hover:text-white hover:bg-primary-700 flex-shrink-0;
+}

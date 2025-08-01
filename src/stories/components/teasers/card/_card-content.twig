@@ -3,6 +3,7 @@
 {% endif %}
 
 {% if badges %}
+  {% if featured | default %}<div class="absolute top-8 right-5 lg:top-14 lg:right-8">{% endif %}
   <ul class="list-none flex gap-x-2 mb-3">
   {% for item in badges %}
     <li>
@@ -10,11 +11,12 @@
     </li>
   {% endfor %}
   </ul>
+  {% if featured | default %}</div>{% endif %}
 {% endif %}
 
 {% set heading_level = heading.level | default ? heading.level : 3 %}
 
-<h{{ heading_level }} class="card_title {{ heading.modifier | default }}">
+<h{{ heading_level }} class="card_title text-lg md:text-2xl {{ heading.modifier | default }}">
   {% if heading.url | default %}
     <a class="{% if clickCard | default %}card_click {% endif %}{% if featured | default is empty %}text-black{% endif %}" href="{{ heading.url }}">
   {% endif %}
@@ -26,6 +28,20 @@
 
 {% if summary | default %}
   <p class="card_summary mb-4 {{ summary_modifier | default }}">{{ summary }}</p>
+{% endif %}
+
+{% if date | default %}
+  <p class="flex items-center gap-x-2 mb-2">
+    <span class="ph ph-[calendar-blank] text-primary text-2xl"></span>
+    <span class="font-bold">{{ date }}</span>
+  </p>
+{% endif %}
+
+{% if address | default %}
+  <p class="flex items-center gap-x-2 mb-2">
+    <span class="ph ph-[map-pin] text-primary text-2xl"></span>
+    <span class="font-bold">{{ address }}</span>
+  </p>
 {% endif %}
 
 {% if button | default %}

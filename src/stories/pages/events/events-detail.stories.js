@@ -103,10 +103,72 @@ const defaultArgs = {
     media_email: 'email@mightyu.edu',
     media_phone: '512-555-1234'
   },
+  modules: [
+    {
+      module_type: 'short-list-horizontal',
+      intro_class: 'text-left',
+      section_heading: 'Related Events',
+      section_link: {
+        url: '#',
+        text: 'Optional Link'
+      },
+      divider: true,
+      cards: [
+        {
+          no_outline: true,
+          var: 'short',
+          image: {
+            src: 'https://placehold.co/120x120',
+            alt: 'Alt Text'
+          },
+          heading: {
+            text: '[h3] Heading example lorem ipsum',
+            url: '#',
+            level: 3
+          },
+          summary: null,
+          date: 'Saturday, 10.6.2024 | 6pm CT',
+          address: 'Address Goes Here, Austin, Texas, USA'
+        },
+        {
+          no_outline: true,
+          var: 'short',
+          image: {
+            src: 'https://placehold.co/120x120',
+            alt: 'Alt Text'
+          },
+          heading: {
+            text: '[h3] Heading example lorem ipsum',
+            url: '#',
+            level: 3
+          },
+          summary: null,
+          date: 'Saturday, 10.6.2024 | 6pm CT',
+          address: 'Address Goes Here, Austin, Texas, USA'
+        },
+        {
+          no_outline: true,
+          var: 'short',
+          image: {
+            src: 'https://placehold.co/120x120',
+            alt: 'Alt Text'
+          },
+          heading: {
+            text: '[h3] Heading example lorem ipsum',
+            url: '#',
+            level: 3
+          },
+          summary: null,
+          date: 'Saturday, 10.6.2024 | 6pm CT',
+          address: 'Address Goes Here, Austin, Texas, USA'
+        }
+      ]
+    }
+  ],
   narrow_modules: [
     {
       module_type: 'wysiwyg',
-      wysiwyg
+      wysiwyg: '<h2>WYSIWYG Event content - h2 Heading - Lorem ipsum dolor sit amet</h2><h3>h3 Heading - Lorem ipsum dolor sit amet</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel, porta et eros. Vestibulum condimentum lectus in convallis feugiat. Sed vulputate fringilla felis. Aliquam ut arcu et dui feugiat scelerisque eu quis diam. Mauris placerat congue dui sit amet blandit. Phasellus condimentum libero vel velit auctor, sit amet tincidunt velit varius.</p><h4>h4 Heading - Lorem ipsum dolor sit amet</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel, porta et eros. Vestibulum condimentum lectus in convallis feugiat. Sed vulputate fringilla felis. Aliquam ut arcu et dui feugiat scelerisque eu quis diam. Mauris placerat congue dui sit amet blandit. Phasellus condimentum libero vel velit auctor, sit amet tincidunt velit varius.</p><p><a class="read-more" href="#">Link Text</a></p><p><a class="button" href="#">Button</a></p><p><a class="button secondary" href="#">Button</a></p>'
     },
     {
       module_type: 'accordion',
@@ -121,6 +183,7 @@ const defaultArgs = {
       ...card
     }
   ],
+
 };
 
 const parameters = {

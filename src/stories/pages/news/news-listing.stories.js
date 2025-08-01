@@ -52,6 +52,11 @@ const Template = (args) => {
   // return `<div>${label}</div>`;
   return twig(args);
 };
+
+const topic = {
+  title: 'Category Name Goes Here'
+};
+
 export const NewsListing = Template.bind({});
 NewsListing.args = {
   menu,
@@ -60,7 +65,168 @@ NewsListing.args = {
   social,
   image_sizes: sizes,
   image_placeholder: placeholder,
-  pagination
+  pagination,
+  hierarchical_news: {
+    section_heading: 'Featured News',
+    featured_card: {
+      horizontal: true,
+      clickCard: true,
+      featured: true,
+      badges: [
+        {
+          icon: 'icon-lightning-fill',
+          text: 'Badge 1'
+        },
+        {
+          icon: 'icon-lightning-fill',
+          text: 'Badge 2'
+        }
+      ],
+      heading: {
+        text: '[h3 or h2] Individual news card / featured - headline Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor. elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali.',
+        url: '#',
+        level: 3
+      },
+      summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+      image: {
+        src: '/images/featured-hierarchical.jpg',
+        alt: 'Alt Text'
+      },
+      date: 'Publish Date Here'
+    },
+    cards: [
+      {
+        no_outline: true,
+        var: 'short',
+        image: {
+          src: 'https://placehold.co/120x120',
+          alt: 'Alt Text'
+        },
+        heading: {
+          text: '[h3] Heading example lorem ipsum',
+          url: '#',
+          level: 3
+        },
+        summary: null,
+        label: '[LABEL - PUBLISH DATE]'
+      },
+      {
+        no_outline: true,
+        var: 'short',
+        image: {
+          src: 'https://placehold.co/120x120',
+          alt: 'Alt Text'
+        },
+        heading: {
+          text: '[h3] Heading example lorem ipsum',
+          url: '#',
+          level: 3
+        },
+        summary: null,
+        label: '[LABEL - PUBLISH DATE]'
+      },
+      {
+        no_outline: true,
+        var: 'short',
+        image: {
+          src: 'https://placehold.co/120x120',
+          alt: 'Alt Text'
+        },
+        heading: {
+          text: '[h3] Heading example lorem ipsum',
+          url: '#',
+          level: 3
+        },
+        summary: null,
+        label: '[LABEL - PUBLISH DATE]'
+      }
+    ]
+  },
+  topics: Array.from({ length: 9 }, (v, i) => topic),
+  hierarchical_news_two: {
+    intro_class: 'text-left',
+    section_heading: '[h2, optional] Modular Component Intro, Label type',
+    section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+    section_link: {
+      url: '#',
+      text: 'Optional Link'
+    },
+    cards: [
+      {
+        no_outline: true,
+        var: 'short',
+        image: {
+          src: 'https://placehold.co/120x120',
+          alt: 'Alt Text'
+        },
+        heading: {
+          text: '[h3] Heading example lorem ipsum',
+          url: '#',
+          level: 3
+        },
+        summary: null,
+        label: '[LABEL - PUBLISH DATE]'
+      },
+      {
+        no_outline: true,
+        var: 'short',
+        image: {
+          src: 'https://placehold.co/120x120',
+          alt: 'Alt Text'
+        },
+        heading: {
+          text: '[h3] Heading example lorem ipsum',
+          url: '#',
+          level: 3
+        },
+        summary: null,
+        label: '[LABEL - PUBLISH DATE]'
+      },
+      {
+        no_outline: true,
+        var: 'short',
+        image: {
+          src: 'https://placehold.co/120x120',
+          alt: 'Alt Text'
+        },
+        heading: {
+          text: '[h3] Heading example lorem ipsum',
+          url: '#',
+          level: 3
+        },
+        summary: null,
+        label: '[LABEL - PUBLISH DATE]'
+      },
+      {
+        no_outline: true,
+        var: 'short',
+        image: {
+          src: 'https://placehold.co/120x120',
+          alt: 'Alt Text'
+        },
+        heading: {
+          text: '[h3] Heading example lorem ipsum',
+          url: '#',
+          level: 3
+        },
+        summary: null,
+        label: '[LABEL - PUBLISH DATE]'
+      }
+    ],
+    featured_card: {
+      clickCard: true,
+      featured: true,
+      heading: {
+        text: '[h3] General content goes here - short name only, e.g. for categories',
+        url: '#',
+        level: 3
+      },
+      image: {
+        src: '/images/featured-card.jpg',
+        alt: 'Alt Text'
+      },
+    }
+  }
 };
 NewsListing.parameters = {
   layout: 'fullscreen'

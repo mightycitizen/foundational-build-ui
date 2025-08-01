@@ -24,9 +24,12 @@ const Template = (args) => {
   return twig(args);
 };
 
-const list = [...Array(5)].map((_, i) => ({
+const cards = [...Array(5)].map((_, i) => ({
   no_outline: true,
-  heading: 'Event Title',
+  heading: {
+    text: 'Event Title',
+    url: '#',
+  },
   url: '#',
   summary: null,
   image: {
@@ -43,7 +46,7 @@ const list = [...Array(5)].map((_, i) => ({
 }));
 
 const defaultArgs = {
-  list
+  cards
 };
 export const ThumbnailList = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
