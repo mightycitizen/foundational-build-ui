@@ -32,6 +32,8 @@
   class="relative section
   {% if padding | default == 'tight' %}
     py-5 lg:py-10
+  {% elseif section_padding | default %}
+    {{ section_padding }}
   {% else %}
     py-10 lg:py-16
   {% endif %}

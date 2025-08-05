@@ -17,7 +17,8 @@ form {
     @apply text-lg;
     margin-bottom: 1.35rem;
   }
-  label {
+  label,
+  legend {
     @apply font-semibold text-lg text-neutrals-800;
     &.form-required:after {
       content: "*";
@@ -28,8 +29,18 @@ form {
   .description {
     margin-bottom: 0.65rem;
   }
-  .form-type-select {
+  .form-item,
+  .form-wrapper {
     margin-bottom: 1.5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .form-wrapper summary {
+    margin-bottom: 0.75rem;
+  }
+  .webform-address--wrapper {
+    margin-bottom: 0;
   }
   select {
     @apply py-[0.688rem] rounded-[4px] cursor-pointer;
@@ -41,7 +52,8 @@ form {
     margin-bottom: 1rem;
   }
 
-  .form-checkboxes .form-type-checkbox {
+  .form-checkboxes .form-type-checkbox,
+  .webform-type-radios .form-type-radio {
     margin-bottom: 0;
   }
   .form-type-checkbox {
