@@ -10,6 +10,9 @@ form {
   fieldset {
     margin-bottom: 0.5rem;
   }
+  .fieldgroup legend {
+    margin-bottom: 0.5rem;
+  }
   legend {
     @apply text-lg;
     margin-bottom: 1.35rem;
@@ -25,6 +28,9 @@ form {
   .description {
     margin-bottom: 0.65rem;
   }
+  .form-type-select {
+    margin-bottom: 1.5rem;
+  }
   select {
     @apply py-[0.688rem] rounded-[4px] cursor-pointer;
   }
@@ -33,6 +39,10 @@ form {
   }
   .form-type-textarea {
     margin-bottom: 1rem;
+  }
+
+  .form-checkboxes .form-type-checkbox {
+    margin-bottom: 0;
   }
   .form-type-checkbox {
     margin-bottom: 1.5rem;
@@ -50,6 +60,8 @@ form {
   @media (min-width: 768px) {
     .webform-flexbox {
       display: flex;
+      margin-left: 0;
+      margin-right: 0;
       select,
       input[type=text]{
         max-width: 100%;
@@ -99,7 +111,8 @@ form {
     @apply text-sm;
   }
 }
-input[type=text] {
+input[type=text],
+input[type=email]{
   @apply py-[0.688rem] rounded-[4px];
 }
 

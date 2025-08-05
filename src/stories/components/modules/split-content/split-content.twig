@@ -9,7 +9,8 @@
         {{ column_left }}
       </div>
       <div class="col-span-12 md:col-span-6">
-        {{ column_right }}
+{#        {{ column_right }}#}
+        {% include '@components/containers/links-list/links-list.twig' with links %}
       </div>
     </div>
   {% endblock %}

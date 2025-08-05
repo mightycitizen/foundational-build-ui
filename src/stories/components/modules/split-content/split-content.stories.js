@@ -28,6 +28,28 @@ const Template = (args) => {
 };
 
 const defaultArgs = {
+  links: [
+    {
+      text: "Link",
+      url: "#"
+    },
+    {
+      text: "Link",
+      url: "#"
+    },
+    {
+      text: "Link",
+      url: "#"
+    },
+    {
+      text: "Link",
+      url: "#"
+    },
+    {
+      text: "Link",
+      url: "#"
+    }
+  ],
   intro_class: 'text-center',
   section_label: {
     icon: 'buildings',
@@ -39,8 +61,7 @@ const defaultArgs = {
     url: '#',
     text: 'Optional Link'
   },
-  column_left: wysiwyg,
-  column_right: wysiwyg
+  column_left: wysiwyg
 };
 export const SplitContent = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
