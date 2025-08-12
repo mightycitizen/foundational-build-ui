@@ -68,4 +68,32 @@ Events.args = {
   cards: eventCards
 };
 
-export { Default, Events };
+const Programs = Template.bind({});
+
+const programCards = cards.map((card, i) =>
+  Object.assign(
+    {
+      heading: {
+        text: "Biology (BS / BA)",
+        url: "#",
+        level: 3
+      },
+      subheading: 'Program type, Program type',
+      specializations: 'Concentration title, Concentration title, Concentration title, Concentration title',
+      summary: "*Format caveat here",
+      image: {
+        src: "https://placehold.co/430x230",
+        alt: "Alt Text"
+      },
+      campus: true,
+      online: true
+    }
+  )
+);
+
+Programs.args = {
+  ...defaultArgs,
+  cards: programCards
+};
+
+export { Default, Events, Programs };

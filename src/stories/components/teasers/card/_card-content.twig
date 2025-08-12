@@ -26,6 +26,16 @@
   {% endif %}
 </h{{ heading_level }}>
 
+{% if subheading | default %}
+  <p class="card_subheading mb-4 font-bold {{ subheading_modifier | default }}">{{ subheading }}</p>
+{% endif %}
+
+{% if specializations | default %}
+  <p class="card_specialization mb-4 {{ specializations_modifier | default }}">
+    <span class="font-bold">Specializations:</span> {{ specializations }}
+  </p>
+{% endif %}
+
 {% if summary | default %}
   <p class="card_summary mb-4 {{ summary_modifier | default }}">{{ summary }}</p>
 {% endif %}
@@ -81,4 +91,20 @@
   {% if clickCard | default %}
     <a href="{{ link.url }}" class="card_click">{{ link.text }}</a>
   {% endif %}
+{% endif %}
+
+{% if campus | default %}
+  {% include '@components/inline-text/badge/badge.twig' with {
+    icon: 'icon-buildings',
+    text: 'Campus',
+    class: 'inline-flex'
+  } %}
+{% endif %}
+{% if online | default %}
+  {% include '@components/inline-text/badge/badge.twig' with {
+    icon: 'icon-lightning-fill',
+    text: 'Online',
+    class: 'inline-flex',
+    style: 'light'
+  } %}
 {% endif %}
