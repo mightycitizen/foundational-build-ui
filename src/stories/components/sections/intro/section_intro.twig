@@ -6,7 +6,7 @@
   <div class="section_intro {{ intro_class }} {% if divider %}border-b-4 border-primary-500 pb-3{% endif %}">
     <div class="grid {% if (media | default) or (intro_class != 'text-center') %}grid-cols-12 items-center{% endif %} gap-y-6 gap-x-10 justify-center">
       {% if media | default %}
-        <div class="col-span-12 md:col-span-5 {{ narrow_image ? 'lg:col-span-4' : 'lg:col-span-6' }}" >
+        <div class="col-span-12 md:col-span-5 {{ narrow_image ? 'lg:col-span-4' : 'lg:col-span-6' }}{% if section_image.alignment  | default and section_image.alignment == 'right' %} md:order-2{% endif %}" >
           {% if section_image %}
           <div class="image-size--landscapeCroppedMedium">
             <img loading="lazy" src="{{ section_image.src }}" alt="{{ section_image.alt }}" class="w-full">

@@ -1,4 +1,4 @@
-import twig from './news-home.twig';
+import twig from './events-home.twig';
 import { menu, social, logo } from '../../global/placeholders/global.json';
 
 import { placeholder, sizes } from '../../global/placeholders/images.json';
@@ -8,7 +8,7 @@ import {
 } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Pages/News/News Home'
+  title: 'Pages/Events/Events Home'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -73,8 +73,8 @@ const short_list_cards = [...Array(8)].map((_, i) => ({
   summary: null
 }));
 
-export const NewsHome = Template.bind({});
-NewsHome.args = {
+export const EventsHome = Template.bind({});
+EventsHome.args = {
   menu,
   logo,
   breadcrumbs,
@@ -83,7 +83,7 @@ NewsHome.args = {
   image_placeholder: placeholder,
   pagination,
   hierarchical_news: {
-    section_heading: 'Featured News',
+    section_heading: '[h2, optional] Modular Component Intro, Label type',
     featured_card: {
       horizontal: true,
       clickCard: true,
@@ -332,6 +332,6 @@ NewsHome.args = {
     cards: short_list_cards
   }
 };
-NewsHome.parameters = {
+EventsHome.parameters = {
   layout: 'fullscreen'
 };

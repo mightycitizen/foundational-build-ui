@@ -1,7 +1,3 @@
-{% if label | default %}
-  <span class="text-sm uppercase text-neutrals-800 font-bold mb-3 block">{{ label }}</span>
-{% endif %}
-
 {% if badges %}
   {% if featured | default %}<div class="absolute top-8 right-5 lg:top-14 lg:right-8">{% endif %}
   <ul class="list-none flex gap-x-2 mb-3">
@@ -12,6 +8,10 @@
   {% endfor %}
   </ul>
   {% if featured | default %}</div>{% endif %}
+{% endif %}
+
+{% if label | default %}
+  <span class="text-sm uppercase text-neutrals-800 font-bold mb-3 block">{{ label }}</span>
 {% endif %}
 
 {% set heading_level = heading.level | default ? heading.level : 3 %}

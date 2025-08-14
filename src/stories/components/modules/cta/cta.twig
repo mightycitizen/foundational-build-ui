@@ -6,9 +6,7 @@
   }) %}
 {% endif %}
 
-{% embed '@components/sections/section.twig' with {
-  section_class: "cta " ~ class | default ~ (section_image | default ? ' cta--horizontal': ''),
-}%}
+{% embed '@components/sections/section.twig' %}
   {% block section_content %}
     {% if block_links %}
       <section class="prose">
