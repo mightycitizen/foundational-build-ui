@@ -1,5 +1,0 @@
-import{t as s}from"./links-BkLsQPSD.js";import{l as n}from"./components-Bw4EXnsR.js";import"./twig-BXd3Gfe2.js";import"./_commonjsHelpers-BosuxZz1.js";import"./twig-foVUGi9y.js";import"./section-c5tc7Ty4.js";import"./section_intro-DB7IKlo8.js";import"./video-yAPYN-oC.js";import"./loader-E1_xi_18.js";import"./icon-CcqnxRgM.js";import"./button-Cwvs5uTH.js";import"./read-more-C-Kgb2FQ.js";import"./link-CIbey7wG.js";const y={title:"Components/Modules/Links",argTypes:{section_class:{control:{type:"select",options:["","bg-solid-primary text-white","bg-solid-secondary text-white","bg-solid-tertiary text-white"]}}}},a=i=>s(i),p={section_heading:"Heading",section_description:"Description",links:n},t=a.bind({});t.args=p;var r,e,o;t.parameters={...t.parameters,docs:{...(r=t.parameters)==null?void 0:r.docs,source:{originalSource:`args => {
-  // You can either use a function to create DOM elements or use a plain html string!
-  // return \`<div>\${label}</div>\`;
-  return twig(args);
-}`,...(o=(e=t.parameters)==null?void 0:e.docs)==null?void 0:o.source}}};const L=["Links"];export{t as Links,L as __namedExportsOrder,y as default};

@@ -1,11 +1,11 @@
 import twig from './events-listing.twig';
+import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, footer_links, site_name } from '../../global/placeholders/global.json';
+
 import { placeholder, sizes } from '../../global/placeholders/images.json';
 import {
   pagination,
   breadcrumbs
 } from '../../global/placeholders/components.json';
-import { menu, social, logo } from '../../global/placeholders/global.json';
-
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/Events/Events Listing'
@@ -52,102 +52,63 @@ const Template = (args) => {
   // return `<div>${label}</div>`;
   return twig(args);
 };
-
 export const EventsListing = Template.bind({});
-
-const type = {
-  label: 'Event',
-  handle: 'events'
-};
-
-const items = [
-  {
-    image: {
-      src:
-        placeholder +
-        sizes.landscapeCroppedMedium.width +
-        'x' +
-        sizes.landscapeCroppedMedium.height,
-      alt: 'Alt Text'
-    },
-    type: type,
-    heading: 'Item Title',
-    summary: 'Lorem ipsum dolor sit amet consectetur adipiscing.',
-    start_date: {
-      month_short: 'Dec',
-      day: 20,
-      unformatted: '2020-12-20',
-      full: 'December 20, 2020'
-    },
-    categories: [
-      {
-        url: '#',
-        title: 'Category'
-      }
-    ]
-  },
-  {
-    type: type,
-    heading: 'Item Title',
-    summary: 'Lorem ipsum dolor sit amet consectetur adipiscing.',
-    start_date: {
-      month_short: 'Dec',
-      day: 20,
-      unformatted: '2020-12-20',
-      full: 'December 20, 2020'
-    },
-    categories: [
-      {
-        url: '#',
-        title: 'Category'
-      }
-    ]
-  },
-  {
-    type: type,
-    heading: 'Item Title',
-    summary: 'Lorem ipsum dolor sit amet consectetur adipiscing.',
-    start_date: {
-      month_short: 'Dec',
-      day: 20,
-      unformatted: '2020-12-20',
-      full: 'December 20, 2020'
-    },
-    categories: [
-      {
-        url: '#',
-        title: 'Category'
-      }
-    ]
-  },
-  {
-    type: type,
-    heading: 'Item Title',
-    summary: 'Lorem ipsum dolor sit amet consectetur adipiscing.',
-    start_date: {
-      month_short: 'Dec',
-      day: 20,
-      unformatted: '2020-12-20',
-      full: 'December 20, 2020'
-    },
-    categories: [
-      {
-        url: '#',
-        title: 'Category'
-      }
-    ]
-  }
-];
-
 EventsListing.args = {
-  breadcrumbs,
-  logo,
-  pagination,
   menu,
+  logo,
+  breadcrumbs,
   social,
-  items
+  address,
+  utility_menu,
+  cta_menu,
+  header_dropdown,
+  menu_column,
+  anchor_nav,
+  local_nav,
+  footer_links,
+  site_name,
+  image_sizes: sizes,
+  image_placeholder: placeholder,
+  pagination,
+  cards: [
+    {
+      badges: [
+        {
+          icon: 'icon-lightning-fill',
+          text: 'Report'
+        },
+        {
+          icon: 'icon-lightning-fill',
+          text: 'Featured'
+        }
+      ],
+      heading: {
+        text: "[h3] Mighty Citizen Annual Prom & Talent Show",
+        url: "#",
+        level: 3
+      },
+      address: null,
+      summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+      date: 'Saturday, 10.6.2024 | 6pm CT',
+      address: 'Address Goes Here, Austin, Texas, USA',
+      image: {
+        src: "/images/news-listing.jpg",
+        alt: "Alt Text",
+        alignment: 'right'
+      },
+      categories: [
+        {
+          text: 'Category goes here',
+          url: '#'
+        },
+        {
+          text: 'Category goes here',
+          url: '#'
+        }
+      ]
+    }
+  ]
 };
-
 EventsListing.parameters = {
   layout: 'fullscreen'
 };

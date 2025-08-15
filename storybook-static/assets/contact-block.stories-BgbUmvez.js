@@ -1,0 +1,5 @@
+import{t as i}from"./contact-block-DDaeitRz.js";import"./twig-BXd3Gfe2.js";import"./_commonjsHelpers-BosuxZz1.js";import"./twig-foVUGi9y.js";import"./section-B2tJ5UHw.js";import"./section_intro-gpem1fey.js";import"./video-CBBgLTGM.js";import"./loader-BnDbBP6a.js";import"./icon-DbjO9X_E.js";import"./button-ByEZkqbv.js";import"./read-more-C6XiWcts.js";import"./link-YWvdyZwT.js";const B={title:"Components/Modules/Contact Block"},n=a=>i(a),c={contact_email:"example@mightyu.edu",contact_phone:"123-456-7890",contact_fax:"123-456-7890",contact_locations:[{address:"1234 Mighty Building</br>Austin, TX 78745"}],contact_information:[{icon:"link",text:"Faculty Website",url:"#"},{icon:"file-doc",text:"Curriculum Vitae",url:"#"}]},t=n.bind({});t.args=c;var o,r,e;t.parameters={...t.parameters,docs:{...(o=t.parameters)==null?void 0:o.docs,source:{originalSource:`args => {
+  // You can either use a function to create DOM elements or use a plain html string!
+  // return \`<div>\${label}</div>\`;
+  return twig(args);
+}`,...(e=(r=t.parameters)==null?void 0:r.docs)==null?void 0:e.source}}};const C=["ContactBlock"];export{t as ContactBlock,C as __namedExportsOrder,B as default};

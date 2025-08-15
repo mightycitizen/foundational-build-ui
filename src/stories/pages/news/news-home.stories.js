@@ -1,5 +1,5 @@
 import twig from './news-home.twig';
-import { menu, social, logo } from '../../global/placeholders/global.json';
+import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, footer_links, site_name } from '../../global/placeholders/global.json';
 
 import { placeholder, sizes } from '../../global/placeholders/images.json';
 import {

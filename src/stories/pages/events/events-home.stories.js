@@ -1,5 +1,5 @@
 import twig from './events-home.twig';
-import { menu, social, logo } from '../../global/placeholders/global.json';
+import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, footer_links, site_name } from '../../global/placeholders/global.json';
 
 import { placeholder, sizes } from '../../global/placeholders/images.json';
 import {
@@ -64,13 +64,14 @@ const short_list_cards = [...Array(8)].map((_, i) => ({
     src: 'https://placehold.co/120x120',
     alt: 'Alt Text'
   },
-  label: 'Optional Label / TBD',
   heading: {
     text: '[h3] Heading example lorem ipsum',
     url: '#',
     level: 3
   },
-  summary: null
+  summary: null,
+  date: 'Saturday, 10.6.2024 | 6pm CT',
+  address: 'Address Goes Here, Austin, Texas, USA'
 }));
 
 export const EventsHome = Template.bind({});
@@ -79,6 +80,15 @@ EventsHome.args = {
   logo,
   breadcrumbs,
   social,
+  address,
+  utility_menu,
+  cta_menu,
+  header_dropdown,
+  menu_column,
+  anchor_nav,
+  local_nav,
+  footer_links,
+  site_name,
   image_sizes: sizes,
   image_placeholder: placeholder,
   pagination,
@@ -108,7 +118,8 @@ EventsHome.args = {
         src: '/images/featured-hierarchical.jpg',
         alt: 'Alt Text'
       },
-      date: 'Publish Date Here'
+      date: 'Saturday, 10.6.2024 | 6pm CT',
+      address: 'Address Goes Here, Austin, Texas, USA'
     },
     cards: [
       {
@@ -124,7 +135,8 @@ EventsHome.args = {
           level: 3
         },
         summary: null,
-        label: '[LABEL - PUBLISH DATE]'
+        date: 'Saturday, 10.6.2024 | 6pm CT',
+        address: 'Address Goes Here, Austin, Texas, USA'
       },
       {
         no_outline: true,
@@ -139,7 +151,8 @@ EventsHome.args = {
           level: 3
         },
         summary: null,
-        label: '[LABEL - PUBLISH DATE]'
+        date: 'Saturday, 10.6.2024 | 6pm CT',
+        address: 'Address Goes Here, Austin, Texas, USA'
       },
       {
         no_outline: true,
@@ -154,7 +167,8 @@ EventsHome.args = {
           level: 3
         },
         summary: null,
-        label: '[LABEL - PUBLISH DATE]'
+        date: 'Saturday, 10.6.2024 | 6pm CT',
+        address: 'Address Goes Here, Austin, Texas, USA'
       }
     ]
   },
@@ -167,85 +181,80 @@ EventsHome.args = {
       url: '#',
       text: 'Optional Link'
     },
+    divider: true,
     cards: [
       {
         no_outline: true,
         var: 'short',
         image: {
           src: 'https://placehold.co/120x120',
-          alt: 'Alt Text'
+          alt: 'Alt Text',
+          alignment: 'right'
         },
         heading: {
-          text: '[h3] Heading example lorem ipsum',
+          text: '[h3] News Article Title Goes Here Lorem ispum dolor sit amet',
           url: '#',
           level: 3
         },
         summary: null,
-        label: '[LABEL - PUBLISH DATE]'
+        date: 'Saturday, 10.6.2024 | 6pm CT',
+        address: 'Address Goes Here, Austin, Texas, USA'
       },
       {
         no_outline: true,
         var: 'short',
         image: {
           src: 'https://placehold.co/120x120',
-          alt: 'Alt Text'
+          alt: 'Alt Text',
+          alignment: 'right'
         },
         heading: {
-          text: '[h3] Heading example lorem ipsum',
+          text: '[h3] News Article Title Goes Here Lorem ispum dolor sit amet',
           url: '#',
           level: 3
         },
         summary: null,
-        label: '[LABEL - PUBLISH DATE]'
+        date: 'Saturday, 10.6.2024 | 6pm CT',
+        address: 'Address Goes Here, Austin, Texas, USA'
       },
       {
         no_outline: true,
         var: 'short',
         image: {
           src: 'https://placehold.co/120x120',
-          alt: 'Alt Text'
+          alt: 'Alt Text',
+          alignment: 'right'
         },
         heading: {
-          text: '[h3] Heading example lorem ipsum',
+          text: '[h3] News Article Title Goes Here Lorem ispum dolor sit amet',
           url: '#',
           level: 3
         },
         summary: null,
-        label: '[LABEL - PUBLISH DATE]'
-      },
-      {
-        no_outline: true,
-        var: 'short',
-        image: {
-          src: 'https://placehold.co/120x120',
-          alt: 'Alt Text'
-        },
-        heading: {
-          text: '[h3] Heading example lorem ipsum',
-          url: '#',
-          level: 3
-        },
-        summary: null,
-        label: '[LABEL - PUBLISH DATE]'
+        date: 'Saturday, 10.6.2024 | 6pm CT',
+        address: 'Address Goes Here, Austin, Texas, USA'
       }
     ],
     featured_card: {
       clickCard: true,
       featured: true,
       heading: {
-        text: '[h3] General content goes here - short name only, e.g. for categories',
+        text: '[h3 or h2] Individual news card / featured - headline Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor. elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali.',
         url: '#',
-        level: 3
+        level: 3,
       },
+      summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+      date: 'Saturday, 10.6.2024 | 6pm CT',
+      address: 'Address Goes Here, Austin, Texas, USA',
       image: {
-        src: '/images/featured-card.jpg',
+        src: '/images/featured-events.jpg',
         alt: 'Alt Text'
       },
     }
   },
-  card_group: {
+  hierarchical_deadlines: {
     intro_class: 'text-left',
-    section_heading: 'Related Articles',
+    section_heading: 'Upcoming Academi Dates & Deadlines',
     section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
     section_link: {
       url: '#',
@@ -254,82 +263,74 @@ EventsHome.args = {
     divider: true,
     cards: [
       {
-        badges: [
-          {
-            icon: 'icon-lightning-fill',
-            text: 'Announcement'
-          },
-          {
-            icon: 'icon-lightning-fill',
-            text: 'Featured'
-          }
-        ],
+        no_outline: true,
+        var: 'short',
         image: {
-          src: 'https://placehold.co/430x230',
-          alt: 'Alt Text'
+          src: 'https://placehold.co/120x120',
+          alt: 'Alt Text',
+          alignment: 'right'
         },
         heading: {
-          text: '[h3] Heading example lorem ipsum',
+          text: '[h3] News Article Title Goes Here Lorem ispum dolor sit amet',
           url: '#',
           level: 3
         },
-        summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+        summary: null,
+        date: 'Saturday, 10.6.2024 | 6pm CT',
+        address: 'Address Goes Here, Austin, Texas, USA'
       },
       {
-        badges: [
-          {
-            icon: 'icon-lightning-fill',
-            text: 'Announcement'
-          },
-          {
-            icon: 'icon-lightning-fill',
-            text: 'Featured'
-          }
-        ],
+        no_outline: true,
+        var: 'short',
         image: {
-          src: 'https://placehold.co/430x230',
-          alt: 'Alt Text'
+          src: 'https://placehold.co/120x120',
+          alt: 'Alt Text',
+          alignment: 'right'
         },
         heading: {
-          text: '[h3] Heading example lorem ipsum',
+          text: '[h3] News Article Title Goes Here Lorem ispum dolor sit amet',
           url: '#',
           level: 3
         },
-        summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+        summary: null,
+        date: 'Saturday, 10.6.2024 | 6pm CT',
+        address: 'Address Goes Here, Austin, Texas, USA'
       },
       {
-        badges: [
-          {
-            icon: 'icon-lightning-fill',
-            text: 'Announcement'
-          },
-          {
-            icon: 'icon-lightning-fill',
-            text: 'Featured'
-          }
-        ],
+        no_outline: true,
+        var: 'short',
         image: {
-          src: 'https://placehold.co/430x230',
-          alt: 'Alt Text'
+          src: 'https://placehold.co/120x120',
+          alt: 'Alt Text',
+          alignment: 'right'
         },
         heading: {
-          text: '[h3] Heading example lorem ipsum',
+          text: '[h3] News Article Title Goes Here Lorem ispum dolor sit amet',
           url: '#',
           level: 3
         },
-        summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+        summary: null,
+        date: 'Saturday, 10.6.2024 | 6pm CT',
+        address: 'Address Goes Here, Austin, Texas, USA'
       }
-    ]
-  },
-  short_list: {
-    intro_class: 'text-left',
-    section_heading: '[h2, optional] Modular Component Intro, Label type',
-    section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
-    section_link: {
-      url: '#',
-      text: 'Optional Link'
-    },
-    cards: short_list_cards
+    ],
+    featured_card: {
+      alignment: 'right',
+      clickCard: true,
+      featured: true,
+      heading: {
+        text: '[h3 or h2] Individual news card / featured - headline Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. ',
+        url: '#',
+        level: 3,
+      },
+      summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+      date: 'Saturday, 10.6.2024 | 6pm CT',
+      address: 'Address Goes Here, Austin, Texas, USA',
+      image: {
+        src: '/images/featured-events.jpg',
+        alt: 'Alt Text'
+      },
+    }
   }
 };
 EventsHome.parameters = {

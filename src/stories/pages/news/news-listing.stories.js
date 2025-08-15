@@ -1,5 +1,5 @@
 import twig from './news-listing.twig';
-import { menu, social, logo } from '../../global/placeholders/global.json';
+import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, footer_links, site_name } from '../../global/placeholders/global.json';
 
 import { placeholder, sizes } from '../../global/placeholders/images.json';
 import {
@@ -58,9 +58,59 @@ NewsListing.args = {
   logo,
   breadcrumbs,
   social,
+  address,
+  utility_menu,
+  cta_menu,
+  header_dropdown,
+  menu_column,
+  anchor_nav,
+  local_nav,
+  footer_links,
+  site_name,
   image_sizes: sizes,
   image_placeholder: placeholder,
-  pagination
+  pagination,
+  cards: [
+    {
+      badges: [
+        {
+          icon: 'icon-lightning-fill',
+          text: 'Report'
+        },
+        {
+          icon: 'icon-lightning-fill',
+          text: 'Featured'
+        }
+      ],
+      heading: {
+        text: "[h3] News article title, lorem ipsum dolor sit amet, full title lorem ipsum dolor sit amet",
+        url: "#",
+        level: 3
+      },
+      label: 'Label- publish date here',
+      author: {
+        text: 'Author name',
+        url: '#'
+      },
+      address: null,
+      summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+      image: {
+        src: "/images/news-listing.jpg",
+        alt: "Alt Text",
+        alignment: 'right'
+      },
+      categories: [
+        {
+          text: 'Category goes here',
+          url: '#'
+        },
+        {
+          text: 'Category goes here',
+          url: '#'
+        }
+      ]
+    }
+  ]
 };
 NewsListing.parameters = {
   layout: 'fullscreen'

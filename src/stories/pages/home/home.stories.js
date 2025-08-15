@@ -1,6 +1,6 @@
 import twig from './home.twig';
 
-import { menu, social, logo, address, footer_links, site_name } from '../../global/placeholders/global.json';
+import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, footer_links, site_name } from '../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 // import {
@@ -43,6 +43,12 @@ const defaultArgs = {
   social,
   logo,
   address,
+  utility_menu,
+  cta_menu,
+  header_dropdown,
+  menu_column,
+  anchor_nav,
+  local_nav,
   footer_links,
   site_name,
   modules: [

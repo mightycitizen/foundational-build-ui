@@ -10,10 +10,6 @@
   {% if featured | default %}</div>{% endif %}
 {% endif %}
 
-{% if label | default %}
-  <span class="text-sm uppercase text-neutrals-800 font-bold mb-3 block">{{ label }}</span>
-{% endif %}
-
 {% set heading_level = heading.level | default ? heading.level : 3 %}
 
 <h{{ heading_level }} class="card_title text-lg md:text-2xl {{ heading.modifier | default }}">
@@ -25,6 +21,18 @@
     </a>
   {% endif %}
 </h{{ heading_level }}>
+
+{% if label | default or author | default %}
+  <ul class="list-none flex gap-x-4 mb-3">
+  {% if label | default %}
+    <li class="text-sm uppercase text-neutrals-800 font-bold">{{ label }}</li>
+  {% endif %}
+
+  {% if author | default %}
+    <li class="text-sm"><a class="text-neutrals-800" href="{{ author.url }}">{{ author.text }}</a></li>
+  {% endif %}
+  </ul>
+{% endif %}
 
 {% if subheading | default %}
   <p class="card_subheading mb-4 font-bold {{ subheading_modifier | default }}">{{ subheading }}</p>
@@ -40,18 +48,22 @@
   <p class="card_summary mb-4 {{ summary_modifier | default }}">{{ summary }}</p>
 {% endif %}
 
-{% if date | default %}
-  <p class="flex items-center gap-x-2 mb-2">
-    <span class="ph ph-[calendar-blank] text-primary text-2xl"></span>
-    <span class="font-bold">{{ date }}</span>
-  </p>
-{% endif %}
+{% if date | default or address | default %}
+<ul class="list-none{% if featured | default %} flex gap-x-4{% endif %}">
+  {% if date | default %}
+    <li class="flex items-center gap-x-2 mb-2">
+      <span class="ph ph-[calendar-blank] {% if featured is empty %}text-primary {% endif%}text-2xl"></span>
+      <span class="font-bold">{{ date }}</span>
+    </li>
+  {% endif %}
 
-{% if address | default %}
-  <p class="flex items-center gap-x-2 mb-2">
-    <span class="ph ph-[map-pin] text-primary text-2xl"></span>
-    <span class="font-bold">{{ address }}</span>
-  </p>
+  {% if address | default %}
+    <li class="flex items-center gap-x-2 mb-2">
+      <span class="ph ph-[map-pin] {% if featured is empty %}text-primary {% endif%} text-2xl"></span>
+      <span class="font-bold">{{ address }}</span>
+    </li>
+  {% endif %}
+</ul>
 {% endif %}
 
 {% if button | default %}
@@ -107,4 +119,12 @@
     class: 'inline-flex',
     style: 'light'
   } %}
+{% endif %}
+
+{% if categories | default %}
+  <ul class="list-none flex gap-x-4">
+  {% for item in categories %}
+    <li><a class="filter-button" href="{{ item.url }}">{{ item.text }}</a></li>
+  {% endfor %}
+  </ul>
 {% endif %}
