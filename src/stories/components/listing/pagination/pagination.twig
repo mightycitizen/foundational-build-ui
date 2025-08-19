@@ -2,7 +2,7 @@
   <ul class="pagination flex gap-3 md:gap-7 justify-center text-center mt-3 lg:mt-5 mb-0 list-none items-center">
     {% if previous | default %}
       <li class="pagination-previous">
-        {% include '@components/links/arrow/arrow.twig' with { direction: 'Previous', url: prev } %}
+        {% include '@components/links/arrow/arrow.twig' with { direction: 'Previous', url: previous } %}
         
       </li>
     {% endif %}
