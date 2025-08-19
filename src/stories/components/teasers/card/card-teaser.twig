@@ -1,0 +1,15 @@
+
+{% if image | default %}
+  {% set col_1 %}
+    <img {% if lazyload_attr | default %}{{ lazyload_attr }}="{{ image.src }}"{% else %}src="{{ image.src }}" {% if disable_lazy | default != true %}loading="lazy"{% endif %}{% endif %}  alt="{{ image.alt }}" class="w-full ">
+  {% endset %}
+{% endif %}
+{% set col_2 %}
+  {% include '@components/teasers/card/_card-content.twig' %}
+{% endset %}
+
+{% include '@layout/columns/columns.twig' with {
+  columns: 'narrow',
+  col_1: col_1,
+  col_2: col_2
+} only %}
