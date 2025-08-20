@@ -34,7 +34,7 @@ const hero_secondary = {
     "alt": "University view"
   },
   heading: "Hon. prefix Firstname lastname hon. suffix",
-  organization_type: '[Organization type] Academic Department',
+  subheading: '[Organization type] Academic Department',
   organizations: [
     {
       text: 'Parent organization (if applicable)',
