@@ -111,9 +111,9 @@
                   </ul>
                 {% endif %}
 
-                {% if organizations | default %}
+                {% if inline_links | default %}
                   <ul class="list-none">
-                    {% for item in organizations %}
+                    {% for item in inline_links %}
                       <li class="inline-block"><a class="text-neutrals-800 md:text-lg" href="{{ item.url }}">{{ item.text }}</a>{{ not loop.last ? ',' }}</li>
                     {% endfor %}
                   </ul>

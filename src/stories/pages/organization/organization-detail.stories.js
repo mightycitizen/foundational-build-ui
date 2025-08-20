@@ -35,7 +35,7 @@ const hero_secondary = {
   },
   heading: "Hon. prefix Firstname lastname hon. suffix",
   subheading: '[Organization type] Academic Department',
-  organizations: [
+  inline_links: [
     {
       text: 'Parent organization (if applicable)',
       url: '#'

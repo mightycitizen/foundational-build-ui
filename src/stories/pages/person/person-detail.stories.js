@@ -35,7 +35,7 @@ const hero_secondary = {
   },
   heading: "Hon. prefix Firstname lastname hon. suffix",
   subheading: 'Job title lorem ipsum',
-  organizations: [
+  inline_links: [
     {
       text: 'Primary organization',
       url: '#'
