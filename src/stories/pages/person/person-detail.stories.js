@@ -34,8 +34,8 @@ const hero_secondary = {
     "alt": "University view"
   },
   heading: "Hon. prefix Firstname lastname hon. suffix",
-  jobtitle: 'Job title lorem ipsum',
-  organizations: [
+  subheading: 'Job title lorem ipsum',
+  inline_links: [
     {
       text: 'Primary organization',
       url: '#'

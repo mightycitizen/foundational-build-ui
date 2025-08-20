@@ -34,7 +34,7 @@ const hero_secondary = {
     "alt": "University view"
   },
   heading: "Program title goes here lorem ipsum dolor",
-  subheading: 'Online MBA Program for Working Adults',
+  tagline: 'Online MBA Program for Working Adults',
   summary: "[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. ",
   hero_button: {
     text: "Primary Button",

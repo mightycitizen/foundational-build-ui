@@ -96,15 +96,11 @@
                 <h1 class="text-5xl">{{ heading }}</h1>
 
                 {% if subheading | default %}
-                  <p class="text-2xl">{{ subheading }}</p>
+                  <p class="text-xl md:text-2xl font-bold mb-3">{{ subheading }}</p>
                 {% endif %}
 
-                {% if organization_type | default %}
-                  <p class="text-xl md:text-2xl font-bold mb-3">{{ organization_type }}</p>
-                {% endif %}
-
-                {% if jobtitle | default %}
-                  <p class="text-xl md:text-2xl font-bold mb-3">{{ jobtitle }}</p>
+                {% if tagline | default %}
+                  <p class="text-2xl ">{{ tagline }}</p>
                 {% endif %}
 
                 {% if list | default %}
@@ -115,9 +111,9 @@
                   </ul>
                 {% endif %}
 
-                {% if organizations | default %}
+                {% if inline_links | default %}
                   <ul class="list-none">
-                    {% for item in organizations %}
+                    {% for item in inline_links %}
                       <li class="inline-block"><a class="text-neutrals-800 md:text-lg" href="{{ item.url }}">{{ item.text }}</a>{{ not loop.last ? ',' }}</li>
                     {% endfor %}
                   </ul>
