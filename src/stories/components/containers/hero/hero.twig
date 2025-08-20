@@ -48,7 +48,7 @@
 {% set background_color = background_color|default('light') %}
 {% if image | default %}{% set split_content = true %}{% endif %}
 
-<div class="hero{% if background_image | default %} hero--background-image{% endif %}{% if background_color == 'dark' %} text-white bg-primary-800 {% endif%}{% if content_type == 'alert' %} bg-neutrals-50{% endif%} relative">
+<div class="hero{% if background_image | default %} hero--background-image{% endif %}{% if background_color == 'dark' %} text-white bg-primary-800 {% endif%}{% if background_color == 'neutral' %} bg-neutrals-50{% endif%} relative">
   {% if background_image | default %}
   <div class="inset-0 w-full h-full max-h-[600px] overflow-hidden">
     <img src="{{ background_image.src }}" alt="{{ background_image.alt }}" class="w-full h-full object-cover object-center">
@@ -160,7 +160,6 @@
                 </div>
               {% endif %}
             </div>
-
           </div>
         </div>
 {#        <div class="col-span-12 lg:col-span-4 md:col-span-6 md:order-2 flex md:justify-end">#}
@@ -170,6 +169,11 @@
 {#        </div>#}
       </div>
     </div>
+    {% if info_panel | default %}
+      <div class="container pt-8">
+        {{ info_panel }}
+      </div>
+    {% endif %}
   </div>
   {% if links_bar_menu | default %}
   <div class="links-bar {% if background_color == 'dark' %}bg-neutrals-50 text-primary-500 shadow{% else %}bg-primary-500 text-white{% endif %}">
