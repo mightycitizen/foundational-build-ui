@@ -168,6 +168,7 @@ const defaultArgs = {
       divider: true,
       cards: [
         {
+          no_outline: true,
           badges: [
             {
               icon: 'icon-lightning-fill',
@@ -182,7 +183,7 @@ const defaultArgs = {
             src: 'https://placehold.co/430x230',
             alt: 'Alt Text'
           },
-          label: 'Events',
+          type: 'Events',
           heading: {
             text: '[h3] Heading example lorem ipsum',
             url: '#',
@@ -193,6 +194,7 @@ const defaultArgs = {
           address: 'Address Goes Here, Austin, Texas, USA'
         },
         {
+          no_outline: true,
           badges: [
             {
               icon: 'icon-lightning-fill',
@@ -207,7 +209,7 @@ const defaultArgs = {
             src: 'https://placehold.co/430x230',
             alt: 'Alt Text'
           },
-          label: 'Events',
+          type: 'Events',
           heading: {
             text: '[h3] Heading example lorem ipsum',
             url: '#',
@@ -218,6 +220,7 @@ const defaultArgs = {
           address: 'Address Goes Here, Austin, Texas, USA'
         },
         {
+          no_outline: true,
           badges: [
             {
               icon: 'icon-lightning-fill',
@@ -232,7 +235,7 @@ const defaultArgs = {
             src: 'https://placehold.co/430x230',
             alt: 'Alt Text'
           },
-          label: 'Events',
+          type: 'Events',
           heading: {
             text: '[h3] Heading example lorem ipsum',
             url: '#',

@@ -10,6 +10,10 @@
   {% if featured | default %}</div>{% endif %}
 {% endif %}
 
+{% if type | default %}
+  <p class="text-sm uppercase text-neutrals-800 font-bold mb-2">{{ type }}</p>
+{% endif %}
+
 {% set heading_level = heading.level | default ? heading.level : 3 %}
 
 <h{{ heading_level }} class="card_title text-lg md:text-2xl {{ heading.modifier | default }}">
