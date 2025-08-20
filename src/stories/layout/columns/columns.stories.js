@@ -8,7 +8,9 @@ const ColumnsTemplate = (args) => columnsTwig(args);
 
 const defaultArgs = {
   col_1: 'Column 1',
-  col_2: 'Column 2'
+  col_2: 'Column 2',
+  col_1_modifiers: 'bg-neutrals-100 text-center',
+  col_2_modifiers: 'bg-neutrals-100 text-center',
 };
 
 export const ColumnsNarrow = ColumnsTemplate.bind({});

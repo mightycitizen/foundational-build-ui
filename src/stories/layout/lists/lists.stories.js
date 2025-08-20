@@ -8,12 +8,10 @@ const ListsTemplate = (args) => listsTwig(args);
 
 const defaultArgs = {
   items: [
-    '<div>Item</div>',
-    '<div>Item</div>',
-    '<div>Item</div>',
-    '<div>Item</div>',
-    '<div>Item</div>',
-    '<div>Item</div>',
+    '<div class="bg-neutrals-100 text-center">Item</div>',
+    '<div class="bg-neutrals-100 text-center">Item</div>',
+    '<div class="bg-neutrals-100 text-center">Item</div>',
+    '<div class="bg-neutrals-100 text-center">Item</div>',
   ],
 };
 
@@ -32,4 +30,5 @@ List2Col.args = {
 export const List3Col = ListsTemplate.bind({});
 List3Col.args = {
   ...defaultArgs,
+  columns: 3
 }

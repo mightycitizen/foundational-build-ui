@@ -1,3 +1,17 @@
+{#
+  Used to display columned content within a section.
+  Does not include any padding or styling – that should be handled by the rendered content.
+
+  Content:
+    - col_1:              rendered content.
+    - col_2:              rendered content.
+
+  Styling:
+    - columns:            'narrow', 'default', 'wide', or 'half' (col_1_classes and col_2_classes are set based on these values).
+    - col_1_modifiers:    additional classes (optional).
+    - col_2_modifiers:    additional classes (optional).
+#}
+
 {% set col_1_classes = 'md:col-span-4' %}
 {% set col_2_classes = 'md:col-span-8' %}
 
