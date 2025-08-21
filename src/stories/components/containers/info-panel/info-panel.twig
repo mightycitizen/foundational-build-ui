@@ -23,7 +23,7 @@
                       <li>
                         <div class="flex gap-x-2 items-center {{ panel_theme == 'light' ? 'text-primary-500' : NULL }}">
                           {% if item.icon %}
-                              {% include '@components/inline-text/icon/icon.twig' with { icon: { name: item.icon }, modifiers: 'text-xl' } only %}
+                              {% include '@components/inline-text/icon/icon.twig' with { icon: item.icon, modifiers: 'text-xl' } only %}
                           {% endif %}
                           {% if item.label %}<span class="font-bold">{{ item.label }}:</span>{% endif %}
                           {% if item.content %}<span class="font-bold">{{ item.content }}</span>{% endif %}
