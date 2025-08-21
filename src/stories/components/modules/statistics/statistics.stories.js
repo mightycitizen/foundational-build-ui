@@ -59,7 +59,7 @@ const defaultArgs = {
       },
       value: '#1 Best Value',
       caption: 'of private universities in Kansas',
-      description: 'Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025</a>'
+      description: 'Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025. Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025</a>'
     },
     {
       stat_bg: 'primary-50',
@@ -89,7 +89,7 @@ const defaultArgs = {
       },
       value: '#1 Best Value',
       caption: 'of private universities in Kansas',
-      description: 'Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025</a>'
+      description: 'Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025. Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025</a>'
     },
     {
       stat_bg: 'primary-50',

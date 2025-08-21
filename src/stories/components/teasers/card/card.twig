@@ -1,5 +1,5 @@
 
-<div class="card {% if no_outline is empty | default %}bg-{{ background_color | default('white')}} shadow-md{% endif%} {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }}{% if clickCard | default %} card--click{% endif %}" >
+<div class="card {% if no_outline is empty | default %}bg-{{ background_color | default('white')}} h-full shadow-md{% endif%} {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }}{% if clickCard | default %} card--click{% endif %}" >
   {% if header | default %}
   <div class="card_divider">
     {{ header }}

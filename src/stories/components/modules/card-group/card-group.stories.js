@@ -36,7 +36,59 @@ const cards = [...Array(3)].map((_, i) => ({
 const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
-  cards: cards
+  cards: [
+    {
+      equalize: true,
+      image: {
+        src: 'https://placehold.co/430x230',
+        alt: 'Alt Text'
+      },
+      heading: {
+        text: '[h3] Heading example lorem ipsum',
+        url: '#',
+        level: 3
+      },
+      summary: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+      link: {
+        text: 'Link',
+        url: '#'
+      }
+    },
+    {
+      equalize: true,
+      image: {
+        src: 'https://placehold.co/430x230',
+        alt: 'Alt Text'
+      },
+      heading: {
+        text: '[h3] Heading example lorem ipsum',
+        url: '#',
+        level: 3
+      },
+      summary: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+      link: {
+        text: 'Link',
+        url: '#'
+      }
+    },
+    {
+      equalize: true,
+      image: {
+        src: 'https://placehold.co/430x230',
+        alt: 'Alt Text'
+      },
+      heading: {
+        text: '[h3] Heading example lorem ipsum',
+        url: '#',
+        level: 3
+      },
+      summary: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+      link: {
+        text: 'Link',
+        url: '#'
+      }
+    }
+  ]
 };
 const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

@@ -51,7 +51,7 @@
         {% endif %}
 
         {# Add column wrapper for button and link if intro is not center #}
-        {% if intro_class == 'text-left' %}
+        {% if intro_class != 'text-center' %}
         </div>
         <div class="col-span-12 md:col-span-4 md:ml-auto">
         {% endif %}
