@@ -1,8 +1,38 @@
-{% embed '@components/sections/section.twig' with {
+{% include '@components/containers/info-panel/info-panel.twig' with {
+  panel_theme: 'light',
+  label_display: 'inline',
+  border: false,
+  columns: [
+    {
+      heading: 'Contact',
+      items: [
+        { icon: { name: 'ph ph-[at]' }, label: 'Email', content: 'example@mightyu.edu' },
+        { icon: { name: 'ph ph-[phone-call]' }, label: 'Phone', content: '123-456-7890' },
+        { icon: { name: 'ph ph-[phone-call]' }, label: 'Fax', content: '123-456-7890' },
+      ]
+    },
+    {
+      heading: 'Location',
+      items: [
+        { icon: { name: 'ph ph-[map-pin-line]' }, label: '<a href="#">Address</a>', additional_info: '1234 Mighty Building<br>Austin, TX 78745' },
+      ]
+    },
+    {
+      heading: 'Information',
+      items: [
+        { icon: { name: 'ph ph-[link]' }, content: '<a href="#">Faculty Website</a>' },
+        { icon: { name: 'ph ph-[link]' }, content: '<a href="#">Curriculum Vitae</a>' },
+      ]
+    }
+  ]
+}%}
+
+{# {% embed '@components/sections/section.twig' with {
   section_class: 'lg:pt-0',
 }
 %}
   {% block section_content %}
+
     <div class="contact-block bg-primary-50">
       <div class="md:max-w-[1152px] md:mx-auto px-[25px] py-10">
         <div class="grid grid-cols-12 gap-y-10 md:gap-x-16">
@@ -55,4 +85,4 @@
       </div>
     </div>
   {% endblock %}
-{% endembed %}
+{% endembed %} #}
