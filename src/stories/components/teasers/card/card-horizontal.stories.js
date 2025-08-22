@@ -39,4 +39,5 @@ FlushImage.args = {
   ...defaultArgs,
   image_position: 'flush'
 };
+
 export { Default, NoImage, FlushImage };

@@ -27,6 +27,7 @@ const Template = (args) => {
 const defaultArgs = {
   steps: [
     {
+      label: 'LABEL - GENERIC / OPTIONAL',
       heading: 'Test',
       description: 'Test',
       link: {
@@ -35,6 +36,7 @@ const defaultArgs = {
       }
     },
     {
+      label: 'LABEL - GENERIC / OPTIONAL',
       heading: 'Test',
       description: 'Test',
       link: {
@@ -43,6 +45,7 @@ const defaultArgs = {
       }
     },
     {
+      label: 'LABEL - GENERIC / OPTIONAL',
       heading: 'Test',
       description: 'Test',
       link: {
