@@ -26,14 +26,16 @@
   {% endif %}
 </h{{ heading_level }}>
 
-{% if label | default or author | default %}
+{% if label | default or authors | default %}
   <ul class="list-none flex gap-x-4 mb-3">
   {% if label | default %}
     <li class="text-sm uppercase text-neutrals-800 font-bold">{{ label }}</li>
   {% endif %}
 
-  {% if author | default %}
-    <li class="text-sm"><a class="text-neutrals-800" href="{{ author.url }}">{{ author.text }}</a></li>
+  {% if authors | default %}
+    {% for author in authors %}
+      <li class="text-sm"><a class="text-neutrals-800" href="{{ author.url }}">{{ author.text }}</a></li>
+    {% endfor %}
   {% endif %}
   </ul>
 {% endif %}
@@ -56,6 +58,7 @@
   <p class="card_summary mb-4 {{ summary_modifier | default }}">{{ summary }}</p>
 {% endif %}
 
+{# TODO: merge into additional_info below #}
 {% if date | default or address | default %}
 <ul class="list-none{% if featured | default %} flex gap-x-4{% endif %}">
   {% if date | default %}
@@ -85,6 +88,8 @@
     {{ jobtitle }}
   </p>
 {% endif %}
+
+{# TODO: merge into additional_info below #}
  {% if contact_email | default %}
    <p class="flex gap-x-2 text-primary-500 items-center mb-2">
      <span class="ph ph-[envelope] text-xl"></span> <a href="mailto:{{ contact_email }}">Email</a>
@@ -99,6 +104,10 @@
   <p class="flex gap-x-2 text-primary-500 items-center mb-2">
     <span class="ph ph-[buildings] text-xl"></span> <a href="{{ department.url }}">{{ department.text }}</a>
   </p>
+{% endif %}
+
+{% if additional_info | default %}
+  {{ additional_info }}
 {% endif %}
 
 {% if link | default %}
