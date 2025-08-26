@@ -46,7 +46,7 @@
 
 {% if specializations | default %}
   <p class="card_specialization mb-4 {{ specializations_modifier | default }}">
-    <span class="font-bold">Specializations:</span> {{ specializations }}
+    <span class="font-bold">{{ specializations_label | default('Specializations' )}}:</span> {{ specializations }}
   </p>
 {% endif %}
 
