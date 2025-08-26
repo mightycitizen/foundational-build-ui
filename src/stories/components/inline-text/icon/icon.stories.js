@@ -43,6 +43,6 @@ Background.args = Object.assign(
     icon: {
       name: 'ph ph-[building]',
       background: 'primary-500',
-    },
+    }
   }
 );

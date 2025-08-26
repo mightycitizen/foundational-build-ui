@@ -102,7 +102,6 @@ const defaultArgs = {
             url: '#',
             level: 3
           },
-          publish_date: 'PUBLISH DATE HERE',
           summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
         },
         {
@@ -125,7 +124,6 @@ const defaultArgs = {
             url: '#',
             level: 3
           },
-          publish_date: 'PUBLISH DATE HERE',
           summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
         },
         {
@@ -148,7 +146,6 @@ const defaultArgs = {
             url: '#',
             level: 3
           },
-          publish_date: 'PUBLISH DATE HERE',
           summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
         }
       ]

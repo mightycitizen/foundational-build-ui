@@ -42,10 +42,6 @@
   <p class="card_subheading mb-4 font-bold {{ subheading_modifier | default }}">{{ subheading }}</p>
 {% endif %}
 
-{% if publish_date %}
-  <p class="card_publish-date mb-4 text-primary-500 font-bold">{{ publish_date }}</p>
-{% endif %}
-
 {% if specializations | default %}
   <p class="card_specialization mb-4 {{ specializations_modifier | default }}">
     <span class="font-bold">Specializations:</span> {{ specializations }}
