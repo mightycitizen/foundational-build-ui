@@ -1907,6 +1907,10 @@ input[type="radio"]:focus:not(:checked).custom,
   width: 100%;
 }
 
+.max-w-20 {
+  max-width: 5rem;
+}
+
 .max-w-full {
   max-width: 100%;
 }
@@ -3439,10 +3443,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
   .md\:hidden {
     display: none;
-  }
-
-  .md\:h-auto {
-    height: auto;
   }
 
   .md\:w-1\/2 {

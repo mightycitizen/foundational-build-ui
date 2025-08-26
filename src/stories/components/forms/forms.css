@@ -140,7 +140,7 @@ input[type=email]{
   @apply bg-neutrals-50 border-[1px] border-neutrals-300 rounded-[4px] px-2 py-2 text-xs;
 }
 
-#views-exposed-form-programs-block-1--secondary {
+.secondary-exposed-form {
   overflow: hidden;
 
   .bef--secondary {
