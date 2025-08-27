@@ -855,7 +855,6 @@ p:last-child {
 }
 
 a {
-  display: inline-block;
   --tw-text-opacity: 1;
   color: rgb(41 83 204 / var(--tw-text-opacity, 1));
   text-decoration-line: underline;

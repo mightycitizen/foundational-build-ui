@@ -118,6 +118,8 @@
   {% endif %}
 {% endif %}
 
+{% if campus | default or online | default %}
+<div>
 {% if campus | default %}
   {% include '@components/inline-text/badge/badge.twig' with {
     icon: 'icon-buildings',
@@ -132,6 +134,8 @@
     class: 'inline-flex',
     style: 'light'
   } %}
+{% endif %}
+</div>
 {% endif %}
 
 {% if categories | default %}

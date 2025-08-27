@@ -64,7 +64,7 @@
 
 
     a {
-        @apply text-primary underline inline-block;
+        @apply text-primary underline;
 
         &:hover,
         &:focus-visible {
