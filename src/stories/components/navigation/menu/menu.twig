@@ -163,10 +163,12 @@
                       }, 100);
 								    }
 								  }">
+{#
 							<li role="presentation" class="parent-link font-bold lg:px-6 py-1">
 								<a {% if link.new_window | default %} target="_blank" rel="noopener" {% endif %} href="{{ link.url }}" class="text-primary">{{ link.text }}
 									Overview</a>
 							</li>
+#}
 							{% for child in link.children %}
 								<li
                   @focusin="if (window.innerWidth > this.breakpoint) childOpen.lg = {{ loop.index0 }}"
@@ -187,7 +189,7 @@
 
 										</button>
 									{% endif %}
-									<a @keydown.enter="toggleChildDropdown({{ loop.index0 }})" role="menuitem" class="no-underline {{ child.children ? 'hidden lg:flex justify-between gap-2 items-center w-full' : 'inline-flex' }}" href="{{ link.url }}">
+									<a @keydown.enter="toggleChildDropdown({{ loop.index0 }})" role="menuitem" class="no-underline {{ child.children ? 'hidden lg:flex justify-between gap-2 items-center w-full' : 'inline-flex' }}" href="{{ child.url }}">
                     <span class="underline flex w-full hover:no-underline">
                       {{ child.text }}
                     </span>
