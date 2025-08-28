@@ -1,5 +1,0 @@
-import{t as n}from"./step-list-CqlIEUaC.js";import"./twig-BXd3Gfe2.js";import"./_commonjsHelpers-BosuxZz1.js";import"./twig-foVUGi9y.js";import"./read-more-C6XiWcts.js";import"./link-YWvdyZwT.js";const T={title:"Components/Listing/Steps",argTypes:{}},a=i=>n(i),o={steps:[{label:"LABEL - GENERIC / OPTIONAL",heading:"Test",description:"Test",link:{text:"Test",url:"#"}},{label:"LABEL - GENERIC / OPTIONAL",heading:"Test",description:"Test",link:{text:"Test",url:"#"}},{label:"LABEL - GENERIC / OPTIONAL",heading:"Test",description:"Test",link:{text:"Test",url:"#"}}]},t=a.bind({});t.args=o;var e,s,r;t.parameters={...t.parameters,docs:{...(e=t.parameters)==null?void 0:e.docs,source:{originalSource:`args => {
-  // You can either use a function to create DOM elements or use a plain html string!
-  // return \`<div>\${label}</div>\`;
-  return twig(args);
-}`,...(r=(s=t.parameters)==null?void 0:s.docs)==null?void 0:r.source}}};const g=["StepList"];export{t as StepList,g as __namedExportsOrder,T as default};

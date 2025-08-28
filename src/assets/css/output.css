@@ -1551,6 +1551,10 @@ input[type="radio"]:focus:not(:checked).custom,
   order: 3;
 }
 
+.order-4 {
+  order: 4;
+}
+
 .col-span-10 {
   grid-column: span 10 / span 10;
 }
@@ -1561,6 +1565,18 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .col-span-2 {
   grid-column: span 2 / span 2;
+}
+
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
+.row-span-3 {
+  grid-row: span 3 / span 3;
+}
+
+.row-span-2 {
+  grid-row: span 2 / span 2;
 }
 
 .float-right {
@@ -2012,8 +2028,32 @@ input[type="radio"]:focus:not(:checked).custom,
   list-style-type: none;
 }
 
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-rows-4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.grid-rows-subgrid {
+  grid-template-rows: subgrid;
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -2030,6 +2070,14 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .flex-nowrap {
   flex-wrap: nowrap;
+}
+
+.place-content-center {
+  place-content: center;
+}
+
+.place-items-center {
+  place-items: center;
 }
 
 .items-start {
@@ -2086,6 +2134,10 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .gap-x-1 {
@@ -2205,6 +2257,10 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .self-center {
   align-self: center;
+}
+
+.justify-self-center {
+  justify-self: center;
 }
 
 .overflow-hidden {
@@ -3378,6 +3434,22 @@ input[type="radio"]:focus:not(:checked).custom,
     grid-column-start: 3;
   }
 
+  .md\:col-start-2 {
+    grid-column-start: 2;
+  }
+
+  .md\:row-span-3 {
+    grid-row: span 3 / span 3;
+  }
+
+  .md\:row-span-2 {
+    grid-row: span 2 / span 2;
+  }
+
+  .md\:row-start-2 {
+    grid-row-start: 2;
+  }
+
   .md\:float-right {
     float: right;
   }
@@ -3468,6 +3540,30 @@ input[type="radio"]:focus:not(:checked).custom,
     flex-basis: auto;
   }
 
+  .md\:grid-cols-\[auto_3fr_1fr\] {
+    grid-template-columns: auto 3fr 1fr;
+  }
+
+  .md\:grid-cols-\[auto_2fr_1fr\] {
+    grid-template-columns: auto 2fr 1fr;
+  }
+
+  .md\:grid-cols-\[2fr_auto\] {
+    grid-template-columns: 2fr auto;
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-rows-\[auto_auto_auto\] {
+    grid-template-rows: auto auto auto;
+  }
+
+  .md\:grid-rows-\[auto_auto\] {
+    grid-template-rows: auto auto;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -3520,6 +3616,10 @@ input[type="radio"]:focus:not(:checked).custom,
 
   .md\:gap-y-9 {
     row-gap: 2.25rem;
+  }
+
+  .md\:gap-y-4 {
+    row-gap: 1rem;
   }
 
   .md\:space-y-11 > :not([hidden]) ~ :not([hidden]) {
