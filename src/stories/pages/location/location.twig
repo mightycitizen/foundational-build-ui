@@ -8,7 +8,7 @@
     padding: 'tight',
   } %}
     {% block section_content %}
-      {% include '@layout/structure/content-pieces.twig' %}
+      {% include '@layout/structure/content-grid.twig' %}
 
       {% set sidebar %}
         {% include '@components/sidebar/sidebar-events.twig' with page_sidebar %}
@@ -16,7 +16,9 @@
 
       {% set hero_section %}
         <div>
-          {{ breadcrumbs }}
+          {% block breadcrumbs %}
+            {{ breadcrumbs }}
+          {% endblock %}
           <p class="font-bold text-sm uppercase mb-1">{{ page_type }}</p>
           <h1>{{ page_title }}</h1>
           {% if page_subheading | default %}

@@ -26,16 +26,14 @@
   {% endif %}
 </h{{ heading_level }}>
 
-{% if label | default or authors | default %}
+{% if label | default or author | default %}
   <ul class="list-none flex gap-x-4 mb-3">
   {% if label | default %}
     <li class="text-sm uppercase text-neutrals-800 font-bold">{{ label }}</li>
   {% endif %}
 
-  {% if authors | default %}
-    {% for author in authors %}
-      <li class="text-sm"><a class="text-neutrals-800" href="{{ author.url }}">{{ author.text }}</a></li>
-    {% endfor %}
+  {% if author | default %}
+    <li class="text-sm"><a class="text-neutrals-800" href="{{ author.url }}">{{ author.text }}</a></li>
   {% endif %}
   </ul>
 {% endif %}
@@ -44,9 +42,13 @@
   <p class="card_subheading mb-4 font-bold {{ subheading_modifier | default }}">{{ subheading }}</p>
 {% endif %}
 
+{% if publish_date %}
+  <p class="card_publish-date mb-4 text-primary-500 font-bold">{{ publish_date }}</p>
+{% endif %}
+
 {% if specializations | default %}
   <p class="card_specialization mb-4 {{ specializations_modifier | default }}">
-    <span class="font-bold">{{ specializations_label | default('Specializations' )}}:</span> {{ specializations }}
+    <span class="font-bold">Specializations:</span> {{ specializations }}
   </p>
 {% endif %}
 
@@ -54,7 +56,6 @@
   <p class="card_summary mb-4 {{ summary_modifier | default }}">{{ summary }}</p>
 {% endif %}
 
-{# TODO: merge into additional_info below #}
 {% if date | default or address | default %}
 <ul class="list-none{% if featured | default %} flex gap-x-4{% endif %}">
   {% if date | default %}
@@ -84,8 +85,6 @@
     {{ jobtitle }}
   </p>
 {% endif %}
-
-{# TODO: merge into additional_info below #}
  {% if contact_email | default %}
    <p class="flex gap-x-2 text-primary-500 items-center mb-2">
      <span class="ph ph-[envelope] text-xl"></span> <a href="mailto:{{ contact_email }}">Email</a>
@@ -102,10 +101,6 @@
   </p>
 {% endif %}
 
-{% if list_items | default %}
-  {{ include('@components/listing/icon-list/icon-list.twig', { items: list_items }) }}
-{% endif %}
-
 {% if link | default %}
   {% include '@components/links/read-more/read-more.twig' with {
     class: 'h4',
@@ -118,8 +113,6 @@
   {% endif %}
 {% endif %}
 
-{% if campus | default or online | default %}
-<div>
 {% if campus | default %}
   {% include '@components/inline-text/badge/badge.twig' with {
     icon: 'icon-buildings',
@@ -134,8 +127,6 @@
     class: 'inline-flex',
     style: 'light'
   } %}
-{% endif %}
-</div>
 {% endif %}
 
 {% if categories | default %}

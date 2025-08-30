@@ -5,6 +5,7 @@
     {{ header }}
   </div>
   {% endif %}
+
   {% if image | default %}
     <div class="card_image w-full relative">
       <img {% if lazyload_attr | default %}{{ lazyload_attr }}="{{ image.src }}"{% else %}src="{{ image.src }}" {% if disable_lazy | default != true %}loading="lazy"{% endif %}{% endif %}  alt="{{ image.alt }}" class="w-full ">
@@ -22,6 +23,15 @@
       {% endif %}
     </div>
   {% endif %}
+
+  {% if icon | default %}
+  <div class="card_icon bg-primary-100 w-full relative text-center py-8">
+    <div class="bg-white p-[8px] rounded-full inline-block border-[13px] border-primary">
+      {% include '@components/inline-text/icon/icon.twig' with { modifiers: 'text-[2.75rem] align-middle' }%}
+    </div>
+  </div>
+  {% endif %}
+
   <div class="card_section {% if no_outline is empty | default %}p-6 {% else %}py-6 {% endif%}bg-white" {% if equalize | default %}data-equalizer-watch{% endif %}>
     {% if image | default is empty %}
         {% if flag | default %}
