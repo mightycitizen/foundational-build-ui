@@ -855,7 +855,6 @@ p:last-child {
 }
 
 a {
-  display: inline-block;
   --tw-text-opacity: 1;
   color: rgb(41 83 204 / var(--tw-text-opacity, 1));
   text-decoration-line: underline;
@@ -1604,6 +1603,11 @@ input[type="radio"]:focus:not(:checked).custom,
 .my-px {
   margin-top: 1px;
   margin-bottom: 1px;
+}
+
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .\!mt-0 {
@@ -3380,6 +3384,10 @@ input[type="radio"]:focus:not(:checked).custom,
 
   .md\:col-start-3 {
     grid-column-start: 3;
+  }
+
+  .md\:float-right {
+    float: right;
   }
 
   .md\:mx-0 {

@@ -139,3 +139,103 @@ input[type=email]{
 .active-filters__button {
   @apply bg-neutrals-50 border-[1px] border-neutrals-300 rounded-[4px] px-2 py-2 text-xs;
 }
+.views-exposed-form {
+  .collapsible-button {
+    border-bottom: 1px solid #E2E2E2;
+    border-top: 1px solid #E2E2E2;
+    @apply py-4 text-lg font-medium text-primary-900 items-center;
+
+    @media (max-width: 767px) {
+      display: inline-flex;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    &.active {
+      border-bottom: 1px solid transparent;
+      &:after {
+        content: '\E13C';
+      }
+    }
+
+    &:after {
+      @apply bg-primary-100 text-primary-500 rounded-full text-xl ml-auto;
+      content: '\e434';
+      display: inline-block;
+      font-family: "Phosphor";
+      line-height: 40px;
+      height: 40px;
+      text-align: center;
+      width: 40px;
+    }
+  }
+  .collapsible-inner-wrapper {
+    @media (max-width: 767px) {
+      border-bottom: 1px solid #E2E2E2;
+      padding-bottom: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      height: auto !important;
+    }
+  }
+}
+
+.secondary-exposed-form {
+  overflow: hidden;
+
+  .bef--secondary {
+    @apply items-center;
+
+    .fieldset-wrapper {
+      @apply w-full;
+    }
+    .fieldset-legend {
+      @apply font-bold mr-2 text-lg;
+    }
+    .form-item {
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    input {
+      @apply w-full pr-6 pl-5 py-[10px] lg:py-3 shadow rounded-sm mb-0;
+    }
+  }
+  .form-type-select {
+    @apply md:float-right flex items-center;
+
+    label {
+      @apply text-lg;
+      margin-bottom: 0;
+      margin-right: 5px;
+    }
+  }
+
+  #selected-filters--wrapper {
+    @apply md:float-left;
+  }
+
+  .form-item.highlight input {
+    display: none;
+  }
+
+  .form-item.highlight label {
+    @apply bg-neutrals-50 border-[1px] border-neutrals-300 rounded-[4px] px-2 py-2 text-xs mb-0 cursor-pointer hover:text-white hover:bg-primary-700 flex-shrink-0;
+    &:after {
+      content: "X";
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+
+  #selected-filters--wrapper {
+    @apply items-center;
+    .fieldset-legend {
+      @apply font-bold text-lg;
+    }
+  }
+}
