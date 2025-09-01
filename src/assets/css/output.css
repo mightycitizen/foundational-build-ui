@@ -3556,6 +3556,11 @@ input[type="radio"]:focus:not(:checked).custom,
     border-right-width: 1px;
   }
 
+  .md\:border-r-primary-400 {
+    --tw-border-opacity: 1;
+    border-right-color: rgb(84 117 214 / var(--tw-border-opacity, 1));
+  }
+
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
