@@ -45,60 +45,52 @@ const defaultArgs = {
     alt: 'group of students'
   },
   page_sidebar: {
-    register_button: {
-      text: 'Register now',
-      url: '#'
-    },
-    event_website: {
-      text: 'Event Website',
-      url: '#'
-    },
-    event_date: 'March 4, 2025',
-    event_time: '4:30am - 5:30pm CT',
-    event_location: 'Address line 1 goes here</br>Address line 2 goes here</br>Address line 3 goes here',
-    event_directions_url: {
+    location_type: 'Academic Building',
+    parent_location: 'Address line 1 goes here</br>Address line 2 goes here',
+    directions_url: {
       text: 'Get Directions',
       url: '#',
     },
-    event_virtual_meeting_url: {
-      text: 'Virtual Meeting Link',
-      url: '#',
-    },
-    topics: [
+    addresses: [
       {
-        text: 'Alumni',
-        url: '#'
+        address: 'Address line 1 goes here',
       },
       {
-        text: 'Topic name here',
-        url: '#'
+        address: 'Address line 2 goes here',
       },
       {
-        text: 'Topic name here',
-        url: '#'
-      },
-      {
-        text: 'Topic name here',
-        url: '#'
-      },
+        address: 'Address line 3 goes here',
+      }
     ],
-    who_its_for: [
+    location_hours: [
       {
-        text: 'Current Students',
+        location_hour: 'Hours line 1 lorem ipsum'
+      },
+      {
+        location_hour: 'Hours line 1 lorem ipsum'
+      },
+      {
+        location_hour: 'Hours line 1 lorem ipsum'
+      }
+    ],
+    departments: [
+      {
+        text: 'Undergraduate Admissions',
         url: '#'
       },
       {
-        text: 'Alumni',
+        text: 'Financial Aid Office',
+        url: '#'
+      },
+      {
+        text: 'Student Affairs Office',
         url: '#'
       }
     ],
-    event_series: {
-      text: 'Portuguese Literature Speaker Series',
-      url: '#'
-    },
-    media_name: 'Firstname Lastname',
-    media_email: 'email@mightyu.edu',
-    media_phone: '512-555-1234'
+    more_info: {
+      text: 'More Information',
+      url: '#',
+    }
   },
   modules: [
     {
