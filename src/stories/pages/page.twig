@@ -1,0 +1,58 @@
+{% if header is empty %}
+  {% set header %}
+    {% include "@layout/wrapper/header.twig" %}
+  {% endset %}
+{% endif %}
+
+{% if footer is empty %}
+  {% set footer %}
+    {% include "@layout/wrapper/footer.twig" %}
+  {% endset %}
+{% endif %}
+
+{% if hero_section is empty %}
+  {% set hero_section %}
+    {% include '@components/containers/hero/hero.twig' with hero %}
+  {% endset %}
+{% endif %}
+
+{% if content is empty %}
+  {% set content %}
+    content
+  {% endset %}
+{% endif %}
+
+{% if sidebar is empty %}
+  {% set sidebar %}
+    sidebar
+  {% endset %}
+{% endif %}
+
+{% if sidebar_bottom is empty %}
+  {% set sidebar_bottom %}
+    sidebar_bottom
+  {% endset %}
+{% endif %}
+
+{% block header %}
+  {{ header }}
+{% endblock %}
+
+{% if (page_structure == 'page_sidebar') %}
+  {# Hero on top of sidebar #}
+  {% include '@layout/structure/content-with-sidebar.twig' %}
+{% elseif (page_structure == 'page_sidebar_full') %}
+  {# Sidebar extends full height next to hero #}
+  {% include '@layout/structure/content-pieces.twig' %}
+{% elseif (page_structure == 'page_sidebar_full_secondary') %}
+  {# Sidebar extends full height next to hero, drops to bottom of page on mobile #}
+  {% include '@layout/structure/content-grid.twig' %}
+{% else %}
+  {# Full width, no sidebar #}
+  {{ hero_section }}
+  {{ content }}
+{% endif %}
+
+{% block footer %}
+  {{ footer }}
+{% endblock %}
