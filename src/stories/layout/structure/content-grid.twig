@@ -1,5 +1,5 @@
 <div id="body" class="{{ wrapper_class | default }}">
-  <div class="grid-template">
+  <div class="grid-template{% if sidebar_bottom is empty %} grid-template-three-item{% endif %}">
     <div class="sidebar">
       {{ sidebar }}
     </div>
@@ -7,9 +7,11 @@
     <div class="hero" id="hero">
       {{ hero_section }}
     </div>
+    {% if  sidebar_bottom %}
     <div class="sidebar-bottom">
       {{ sidebar_bottom }}
     </div>
+    {% endif %}
     <div class="content" id="content">
       {{ content }}
     </div>

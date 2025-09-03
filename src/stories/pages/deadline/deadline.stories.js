@@ -41,7 +41,7 @@ const defaultArgs = {
   page_title: 'Undergraduate Admissions - Fall 2026 Application Deadline',
   page_subheading: '[Subheading] For first-time freshmen and transfer students',
   page_date: 'May 9, 2025',
-  page_hour: '11:59 PM (CST)',
+  page_time: '11:59 PM (CST)',
   page_location_url: '#',
   page_status: {
     upcoming: true,
@@ -62,15 +62,11 @@ const defaultArgs = {
       text: 'Event Website',
       url: '#'
     },
-    event_date: 'March 4, 2025',
-    event_time: '4:30am - 5:30pm CT',
-    event_location: 'Address line 1 goes here</br>Address line 2 goes here</br>Address line 3 goes here',
-    event_directions_url: {
+    date: 'March 4, 2025',
+    time: '4:30am - 5:30pm CT',
+    location: 'Address line 1 goes here</br>Address line 2 goes here</br>Address line 3 goes here',
+    directions_url: {
       text: 'Get Directions',
-      url: '#',
-    },
-    event_virtual_meeting_url: {
-      text: 'Virtual Meeting Link',
       url: '#',
     },
     topics: [
