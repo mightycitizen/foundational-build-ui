@@ -43,9 +43,11 @@ const defaultArgs = {
   page_date: 'May 9, 2025',
   page_author: 'Firstname Lastname',
   page_author_url: '#',
-  page_image: {
-    src: '/images/news-detail-featured.jpg',
-    alt: 'group of students'
+  below_hero: {
+    page_image: {
+      src: '/images/news-detail-featured.jpg',
+      alt: 'group of students'
+    }
   },
   page_sidebar: {
     register_button: {

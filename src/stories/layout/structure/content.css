@@ -1,84 +1,21 @@
 @media (min-width: 1024px) {
   .grid-template {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
-    column-gap: 78px;
-    row-gap: 40px;
-
-    .sidebar {
-      grid-row: 1;
-      grid-column: 1 / 2;
-    }
-    .sidebar-bottom {
-      grid-row: 2 / 4;
-      grid-column: 1 / 2;
-    }
-    .hero {
-      grid-row: 1 / 4;
-      grid-column: 2 / 5;
-    }
-    .content {
-      grid-row: 2 / 4;
-      grid-column: 2 / 5;
-    }
+    columns: 2;
+    column-gap: 5rem;
   }
-
-  .grid-template-three-item {
-    .sidebar {
-      grid-row: 1 / 4;
-      grid-column: 1 / 2;
-    }
-    .sidebar-bottom {
-      grid-row: 2 / 4;
-      grid-column: 1 / 2;
-    }
-    .hero {
-      grid-row: 1 / 2;
-      grid-column: 2 / 5;
-    }
-    .content {
-      grid-row: 2 / 4;
-      grid-column: 2 / 5;
-    }
-  }
-
-  .grid-template-no-image {
-    .sidebar {
-      grid-row: 1 / 3;
-      grid-column: 1 / 2;
-    }
-    .sidebar-bottom {
-      grid-row: 3 / 3;
-      grid-column: 1 / 2;
-    }
-    .hero {
-      grid-row: 1 / 5;
-      grid-column: 2 / 5;
-    }
-    .content {
-      grid-row: 2 / 6;
-      grid-column: 2 / 5;
-    }
-  }
+  .grid-template > div { break-inside: avoid-column; }
+  .sidebar, .sidebar-bottom { width: 50%; }
+  .hero, .content { width: 150%; margin-left: -50%; }
+  .hero { break-before: column; }
 
 }
 @media (max-width: 1023px) {
   .grid-template {
     display: flex;
     flex-direction: column;
-    gap: 40px;
   }
-  .sidebar {
-    order: 2;
-  }
-  .hero {
-    order: 1;
-  }
-  .content {
-    order: 3;
-  }
-  .sidebar-bottom {
-    order: 4;
-  }
+  .sidebar { order: 2 }
+  .sidebar-bottom { order: 4 }
+  .hero { order: 1 }
+  .content { order: 3 }
 }
-

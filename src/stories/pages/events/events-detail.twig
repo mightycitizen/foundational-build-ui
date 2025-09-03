@@ -8,7 +8,7 @@
     padding: 'tight',
   } %}
     {% block section_content %}
-      {% include '@layout/structure/content-pieces.twig' %}
+      {% include '@layout/structure/content-grid.twig' %}
 
       {% set sidebar %}
         {% include '@components/sidebar/sidebar-events.twig' with page_sidebar %}
@@ -23,8 +23,8 @@
             <div class="mb-4">{{ page_subheading }}</div>
           {% endif %}
 
-          {% if page_image | default %}
-            <img src="{{ page_image.src }}" alt="{{ page_image.alt }}" />
+          {% if below_hero.page_image | default %}
+            <img src="{{ below_hero.page_image.src }}" alt="{{ below_hero.page_image.alt }}" />
           {% endif %}
         </div>
       {% endset %}

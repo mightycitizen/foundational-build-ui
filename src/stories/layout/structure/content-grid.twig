@@ -3,15 +3,14 @@
     <div class="sidebar">
       {{ sidebar }}
     </div>
-
+    {% if  sidebar_bottom %}
+      <div class="sidebar-bottom">
+        {{ sidebar_bottom }}
+      </div>
+    {% endif %}
     <div class="hero" id="hero">
       {{ hero_section }}
     </div>
-    {% if  sidebar_bottom %}
-    <div class="sidebar-bottom">
-      {{ sidebar_bottom }}
-    </div>
-    {% endif %}
     <div class="content" id="content">
       {{ content }}
     </div>

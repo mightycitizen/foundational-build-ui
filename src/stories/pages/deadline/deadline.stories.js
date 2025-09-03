@@ -43,6 +43,7 @@ const defaultArgs = {
   page_date: 'May 9, 2025',
   page_time: '11:59 PM (CST)',
   page_location_url: '#',
+  below_hero: 'deadline',
   page_status: {
     upcoming: true,
     approaching: true,
