@@ -40,9 +40,11 @@ const defaultArgs = {
   page_type: 'Location',
   page_title: 'Location name',
   page_subheading: 'Subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus vulputate diam eu pretium. Mauris elit orci, ultricies id fermentum vel, porta et eros.',
-  page_image: {
-    src: '/images/news-detail-featured.jpg',
-    alt: 'group of students'
+  below_hero: {
+    page_image: {
+      src: '/images/news-detail-featured.jpg',
+      alt: 'group of students'
+    }
   },
   page_sidebar: {
     location_type: 'Academic Building',

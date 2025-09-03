@@ -25,8 +25,8 @@
             <div class="mb-4">{{ page_subheading }}</div>
           {% endif %}
 
-          {% if page_image | default %}
-            <img src="{{ page_image.src }}" alt="{{ page_image.alt }}" />
+          {% if below_hero.page_image | default %}
+            <img src="{{ below_hero.page_image.src }}" alt="{{ below_hero.page_image.alt }}" />
           {% endif %}
         </div>
       {% endset %}
