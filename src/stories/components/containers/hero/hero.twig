@@ -55,7 +55,7 @@
   </div>
   {% endif %}
   <div class="hero--inner-wrapper pb-4{{ not hero_inline ? ' lg:py-11' }}{% if background_image %} {{ background_color == 'dark' ? 'bg-primary-800' : 'bg-white' }}{% endif %}">
-    <div class="container{{ hero_inline ? ' px-0' }}">
+    <div class="container">
       <div class="grid grid-cols-12 gap-6 gap-y-8 lg:g-y-0">
         <div class="{% if content_type == 'alert' %}col-span-10{% else %}col-span-12{% endif%} md:order-3">
           <div class="hero_content">

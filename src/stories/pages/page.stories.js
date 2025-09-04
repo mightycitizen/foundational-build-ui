@@ -280,20 +280,20 @@ Page.args = defaultArgs;
 
 export { Page };
 
-export const PageSidebar = Page.bind({});
-PageSidebar.args = {
-  ...defaultArgs,
-  page_structure: 'page_sidebar',
-}
+// export const PageSidebar = Page.bind({});
+// PageSidebar.args = {
+//   ...defaultArgs,
+//   page_structure: 'page_sidebar',
+// }
 
-export const PageFullHeightSidebar = Page.bind({});
-PageFullHeightSidebar.args = {
-  ...defaultArgs,
-  page_structure: 'page_sidebar_full',
-}
+// export const PageFullHeightSidebar = Page.bind({});
+// PageFullHeightSidebar.args = {
+//   ...defaultArgs,
+//   page_structure: 'page_sidebar_full',
+// }
 
-export const PageFullHeightSidebarSecondary = Page.bind({});
-PageFullHeightSidebarSecondary.args = {
-  ...defaultArgs,
-  page_structure: 'page_sidebar_full_secondary',
-}
+// export const PageFullHeightSidebarSecondary = Page.bind({});
+// PageFullHeightSidebarSecondary.args = {
+//   ...defaultArgs,
+//   page_structure: 'page_sidebar_full_secondary',
+// }
