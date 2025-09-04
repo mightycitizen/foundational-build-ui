@@ -1,36 +1,50 @@
 {% extends '@wrappers/default.twig' %}
-{% set type = {
-  label: 'News',
-  handle: 'news'
-}%}
 {% block top %}
-  {% include '@components/containers/hero/hero.twig'  with {
-    heading: 'News Detail',
-    image: featured_image
-  } %}
+
 {% endblock %}
 {% block main %}
-  {% embed '@components/sections/section.twig' with {
-    padding: 'tight',
-    section_class: 'section--collapse'
-  } %}
-    {% block section_content %}
-      {% include '@components/inline-text/meta/meta.twig' with {
-        date: {
-          unformatted: "2021-08-12",
-          full: 'August 12, 2021',
-        },
-        categories: [
-          {
-            url: "#",
-            title: "News Category"
-          }
-        ]
-      }%}
-    {% endblock %}
-  {% endembed %}
-  {% include '@components/modules/wysiwyg/wysiwyg.twig' with {
-    section_class: 'section--collapse',
-    wysiwyg: wysiwyg
-  }%}
+  {% if narrow_modules | default | length > 0 %}
+    {% set content %}
+      <div>
+        {{ breadcrumbs }}
+        <h1>{{ page_title }}</h1>
+        {% if page_subheading | default %}
+        <div class="mb-4">{{ page_subheading }}</div>
+        {% endif %}
+        <ul class="list-none flex font-semibold mb-12 gap-x-10">
+          <li>By <a class="text-black" href="{{ page_author_url }}">{{ page_author }}</a></li>
+          <li>{{ page_date }}</li>
+        </ul>
+        {% if page_image | default %}
+          <img src="{{ page_image.src }}" alt="{{ page_image.alt }}" />
+        {% endif %}
+      </div>
+      {% for module in narrow_modules %}
+        {% if module.module_type == 'wysiwyg' %}
+          {{ module.wysiwyg }}
+        {% elseif module.module_type == 'accordion' %}
+          {% include '@components/modules/accordion/accordion-module.twig' with module only %}
+        {% endif %}
+      {% endfor %}
+    {% endset %}
+    {% if sidebar_modules | default | length > 0 %}
+      {% set sidebar %}
+        {% include '@components/sidebar/sidebar-news.twig' with page_sidebar %}
+
+        {% for module in sidebar_modules %}
+          {% if module.module_type == 'accordion' %}
+            {% include '@components/modules/accordion/accordion-module.twig' with module only %}
+          {% endif %}
+        {% endfor %}
+      {% endset %}
+    {% endif %}
+    {% embed '@components/sections/section.twig' with {
+      padding: 'tight',
+    } %}
+      {% block section_content %}
+        {% include '@layout/structure/content-with-sidebar.twig' %}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+
 {% endblock %}

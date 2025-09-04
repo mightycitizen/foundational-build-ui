@@ -6,7 +6,8 @@ import {
   accordion,
   tabs,
   breadcrumbs,
-  hero,
+  hero_primary,
+  hero_secondary,
   card,
   contact,
   testimonial,
@@ -17,7 +18,7 @@ import {
   links
 } from '../../global/placeholders/components.json';
 
-import { menu, social, logo } from '../../global/placeholders/global.json';
+import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, links_bar_menu, footer_links, site_name } from '../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Pages/General'
@@ -30,11 +31,21 @@ const Template = (args) => {
 
 const Default = Template.bind({});
 const defaultArgs = {
-  hero,
   breadcrumbs,
   menu,
+  utility_menu,
+  links_bar_menu,
+  anchor_nav,
+  local_nav,
+  cta_menu,
+  header_dropdown,
   logo,
   social,
+  address,
+  footer_links,
+  site_name,
+  menu_column,
+  hero: hero_primary,
   modules: [
     {
       module_type: 'wysiwyg',
@@ -313,6 +324,24 @@ const parameters = {
   layout: 'fullscreen'
 };
 
+const hero_secondary_background = {
+  background_color: true,
+  image: {
+    src: "/images/hero-secondary.jpg",
+    alt: "University view"
+  },
+  heading: "Hero title goes here",
+  summary: "[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. ",
+  hero_button: {
+    text: "Primary Button",
+    url: "#"
+  },
+  readmore_link: {
+    text: "Optional Link",
+    url: "#"
+  }
+};
+
 // console.log(defaultArgs);
 Default.args = defaultArgs;
 Default.parameters = parameters;
@@ -371,11 +400,31 @@ SectionTest.parameters = parameters;
 
 const Sidebar = Template.bind({});
 Sidebar.args = {
-  ...defaultArgs,
+  breadcrumbs,
+  menu,
+  utility_menu,
+  links_bar_menu,
+  anchor_nav,
+  local_nav,
+  cta_menu,
+  header_dropdown,
+  logo,
+  social,
+  address,
+  footer_links,
+  site_name,
+  menu_column,
+  hero: hero_primary,
   narrow_modules: [
     {
       module_type: 'wysiwyg',
       wysiwyg
+    },
+    {
+      module_type: 'accordion',
+      exclude_container: true,
+      section_id: 'section-2',
+      ...accordion
     }
   ],
   sidebar_modules: [
@@ -383,8 +432,36 @@ Sidebar.args = {
       module_type: 'card',
       ...card
     }
+  ],
+  modules: [
+    {
+      module_type: 'cta',
+      section_heading: 'Default CTA',
+      section_description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      section_button: {
+        url: '#',
+        text: 'Text'
+      }
+    }
   ]
 };
 Sidebar.parameters = parameters;
 
-export { Default, Cookies, AnchorMenu, SectionTest, Sidebar };
+const SecondaryHero = Template.bind({});
+SecondaryHero.args = {
+  ...defaultArgs,
+  hero: hero_secondary
+};
+SecondaryHero.parameters = parameters;
+
+const SecondaryHeroBackground = Template.bind({});
+SecondaryHeroBackground.args = {
+  ...defaultArgs,
+  hero: hero_secondary_background
+};
+SecondaryHeroBackground.parameters = parameters;
+
+export { Default, Cookies, AnchorMenu, SectionTest, Sidebar, SecondaryHero, SecondaryHeroBackground };
+
+

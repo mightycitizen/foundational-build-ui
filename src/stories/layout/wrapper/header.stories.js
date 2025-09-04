@@ -1,5 +1,5 @@
 import twig from './header.twig';
-import { menu, logo } from '../../global/placeholders/global.json';
+import { menu, utility_menu, header_dropdown, cta_menu, logo } from '../../global/placeholders/global.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -51,5 +51,8 @@ const Template = (args) => {
 export const Header = Template.bind({});
 Header.args = {
   menu,
+  utility_menu,
+  cta_menu,
+  header_dropdown,
   logo
 };

@@ -6,7 +6,14 @@
   }) %}
 {% endif %}
 
-{% include '@components/sections/section.twig' with {
-  section_class: "cta bg-primary bg-gradient-primary-darker text-white " ~ class | default ~ (section_image | default ? ' cta--horizontal': ''),
-  intro_class: (section_image | default ? 'md:text-left': '') ~ ' text-center mb-0'
-}%}
+{% embed '@components/sections/section.twig' %}
+  {% block section_content %}
+    {% if block_links %}
+      <section class="prose">
+        {% include '@components/links/block-links/block-links.twig' %}
+      </section>
+    {% else %}
+      {{ section_content }}
+    {% endif %}
+  {% endblock %}
+{% endembed %}

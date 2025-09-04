@@ -1,11 +1,10 @@
 <form action="{{ action | default('/search') }}">
-  <div class="flex relative">
-    <label for="{{ input_id | default('keywords') }}" class="sr-only">Keywords</label>
-    <input class="w-full pr-6" placeholder="Search" type="search" id="{{ input_id | default('keywords') }}" name="{{ name | default('q') }}">
-    <div class="absolute h-full right-0 top-0 flex items-center px-3">
-      <button type="submit"  value="Submit">
-        <span class="sr-only">{{ button_text | default('Search') }}</span>
-        <span class="icon-search text-primary"></span>
+  <div class="relative">
+    <label for="{{ input_id | default('keywords') }}" class="text-2xl mb-5">Site Search</label>
+    <input class="w-full pr-6 shadow rounded" placeholder="Enter your search term" type="search" id="{{ input_id | default('keywords') }}" name="{{ name | default('q') }}">
+    <div class="absolute right-0 bottom-0 flex items-center pl-3">
+      <button class="button m-0" type="submit"  value="Submit">
+        <span class="">{{ button_text | default('Search') }}</span>
       </button>
     </div>
   </div>

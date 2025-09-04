@@ -27,8 +27,20 @@ const Template = (args) => {
 };
 
 const defaultArgs = {
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-  label: 'Alert'
+  alert_type: {
+    type: 'emergency',
+    label: 'Emergency Alert',
+    icon: { name: 'icon-lightning-fill' },
+    icon_colors: 'bg-tertiary-100 text-tertiary-600',
+  },
+  title: 'Alert title',
+  text: '[Text goes here]  Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+  link: {
+    url: '#',
+    target: 'new_tab',
+    text: 'Alert title goes here lorem ipsum dolor sit amet.]'
+  },
+  closable: true
 };
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

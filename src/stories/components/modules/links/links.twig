@@ -17,9 +17,9 @@
 
         {% set first_row_end_index = items_per_row - 1 %}
 
-        {% for link in links %}          
+        {% for link in links %}
 
-              
+
               {% set has_bottom = {
                 sm: loop.last == false,
                 md: loop.index0 < last_row_start_index
@@ -35,11 +35,11 @@
                 sm: 4,
                 md: 10
               } %} #}
-              
-              <div class="col-span-12 md:col-span-4 
-              {{ has_top.sm ? 'pt-4' : 'pt-0'}} 
+
+              <div class="col-span-12 md:col-span-4
+              {{ has_top.sm ? 'pt-4' : 'pt-0'}}
               {{ has_bottom.sm ? 'border-b pb-4' : 'border-0 pb-0'}}
-              {{ has_top.md ? 'md:pt-10': 'md:pt-0'}} 
+              {{ has_top.md ? 'md:pt-10': 'md:pt-0'}}
               {{ has_bottom.md ? 'md:border-b md:pb-10' : 'md:border-0 md:pb-0'}}">
 
                 {% if link | default is not empty %}
@@ -51,8 +51,8 @@
                 {% endif %}
 
               </div>
-            
-          
+
+
         {% endfor %}
         </div>
       </div>

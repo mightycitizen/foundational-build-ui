@@ -17,19 +17,29 @@ const Template = (args) => {
 };
 
 const cards = [...Array(5)].map((_, i) => ({
-  heading: {
-    text: 'Heading',
-    url: '#',
-    level: 3
-  },
+  badges: [
+    {
+      icon: 'icon-lightning-fill',
+      text: 'Announcement'
+    },
+    {
+      icon: 'icon-lightning-fill',
+      text: 'Featured'
+    }
+  ],
   image: {
     src: 'https://placehold.co/430x230',
     alt: 'Alt Text'
   },
-  link: {
-    text: 'Link',
-    url: '#'
-  }
+  type: 'Events',
+  heading: {
+    text: '[h3] Heading example lorem ipsum',
+    url: '#',
+    level: 3
+  },
+  summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+  date: 'Saturday, 10.6.2024 | 6pm CT',
+  address: 'Address Goes Here, Austin, Texas, USA'
 }));
 
 const defaultArgs = {

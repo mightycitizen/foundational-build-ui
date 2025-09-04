@@ -10,7 +10,7 @@ const breakpointsArray = Object.keys(breakpoints).map(key => parseInt(key.replac
 export const initSplide = () => {
   document.querySelectorAll('.js-splide:not(.splide-initialized)').forEach(slider => {
 
-    
+
 
     // console.log(slider);
     let sliderOptions = {
@@ -44,14 +44,14 @@ export const initSplide = () => {
             autoWidth: true,
             type: 'loop',
             updateOnMove: true,
-            autoHeight: true,            
+            autoHeight: true,
             perPage: 5,
-            focus: 'center',            
+            focus: 'center',
             padding: '5rem',
             gap: '2rem',
             breakpoints: {
-              [breakpointsArray.lg]: {                                                       
-                  
+              [breakpointsArray.lg]: {
+
                 }
             }
         };
@@ -68,7 +68,7 @@ export const initSplide = () => {
     const resizeActiveSlide = (index) => {
         if (index < 0) return;
         if (!heightMap[index]){
-          setTimeout(() => {            
+          setTimeout(() => {
             heightMap[index] = slides[index].scrollHeight;
             resizeActiveSlide(index);
           }, 100);
@@ -77,7 +77,7 @@ export const initSplide = () => {
         // console.log(heightMap[index]);
         splide.root.querySelector(".splide__list").style.height = heightMap[index] + "px";
     }
-     
+
     const resetHeightMap = () => {
       heightMap = {};
     }
@@ -104,11 +104,18 @@ export const initSplide = () => {
     window.addEventListener('resize', resizeHeightMap);
 
 
-    
+
     splide.on("active", function (e) {
       resizeActiveSlide(e.slideIndex);
     });
 
+    var counter = document.querySelector('.splide__counter');
+
+    splide.on('mounted moved', function () {
+      var currentSlide = splide.index + 1; // Add 1 because index is 0-based
+      var totalSlides = splide.length;
+      counter.textContent = currentSlide + ' / ' + totalSlides;
+    });
 
     splide.mount();
     attachSplideEvents(splide, slider);
@@ -118,7 +125,7 @@ export const initSplide = () => {
 
 const attachSplideEvents = (splide, slider) => {
   splide.on('mounted move', () => updatePagination(slider, splide));
-  // if slider is center add 
+  // if slider is center add
   attachPauseButton(slider, splide);
 };
 

@@ -1,49 +1,25 @@
 {% set width_class = '' %}
 {% if section_style | default == 'narrower'%}
   {% set width_class = 'lg:max-w-screen-lg' %}
-{% elseif section_style | default == 'narrow' %}  
+{% elseif section_style | default == 'narrow' %}
   {% set width_class = 'lg:max-w-screen-xl' %}
 {% endif %}
-{% if background_color | default %}  
+{% if background_color | default %}
   {% if background_style | default == 'gradient' %}
-    {% set background_color = background_color ~ '-200' %}    
+    {% set background_color = background_color ~ '-200' %}
     {% set section_class = 'bg-gradient-to-b lg:bg-gradient-to-r from-' ~ background_color ~ ' to-white' %}
   {% else %}
     {% set background_color = background_color == 'primary' ? background_color ~ '-100' : background_color ~ '-200' %}
     {% set section_class = 'bg-' ~ background_color %}
   {% endif %}
 {% endif %}
-{% if intro_class | default is empty %}{% set intro_class = 'text-center' %}{% endif %}
 
-{% set intro %}
-  {% if section_heading | default %}
-      <div class="section_intro {{ intro_class }} ">
-        <div class="grid {% if section_image | default %}grid-cols-12{% endif %} gap-y-6 gap-x-10 items-center justify-center">
-          {% if section_image | default %}
-            <div class="col-span-12 md:col-span-5 lg:col-span-6" >
-              <div class="image-size--landscapeCroppedMedium">
-                <img loading="lazy" src="{{ section_image.src }}" alt="{{ section_image.alt }}" class="w-full">
-              </div>
-            </div>
-          {% endif %}
-          <div class="col-span-12 {% if section_image | default %}md:col-span-7 lg:col-span-6{% elseif section_style | default is empty %}md:col-span-8{% endif %}">
-            <h2 class="section_heading">{{ section_heading }}</h2>
-            {% if section_subheading | default %}
-              <h3 class="section_subheading">{{ section_subheading }}</h3>
-            {% endif %}
-            {% if section_description | default %}
-              <p class="lead {{ section_description_size | default('text-xl') }}">{{ section_description }}</p>
-            {% endif %}
-            {% if section_button | default %}
-              {% include '@components/links/button/button.twig' with section_button | merge({
-                color: 'secondary'
-              }) only %}
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    {% endif %}
-{% endset %}
+{% if intro is empty %}
+  {% set intro %}
+    {% include '@components/sections/intro/section_intro.twig' %}
+  {% endset %}
+{% endif %}
+
 {% set content %}
   {% if block('section_content') | trim is not empty%}
     <div class="section_content" >
@@ -52,18 +28,20 @@
     </div>
   {% endif %}
 {% endset %}
-<section {% if section_id | default %}id="{{ section_id }}"{% endif %} 
-  class="relative section 
+<section {% if section_id | default %}id="{{ section_id }}"{% endif %}
+  class="relative section
   {% if padding | default == 'tight' %}
     py-5 lg:py-10
+  {% elseif section_padding | default %}
+    {{ section_padding }}
   {% else %}
     py-10 lg:py-16
-  {% endif %}  
+  {% endif %}
 
-  {{ section_class | default }} 
-  transition-opacity duration-1000 ease-in-out  
-  {% if collapse | default %} section--collapse{% endif %}" 
-    :class="show ? 'opacity-100' : 'opacity-0'"    
+  {{ section_class | default }}
+  transition-opacity duration-1000 ease-in-out
+  {% if collapse | default %} section--collapse{% endif %}"
+    :class="show ? 'opacity-100' : 'opacity-0'"
     x-data="{{'{'}} show: false {{'}'}}"  x-intersect="show = true" >
   {% if section_background | default %}
     <div class="position-unset">
@@ -73,7 +51,7 @@
   {% endif %}
   <div class="{% if exclude_container | default %}max-w-full lg:px-0{% endif %} {{ width_class | default }} container {{ grid_class | default }} relative z-10" >
     {% if section_style | default and (section_style == 'side') %}
-      <div class="grid grid-cols-12 items-center justify-center gap-y-8">
+      <div class="grid grid-cols-12 items-center justify-center gap-y-8{% if section_style == 'side' %} gap-x-10{% endif %}">
         <div class="col-span-12 lg:col-span-8">
           {{ intro }}
         </div>

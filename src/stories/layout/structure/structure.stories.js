@@ -60,7 +60,7 @@ const SidebarTwigTemplate = (args) => {
 };
 
 const defaultArgs = {
-  wrapper_class: 'grid-container',
+  wrapper_class: 'grid.twig-container',
   content: '<div class="pl-placeholder">Content</div>'
 };
 

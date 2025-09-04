@@ -1,5 +1,5 @@
 import twig from './accordion.twig';
-import { accordion } from '../../../global/placeholders/components.json';
+import { accordion, wysiwyg } from '../../../global/placeholders/components.json';
 
 export default {
   title: 'Components/Containers/Accordion'
@@ -11,7 +11,8 @@ const Template = (args) => {
 };
 
 const defaultArgs = {
-  ...accordion
+  ...accordion,
+  wysiwyg
 };
 
 const Default = Template.bind({});
@@ -30,8 +31,8 @@ Icons.args = {
   ...defaultArgs,
   accordion_id: 'accordion_icons',
   items: [
-    { heading: 'Heading', content: 'Content', icon: 'icon-bell' },
-    { heading: 'Heading', content: 'Content', icon: 'icon-search' }
+    { heading: 'Heading', content: 'Content', icon: 'icon-moon' },
+    { heading: 'Heading', content: 'Content', icon: 'icon-moon' }
   ]
 };
 

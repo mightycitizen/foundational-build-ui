@@ -32,8 +32,18 @@ const Template = (args) => {
 // }));
 
 const defaultArgs = {
-  section_heading: 'Heading',
-  section_description: 'Description',
+  intro_class: 'text-left',
+  section_label: {
+    icon: 'buildings',
+    text: 'Example label goes here'
+  },
+  section_heading: '[h2, optional] Modular Component Intro, Label type',
+  section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+  section_link: {
+    url: '#',
+    text: 'Optional Link'
+  },
+  divider: true,
   steps
 };
 export const StepList = Template.bind({});

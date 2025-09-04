@@ -49,6 +49,10 @@ export const Secondary = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Secondary.args = Object.assign({ ...defaultArgs }, { color: 'secondary' });
 
+export const Tertiary = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Tertiary.args = Object.assign({ ...defaultArgs }, { color: 'tertiary' });
+
 export const Small = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Small.args = Object.assign({ ...defaultArgs }, { size: 'sm' });

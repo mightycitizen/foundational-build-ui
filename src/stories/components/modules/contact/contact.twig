@@ -1,7 +1,6 @@
 {% embed '@components/sections/section.twig' with {
-    padding: 'tight',
     class: section_class | default,
-    section_style: "narrow"
+    exclude_container: true
   }
 %}
   {% block section_content %}

@@ -17,29 +17,137 @@ const Template = (args) => {
 };
 
 const cards = [...Array(3)].map((_, i) => ({
-  heading: {
-    text: 'Heading',
-    url: '#',
-    level: 3
-  },
   image: {
     src: 'https://placehold.co/430x230',
     alt: 'Alt Text'
   },
-  link: {
-    text: 'Link',
-    url: '#'
-  }
+  heading: {
+    text: '[h3] Heading example lorem ipsum',
+    url: '#',
+    level: 3
+  },
+  summary: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
 }));
 
 const defaultArgs = {
   section_heading: 'Heading',
   section_description: 'Description',
-  cards: cards
+  cards: [
+    {
+      equalize: true,
+      image: {
+        src: 'https://placehold.co/430x230',
+        alt: 'Alt Text'
+      },
+      heading: {
+        text: '[h3] Heading example lorem ipsum',
+        url: '#',
+        level: 3
+      },
+      summary: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+      link: {
+        text: 'Link',
+        url: '#'
+      }
+    },
+    {
+      equalize: true,
+      image: {
+        src: 'https://placehold.co/430x230',
+        alt: 'Alt Text'
+      },
+      heading: {
+        text: '[h3] Heading example lorem ipsum',
+        url: '#',
+        level: 3
+      },
+      summary: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+      link: {
+        text: 'Link',
+        url: '#'
+      }
+    },
+    {
+      equalize: true,
+      image: {
+        src: 'https://placehold.co/430x230',
+        alt: 'Alt Text'
+      },
+      heading: {
+        text: '[h3] Heading example lorem ipsum',
+        url: '#',
+        level: 3
+      },
+      summary: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+      link: {
+        text: 'Link',
+        url: '#'
+      }
+    }
+  ]
 };
 const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;
+
+const Icons = Template.bind({});
+
+const iconCards = cards.map((card, i) =>
+  Object.assign(
+    { ...card },
+    {
+      image: null,
+      icon: {
+        name: 'ph ph-[building]',
+        background: 'primary-500',
+      },
+      link: null
+    }
+  )
+);
+
+Icons.args = {
+  ...defaultArgs,
+  section_label: {
+    icon: 'buildings',
+    text: 'Example label goes here'
+  },
+  section_heading: '[h2, optional] Modular Component Intro, Label type',
+  section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+  section_link: {
+    url: '#',
+    text: 'Optional Link'
+  },
+  divider: true,
+  cards: iconCards
+};
+
+const News = Template.bind({});
+
+const newsCards = cards.map((card, i) =>
+  Object.assign(
+    { ...card },
+    {
+      badges: [
+        {
+          icon: 'icon-lightning-fill',
+          text: 'Announcement'
+        },
+        {
+          icon: 'icon-lightning-fill',
+          text: 'Featured'
+        }
+      ],
+      publish_date: 'PUBLISH DATE HERE',
+      link: null
+    }
+  )
+);
+
+News.args = {
+  ...defaultArgs,
+  cards: newsCards
+};
 
 const Events = Template.bind({});
 
@@ -47,17 +155,29 @@ const eventCards = cards.map((card, i) =>
   Object.assign(
     { ...card },
     {
-      date: {
-        unformatted: '2020-01-01',
-        full: 'January 1, 2020',
-        day: 1,
-        month_short: 'Jan',
-        year: 2020
+      badges: [
+        {
+          icon: 'icon-lightning-fill',
+          text: 'Home Game'
+        },
+        {
+          icon: 'icon-lightning-fill',
+          text: 'Tickets Available'
+        }
+      ],
+      image: {
+        src: 'https://placehold.co/430x230',
+        alt: 'Alt Text'
       },
-      type: {
-        handle: 'events',
-        label: 'Events'
-      }
+      type: 'Events',
+      heading: {
+        text: '[h3] Heading example lorem ipsum',
+        url: '#',
+        level: 3
+      },
+      summary: '[150 char max dedicated description] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan.',
+      date: 'Saturday, 10.6.2024 | 6pm CT',
+      address: 'Address Goes Here, Austin, Texas, USA'
     }
   )
 );
@@ -67,4 +187,32 @@ Events.args = {
   cards: eventCards
 };
 
-export { Default, Events };
+const Programs = Template.bind({});
+
+const programCards = cards.map((card, i) =>
+  Object.assign(
+    {
+      heading: {
+        text: "Biology (BS / BA)",
+        url: "#",
+        level: 3
+      },
+      subheading: 'Program type, Program type',
+      specializations: 'Concentration title, Concentration title, Concentration title, Concentration title',
+      summary: "*Format caveat here",
+      image: {
+        src: "https://placehold.co/430x230",
+        alt: "Alt Text"
+      },
+      campus: true,
+      online: true
+    }
+  )
+);
+
+Programs.args = {
+  ...defaultArgs,
+  cards: programCards
+};
+
+export { Default, News, Events, Programs, Icons };

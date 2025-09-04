@@ -30,10 +30,10 @@
   {% set modifiers = modifiers | merge(['icon']) %}
 {% endif %}
 
-<a href="{{ url }}" {% if target | default %}target="{{ target }}"{% endif %} class="button {{ modifiers | join(' ')}}">
+<a href="{{ url }}" {% if target | default %}target="{{ target }}"{% endif %} class="button {{ modifiers | join(' ')}} {{ classes }}">
   {{ text | default }}
   {% if icon | default %}
-    <i class="icon icon--small icon-{{ icon }}"></i>
+    <i class="icon align-middle text-2xl icon-{{ icon }}"></i>
   {% endif %}
 </a>
 

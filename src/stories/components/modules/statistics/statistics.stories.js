@@ -38,23 +38,78 @@ const Template = (args) => {
 // }));
 
 const defaultArgs = {
-  section_heading: 'Heading',
-  section_description: 'Description',
+  intro_class: 'text-left',
+  section_label: {
+    icon: 'home',
+    text: 'Example label goes here'
+  },
+  section_heading: '[h2, optional] Modular Component Intro, Label type',
+  section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
+  section_link: {
+    url: '#',
+    text: 'Optional Link'
+  },
+  divider: true,
   statistics: [
     {
-      value: 200,
-      text: 'Lorem ipsum dolor sit amet',
-      link: 'test'
+      stat_bg: 'primary-50',
+      icon: {
+        name: 'moon',
+        background: 'primary'
+      },
+      value: '#1 Best Value',
+      caption: 'of private universities in Kansas',
+      description: 'Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025. Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025</a>'
     },
     {
-      value: 200,
-      text: 'Lorem ipsum dolor sit amet',
-      statistic_link: 'test'
+      stat_bg: 'primary-50',
+      icon: {
+        name: 'moon',
+        background: 'primary'
+      },
+      value: '#1 Best Value',
+      caption: 'of private universities in Kansas',
+      description: 'Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025</a>'
     },
     {
-      value: 200,
-      text: 'Lorem ipsum dolor sit amet',
-      statistic_link: 'test'
+      stat_bg: 'primary-50',
+      icon: {
+        name: 'moon',
+        background: 'primary'
+      },
+      value: '#1 Best Value',
+      caption: 'of private universities in Kansas',
+      description: 'Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025</a>'
+    },
+    {
+      stat_bg: 'primary-50',
+      icon: {
+        name: 'moon',
+        background: 'primary'
+      },
+      value: '#1 Best Value',
+      caption: 'of private universities in Kansas',
+      description: 'Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025. Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025</a>'
+    },
+    {
+      stat_bg: 'primary-50',
+      icon: {
+        name: 'moon',
+        background: 'primary'
+      },
+      value: '#1 Best Value',
+      caption: 'of private universities in Kansas',
+      description: 'Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025</a>'
+    },
+    {
+      stat_bg: 'primary-50',
+      icon: {
+        name: 'moon',
+        background: 'primary'
+      },
+      value: '#1 Best Value',
+      caption: 'of private universities in Kansas',
+      description: 'Accordion to <a href="https://google.com"> US News & World Report, Best Colleges of 2025</a>'
     }
   ]
 };

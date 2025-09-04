@@ -3,14 +3,18 @@
     @apply transition-all duration-300;
 }
 
-.splide__pagination{    
+.splide__pagination{
 
     button{
-        @apply bg-primary w-5 aspect-square rounded-full border-2 border-primary;
+        @apply bg-neutrals-200 w-2 h-2 aspect-square rounded-full;
         &.is-active{
-            @apply bg-white;
+            @apply bg-primary w-[1.5rem] h-[0.5rem];
         }
     }
+}
+
+.splide__arrow:hover span.ph {
+  @apply text-white;
 }
 
 
@@ -27,19 +31,19 @@
             @apply shadow-none bg-transparent w-[var(--slide-width)];
         }
 
-        
+
         .card_section {
             @apply transition-all duration-300 shadow-md bg-white;
         }
 
         .splide__slide.is-active {
             @apply z-20 relative m-0;
-            
-            
+
+
             .card {
                 @apply w-[var(--slide-width-curr)] -ml-24 -mr-24 shadow-lg text-white;
-                
-                
+
+
                 a:not(.button) {
                     @apply text-inherit;
                 }

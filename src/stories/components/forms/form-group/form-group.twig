@@ -1,4 +1,4 @@
-<div class="flex flex-col md:flex-row gap-4">
+<div>
   {% block form_content %}
     <div class=" md:w-1/2">
       {% include '@components/forms/text/text.twig' with {
@@ -22,8 +22,8 @@
         required: true
       } %}
     </div>
-    
+
     <button class="button self-end w-full md:w-auto" type="submit">Submit</button>
-  
+
   {% endblock %}
 </div>

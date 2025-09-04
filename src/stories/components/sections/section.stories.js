@@ -1,4 +1,5 @@
 import twig from './section.twig';
+import intro from './intro/section_intro.twig';
 import './section.css';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
@@ -36,13 +37,17 @@ const Template = (args) => {
 const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 
-const defaultArgs = {
+const introConfig = {
   section_heading: 'Heading',
   section_description: 'Description',
   section_button: {
     url: '#',
     text: 'Button'
-  }
+  },
+};
+
+const defaultArgs = {
+  intro: intro(introConfig),
 };
 
 Default.args = defaultArgs;
@@ -50,14 +55,20 @@ Default.args = defaultArgs;
 const BackgroundColor = Template.bind({});
 BackgroundColor.args = {
   ...defaultArgs,
-  section_heading: 'Background Primary',
+  intro: intro({
+    ...introConfig,
+    section_heading: 'Background Primary',
+  }),
   section_class: 'bg-primary color-white'
 };
 
 const Secondary = Template.bind({});
 Secondary.args = {
   ...defaultArgs,
-  section_heading: 'Background Secondary',
+  intro: intro({
+    ...introConfig,
+    section_heading: 'Background Secondary'
+  }),
   section_class: 'bg-secondary-200'
 };
 
