@@ -2,7 +2,7 @@
   <ul class="pagination flex gap-3 md:gap-7 justify-center text-center mt-3 lg:mt-5 mb-0 list-none items-center">
     {% if previous | default %}
       <li class="pagination-previous">
-        {% include '@components/links/arrow/arrow.twig' with { direction: 'Previous', url: previous } %}
+        {% include '@molecules/pagination/pagination-arrow.twig' with { direction: 'Previous', url: previous } %}
         
       </li>
     {% endif %}
@@ -21,7 +21,7 @@
     {% endif %}
     {% if next | default %}
       <li class="pagination-next">
-        {% include '@components/links/arrow/arrow.twig' with { direction: 'Next', url: next } %}
+        {% include '@molecules/pagination/pagination-arrow.twig' with { direction: 'Next', url: next } %}
       </li>
     {% endif %}
   </ul>
