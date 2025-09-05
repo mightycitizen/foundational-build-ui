@@ -46,6 +46,12 @@ export const parameters = {
     storySort: {
        method: 'alphabetical',
         order: [
+          'Base',
+          'Atoms',
+          'Molecules',
+          'Organisms',
+          'Templates',
+          'Demos',
           'Global',
           'Layout',
           'Components',

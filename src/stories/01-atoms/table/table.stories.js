@@ -1,8 +1,8 @@
-import twig from './hr.twig';
+import twig from './table.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Elements/Horizontal Rule'
+  title: 'Atoms/Table'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   required: {
@@ -21,5 +21,5 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const HorizontalRule = Template.bind({});
+export const Table = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

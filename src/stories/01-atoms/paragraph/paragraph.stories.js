@@ -1,8 +1,8 @@
-import twig from './image-with-caption.twig';
+import twig from './paragraph.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Elements/Image'
+  title: 'Atoms/Paragraph'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   required: {
@@ -21,5 +21,5 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const Image = Template.bind({});
+export const Paragraph = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args

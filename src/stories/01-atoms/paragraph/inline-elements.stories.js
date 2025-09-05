@@ -1,8 +1,8 @@
-import twig from './paragraph.twig';
+import twig from './inline-elements.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Elements/Paragraph'
+  title: 'Atoms/Paragraph/Inline Elements'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   required: {
@@ -21,5 +21,5 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const Paragraph = Template.bind({});
+export const InlineElements = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
