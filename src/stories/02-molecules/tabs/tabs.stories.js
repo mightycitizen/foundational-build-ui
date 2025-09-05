@@ -3,7 +3,7 @@ import twig from './tabs.twig';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 export default {
-  title: 'Components/Containers/Tabs',
+  title: 'Molecules/Tabs',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     // modifier: {

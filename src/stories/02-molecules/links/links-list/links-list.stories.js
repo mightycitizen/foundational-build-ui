@@ -2,7 +2,7 @@ import twig from './links-list.twig';
 import { links } from '../../../global/placeholders/components.json';
 
 export default {
-  title: 'Components/Containers/Links List'
+  title: 'Molecules/Links/Links List'
 };
 
 const Template = (args) => {
