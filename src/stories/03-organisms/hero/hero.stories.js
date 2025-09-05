@@ -7,7 +7,7 @@ import {
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Containers/Hero'
+  title: 'Organisms/Hero'
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args

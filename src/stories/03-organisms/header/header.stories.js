@@ -3,7 +3,7 @@ import { menu, utility_menu, header_dropdown, cta_menu, logo } from '../../globa
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Layout/Wrapper/Header'
+  title: 'Organisms/Header'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {

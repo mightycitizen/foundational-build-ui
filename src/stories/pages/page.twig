@@ -1,18 +1,18 @@
 {% if header is empty %}
   {% set header %}
-    {% include "@layout/wrapper/header.twig" %}
+    {% include "organisms:header" %}
   {% endset %}
 {% endif %}
 
 {% if footer is empty %}
   {% set footer %}
-    {% include "@layout/wrapper/footer.twig" %}
+    {% include "organisms:footer" %}
   {% endset %}
 {% endif %}
 
 {% if hero_section is empty %}
   {% set hero_section %}
-    {% include '@components/containers/hero/hero.twig' with hero %}
+    {% include 'organisms:hero' with hero %}
   {% endset %}
 {% endif %}
 

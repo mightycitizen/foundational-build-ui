@@ -2,7 +2,7 @@
     @scroll.window="backToTop = window.scrollY > 100">
 
   {% block header %}
-    {% include "@layout/wrapper/header.twig" %}
+    {% include "organisms:header" %}
   {% endblock %}
 
   <main class="l-main" id="main">
@@ -21,7 +21,7 @@
   </main>
 
   {% block footer %}
-    {% include "@layout/wrapper/footer.twig" %}
+    {% include "organisms:footer" %}
   {% endblock %}
 
   {% if cookie | default %}
