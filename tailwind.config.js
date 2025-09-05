@@ -35,7 +35,12 @@ colors = {
 
 
 module.exports = {
-  content: ['./src/assets/js/**/*.js', './src/stories/{components,layout,pages}/**/*.{twig,js,css}','../templates/**/*.twig'],
+  content: [
+    './src/assets/js/**/*.js',
+    './src/stories/{components,layout,pages}/**/*.{twig,js,css}',
+    '../templates/**/*.twig',
+    './src/stories/{00-base,01-atoms,02-molecules,03-organisms}/**/*.{twig,js,css}',
+  ],
   safelist: [
     'mb-1',
     'font-display',

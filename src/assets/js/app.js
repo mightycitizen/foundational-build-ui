@@ -5,6 +5,11 @@ if (import.meta.hot) {
   });
 }
 
+const base = import.meta.glob('../../stories/00-base/**/*.css', { eager: true }); // Or .scss
+const atoms = import.meta.glob('../../stories/01-atoms/**/*.css', { eager: true }); // Or .scss
+const molecules = import.meta.glob('../../stories/02-molecules/**/*.css', { eager: true });
+const organisms = import.meta.glob('../../stories/03-organisms/**/!(*.stories).js', { eager: true }); // Or .scss
+
 import.meta.glob('../../stories/components/**/*.css', { eager: true }); // Or .scss
 const globalCSS = import.meta.glob('../../stories/global/**/*.css', { eager: true }); // Or .scss
 const layoutCSS = import.meta.glob('../../stories/layout/**/*.css', { eager: true });

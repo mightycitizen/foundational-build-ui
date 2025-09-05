@@ -35,7 +35,7 @@
     {% block section_content %}
       {% if sidebar or sidebar_bottom %}
         {# Sidebars, hero, and content inside section container #}
-        {% include '@layout/structure/content-grid.twig' %}
+        {% include '@base/layout/layout.twig' %}
       {% else %}
         {# Just content inside section container #}
         {{ content }}

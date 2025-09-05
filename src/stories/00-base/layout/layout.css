@@ -16,8 +16,8 @@
   .hero-wrapper {
     break-before: column;
   }
-
 }
+
 @media (max-width: 1023px) {
   .grid-template {
     display: flex;

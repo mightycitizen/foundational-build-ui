@@ -1,8 +1,8 @@
-import sidebarTwig from './content-with-sidebar.twig';
+import sidebarTwig from './layout.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Layout/Structure/Content'
+  title: 'Base/Layout'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {

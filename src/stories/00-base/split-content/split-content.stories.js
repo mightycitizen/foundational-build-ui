@@ -1,10 +1,10 @@
-import columnsTwig from './columns.twig';
+import twig from './split-content.twig';
 
 export default {
-  title: 'Layout/Containers/Columns',
+  title: 'Base/Split Content',
 };
 
-const ColumnsTemplate = (args) => columnsTwig(args);
+const ColumnsTemplate = (args) => twig(args);
 
 const defaultArgs = {
   col_1: 'Column 1',

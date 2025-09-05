@@ -1,10 +1,10 @@
-import listsTwig from './lists.twig';
+import twig from './list-content.twig';
 
 export default {
-  title: 'Layout/Containers/Lists',
+  title: 'Base/List Content',
 };
 
-const ListsTemplate = (args) => listsTwig(args);
+const ListsTemplate = (args) => twig(args);
 
 const defaultArgs = {
   items: [
