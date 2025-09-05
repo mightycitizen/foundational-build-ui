@@ -9,7 +9,7 @@
     <div class="hero_search-form bg-neutrals-50 md:border-b md:pt-9 pb-8 mb-16">
       <div class="container">
         <div class="mb-8 lg:mb-4{% if background_color is empty %} text-primary-500{% endif %}">
-          {% include '@components/navigation/breadcrumbs/breadcrumbs.twig' with breadcrumbs %}
+          {% include 'molecules:breadcrumbs' with breadcrumbs %}
         </div>
         <div class="grid grid-cols-12 gap-6 items-center justify-center">
           <div class="col-span-12 md:col-span-8 md:col-start-3 md:pt-8 pb-5">

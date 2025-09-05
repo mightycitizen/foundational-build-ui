@@ -1,8 +1,8 @@
 import twig from './accordion.twig';
-import { accordion, wysiwyg } from '../../../global/placeholders/components.json';
+import { accordion, wysiwyg } from '../../global/placeholders/components.json';
 
 export default {
-  title: 'Components/Containers/Accordion'
+  title: 'Molecules/Accordion'
 };
 
 const Template = (args) => {

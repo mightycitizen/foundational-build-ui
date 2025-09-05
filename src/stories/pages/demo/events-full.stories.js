@@ -1,5 +1,5 @@
 import twig from '../page.twig';
-import breadcrumbs_twig from '../../components/navigation/breadcrumbs/breadcrumbs.twig';
+import breadcrumbs_twig from '../../02-molecules/breadcrumbs/breadcrumbs.twig';
 import sidebar from '../../components/sidebar/sidebar-events.twig';
 import sidebar_bottom from '../../components/sidebar/sidebar-events-bottom.twig';
 import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, links_bar_menu, footer_links, site_name } from '../../global/placeholders/global.json';

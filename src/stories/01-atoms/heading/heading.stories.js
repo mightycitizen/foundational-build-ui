@@ -1,4 +1,4 @@
-import twig from './headings.twig';
+import twig from './heading.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {

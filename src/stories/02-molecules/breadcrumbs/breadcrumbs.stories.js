@@ -1,8 +1,8 @@
 import twig from './breadcrumbs.twig';
-import { breadcrumbs } from '../../../global/placeholders/components.json';
+import { breadcrumbs } from '../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Navigation/Breadcrumbs',
+  title: 'Molecules/Breadcrumbs',
   argTypes: {}
 };
 
