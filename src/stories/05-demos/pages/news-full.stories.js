@@ -1,4 +1,4 @@
-import twig from '../page.twig';
+import twig from '../../04-templates/page/page.twig';
 import breadcrumbs_twig from '../../02-molecules/breadcrumbs/breadcrumbs.twig';
 import sidebar from '../../03-organisms/sidebar/sidebar-news.twig';
 import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, links_bar_menu, footer_links, site_name } from '../../global/placeholders/global.json';
@@ -9,7 +9,7 @@ import {
 } from '../../global/placeholders/components.json';
 
 export default {
-  title: 'Pages/Demo Pages',
+  title: 'Demos/Pages/News Detail',
 };
 
 const NewsFullTemplate = (args) => twig(args);

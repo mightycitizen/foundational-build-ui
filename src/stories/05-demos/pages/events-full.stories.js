@@ -1,4 +1,4 @@
-import twig from '../page.twig';
+import twig from '../../04-templates/page/page.twig';
 import breadcrumbs_twig from '../../02-molecules/breadcrumbs/breadcrumbs.twig';
 import sidebar from '../../03-organisms/sidebar/sidebar-events.twig';
 import sidebar_bottom from '../../03-organisms/sidebar/sidebar-events-bottom.twig';
@@ -10,7 +10,7 @@ import {
 } from '../../global/placeholders/components.json';
 
 export default {
-  title: 'Pages/Demo Pages',
+  title: 'Demos/Pages/Event Detail',
 };
 
 const EventsFullTemplate = (args) => twig(args);
