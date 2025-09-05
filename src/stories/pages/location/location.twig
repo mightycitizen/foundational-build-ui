@@ -11,7 +11,7 @@
       {% include '@base/layout/layout.twig' %}
 
       {% set sidebar %}
-        {% include '@components/sidebar/sidebar-location.twig' with page_sidebar %}
+        {% include '@organisms/sidebar/sidebar-location.twig' with page_sidebar %}
       {% endset %}
 
       {% set hero_section %}
@@ -40,7 +40,7 @@
       {% endset %}
 
       {% set sidebar_bottom %}
-        {% include '@components/sidebar/sidebar-location-bottom.twig' with page_sidebar %}
+        {% include '@organisms/sidebar/sidebar-location-bottom.twig' with page_sidebar %}
       {% endset %}
     {% endblock %}
   {% endembed %}

@@ -11,7 +11,7 @@
       {% include '@base/layout/layout.twig' %}
 
       {% set sidebar %}
-        {% include '@components/sidebar/sidebar-events.twig' with page_sidebar %}
+        {% include '@organisms/sidebar/sidebar-events.twig' with page_sidebar %}
       {% endset %}
 
       {% set hero_section %}
@@ -38,7 +38,7 @@
       {% endset %}
 
       {% set sidebar_bottom %}
-        {% include '@components/sidebar/sidebar-events-bottom.twig' with page_sidebar %}
+        {% include '@organisms/sidebar/sidebar-events-bottom.twig' with page_sidebar %}
       {% endset %}
     {% endblock %}
   {% endembed %}

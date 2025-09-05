@@ -29,7 +29,7 @@
     {% endset %}
     {% if sidebar_modules | default | length > 0 %}
       {% set sidebar %}
-        {% include '@components/sidebar/sidebar-news.twig' with page_sidebar %}
+        {% include '@organisms/sidebar/sidebar-news.twig' with page_sidebar %}
 
         {% for module in sidebar_modules %}
           {% if module.module_type == 'accordion' %}
