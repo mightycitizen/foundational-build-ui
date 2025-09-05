@@ -2,9 +2,9 @@
   {% for link in links %}
     <li>
       {% if arrow | default %}
-        {% include "@components/links/read-more/read-more.twig" with link %}
+        {% include "atoms:read-more" with link %}
       {% else %}
-        {% include "@components/links/link.twig" with link %}
+        {% include "atoms:link" with link %}
       {% endif %}
     </li>
   {% endfor %}

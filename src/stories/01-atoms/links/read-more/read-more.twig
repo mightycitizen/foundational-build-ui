@@ -2,7 +2,7 @@
 {% if size | default == 'lg' %}
   {% set modifier = modifier ~ ' text-2xl' %}
 {% endif %}
-  {% include '@components/links/link.twig' with {
+  {% include 'atoms:link' with {
     url: url,
     text: text,
     target: target,

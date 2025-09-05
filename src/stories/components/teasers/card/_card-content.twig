@@ -78,7 +78,7 @@
 {% endif %}
 
 {% if button | default %}
-  {% include '@components/links/button/button.twig' with {
+  {% include 'atoms:button' with {
     text: button.text,
     url: button.url
   } %}
@@ -111,7 +111,7 @@
 {% endif %}
 
 {% if link | default %}
-  {% include '@components/links/read-more/read-more.twig' with {
+  {% include 'atoms:read-more' with {
     class: 'h4',
     text: link.text,
     url: link.url,

@@ -14,7 +14,7 @@
           <h3 class="mb-2">{{ step.heading }}</h3>
           <p class="mb-3">{{ step.description }}</p>
           {% if step.link | default is not empty %}
-            {% include '@components/links/read-more/read-more.twig' with {
+            {% include 'atoms:read-more' with {
 
                 text: step.link.text,
                 url: step.link.url,

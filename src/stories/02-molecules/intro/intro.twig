@@ -58,17 +58,17 @@
 
         <div class="flex flex-col gap-y-4 md:flex-row md:gap-x-4{% if intro_class == 'text-center' %} items-center justify-center{% else %} items-start{% endif %}{% if section_disclaimer | default %} mb-4{% endif %}">
           {% if section_button | default %}
-            {% include '@components/links/button/button.twig' with section_button | merge({
+            {% include 'atoms:button' with section_button | merge({
               color: 'secondary'
             }) only %}
           {% endif %}
           {% if section_button_tertiary | default %}
-            {% include '@components/links/button/button.twig' with section_button | merge({
+            {% include 'atoms:button' with section_button | merge({
               color: 'tertiary'
             }) only %}
           {% endif %}
           {% if section_link | default %}
-            {% include '@components/links/read-more/read-more.twig' with section_link only %}
+            {% include 'atoms:read-more' with section_link only %}
           {% endif %}
         </div>
 

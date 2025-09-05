@@ -1,10 +1,18 @@
-import twig from './small-link.twig';
+import twig from './read-more.twig';
+// import './read-more.css';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Links/Small Link',
+  title: 'Atoms/Links/Read More',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {}
+  argTypes: {
+    text: { control: 'text' },
+    url: { control: 'text' },
+    size: {
+      control: { type: 'select' },
+      options: ['', 'lg']
+    }
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -15,9 +23,9 @@ const Template = (args) => {
 };
 
 const defaultArgs = {
-  text: 'Small Link',
+  text: 'Read More',
   url: '#'
 };
-export const SmallLink = Template.bind({});
+export const ReadMore = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-SmallLink.args = defaultArgs;
+ReadMore.args = defaultArgs;

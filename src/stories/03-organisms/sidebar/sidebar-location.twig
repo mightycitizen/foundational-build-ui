@@ -29,7 +29,7 @@
     {% endif %}
 
     {% if directions_url | default %}
-      {% include "@components/links/read-more/read-more.twig" with directions_url %}
+      {% include "atoms:read-more" with directions_url %}
     {% endif %}
   </div>
 
@@ -43,7 +43,7 @@
     </ul>
     {% endif %}
     {% if more_info | default %}
-      {% include "@components/links/read-more/read-more.twig" with more_info %}
+      {% include "atoms:read-more" with more_info %}
     {% endif %}
   </div>
 

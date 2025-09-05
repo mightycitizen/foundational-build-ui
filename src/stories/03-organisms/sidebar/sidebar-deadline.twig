@@ -16,7 +16,7 @@
   {% if event_series | default %}
     <div class="event-series border-b-[1px] border-b-neutrals-100 pb-6">
       <h2 class="text-lg font-semibold">Event Series [if appl.]</h2>
-      {% include "@components/links/read-more/read-more.twig" with event_series %}
+      {% include "atoms:read-more" with event_series %}
     </div>
   {% endif %}
 

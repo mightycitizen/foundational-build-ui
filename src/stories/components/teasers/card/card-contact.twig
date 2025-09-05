@@ -10,7 +10,7 @@
           <p class="mb-3 lg:text-lg">{{ description }}</p>
         {% endif %}
         {% if link | default %}
-          {% include '@components/links/read-more/read-more.twig' with link %}
+          {% include 'atoms:read-more' with link %}
         {% endif %}
       </div>
       {% if items | length %}
