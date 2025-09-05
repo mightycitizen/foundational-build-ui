@@ -1,10 +1,10 @@
 import twig from './section.twig';
-import intro from './intro/section_intro.twig';
+import intro from '../../02-molecules/intro/intro.twig';
 import './section.css';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Sections',
+  title: 'Organisms/Section',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     intro_class: {

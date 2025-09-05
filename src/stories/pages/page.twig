@@ -29,7 +29,7 @@
     {# Sidebar layouts have inline hero, otherwise render full width here #}
     {{ hero_section }}
   {% endif %}
-  {% embed '@components/sections/section.twig' with {
+  {% embed 'organisms:section' with {
     padding: padding,
   } %}
     {% block section_content %}

@@ -1,4 +1,4 @@
-{% embed '@components/sections/section.twig' with {
+{% embed 'organisms:section' with {
   section_class: "section--hierarchical " ~ section_class | default,
 } %}
   {% block section_content %}

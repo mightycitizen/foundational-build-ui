@@ -104,7 +104,7 @@
       {% include '@components/listing/pagination/pagination.twig' with pagination %}
     {% endset %}
 
-    {% embed '@components/sections/section.twig' with {
+    {% embed 'organisms:section' with {
       section_class: 'pt-0 lg:pt-11',
       padding: 'tight',
     } %}
