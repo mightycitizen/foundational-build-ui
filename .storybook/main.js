@@ -79,6 +79,12 @@ export default {
           layout: join(__dirname, '../', 'src/stories/layout'),
           pages: join(__dirname, '../', 'src/stories/pages'),
           wrappers: join(__dirname, '../', 'src/stories/wrappers'),
+
+          base: join(__dirname, '../', 'src/stories/00-base'),
+          atoms: join(__dirname, '../', 'src/stories/01-atoms'),
+          molecules: join(__dirname, '../', 'src/stories/02-molecules'),
+          organisms: join(__dirname, '../', 'src/stories/03-organisms'),
+          templates: join(__dirname, '../', 'src/stories/04-templates'),
         },
       })
     );

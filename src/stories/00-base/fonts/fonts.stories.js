@@ -1,8 +1,8 @@
-import twig from './fonts.twig';
+import twig from './fonts.stories.twig';
 import fonts from './fonts.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Base/Fonts'
+  title: 'Base/Fonts'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {

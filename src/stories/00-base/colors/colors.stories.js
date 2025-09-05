@@ -1,9 +1,9 @@
-import twig from './colors.twig';
+import twig from './colors.stories.twig';
 import colors from './colors.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Base/Colors'
+  title: 'Base/Colors'
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args

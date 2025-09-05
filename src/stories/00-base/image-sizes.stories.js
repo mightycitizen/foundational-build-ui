@@ -1,8 +1,8 @@
-import twig from './image-sizes.twig';
+import twig from './image-sizes.stories.twig';
 import imageSizes from './image-sizes.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Global/Base/Image Sizes'
+  title: 'Base/Image Sizes'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {

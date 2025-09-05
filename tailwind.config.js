@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-import palettes from './src/stories/global/base/colors.json';
-import fonts from './src/stories/global/base/fonts.json';
-import breakpoints from './src/stories/global/base/breakpoints.json';
+import palettes from './src/stories/00-base/colors/colors.json';
+import fonts from './src/stories/00-base/fonts/fonts.json';
+import breakpoints from './src/stories/00-base/breakpoints.json';
 import phosphorIcons from "phosphor-icons-tailwindcss";
 
 let colors = {

@@ -73,13 +73,13 @@
       <div class="flex flex-wrap pb-5">
         {% if color.colors.default %}
 
-          {% include './_swatch.twig' with {
+          {% include './_swatch.stories.twig' with {
             hex: color.colors.default
           }%}
 
 
           {% for key, value in color.colors.variants %}
-            {% include './_swatch.twig' with {
+            {% include './_swatch.stories.twig' with {
               hex: value,
               type: key
             }%}
@@ -87,7 +87,7 @@
 
 
         {% else %}
-          {% include './_swatch.twig' with {
+          {% include './_swatch.stories.twig' with {
             hex: color.hex
           }%}
         {% endif %}
