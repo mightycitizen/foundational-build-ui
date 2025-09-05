@@ -19,7 +19,7 @@
     {% endif %}
     {% if sidebar_link | default %}
       <div class="flex items-center gap-x-2 pt-4">
-        {% if sidebar_link.icon %}<span class="text-primary">{% include '@components/inline-text/icon/icon.twig' with sidebar_link %}</span>{% endif %}
+        {% if sidebar_link.icon %}<span class="text-primary">{% include 'atoms:icon' with sidebar_link %}</span>{% endif %}
         {% include "atoms:read-more" with sidebar_link %}
       </div>
     {% endif %}

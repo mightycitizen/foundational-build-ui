@@ -21,7 +21,7 @@
   <div class="container flex gap-6 justify-between md:justify-center flex-wrap md:flex-nowrap items-center md:items-start">
     {% if alert_type %}
       <div class="alert-type-icon order-1">
-        {% include '@components/inline-text/icon/icon.twig' with {
+        {% include 'atoms:icon' with {
           icon: alert_type.icon,
           modifiers: 'w-[56px] h-[56px] rounded-full flex items-center justify-center ' ~ alert_type.icon_colors
         } %}

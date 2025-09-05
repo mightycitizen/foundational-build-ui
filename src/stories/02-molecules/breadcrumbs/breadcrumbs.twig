@@ -52,7 +52,7 @@
   </nav>
 {% elseif breadcrumb_back %}
   <a href="{{ breadcrumb_back.url }}" class="text-semibold display-inline-flex flex-align-center py-6 gx-05">
-    {% include '@components/inline-text/icon/icon.twig' with {
+    {% include 'atoms:icon' with {
       icon_name: 'angle-left',
       stroke_width: 2
     } only %}

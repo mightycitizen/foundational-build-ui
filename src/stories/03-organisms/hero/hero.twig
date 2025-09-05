@@ -76,7 +76,7 @@
                 {% if alert_type | default or badge | default %}
                   <div class="flex items-center gap-x-4 mb-5">
                     {% if alert_type %}
-                      {% include '@components/inline-text/icon/icon.twig' with {
+                      {% include 'atoms:icon' with {
                         icon: alert_type.icon,
                         modifiers: 'inline-block w-[40px] h-[40px] rounded-full flex items-center justify-center ' ~ alert_type.icon_colors
                       } %}
@@ -197,7 +197,7 @@
         {% for item in links_bar_menu %}
           <li class="shrink-0">
             {% if item.icon %}
-              {% include '@components/inline-text/icon/icon.twig' with { icon: item.icon, modifiers: 'text-xl align-middle' }%}
+              {% include 'atoms:icon' with { icon: item.icon, modifiers: 'text-xl align-middle' }%}
             {% endif %}
             <a class="no-underline hover:underline" href="{{ item.url }}">{{ item.text }}</a>
           </li>

@@ -2,7 +2,7 @@ import twig from './icon.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Inline Text/Icon'
+  title: 'Atoms/Icon'
   // argTypes: {
   //   class: {
   //     control: {

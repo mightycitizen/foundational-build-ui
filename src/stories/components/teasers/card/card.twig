@@ -27,7 +27,7 @@
   {% if icon | default %}
   <div class="card_icon bg-primary-100 w-full relative text-center py-8">
     <div class="bg-white p-[8px] rounded-full inline-block border-[13px] border-primary">
-      {% include '@components/inline-text/icon/icon.twig' with { modifiers: 'text-[2.75rem] align-middle' }%}
+      {% include 'atoms:icon' with { modifiers: 'text-[2.75rem] align-middle' }%}
     </div>
   </div>
   {% endif %}
