@@ -14,7 +14,7 @@
           {% endif %}
           {% if video_id | default %}
             {% set section_video %}
-              {% include '@components/embed/video/video.twig' with {
+              {% include 'atoms:video' with {
                 trigger: "click"
               }%}
             {% endset %}

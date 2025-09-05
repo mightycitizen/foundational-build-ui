@@ -39,7 +39,7 @@
 
             </button>
             <div class="search-form-wrapper bg-neutrals-50 absolute z-30 bottom-[-186px] right-0 rounded-b shadow lg:px-10 lg:pt-10 lg:pb-9" x-show="open">
-              {% include '@components/forms/simple-form/simple-form.twig' %}
+              {% include 'atoms:simple-form' %}
             </div>
           </div>
 
@@ -72,7 +72,7 @@
             <span class="icon-search"></span>
           </button>
           <div id="search-form" data-toggler=".hide" class="hide search-form">
-            {% include '@components/forms/simple-form/simple-form.twig' %}
+            {% include 'atoms:simple-form' %}
           </div>#}
         </div>
       </div>
@@ -84,7 +84,7 @@
 
           </button>
           <div class="search-form-wrapper leading-6 bg-neutrals-50 absolute z-50 bottom-[-145px] right-0 rounded-b shadow pt-5 pb-5 px-5 lg:px-10 lg:pt-10 lg:pb-9" x-show="open">
-            {% include '@components/forms/simple-form/simple-form.twig' %}
+            {% include 'atoms:simple-form' %}
           </div>
         </div>
         {% include  "@components/utils/hamburger/hamburger.twig" with {

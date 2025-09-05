@@ -24,7 +24,7 @@
       <div class="grid grid-cols-12 gap-6 items-center justify-center">
         <div class="col-span-12 md:col-span-8 md:pt-8 pb-5">
           <h2>Search Faculty & Staff</h2>
-          {% include '@components/forms/hero-search-form/hero-search-form.twig' %}
+          {% include 'atoms:hero-search-form' %}
         </div>
       </div>
       <div class="grid grid-cols-12 gap-6 items-end justify-center">
@@ -47,7 +47,7 @@
         <div class="col-span-12">
           <div class="view-filter view-filter--horizontal flex items-center gap-x-5">
             <h3 class="my-0">Filter results:</h3>
-            {% include '@components/forms/checkbox-group/checkbox-group.twig' with {
+            {% include 'atoms:checkbox-group' with {
               input_class: 'w-full ' ~ input_class | default,
               label: "Department",
               id: "category",
@@ -74,7 +74,7 @@
             } only
             %}
 
-            {% include '@components/forms/radio-group/radio-group.twig' with {
+            {% include 'atoms:radio-group' with {
               input_class: 'w-full ' ~ input_class | default,
               label: "Position Type",
               id: "taxonomy",

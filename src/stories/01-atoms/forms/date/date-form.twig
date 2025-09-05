@@ -1,0 +1,8 @@
+
+{% include 'atoms:input' with {
+  label: label,
+  type: 'date', 
+  value: value,
+  class: datepicker | default ? 'js-datepicker' : null, 
+  id: "date"
+} %}
