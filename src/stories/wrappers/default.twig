@@ -6,7 +6,7 @@
   {% endblock %}
 
   <main class="l-main" id="main">
-{#    {% include '@components/informational/alert/alert.twig' with {#}
+{#    {% include 'molecules:alert' with {#}
 {#      alert_label: "Alert",#}
 {#      text: "Important message goes here and is an optional link lorem ipsum dolor sit amet, consectetur adipiscing elit."#}
 {#    }%}#}
@@ -25,7 +25,7 @@
   {% endblock %}
 
   {% if cookie | default %}
-    {% include '@components/informational/alert/alert.twig' with {
+    {% include 'molecules:alert' with {
       text: cookie,
       closable: true,
       closable_text: "Accept",

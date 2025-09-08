@@ -16,7 +16,7 @@
       {% if items | length %}
         <div class="col-span-12 lg:col-span-9 lg:pl-[70px]">
           <div>
-            {% include '@components/informational/listing/listing.twig' with {
+            {% include 'molecules:label-value' with {
             "listing_class": 'items-start mb-0',
             "items": items
           } %}
