@@ -3,12 +3,12 @@ import twig from './carousel-testimonial.twig';
 import {
   sizes,
   placeholder
-} from '../../../../global/placeholders/images.json';
-import { testimonial } from '../../../../global/placeholders/components.json';
+} from '../../../global/placeholders/images.json';
+import { testimonial } from '../../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 export default {
-  title: 'Components/Containers/Card Group/Testimonial Cards',
+  title: 'Molecules/Carousel/Testimonial Cards',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     // modifier: {

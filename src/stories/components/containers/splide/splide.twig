@@ -2,7 +2,7 @@
 
 	<section {% if id | default %} id="{{ id }}" {% endif %} {% if type | default %} data-type="{{ type }}" {% endif %} class="splide js-splide {{ splide_class | default }} {% if grid | default %}grid grid-cols-12 gap-6{% endif %} -my-2">
   	{% if splide_nav_position  | default  == 'top'%}
-      {% include '@components/containers/carousel/carousel-nav.twig' with {
+      {% include '@molecules/carousel/carousel-nav.twig' with {
         inline: true
       } %}
     {% endif %}
@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		{% if splide_nav_position | default != 'top' %}
-			{% include '@components/containers/carousel/carousel-nav.twig' with {
+			{% include '@molecules/carousel/carousel-nav.twig' with {
       inline: true
     } %}
 		{% endif %}
