@@ -1,11 +1,12 @@
 import twig from '../../04-templates/page/page.twig';
-import breadcrumbs_twig from '../../02-molecules/breadcrumbs/breadcrumbs.twig';
+import pageData from '../../04-templates/page/page.stories.js';
+
+import hero from '../../03-organisms/hero/hero.twig';
+
 import sidebar from '../../03-organisms/sidebar/sidebar-events.twig';
 import sidebar_bottom from '../../03-organisms/sidebar/sidebar-events-bottom.twig';
-import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, links_bar_menu, footer_links, site_name } from '../../global/placeholders/global.json';
-import { placeholder, sizes } from '../../global/placeholders/images.json';
+
 import {
-  breadcrumbs as breadcrumb_data,
   wysiwyg,
 } from '../../global/placeholders/components.json';
 
@@ -14,6 +15,7 @@ export default {
 };
 
 const EventsFullTemplate = (args) => twig(args);
+
 const sidebar_data = {
   page_title: 'Title of Event',
   register_button: {
@@ -71,9 +73,12 @@ const sidebar_data = {
   media_email: 'email@mightyu.edu',
   media_phone: '512-555-1234',
 }
+
 const eventsDetailArgs = {
+  ...pageData,
   page_structure: 'sidebar_full_flex',
-  hero: {
+  hero_section: hero({
+    breadcrumbs: pageData.breadcrumbs,
     hero_inline: true,
     heading: 'Title of Event',
     type: 'event',
@@ -81,24 +86,10 @@ const eventsDetailArgs = {
     summary: 'Summary of event goes here',
     below_hero: 'Rendered image goes here',
     links_bar_menu: null,
-  },
+  }),
   content: wysiwyg,
   sidebar: sidebar( sidebar_data ),
   sidebar_bottom: sidebar_bottom( sidebar_data ),
-  breadcrumbs: breadcrumbs_twig({ breadcrumbs: breadcrumb_data }),
-  menu,
-  utility_menu,
-  links_bar_menu,
-  anchor_nav,
-  local_nav,
-  cta_menu,
-  header_dropdown,
-  logo,
-  social,
-  address,
-  footer_links,
-  site_name,
-  menu_column,
 };
 
 export const EventsFull = EventsFullTemplate.bind({});

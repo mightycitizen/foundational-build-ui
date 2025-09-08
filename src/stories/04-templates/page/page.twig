@@ -1,21 +1,3 @@
-{% if header is empty %}
-  {% set header %}
-    {% include "organisms:header" %}
-  {% endset %}
-{% endif %}
-
-{% if footer is empty %}
-  {% set footer %}
-    {% include "organisms:footer" %}
-  {% endset %}
-{% endif %}
-
-{% if hero_section is empty %}
-  {% set hero_section %}
-    {% include 'organisms:hero' with hero %}
-  {% endset %}
-{% endif %}
-
 {% block header %}
   {{ header }}
 {% endblock %}

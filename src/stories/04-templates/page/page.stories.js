@@ -1,14 +1,22 @@
 import twig from './page.twig';
 
-import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, footer_links, site_name } from '../../global/placeholders/global.json';
-//More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
+import header from '../../03-organisms/header/header.twig';
+import header_data from '../../03-organisms/header/header.stories.js';
 
-// import {
-//   hero_primary,
-// } from '../../global/placeholders/components.json';
+import footer from '../../03-organisms/footer/footer.twig';
+import footer_data from '../../03-organisms/footer/footer.stories.js';
+
+import hero from '../../03-organisms/hero/hero.twig';
+import hero_data from '../../03-organisms/hero/hero.stories.js';
+
+import breadcrumbs from '../../02-molecules/breadcrumbs/breadcrumbs.twig';
+import breadcrumb_data from '../../02-molecules/breadcrumbs/breadcrumbs.stories.js';
 
 export default {
-  title: 'Pages/Page'
+  title: 'Templates/Page',
+  header: header( header_data ),
+  footer: footer( footer_data ),
+  breadcrumbs: breadcrumbs( breadcrumb_data ),
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -21,36 +29,10 @@ const Template = (args) => {
 const Page = Template.bind({});
 
 const defaultArgs = {
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-  label: 'Alert',
-  hero: {
-    background_image: {
-      src: "/images/hero-primary.jpg",
-      alt: "University view"
-    },
-    heading: "Unleash Your Mighty Potential. Your Future Starts Here.",
-    summary: "Discover a vibrant community, groundbreaking research, and unmatched opportunities designed to empower your journey and elevate your impact.",
-    hero_button: {
-      text: "Primary Button",
-      url: "#"
-    },
-    readmore_link: {
-      text: "Optional Link",
-      url: "#"
-    }
-  },
-  menu,
-  social,
-  logo,
-  address,
-  utility_menu,
-  cta_menu,
-  header_dropdown,
-  menu_column,
-  anchor_nav,
-  local_nav,
-  footer_links,
-  site_name,
+  header: header( header_data ),
+  footer: footer( footer_data ),
+  hero_section: hero( hero_data ),
+  breadcrumbs: breadcrumbs( breadcrumb_data ),
   modules: [
     {
       module_type: 'cta',

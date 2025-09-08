@@ -1,10 +1,10 @@
 import twig from '../../04-templates/page/page.twig';
-import breadcrumbs_twig from '../../02-molecules/breadcrumbs/breadcrumbs.twig';
+import pageData from '../../04-templates/page/page.stories.js';
+
+import hero from '../../03-organisms/hero/hero.twig';
 import sidebar from '../../03-organisms/sidebar/sidebar-news.twig';
-import { menu, social, logo, address, utility_menu, cta_menu, header_dropdown, menu_column, anchor_nav, local_nav, links_bar_menu, footer_links, site_name } from '../../global/placeholders/global.json';
-import { placeholder, sizes } from '../../global/placeholders/images.json';
+
 import {
-  breadcrumbs as breadcrumb_data,
   wysiwyg,
 } from '../../global/placeholders/components.json';
 
@@ -13,7 +13,8 @@ export default {
 };
 
 const NewsFullTemplate = (args) => twig(args);
-const page_sidebar = {
+
+const sidebar_data = {
   topics: [
     {
       text: 'Alumni',
@@ -62,9 +63,12 @@ const page_sidebar = {
   media_email: 'email@mightyu.edu',
   media_phone: '512-555-1234'
 };
+
 const newsDetailArgs = {
+  ...pageData,
   page_structure: 'sidebar_full_flex',
-  hero: {
+  hero_section: hero({
+    breadcrumbs: pageData.breadcrumbs,
     hero_inline: true,
     heading: 'Title of News Article',
     type: 'news',
@@ -78,23 +82,9 @@ const newsDetailArgs = {
       publish_date: 'MM DD, YYYY',
     },
     links_bar_menu: null,
-  },
+  }),
   content: wysiwyg,
-  sidebar: sidebar( page_sidebar ),
-  breadcrumbs: breadcrumbs_twig({ breadcrumbs: breadcrumb_data }),
-  menu,
-  utility_menu,
-  links_bar_menu,
-  anchor_nav,
-  local_nav,
-  cta_menu,
-  header_dropdown,
-  logo,
-  social,
-  address,
-  footer_links,
-  site_name,
-  menu_column,
+  sidebar: sidebar( sidebar_data ),
 };
 
 export const NewsFull = NewsFullTemplate.bind({});

@@ -7,7 +7,9 @@ import {
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Organisms/Hero'
+  title: 'Organisms/Hero',
+  breadcrumbs: breadcrumbs_twig({ breadcrumbs: breadcrumb_data }),
+  ...hero_primary,
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
