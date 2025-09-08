@@ -3,7 +3,7 @@ import twig from './badge.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Inline Text/Badge',
+  title: 'Atoms/Inline Text/Badge',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {}
 };

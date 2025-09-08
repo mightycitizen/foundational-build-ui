@@ -1,8 +1,8 @@
-import twig from './label.twig';
+import twig from './flag.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Inline Text/Label',
+  title: 'Atoms/Inline Text/Flag',
   argTypes: {
     class: {
       control: {
@@ -24,8 +24,8 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const Label = Template.bind({});
-Label.args = {
-  text: 'Label'
+export const Flag = Template.bind({});
+Flag.args = {
+  text: 'Flag'
 };
 //

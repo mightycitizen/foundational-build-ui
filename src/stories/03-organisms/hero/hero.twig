@@ -66,7 +66,7 @@
                 </div>
 
                 {% if date | default and endDate | default %}
-                  {% include '@components/inline-text/meta/meta.twig' with {
+                  {% include 'molecules:meta' with {
                     modifier: 'mb-4',
                     date: date,
                     endDate: endDate
@@ -84,7 +84,7 @@
                       <span class="border-r-2 border-r-neutrals-900">&nbsp;</span>
                     {% endif %}
                     {% if badge %}
-                      {% include '@components/inline-text/badge/badge.twig' with badge %}
+                      {% include 'atoms:badge' with badge %}
                     {% endif %}
                   </div>
                 {% endif %}
@@ -152,7 +152,7 @@
                 {% endif %}
 
                 {% if categories | default %}
-                  {% include '@components/inline-text/meta/meta.twig' with {
+                  {% include 'molecules:meta' with {
                     date: endDate | default is empty ? date : false,
                     modifier: 'mt-4',
                     categories: categories

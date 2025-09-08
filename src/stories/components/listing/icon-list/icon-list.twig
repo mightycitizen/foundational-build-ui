@@ -4,7 +4,7 @@
     {% for item in items %}
       <li class="flex items-center gap-x-2 mb-2">
         {% if item.icon %}
-          {{ include('@components/inline-text/icon-text/icon-text.twig', {
+          {{ include('atoms:icon-text', {
             icon: item.icon,
             text: item.text,
           })}}

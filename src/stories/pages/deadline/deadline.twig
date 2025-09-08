@@ -47,7 +47,7 @@
             <li class="font-semibold"><span>Status:</span></li>
             {% if page_status.upcoming | default %}
               <li>
-                  {% include '@components/inline-text/badge/badge.twig' with {
+                  {% include 'atoms:badge' with {
                     icon: 'icon-lightning-fill',
                     text: 'Upcoming',
                     class: 'inline-flex',
@@ -57,7 +57,7 @@
             {% endif %}
             {% if page_status.approaching | default %}
               <li>
-                {% include '@components/inline-text/badge/badge.twig' with {
+                {% include 'atoms:badge' with {
                   icon: 'icon-lightning-fill',
                   text: 'Approaching',
                   class: 'inline-flex',
@@ -67,7 +67,7 @@
             {% endif %}
             {% if page_status.expired_past | default %}
               <li>
-                {% include '@components/inline-text/badge/badge.twig' with {
+                {% include 'atoms:badge' with {
                   icon: 'icon-lightning-fill',
                   text: 'Expired/Past',
                   class: 'inline-flex',

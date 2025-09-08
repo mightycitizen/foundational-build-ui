@@ -11,12 +11,12 @@
       <img {% if lazyload_attr | default %}{{ lazyload_attr }}="{{ image.src }}"{% else %}src="{{ image.src }}" {% if disable_lazy | default != true %}loading="lazy"{% endif %}{% endif %}  alt="{{ image.alt }}" class="w-full ">
 
       {% if type.handle | default == 'events' and date | default %}
-        {% include '@components/inline-text/date/date.twig' with date | merge({
+        {% include 'atoms:date' with date | merge({
           class: 'absolute top-0 left-0 z-2'
         }) %}
       {% endif %}
       {% if flag | default %}
-        {% include '@components/inline-text/flag/flag.twig' with {
+        {% include 'atoms:flag' with {
           class: 'absolute top-0 right-0 z-2',
           flag_text: flag
         }%}
@@ -35,7 +35,7 @@
   <div class="card_section {% if no_outline is empty | default %}p-6 {% else %}py-6 {% endif%}bg-white" {% if equalize | default %}data-equalizer-watch{% endif %}>
     {% if image | default is empty %}
         {% if flag | default %}
-          {% include '@components/inline-text/flag/flag.twig' with {
+          {% include 'atoms:flag' with {
             flag_class: "card_flag"
           }%}
       {% endif %}

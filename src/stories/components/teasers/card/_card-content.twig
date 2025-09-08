@@ -3,7 +3,7 @@
   <ul class="list-none flex gap-x-2 mb-3">
   {% for item in badges %}
     <li>
-      {% include '@components/inline-text/badge/badge.twig' with item %}
+      {% include 'atoms:badge' with item %}
     </li>
   {% endfor %}
   </ul>
@@ -125,14 +125,14 @@
 {% if campus | default or online | default %}
   <div>
   {% if campus | default %}
-    {% include '@components/inline-text/badge/badge.twig' with {
+    {% include 'atoms:badge' with {
       icon: 'icon-buildings',
       text: 'Campus',
       class: 'inline-flex'
     } %}
   {% endif %}
   {% if online | default %}
-    {% include '@components/inline-text/badge/badge.twig' with {
+    {% include 'atoms:badge' with {
       icon: 'icon-lightning-fill',
       text: 'Online',
       class: 'inline-flex',

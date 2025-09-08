@@ -1,20 +1,10 @@
-import twig from './date.twig';
+import twig from './large-value.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Inline Text/Date'
+  title: 'Atoms/Inline Text/Large Value'
   // argTypes: {
-  //   day: {
-  //     control: {
-  //       type: 'text'
-  //     }
-  //   },
-  //   month_short: {
-  //     control: {
-  //       type: 'text'
-  //     }
-  //   },
-  //   unformatted: {
+  //   value: {
   //     control: {
   //       type: 'text'
   //     }
@@ -30,10 +20,8 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const Date = Template.bind({});
-Date.args = {
-  day: '1',
-  month_short: 'Jan',
-  unformatted: '2020-01-01'
+export const LargeValue = Template.bind({});
+LargeValue.args = {
+  value: 9
 };
 //
