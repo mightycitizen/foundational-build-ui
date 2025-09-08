@@ -159,7 +159,7 @@
     {% include 'molecules:pagination' with pagination %}
   {% endset %}
 
-  {% embed 'organisms:section' with {
+  {% embed '@organisms/section/section-embed.twig' with {
     section_class: 'pt-0 lg:pt-11',
     padding: 'tight',
   } %}

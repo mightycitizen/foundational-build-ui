@@ -1,6 +1,6 @@
 {% set panel_classes = panel_theme == 'dark' ? 'bg-primary-800 text-white' : 'bg-primary-50' %}
 {% set border_classes = border ? 'pb-4 lg:pb-0 border-b-[1px] border-b-primary-300 md:border-b-0 md:border-r-2 md:border-r-primary-400' : '' %}
-{% embed 'organisms:section' with {
+{% embed '@organisms/section/section-embed.twig' with {
   section_class: panel_classes | default,
 } %}
   {% block section_content %}

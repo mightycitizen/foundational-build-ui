@@ -2,7 +2,7 @@
   {% set right_aligned = true %}
 {% endif %}
 
-{% embed 'organisms:section' with {
+{% embed '@organisms/section/section-embed.twig' with {
   section_class: "section--heirarchical " ~ section_class | default,
 } %}
   {% block section_content %}
