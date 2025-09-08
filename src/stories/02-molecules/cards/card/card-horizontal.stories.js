@@ -3,7 +3,7 @@ import { card } from '../../../global/placeholders/components.json';
 import { sizes } from '../../../global/placeholders/images.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Teasers/Horizontal Card'
+  title: 'Molecules/Cards/Horizontal Card'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
 };
 

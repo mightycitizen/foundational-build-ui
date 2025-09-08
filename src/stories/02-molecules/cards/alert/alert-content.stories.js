@@ -1,8 +1,8 @@
-import twig from './alert-teaser.twig';
+import twig from './alert-content.twig';
 import { alert_teaser } from '../../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Teasers/Alert Teaser'
+  title: 'Molecules/Cards/Alert/Inactive'
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args

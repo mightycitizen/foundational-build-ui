@@ -1,8 +1,8 @@
-import twig from './card-teaser.twig';
-import { card } from '../../../global/placeholders/components.json';
+import twig from './alert-teaser.twig';
+import { alert_teaser } from '../../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Teasers/Teaser Card'
+  title: 'Molecules/Cards/Alert'
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -13,9 +13,8 @@ const Template = (args) => {
 };
 
 const defaultArgs = {
-  ...card
+  ...alert_teaser
 };
-
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Default.args = defaultArgs;

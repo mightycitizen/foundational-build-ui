@@ -1,7 +1,7 @@
 import twig from './info-panel.twig';
 
 export default {
-  title: 'Components/Containers/Info Panel'
+  title: 'Molecules/Panels/Info Panel'
 };
 
 const Template = (args) => {

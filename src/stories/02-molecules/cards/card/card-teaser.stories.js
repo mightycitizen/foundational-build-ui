@@ -1,8 +1,8 @@
-import twig from './card-icon.twig';
+import twig from './card-teaser.twig';
 import { card } from '../../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Teasers/Icon Card'
+  title: 'Molecules/Cards/Teaser Card'
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -13,19 +13,7 @@ const Template = (args) => {
 };
 
 const defaultArgs = {
-  ...card,
-  image: null,
-  icon: {
-    name: 'ph ph-[building]',
-    background: 'primary-500',
-  },
-  badges: null,
-  heading: {
-    text: '[h3] Heading example lorem ipsum',
-    url: '#',
-    level: 3
-  },
-  link: null
+  ...card
 };
 
 export const Default = Template.bind({});

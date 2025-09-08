@@ -24,7 +24,7 @@
             <div>
               <h2><a class="text-black text-2xl" href="{{ item.url }}">{{ item.heading }}</a></h2>
               {% if item_type | default != 'events' and item.date.full | default %}
-                {% include 'lists:meta' with {
+                {% include 'molecules:meta' with {
                   date: item.date,
                   modifier: 'mb-3'
                 } %}
@@ -36,7 +36,7 @@
                 <p class="mb-0"><a class="text-lg" href="{{ item.url }}">{{ item.url }}</a></p>
               {% endif %}
               {% if item.categories | default | length %}
-                {% include 'lists:meta' with {
+                {% include 'molecules:meta' with {
                     modifier: 'mb-0',
                     categories: item.categories,
                     date: null

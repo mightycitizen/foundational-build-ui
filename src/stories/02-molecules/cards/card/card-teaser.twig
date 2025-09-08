@@ -7,7 +7,7 @@
 {% endif %}
 
 {% set col_2 %}
-  {% include '@components/teasers/card/_card-content.twig' %}
+  {% include '@molecules/cards/card/_card-content.twig' %}
 {% endset %}
 
 <div class="card card--horizontal {% if no_outline is empty | default %}md:shadow-lg bg-white {% endif %}{{ modifier | default }} {% if clickCard | default %}card--click{% endif %}" data-scroll-show>
