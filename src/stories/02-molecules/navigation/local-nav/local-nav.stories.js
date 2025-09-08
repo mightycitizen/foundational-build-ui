@@ -1,11 +1,9 @@
-import twig from './utility-menu.twig';
-import { cta_menu, social } from '../../../global/placeholders/global.json';
+import twig from './local-nav.twig';
+import { local_nav } from '../../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Navigation/CTA Menu'
-  // argTypes: {
-
-  // }
+  title: 'Molecules/Navigation/Local Nav',
+  argTypes: {}
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -15,9 +13,8 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const Menu = Template.bind({});
-Menu.args = {
-  menu_type: 'cta',
-  links: cta_menu
+export const LocalNav = Template.bind({});
+LocalNav.args = {
+  local_nav
 };
 //

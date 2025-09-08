@@ -40,7 +40,7 @@
     {% endset %}
     {% if sidebar_modules | default | length > 0 %}
       {% set sidebar %}
-        {% include '@components/navigation/local-nav/local-nav.twig' with local_nav %}
+        {% include 'molecules:local-nav' with local_nav %}
         {% for module in sidebar_modules %}
           {% if module.module_type == 'accordion' %}
             {% include '@components/modules/accordion/accordion-module.twig' with module only %}
@@ -57,7 +57,7 @@
     {% endembed %}
   {% endif %}
 
-  {% include '@components/navigation/anchor/anchor.twig' %}
+  {% include 'molecules:anchor' %}
   {% for module in modules %}
     {% if module.module_type == 'active_alerts' %}
       {% include '@components/modules/alerts/active-alerts.twig' with module only %}

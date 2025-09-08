@@ -1,9 +1,11 @@
-import twig from './anchor-nav.twig';
-import { anchor_nav } from '../../../global/placeholders/global.json';
+import twig from './utility-menu.twig';
+import { utility_menu, social } from '../../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Navigation/Anchor Nav horizontal',
-  argTypes: {}
+  title: 'Molecules/Navigation/Utility Menu'
+  // argTypes: {
+
+  // }
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -13,8 +15,8 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const AnchorNavHorizontal = Template.bind({});
-AnchorNavHorizontal.args = {
-  anchor_nav,
-  "horizontal_nav": true
+export const Menu = Template.bind({});
+Menu.args = {
+  links: utility_menu
 };
+//

@@ -14,7 +14,7 @@
     <div class="grid grid-cols-12 gap-6 items-center align-middle justify-between">
       {% if utility_menu %}
         <div class="col-span-12 lg:block hidden">
-          {% include '@components/navigation/utility-menu/utility-menu.twig' with {
+          {% include 'molecules:utility-menu' with {
             menu_type: 'utility',
             links: utility_menu
           } %}
@@ -27,7 +27,7 @@
       {% endif %}
       <div class="col-span-12 lg:col-span-9 lg:block hidden">
         <div class="flex items-center justify-end gap-4">
-          {% include '@components/navigation/utility-menu/utility-menu.twig' with {
+          {% include 'molecules:utility-menu' with {
             menu_type: 'cta',
             links: cta_menu
           } %}
@@ -95,6 +95,6 @@
 
   </div>
   {% if menu %}
-    {% include '@components/navigation/menu/menu.twig' with menu %}
+    {% include 'molecules:menu' with menu %}
   {% endif %}
 </header>

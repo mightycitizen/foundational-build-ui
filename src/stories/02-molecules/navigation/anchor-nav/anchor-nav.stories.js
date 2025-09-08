@@ -1,8 +1,8 @@
-import twig from './local-nav.twig';
-import { local_nav } from '../../../global/placeholders/global.json';
+import twig from './anchor-nav.twig';
+import { anchor_nav } from '../../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Navigation/Local Nav',
+  title: 'Molecules/Navigation/Anchor Nav',
   argTypes: {}
 };
 
@@ -13,8 +13,7 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const LocalNav = Template.bind({});
-LocalNav.args = {
-  local_nav
+export const AnchorNav = Template.bind({});
+AnchorNav.args = {
+  anchor_nav
 };
-//

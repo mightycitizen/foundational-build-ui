@@ -2,7 +2,7 @@ import twig from './anchor-nav.twig';
 import { anchor_nav } from '../../../global/placeholders/global.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Navigation/Anchor Nav',
+  title: 'Molecules/Navigation/Anchor Nav horizontal',
   argTypes: {}
 };
 
@@ -13,7 +13,8 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const AnchorNav = Template.bind({});
-AnchorNav.args = {
-  anchor_nav
+export const AnchorNavHorizontal = Template.bind({});
+AnchorNavHorizontal.args = {
+  anchor_nav,
+  "horizontal_nav": true
 };
