@@ -107,7 +107,7 @@
 {% endif %}
 
 {% if list_items | default %}
-  {{ include('@components/listing/icon-list/icon-list.twig', { items: list_items }) }}
+  {{ include('@molecules/lists/icon-list/icon-list.twig', { items: list_items }) }}
 {% endif %}
 
 {% if link | default %}
