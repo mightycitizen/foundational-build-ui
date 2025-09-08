@@ -72,7 +72,7 @@ const defaultArgs = {
       }
     },
     {
-      module_type: 'cardgroup',
+      module_type: 'card-group',
       intro_class: 'text-left',
       section_heading: 'News from Mighty University',
       section_description: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.',
@@ -154,7 +154,7 @@ const defaultArgs = {
       ]
     },
     {
-      module_type: 'cardgroup',
+      module_type: 'card-group',
       intro_class: 'text-left',
       section_label: {
         icon: {

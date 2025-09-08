@@ -5,11 +5,7 @@
 {% block main %}
 
   {% for module in modules %}
-    {% if module.module_type == 'cta' %}
-      {% include '@components/modules/cta/cta.twig' with module only %}
-    {% elseif module.module_type == 'cardgroup' %}
-      {% include '@components/modules/card-group/card-group-module.twig' with module only %}
-    {% endif %}
+    {% include '@organisms/section/module.twig' with module only %}
   {% endfor %}
 
 {% endblock %}

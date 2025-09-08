@@ -1,0 +1,91 @@
+{# Section styling #}
+{% if module_type in ['wysiwyg', 'video'] %}
+  {% set padding = 'tight' %}
+  {% set section_style = 'narrower' %}
+
+{% elseif module_type in ['accordion', 'tabs', 'testimonial'] %}
+  {% set padding = 'tight' %}
+  {% set section_style = 'narrow' %}
+
+{% elseif module_type in ['card-carousel'] %}
+  {% set intro_class = 'text-center' %}
+
+{% elseif module_type in ['contact'] %}
+  {% set exclude_container = true %}
+
+{% elseif module_type in ['card-carousel-center'] %}
+  {% set intro_class = 'text-center' %}
+  {% set exclude_container = true %}
+
+{% elseif module_type in ['testimonial-carousel'] %}
+  {% set section_style = 'narrow' %}
+  {% set intro_class = 'text-center' %}
+{% endif %}
+
+{# Section content #}
+{% set section_content %}
+  {% if module_type == 'wysiwyg' %}
+    <section class="prose">
+      {{ wysiwyg }}
+    </section>
+
+  {% elseif module_type == 'accordion' %}
+    {% include 'molecules:accordion' %}
+
+  {% elseif module_type == 'card-carousel' %}
+    {% include 'molecules:carousel-cards' %}
+
+  {% elseif module_type == 'card-carousel-center' %}
+    {% include 'molecules:carousel-cards-center' %}
+
+  {% elseif module_type == 'card-group' %}
+    {% set items = [] %}
+    {% for card in cards %}
+      {% if card is iterable %}
+        {% set card = card | merge({lazyload_class: 'data-splide-lazy', equalize: true}) %}
+        {% set item %}
+          {% include "molecules:card" with card only %}
+        {% endset %}
+      {% else %}
+        {% set item = card %}
+      {% endif %}
+      {% set items = items | merge([item]) %}
+    {% endfor %}
+
+    {% include 'base:list-content' with {
+      items,
+      columns: 3,
+    } %}
+
+  {% elseif module_type == 'contact' %}
+    {% include 'molecules:contact-panel' %}
+
+  {% elseif module_type == 'tabs' %}
+    {% include 'molecules:tabs' %}
+
+  {% elseif module_type == 'testimonial' %}
+    {% include 'molecules:card-testimonial' %}
+
+  {% elseif module_type == 'testimonial-carousel' %}
+    {% include 'molecules:carousel-testimonial' %}
+
+  {% elseif module_type == 'video' %}
+    {% include 'atoms:video' with {
+      trigger: "click"
+    } %}
+  {% endif %}
+{% endset %}
+
+{# Section #}
+{% if section_content|trim is not empty %}
+  {% include 'organisms:section' with {
+    padding: padding,
+    section_class: section_class,
+    section_style: section_style,
+    exclude_container: exclude_container,
+    intro: intro,
+    section_content: section_content,
+  } %}
+{% elseif module_type == 'cta' %}
+  {% include 'molecules:cta' %}
+{% endif %}
