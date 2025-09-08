@@ -51,7 +51,7 @@
   {% include 'molecules:anchor' %}
 
   {% for module in modules %}
-    {% include '@organisms/section/module.twig' with module only %}
+    {% include 'organisms:module' with module only %}
   {% endfor %}
 
 {% endblock %}

@@ -86,6 +86,11 @@
     intro: intro,
     section_content: section_content,
   } %}
+
+{# These modules already include the section embed: #}
 {% elseif module_type == 'cta' %}
   {% include 'molecules:cta' %}
+
+{% elseif module_type == 'info-panel' %}
+  {% include 'molecules:info-panel' %}
 {% endif %}
