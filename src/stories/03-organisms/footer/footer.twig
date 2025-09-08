@@ -7,7 +7,7 @@
           {% if social %}
             <div class="col-span-12 md:col-span-6 mb-0 self-center flex flex-col md:flex-row md:items-center">
               <span class="font-bold align-top mb-2 md:mb-0 md:mr-4">Connect with us:</span>
-              {% include '@components/utils/social-media/social-media.twig' %}
+              {% include 'molecules:social-media' %}
             </div>
           {% endif %}
           {% if ctas %}
@@ -27,7 +27,7 @@
           <div class="col-span-12 md:col-span-3 mb-12 md:mb-0 md:text-left">
             {% if logo %}
               <div class="mb-4">
-                {% include '@components/logo/logo.twig' with logo %}
+                {% include 'atoms:logo' with logo %}
               </div>
             {% endif %}
             {% if contact %}
@@ -104,7 +104,7 @@
       </div>
     </div>
   </div>
-  {% include '@components/utils/back-to-top/back-to-top.twig' with {
+  {% include 'base:back-to-top' with {
     scroll_show: true
   } %}
 </footer>

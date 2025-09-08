@@ -2,7 +2,7 @@ import twig from './callout.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Informational/Callout',
+  title: 'Molecules/Callout',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     label: {

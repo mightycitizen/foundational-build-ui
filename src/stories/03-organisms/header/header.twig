@@ -22,7 +22,7 @@
       {% endif %}
       {% if logo %}
         <div class="col-span-10 lg:col-span-3 leading-[0]">
-          {% include '@components/logo/logo.twig' with logo %}
+          {% include 'atoms:logo' with logo %}
         </div>
       {% endif %}
       <div class="col-span-12 lg:col-span-9 lg:block hidden">
@@ -87,7 +87,7 @@
             {% include 'atoms:simple-form' %}
           </div>
         </div>
-        {% include  "@components/utils/hamburger/hamburger.twig" with {
+        {% include  "base:hamburger" with {
           toggle: "mainMenu"
         } %}
       </div>

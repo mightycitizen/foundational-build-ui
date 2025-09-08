@@ -170,7 +170,7 @@
 			<span class="sr-only">Pause/Play Video</span>
 		</button>
 		<div class="video_loader absolute z-20 flex justify-center items-center h-full w-full {{ overlay_class }}" x-show="loading">
-			{% include '@components/utils/loader/loader.twig' %}
+			{% include 'base:loader' %}
 		</div>
 		{% if image %}
 			<div class="video_image_wrapper image-size--landscapeCropped z-10" x-show="!playing">

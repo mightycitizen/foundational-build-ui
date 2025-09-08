@@ -1,18 +1,8 @@
-import twig from './hamburger.twig';
+import twig from './loader.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Utils/Hamburger',
-  toggle: {
-    control: {
-      type: 'text'
-    }
-  }
-};
-
-const defaultArgs = {
-  is_demo: true,
-  toggle: 'open'
+  title: 'Base/Utilities/Loader'
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
@@ -22,8 +12,4 @@ const Template = (args) => {
   return twig(args);
 };
 
-const Hamburger = Template.bind({});
-
-Hamburger.args = defaultArgs;
-
-export { Hamburger };
+export const Loader = Template.bind({});

@@ -1,8 +1,8 @@
-import twig from './add2any.twig';
+import twig from './back-to-top.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Utils/Add2Any'
+  title: 'Base/Utilities/Back To Top'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   label: {
@@ -22,25 +22,7 @@ const Template = (args) => {
   return twig(args);
 };
 
-export const Add2Any = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Add2Any.args = {
-  label: 'Heading'
+export const BackToTop = Template.bind({});
+BackToTop.args = {
+  scroll_show: false
 };
-//
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
-//
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// };
-//
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };
