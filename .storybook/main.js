@@ -57,8 +57,16 @@ export default {
     // Add legacy resolver plugin
     config.resolve.plugins = [
       new LegacyNsResolverPlugin()
-  ];    
-    
+    ];
+
+    // Add JS import alias for stories
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      '@molecules': join(__dirname, '../', 'src/stories/02-molecules'),
+      '@organisms': join(__dirname, '../', 'src/stories/03-organisms'),
+      '@templates': join(__dirname, '../', 'src/stories/04-templates'),
+    };
+
     config.plugins.push(
       ViteImageOptimizer({
         logStats: true,

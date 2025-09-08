@@ -1,16 +1,16 @@
 import twig from './page.twig';
 
-import header from '../../03-organisms/header/header.twig';
-import header_data from '../../03-organisms/header/header.stories.js';
+import header from '@organisms/header/header.twig';
+import header_data from '@organisms/header/header.stories.js';
 
-import footer from '../../03-organisms/footer/footer.twig';
-import footer_data from '../../03-organisms/footer/footer.stories.js';
+import footer from '@organisms/footer/footer.twig';
+import footer_data from '@organisms/footer/footer.stories.js';
 
-import hero from '../../03-organisms/hero/hero.twig';
-import hero_data from '../../03-organisms/hero/hero.stories.js';
+import hero from '@organisms/hero/hero.twig';
+import hero_data from '@organisms/hero/hero.stories.js';
 
-import breadcrumbs from '../../02-molecules/breadcrumbs/breadcrumbs.twig';
-import breadcrumb_data from '../../02-molecules/breadcrumbs/breadcrumbs.stories.js';
+import breadcrumbs from '@molecules/breadcrumbs/breadcrumbs.twig';
+import breadcrumb_data from '@molecules/breadcrumbs/breadcrumbs.stories.js';
 
 export default {
   title: 'Templates/Page',

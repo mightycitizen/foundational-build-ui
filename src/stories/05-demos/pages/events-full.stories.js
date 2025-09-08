@@ -1,17 +1,17 @@
-import twig from '../../04-templates/page/page.twig';
-import pageData from '../../04-templates/page/page.stories.js';
+import twig from '@templates/page/page.twig';
+import pageData from '@templates/page/page.stories.js';
 
-import hero from '../../03-organisms/hero/hero.twig';
+import hero from '@organisms/hero/hero.twig';
 
-import sidebar from '../../03-organisms/sidebar/sidebar-events.twig';
-import sidebar_bottom from '../../03-organisms/sidebar/sidebar-events-bottom.twig';
+import sidebar from '@organisms/sidebar/sidebar-events.twig';
+import sidebar_bottom from '@organisms/sidebar/sidebar-events-bottom.twig';
 
 import {
   wysiwyg,
 } from '../../global/placeholders/components.json';
 
 export default {
-  title: 'Demos/Pages/Event Detail',
+  title: 'Demos/Pages/Events/Event Detail',
 };
 
 const EventsFullTemplate = (args) => twig(args);
@@ -76,7 +76,6 @@ const sidebar_data = {
 
 const eventsDetailArgs = {
   ...pageData,
-  page_structure: 'sidebar_full_flex',
   hero_section: hero({
     breadcrumbs: pageData.breadcrumbs,
     hero_inline: true,
