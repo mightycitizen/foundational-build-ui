@@ -6,6 +6,8 @@
     {% set item %}
       {% if view_mode == 'stacked' %}
         {% include '@molecules/cards/card/card-horizontal.twig' with card only %}
+      {% elseif view_mode == 'statistic' %}
+        {% include '@molecules/cards/statistic/statistic.twig' with card only %}
       {% else %}
         {% include '@molecules/cards/card/card.twig' with card only %}
       {% endif %}
