@@ -1,7 +1,7 @@
 <div>
   {% block form_content %}
     <div class=" md:w-1/2">
-      {% include 'atoms:input' with {
+      {% include '@atoms/forms/input/input.twig' with {
         label: "Text",
         name: "text",
         id: "field_group_1",
@@ -12,7 +12,7 @@
       } %}
     </div>
     <div class=" md:w-1/2">
-      {% include 'atoms:input' with {
+      {% include '@atoms/forms/input/input.twig' with {
         label: "Text",
         name: "text",
         class: 'w-full',

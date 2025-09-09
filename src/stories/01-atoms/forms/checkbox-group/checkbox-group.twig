@@ -9,7 +9,7 @@
       {% if options is iterable %}
         <ul class="checkbox-group list-none">
           {% for option in options %}
-            <li>{% include 'atoms:checkbox' with {
+            <li>{% include '@atoms/forms/checkbox/checkbox.twig' with {
             field_id: id,
             value: option.value,
             name: name,

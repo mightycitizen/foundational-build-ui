@@ -4,7 +4,7 @@
   handle: 'directory'
 }%}
 {% block top %}
-  {% include 'organisms:hero'  with {
+  {% include '@organisms/hero/hero.twig'  with {
     heading: 'Directory',
     summary: "[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum. ",
     hero_button: {
@@ -24,7 +24,7 @@
       <div class="grid grid-cols-12 gap-6 items-center justify-center">
         <div class="col-span-12 md:col-span-8 md:pt-8 pb-5">
           <h2>Search Faculty & Staff</h2>
-          {% include 'atoms:hero-search-form' %}
+          {% include '@atoms/forms/hero-search-form/hero-search-form.twig' %}
         </div>
       </div>
       <div class="grid grid-cols-12 gap-6 items-end justify-center">
@@ -47,7 +47,7 @@
         <div class="col-span-12">
           <div class="view-filter view-filter--horizontal flex items-center gap-x-5">
             <h3 class="my-0">Filter results:</h3>
-            {% include 'atoms:checkbox-group' with {
+            {% include '@atoms/forms/checkbox-group/checkbox-group.twig' with {
               input_class: 'w-full ' ~ input_class | default,
               label: "Department",
               id: "category",
@@ -74,7 +74,7 @@
             } only
             %}
 
-            {% include 'atoms:radio-group' with {
+            {% include '@atoms/forms/radio-group/radio-group.twig' with {
               input_class: 'w-full ' ~ input_class | default,
               label: "Position Type",
               id: "taxonomy",
@@ -136,7 +136,7 @@
 
       {% include '@components/listing/list/list-cards.twig' with cards %}
 
-      {% include 'molecules:pagination' with pagination %}
+      {% include '@molecules/pagination/pagination.twig' with pagination %}
     {% endblock %}
   {% endembed %}
 {% endblock %}

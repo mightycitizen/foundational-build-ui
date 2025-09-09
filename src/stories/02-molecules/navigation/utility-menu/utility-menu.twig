@@ -122,7 +122,7 @@
 
           <a @keydown.enter="toggleDropdown({{ loop.index0 }})"  role="menuitem" :class="dropdownOpen.lg === {{ loop.index0 }} ? '{{ menu_options.parent_link_hover_modifiers }}' : ''" class="{{ link.children ? 'hidden lg:inline-flex' : 'inline-flex' }} {{ menu_options.parent_link_modifiers}} {% if link.url and link.children is empty %}hover:underline{% endif %}" {% if link.url %} href="{{ link.url }}"{% endif %}>
             {% if link.icon %}
-              {% include 'atoms:icon' with { icon: link.icon } %}
+              {% include '@atoms/icon/icon.twig' with { icon: link.icon } %}
             {% endif %}
             {{ link.text }}
             {% if link.children %}

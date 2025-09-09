@@ -100,7 +100,7 @@
 
 					<a @keydown.enter="toggleDropdown({{ loop.index0 }})"  role="menuitem" :class="dropdownOpen.lg === {{ loop.index0 }} ? 'bg-primary text-white' : ''" class="{{ link.children ? 'hidden lg:inline-flex' : 'inline-flex' }} text-white font-bold px-6 py-3 gap-2 leading-5 items-center lg:inline-flex no-underline {% if link.url and link.children is empty %}hover:underline{% endif %}" {% if link.url %} href="{{ link.url }}"{% endif %}>
             {% if link.icon %}
-              {% include 'atoms:icon' with { icon: link.icon } %}
+              {% include '@atoms/icon/icon.twig' with { icon: link.icon } %}
               {{ link.text }}
             {% else %}
               <span class="my-px">{{ link.text }}</span>
@@ -219,7 +219,7 @@
 			{% endfor %}
 		</ul>
 		<div class="lg:hidden search-wrapper mt-4">
-			{% include 'atoms:simple-form' with { input_id: 'keywords_mobile' } %}
+			{% include '@atoms/forms/simple-form/simple-form.twig' with { input_id: 'keywords_mobile' } %}
 		</div>
 	</div>
 </div>

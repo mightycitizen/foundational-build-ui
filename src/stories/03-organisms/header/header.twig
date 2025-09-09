@@ -14,7 +14,7 @@
     <div class="grid grid-cols-12 gap-6 items-center align-middle justify-between">
       {% if utility_menu %}
         <div class="col-span-12 lg:block hidden">
-          {% include 'molecules:utility-menu' with {
+          {% include '@molecules/navigation/utility-menu/utility-menu.twig' with {
             menu_type: 'utility',
             links: utility_menu
           } %}
@@ -22,12 +22,12 @@
       {% endif %}
       {% if logo %}
         <div class="col-span-10 lg:col-span-3 leading-[0]">
-          {% include 'atoms:logo' with logo %}
+          {% include '@atoms/logo/logo.twig' with logo %}
         </div>
       {% endif %}
       <div class="col-span-12 lg:col-span-9 lg:block hidden">
         <div class="flex items-center justify-end gap-4">
-          {% include 'molecules:utility-menu' with {
+          {% include '@molecules/navigation/utility-menu/utility-menu.twig' with {
             menu_type: 'cta',
             links: cta_menu
           } %}
@@ -39,7 +39,7 @@
 
             </button>
             <div class="search-form-wrapper bg-neutrals-50 absolute z-30 bottom-[-186px] right-0 rounded-b shadow lg:px-10 lg:pt-10 lg:pb-9" x-show="open">
-              {% include 'atoms:simple-form' %}
+              {% include '@atoms/forms/simple-form/simple-form.twig' %}
             </div>
           </div>
 
@@ -72,7 +72,7 @@
             <span class="icon-search"></span>
           </button>
           <div id="search-form" data-toggler=".hide" class="hide search-form">
-            {% include 'atoms:simple-form' %}
+            {% include '@atoms/forms/simple-form/simple-form.twig' %}
           </div>#}
         </div>
       </div>
@@ -84,10 +84,10 @@
 
           </button>
           <div class="search-form-wrapper leading-6 bg-neutrals-50 absolute z-50 bottom-[-145px] right-0 rounded-b shadow pt-5 pb-5 px-5 lg:px-10 lg:pt-10 lg:pb-9" x-show="open">
-            {% include 'atoms:simple-form' %}
+            {% include '@atoms/forms/simple-form/simple-form.twig' %}
           </div>
         </div>
-        {% include  "base:hamburger" with {
+        {% include  "@base/utils/hamburger/hamburger.twig" with {
           toggle: "mainMenu"
         } %}
       </div>
@@ -95,6 +95,6 @@
 
   </div>
   {% if menu %}
-    {% include 'molecules:menu' with menu %}
+    {% include '@molecules/navigation/menu/menu.twig' with menu %}
   {% endif %}
 </header>

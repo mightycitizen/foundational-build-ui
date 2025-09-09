@@ -10,13 +10,13 @@
           <p class="mb-3 lg:text-lg">{{ description }}</p>
         {% endif %}
         {% if link | default %}
-          {% include 'atoms:read-more' with link %}
+          {% include '@atoms/links/read-more/read-more.twig' with link %}
         {% endif %}
       </div>
       {% if items | length %}
         <div class="col-span-12 lg:col-span-9 lg:pl-[70px]">
           <div>
-            {% include 'molecules:label-value' with {
+            {% include '@molecules/lists/label-value/label-value.twig' with {
             "listing_class": 'items-start mb-0',
             "items": items
           } %}

@@ -3,13 +3,13 @@
     <p class="font-bold text-2xl">{{ page_title }}</p>
     {% if register_button | default %}
       <div class="mb-2">
-      {% include "atoms:button" with register_button %}
+      {% include "@atoms/links/button/button.twig" with register_button %}
       </div>
     {% endif %}
     {% if event_website | default %}
       <div class="flex items-center gap-x-2 pt-4">
         <span class="ph ph-[link] text-primary text-2xl"></span>
-        {% include "atoms:read-more" with event_website %}
+        {% include "@atoms/links/read-more/read-more.twig" with event_website %}
       </div>
     {% endif %}
   </div>
@@ -35,18 +35,18 @@
         {{ event_location }}
       </div>
       {% if event_directions_url | default %}
-        {% include "atoms:read-more" with event_directions_url %}
+        {% include "@atoms/links/read-more/read-more.twig" with event_directions_url %}
       {% endif %}
     </div>
   </div>
   {% if event_virtual_meeting_url | default %}
   <div>
     <h2 class="text-lg font-semibold">Stream this event</h2>
-    {% include "atoms:read-more" with event_virtual_meeting_url %}
+    {% include "@atoms/links/read-more/read-more.twig" with event_virtual_meeting_url %}
   </div>
   {% endif %}
   <div class="text-right">
-    {% include 'base:add2any' with {
+    {% include '@base/utils/add2any/add2any.twig' with {
       class: 'mb-0'
     } %}
   </div>

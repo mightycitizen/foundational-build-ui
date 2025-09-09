@@ -10,7 +10,7 @@
   {% block section_content %}
     {% if block_links %}
       <section class="prose">
-        {% include 'molecules:block-links' %}
+        {% include '@molecules/links/block-links/block-links.twig' %}
       </section>
     {% else %}
       {{ section_content }}

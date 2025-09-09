@@ -5,7 +5,7 @@
   }
 %}
   {% block section_content %}
-      {% include 'atoms:video' with {
+      {% include '@atoms/video/video.twig' with {
         trigger: "click"
       }%}
   {% endblock %}

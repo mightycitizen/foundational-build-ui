@@ -7,7 +7,7 @@ import {
   testimonial,
   contact,
   card,
-} from '../../../global/placeholders/components.json';
+} from '../../global/placeholders/components.json';
 import logos from '@molecules/cards/logo/logo-image.stories.js';
 import logo_twig from '@molecules/cards/logo/logo-image.twig';
 

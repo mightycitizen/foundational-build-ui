@@ -1,6 +1,6 @@
 {% extends '@wrappers/default.twig' %}
 {% block top %}
-  {% include 'organisms:hero' with hero %}
+  {% include '@organisms/hero/hero.twig' with hero %}
 {% endblock %}
 {% block main %}
   {% if narrow_modules | default | length > 0 %}
@@ -25,7 +25,7 @@
     {% endset %}
     {% if sidebar_modules | default | length > 0 %}
       {% set sidebar %}
-        {% include 'molecules:local-nav' with local_nav %}
+        {% include '@molecules/navigation/local-nav/local-nav.twig' with local_nav %}
         {% for module in sidebar_modules %}
           {% if module.module_type == 'accordion' %}
             {% include '@components/modules/accordion/accordion-module.twig' with module only %}
@@ -48,10 +48,10 @@
     {% endif %}
   {% endfor %}
 
-  {% include 'molecules:anchor' %}
+  {% include '@molecules/navigation/anchor/anchor.twig' %}
 
   {% for module in modules %}
-    {% include 'organisms:module' with module only %}
+    {% include '@organisms/module/module.twig' with module only %}
   {% endfor %}
 
 {% endblock %}

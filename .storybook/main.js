@@ -62,6 +62,8 @@ export default {
     // Add JS import alias for stories
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
+      '@base': join(__dirname, '../', 'src/stories/00-base'),
+      '@atoms': join(__dirname, '../', 'src/stories/01-atoms'),
       '@molecules': join(__dirname, '../', 'src/stories/02-molecules'),
       '@organisms': join(__dirname, '../', 'src/stories/03-organisms'),
       '@templates': join(__dirname, '../', 'src/stories/04-templates'),

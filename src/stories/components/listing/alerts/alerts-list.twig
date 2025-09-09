@@ -7,7 +7,7 @@
   {% endfor %}
 </div>
 {% block pagination %}
-{% include 'molecules:pagination' with {
+{% include '@molecules/pagination/pagination.twig' with {
   "previous": null,
   "pages": [
     {

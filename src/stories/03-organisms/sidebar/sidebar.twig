@@ -1,6 +1,6 @@
 {% set share %}
   <div class="text-right">
-    {% include 'base:add2any' with {
+    {% include '@base/utils/add2any/add2any.twig' with {
       class: 'mb-0'
     } %}
   </div>
@@ -14,13 +14,13 @@
     {% if sidebar_title %}<p class="font-bold text-2xl">{{ sidebar_title }}</p>{% endif %}
     {% if sidebar_cta | default %}
       <div class="mb-2">
-      {% include "atoms:button" with sidebar_cta %}
+      {% include "@atoms/links/button/button.twig" with sidebar_cta %}
       </div>
     {% endif %}
     {% if sidebar_link | default %}
       <div class="flex items-center gap-x-2 pt-4">
-        {% if sidebar_link.icon %}<span class="text-primary">{% include 'atoms:icon' with sidebar_link %}</span>{% endif %}
-        {% include "atoms:read-more" with sidebar_link %}
+        {% if sidebar_link.icon %}<span class="text-primary">{% include '@atoms/icon/icon.twig' with sidebar_link %}</span>{% endif %}
+        {% include "@atoms/links/read-more/read-more.twig" with sidebar_link %}
       </div>
     {% endif %}
   </div>

@@ -3,7 +3,7 @@
   <ul class="list-none flex gap-x-2 mb-3">
   {% for item in badges %}
     <li>
-      {% include 'atoms:badge' with item %}
+      {% include '@atoms/inline-text/badge/badge.twig' with item %}
     </li>
   {% endfor %}
   </ul>
@@ -78,7 +78,7 @@
 {% endif %}
 
 {% if button | default %}
-  {% include 'atoms:button' with {
+  {% include '@atoms/links/button/button.twig' with {
     text: button.text,
     url: button.url
   } %}
@@ -111,7 +111,7 @@
 {% endif %}
 
 {% if link | default %}
-  {% include 'atoms:read-more' with {
+  {% include '@atoms/links/read-more/read-more.twig' with {
     class: 'h4',
     text: link.text,
     url: link.url,
@@ -125,14 +125,14 @@
 {% if campus | default or online | default %}
   <div>
   {% if campus | default %}
-    {% include 'atoms:badge' with {
+    {% include '@atoms/inline-text/badge/badge.twig' with {
       icon: 'icon-buildings',
       text: 'Campus',
       class: 'inline-flex'
     } %}
   {% endif %}
   {% if online | default %}
-    {% include 'atoms:badge' with {
+    {% include '@atoms/inline-text/badge/badge.twig' with {
       icon: 'icon-lightning-fill',
       text: 'Online',
       class: 'inline-flex',

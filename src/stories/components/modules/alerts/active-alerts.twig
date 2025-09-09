@@ -8,7 +8,7 @@
         {{ rendered_view }}
       {% else %}
         {% for alert_teaser in alert_teasers %}
-          {% include 'molecules:alert-teaser' with alert_teaser only %}
+          {% include '@molecules/cards/alert/alert.twig-teaser' with alert_teaser only %}
         {% endfor %}
       {% endif %}
     </div>

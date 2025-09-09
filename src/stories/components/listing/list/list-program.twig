@@ -20,7 +20,7 @@
         {% endif %}
         {% if item.campus | default %}
           <div class="col-span-12 lg:col-span-2">
-            {% include 'atoms:badge' with {
+            {% include '@atoms/inline-text/badge/badge.twig' with {
               icon: 'icon-buildings',
               text: 'Campus',
               class: 'inline-flex'
@@ -29,7 +29,7 @@
         {% endif %}
         {% if item.online | default %}
           <div class="col-span-12 lg:col-span-2">
-            {% include 'atoms:badge' with {
+            {% include '@atoms/inline-text/badge/badge.twig' with {
               icon: 'icon-lightning-fill',
               text: 'Online',
               class: 'inline-flex',

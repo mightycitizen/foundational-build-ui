@@ -1,10 +1,10 @@
 
 <form class="view-filter" {% if action | default %}action="{{ action }}"{% endif %} {% if ajax | default %}x-data @change="if ($event.target.matches('select, input')) { $el.dispatchEvent(new Event('submit')); $el.submit() }" {% endif %} >
-  {% embed 'atoms:form-group' %}
+  {% embed '@atoms/forms/form-group/form-group.twig' %}
     {% block form_content %}
       {% if keyword_filter | default %}
         <div class="col-span-12 md:col-span-5">
-          {% include 'atoms:text/text.twig' with {
+          {% include '@atoms/forms/input/input.twig' with {
             value: queryParam | default,
             label: label | default("Keywords"),
             id: input_id | default("keywords"),
@@ -15,7 +15,7 @@
         </div>
       {% endif %}
       {#        <div class="col-span-12 md:col-span-5 lg:col-span-4">#}
-      {#          {% include 'atoms:select' with {#}
+      {#          {% include '@atoms/forms/select/select.twig' with {#}
       {#            label: category_label | default("Filter by Category"),#}
       {#            input_class: 'w-full ' ~ input_class | default,#}
       {#            id: "category",#}
@@ -34,7 +34,7 @@
       {#        </div>#}
 
       <div class="col-span-12">
-        {% include 'atoms:checkbox-group' with {
+        {% include '@atoms/forms/checkbox-group/checkbox-group.twig' with {
           input_class: 'w-full ' ~ input_class | default,
           label: "Fieldset - checkbox",
           id: "category",
@@ -59,7 +59,7 @@
         } only
         %}
 
-        {% include 'atoms:radio-group' with {
+        {% include '@atoms/forms/radio-group/radio-group.twig' with {
           input_class: 'w-full ' ~ input_class | default,
           label: "Fieldset - radio",
           id: "taxonomy",

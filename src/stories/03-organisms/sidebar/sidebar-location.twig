@@ -29,7 +29,7 @@
     {% endif %}
 
     {% if directions_url | default %}
-      {% include "atoms:read-more" with directions_url %}
+      {% include "@atoms/links/read-more/read-more.twig" with directions_url %}
     {% endif %}
   </div>
 
@@ -43,12 +43,12 @@
     </ul>
     {% endif %}
     {% if more_info | default %}
-      {% include "atoms:read-more" with more_info %}
+      {% include "@atoms/links/read-more/read-more.twig" with more_info %}
     {% endif %}
   </div>
 
   <div class="text-right">
-    {% include 'base:add2any' with {
+    {% include '@base/utils/add2any/add2any.twig' with {
       class: 'mb-0'
     } %}
   </div>

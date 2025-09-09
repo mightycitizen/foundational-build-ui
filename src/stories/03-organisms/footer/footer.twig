@@ -7,14 +7,14 @@
           {% if social %}
             <div class="col-span-12 md:col-span-6 mb-0 self-center flex flex-col md:flex-row md:items-center">
               <span class="font-bold align-top mb-2 md:mb-0 md:mr-4">Connect with us:</span>
-              {% include 'molecules:social-media' %}
+              {% include '@molecules/lists/social-media/social-media.twig' %}
             </div>
           {% endif %}
           {% if ctas %}
             <div class="col-span-12 md:col-span-6 mb-11 md:mb-0">
               <ul class="menu flex gap-x-3 list-none md:justify-{{ social ? 'end' : 'start' }}">
                 {% for cta in ctas %}
-                  <li>{% include 'atoms:link' with cta %}</li>
+                  <li>{% include '@atoms/links/link/link.twig' with cta %}</li>
                 {% endfor %}
               </ul>
             </div>
@@ -27,7 +27,7 @@
           <div class="col-span-12 md:col-span-3 mb-12 md:mb-0 md:text-left">
             {% if logo %}
               <div class="mb-4">
-                {% include 'atoms:logo' with logo %}
+                {% include '@atoms/logo/logo.twig' with logo %}
               </div>
             {% endif %}
             {% if contact %}
@@ -36,12 +36,12 @@
                   <li>
                     <span class="icon {{ item.icon }} text-2xl md:text-[32px] align-middle mr-2"></span>
                     {% if item.type == 'address' %}
-                      <span class="font-bold">{% include 'atoms:link' with { text: item.label, url: item.url, targetString: '_blank' } %}</span>
+                      <span class="font-bold">{% include '@atoms/links/link/link.twig' with { text: item.label, url: item.url, targetString: '_blank' } %}</span>
                     {% else %}
                       <span class="font-bold">{{ item.label }}</span>
                       <span>
                         {% if item.url %}
-                          {% include 'atoms:link' with item %}
+                          {% include '@atoms/links/link/link.twig' with item %}
                         {% else %}
                           {{ item.text }}
                         {% endif %}
@@ -62,7 +62,7 @@
                 {% if link.url is empty %}
                   <span class="h5 block mb-4">{{ link.text }}</span>
                 {% else %}
-                  {% include 'atoms:link' with link|merge({ modifier: 'font-bold no-underline hover:underline' }) %}
+                  {% include '@atoms/links/link/link.twig' with link|merge({ modifier: 'font-bold no-underline hover:underline' }) %}
                 {% endif %}
                 {% if link.children %}
                   <ul class="menu flex flex-col gap-x-3 gap-y-3 list-none mb-3 md:mb-0">
@@ -71,7 +71,7 @@
                         {% if child_link.url is empty %}
                           <span class="h5 block mb-4">{{ child_link.text }}</span>
                         {% else %}
-                          {% include 'atoms:link' with child_link|merge({ modifier: 'font-bold no-underline hover:underline' }) %}
+                          {% include '@atoms/links/link/link.twig' with child_link|merge({ modifier: 'font-bold no-underline hover:underline' }) %}
                         {% endif %}
                       </li>
                     {% endfor %}
@@ -96,7 +96,7 @@
           <ul class="list-none flex flex-col flex-wrap md:flex-row gap-4 justify-end mb-2">
             {% for link in footer_links | default %}
               <li>
-                {% include 'atoms:link' with link|merge({ modifier: 'text-black font-semibold' }) %}
+                {% include '@atoms/links/link/link.twig' with link|merge({ modifier: 'text-black font-semibold' }) %}
               </li>
             {% endfor %}
           </ul>
@@ -104,7 +104,7 @@
       </div>
     </div>
   </div>
-  {% include 'base:back-to-top' with {
+  {% include '@base/utils/back-to-top/back-to-top.twig' with {
     scroll_show: true
   } %}
 </footer>

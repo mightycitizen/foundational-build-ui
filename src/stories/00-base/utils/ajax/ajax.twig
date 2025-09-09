@@ -69,7 +69,7 @@
       <div class=" md:col-span-8">
         <p data-ajaxify-num-results="events">There were <strong class="value"></strong> results for your search/filters</p>
         <div data-ajaxify id="events">
-          {% include 'base:loader' %}
+          {% include '@base/utils/loader/loader.twig' %}
         </div>
         <div data-ajaxify-no-results="events" class="hide">
           <p>There were no results for your search/filters</p>

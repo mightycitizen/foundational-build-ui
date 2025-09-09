@@ -11,7 +11,7 @@
       <div class="{{ card_classes }}">
         {% if card is iterable %}
           {% set card = card | merge({lazyload_class: 'data-splide-lazy', equalize: true}) %}
-          {% include "molecules:card" with card only %}
+          {% include "@molecules/cards/card/card.twig" with card only %}
         {% else %}
           {{ card }}
         {% endif %}

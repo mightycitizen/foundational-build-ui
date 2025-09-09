@@ -5,9 +5,9 @@
     {% set card = card | merge({lazyload_class: 'data-splide-lazy', equalize: true}) %}
     {% set item %}
       {% if view_mode == 'stacked' %}
-        {% include 'molecules:card-horizontal' with card only %}
+        {% include '@molecules/cards/card/card-horizontal.twig' with card only %}
       {% else %}
-        {% include 'molecules:card' with card only %}
+        {% include '@molecules/cards/card/card.twig' with card only %}
       {% endif %}
     {% endset %}
   {% else %}
@@ -16,7 +16,7 @@
   {% set items = items | merge([item]) %}
 {% endfor %}
 
-{% include 'base:list-content' with {
+{% include '@base/list-content/list-content.twig' with {
   items,
   columns: columns|default(3),
 } %}

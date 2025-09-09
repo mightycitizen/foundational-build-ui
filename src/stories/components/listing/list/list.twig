@@ -16,7 +16,7 @@
 
             {% if item.start_date | default is not empty %}
 
-              {% include 'atoms:date' with item.start_date %}
+              {% include '@atoms/inline-text/date/date.twig' with item.start_date %}
 
 
             {% endif %}
@@ -24,7 +24,7 @@
             <div>
               <h2><a class="text-black text-2xl" href="{{ item.url }}">{{ item.heading }}</a></h2>
               {% if item_type | default != 'events' and item.date.full | default %}
-                {% include 'molecules:meta' with {
+                {% include '@molecules/lists/meta/meta.twig' with {
                   date: item.date,
                   modifier: 'mb-3'
                 } %}
@@ -36,7 +36,7 @@
                 <p class="mb-0"><a class="text-lg" href="{{ item.url }}">{{ item.url }}</a></p>
               {% endif %}
               {% if item.categories | default | length %}
-                {% include 'molecules:meta' with {
+                {% include '@molecules/lists/meta/meta.twig' with {
                     modifier: 'mb-0',
                     categories: item.categories,
                     date: null

@@ -6,7 +6,7 @@
         <span class="font-bold lg:text-lg text-primary-500 mb-3 {% if item.icon | default %}inline-flex gap-1 items-center{% endif %}">
           {# {% if item.icon | default %}<i class="ph ph-[{{ item.icon }}] text-xl lg:text-2xl"></i>{% endif %} #}
           {% if item.icon | default %}
-            {% include 'atoms:icon' with {
+            {% include '@atoms/icon/icon.twig' with {
               icon: item.icon,
               modifiers: 'text-xl lg:text-2xl',
             } %}

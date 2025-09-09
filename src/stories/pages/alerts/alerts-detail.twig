@@ -4,7 +4,7 @@
   handle: 'alerts'
 }%}
 {% block top %}
-  {% include 'organisms:hero'  with {
+  {% include '@organisms/hero/hero.twig'  with {
     content_type: 'alert',
     heading: 'Emergency Alert: Sharknado Warning! Seek shelter immediately.',
     alert_type: {

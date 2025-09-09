@@ -2,7 +2,7 @@
   {% for card in cards %}
     {% set card = card | merge({lazyload_class: 'data-splide-lazy', equalize: true}) %}
     <div class="col-span-12{% if single_column is empty %} md:col-span-6{% endif %}">
-      {% include "molecules:card-horizontal" with card only %}
+      {% include "@molecules/cards/card/card-horizontal.twig" with card only %}
     </div>
   {% endfor %}
 </div>

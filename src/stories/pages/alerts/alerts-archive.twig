@@ -1,6 +1,6 @@
 {% extends '@wrappers/default.twig' %}
 {% block top %}
-  {% include 'organisms:hero' with {
+  {% include '@organisms/hero/hero.twig' with {
     image: {
       src: "/images/hero-secondary.jpg",
       alt: "University view"
@@ -40,7 +40,7 @@
     {% endset %}
     {% if sidebar_modules | default | length > 0 %}
       {% set sidebar %}
-        {% include 'molecules:local-nav' with local_nav %}
+        {% include '@molecules/navigation/local-nav/local-nav.twig' with local_nav %}
         {% for module in sidebar_modules %}
           {% if module.module_type == 'accordion' %}
             {% include '@components/modules/accordion/accordion-module.twig' with module only %}
@@ -57,7 +57,7 @@
     {% endembed %}
   {% endif %}
 
-  {% include 'molecules:anchor' %}
+  {% include '@molecules/navigation/anchor/anchor.twig' %}
   {% for module in modules %}
     {% if module.module_type == 'active_alerts' %}
       {% include '@components/modules/alerts/active-alerts.twig' with module only %}

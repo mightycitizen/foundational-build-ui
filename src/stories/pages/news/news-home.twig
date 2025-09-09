@@ -4,7 +4,7 @@
   handle: 'news'
 }%}
 {% block top %}
-  {% include 'organisms:hero'  with {
+  {% include '@organisms/hero/hero.twig'  with {
     heading: 'Mighty University News',
     subheading: '[WYSIWYG - text + links allowed] Lorem ipsum odor amet, consectetuer adipiscing elit. Nec urna commodo aliquam parturient ante curabitur. Accumsan morbi et non facilisi iaculis, tempus curabitur bibendum.'
   } %}
@@ -18,7 +18,7 @@
       <div class="bg-neutrals-50 grid grid-cols-12 gap-6 items-center justify-center">
         <div class="col-span-12 md:col-span-8 md:pt-9 pb-8 px-10">
           <h1 class="h2">Site Search</h1>
-          {% include 'atoms:hero-search-form' %}
+          {% include '@atoms/forms/hero-search-form/hero-search-form.twig' %}
         </div>
       </div>
     </div>

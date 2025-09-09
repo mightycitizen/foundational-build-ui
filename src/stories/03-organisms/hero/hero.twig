@@ -66,7 +66,7 @@
                 </div>
 
                 {% if date | default and endDate | default %}
-                  {% include 'molecules:meta' with {
+                  {% include '@molecules/lists/meta/meta.twig' with {
                     modifier: 'mb-4',
                     date: date,
                     endDate: endDate
@@ -76,7 +76,7 @@
                 {% if alert_type | default or badge | default %}
                   <div class="flex items-center gap-x-4 mb-5">
                     {% if alert_type %}
-                      {% include 'atoms:icon' with {
+                      {% include '@atoms/icon/icon.twig' with {
                         icon: alert_type.icon,
                         modifiers: 'inline-block w-[40px] h-[40px] rounded-full flex items-center justify-center ' ~ alert_type.icon_colors
                       } %}
@@ -84,7 +84,7 @@
                       <span class="border-r-2 border-r-neutrals-900">&nbsp;</span>
                     {% endif %}
                     {% if badge %}
-                      {% include 'atoms:badge' with badge %}
+                      {% include '@atoms/inline-text/badge/badge.twig' with badge %}
                     {% endif %}
                   </div>
                 {% endif %}
@@ -137,14 +137,14 @@
                 {% if hero_button | default or readmore_link | default %}
                   <div class="flex flex-wrap flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-8 pb-5 lg:pb-0">
                     {% if hero_button | default %}
-                      {% include 'atoms:button' with hero_button | merge({
+                      {% include '@atoms/links/button/button.twig' with hero_button | merge({
                         classes: 'text-lg items-center',
                         icon: 'arrow-circle-right'
                       }) only %}
                     {% endif %}
 
                     {% if readmore_link | default %}
-                      {% include 'atoms:read-more' with readmore_link | merge({
+                      {% include '@atoms/links/read-more/read-more.twig' with readmore_link | merge({
                         class: 'text-white justify-left lg:justify-center'
                       }) only %}
                     {% endif %}
@@ -152,7 +152,7 @@
                 {% endif %}
 
                 {% if categories | default %}
-                  {% include 'molecules:meta' with {
+                  {% include '@molecules/lists/meta/meta.twig' with {
                     date: endDate | default is empty ? date : false,
                     modifier: 'mt-4',
                     categories: categories
@@ -178,7 +178,7 @@
           </div>
         </div>
 {#        <div class="col-span-12 lg:col-span-4 md:col-span-6 md:order-2 flex md:justify-end">#}
-{#          {% include 'base:add2any' with {#}
+{#          {% include '@base/utils/add2any/add2any.twig' with {#}
 {#            class: 'mb-0'#}
 {#          } %}#}
 {#        </div>#}
@@ -197,7 +197,7 @@
         {% for item in links_bar_menu %}
           <li class="shrink-0">
             {% if item.icon %}
-              {% include 'atoms:icon' with { icon: item.icon, modifiers: 'text-xl align-middle' }%}
+              {% include '@atoms/icon/icon.twig' with { icon: item.icon, modifiers: 'text-xl align-middle' }%}
             {% endif %}
             <a class="no-underline hover:underline" href="{{ item.url }}">{{ item.text }}</a>
           </li>

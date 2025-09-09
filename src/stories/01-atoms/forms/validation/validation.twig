@@ -1,12 +1,12 @@
 <form action="/" >
-  {% include  'atoms:input' with {
+  {% include  '@atoms/forms/input/input.twig' with {
       label: "Text",
       name: "text",
       id: "id_3",
       placeholder: "Prompt Text",
       required: true
     } %}
-  {% include  'atoms:textarea' with {
+  {% include  '@atoms/forms/textarea/textarea.twig' with {
       label: "Textarea",
       name: "textarea",
       id: "id_2",
@@ -34,16 +34,16 @@
       }
     ]
   } %}
-  {% include  'atoms:select' with select_options
+  {% include  '@atoms/forms/select/select.twig' with select_options
   %}
 
   {% set select_options = select_options | merge({ label: "Select (Filterable)" }) %}
 
 
-  {% include  'atoms:filterable' with select_options
+  {% include  '@atoms/forms/select/filterable.twig' with select_options
   only
   %}
-  {% include  'atoms:radio-group' with {
+  {% include  '@atoms/forms/radio-group/radio-group.twig' with {
     required: true,
     label: "Radio",
     id: "radio_validation",
@@ -67,7 +67,7 @@
   %}
 
 
-  {% include  'atoms:checkbox-group' with {
+  {% include  '@atoms/forms/checkbox-group/checkbox-group.twig' with {
       label: "Checkbox",
       id: "checkbox_validation",
       required: true,
