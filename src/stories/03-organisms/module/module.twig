@@ -1,9 +1,25 @@
+{# Module types:
+    accordion
+    callout
+    card-carousel
+    card-carousel-center
+    card-group
+    contact
+    cta
+    info-panel
+    tabs
+    testimonial
+    testimonial-carousel
+    video
+    wysiwyg
+#}
+
 {# Section styling #}
 {% if module_type in ['wysiwyg', 'video'] %}
   {% set padding = 'tight' %}
   {% set section_style = 'narrower' %}
 
-{% elseif module_type in ['accordion', 'tabs', 'testimonial'] %}
+{% elseif module_type in ['accordion', 'callout', 'tabs', 'testimonial'] %}
   {% set padding = 'tight' %}
   {% set section_style = 'narrow' %}
 
@@ -32,6 +48,9 @@
   {% elseif module_type == 'accordion' %}
     {% include 'molecules:accordion' %}
 
+  {% elseif module_type == 'callout' %}
+    {% include 'molecules:callout' %}
+
   {% elseif module_type == 'card-carousel' %}
     {% include 'molecules:carousel-cards' %}
 
@@ -39,23 +58,7 @@
     {% include 'molecules:carousel-cards-center' %}
 
   {% elseif module_type == 'card-group' %}
-    {% set items = [] %}
-    {% for card in cards %}
-      {% if card is iterable %}
-        {% set card = card | merge({lazyload_class: 'data-splide-lazy', equalize: true}) %}
-        {% set item %}
-          {% include "molecules:card" with card only %}
-        {% endset %}
-      {% else %}
-        {% set item = card %}
-      {% endif %}
-      {% set items = items | merge([item]) %}
-    {% endfor %}
-
-    {% include 'base:list-content' with {
-      items,
-      columns: 3,
-    } %}
+    {% include 'molecules:listing' %}
 
   {% elseif module_type == 'contact' %}
     {% include 'molecules:contact-panel' %}

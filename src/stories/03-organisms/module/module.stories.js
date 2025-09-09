@@ -39,6 +39,17 @@ AccordionModule.args = {
   ...accordion
 };
 
+export const CardGridModule = Template.bind({});
+CardGridModule.args = {
+  ...section_intro,
+  module_type: 'card-group',
+  cards: [
+    { ...card },
+    { ...card },
+    { ...card },
+  ],
+};
+
 export const TestimonialModule = Template.bind({});
 TestimonialModule.args = {
   ...section_intro,

@@ -1,0 +1,22 @@
+{% set items = [] %}
+
+{% for card in cards %}
+  {% if card is iterable %}
+    {% set card = card | merge({lazyload_class: 'data-splide-lazy', equalize: true}) %}
+    {% set item %}
+      {% if view_mode == 'stacked' %}
+        {% include 'molecules:card-horizontal' with card only %}
+      {% else %}
+        {% include 'molecules:card' with card only %}
+      {% endif %}
+    {% endset %}
+  {% else %}
+    {% set item = card %}
+  {% endif %}
+  {% set items = items | merge([item]) %}
+{% endfor %}
+
+{% include 'base:list-content' with {
+  items,
+  columns: columns|default(3),
+} %}
