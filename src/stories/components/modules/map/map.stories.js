@@ -2,7 +2,7 @@ import twig from './map.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Map',
+  title: 'Demos/Components/Modules/Map',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
 

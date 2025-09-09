@@ -3,7 +3,7 @@ import { wysiwyg } from '../../../global/placeholders/components.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Split Content',
+  title: 'Demos/Components/Modules/Split Content',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   section_class: {

@@ -2,7 +2,7 @@ import twig from './logo-grid.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Logo Grid'
+  title: 'Demos/Components/Modules/Logo Grid'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 

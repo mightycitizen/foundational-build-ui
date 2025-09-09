@@ -2,7 +2,7 @@ import twig from './accordion-module.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Accordion'
+  title: 'Demos/Components/Modules/Accordion'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   // accordion_id: {

@@ -2,7 +2,7 @@ import twig from './short-list.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Content Group/Short List'
+  title: 'Demos/Components/Modules/Content Group/Short List'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 

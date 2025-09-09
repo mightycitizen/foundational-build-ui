@@ -3,7 +3,7 @@ import { alert_teaser } from '../../../global/placeholders/components.json';
 import { sizes } from '../../../global/placeholders/images.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Alerts/Active Alerts'
+  title: 'Demos/Components/Modules/Alerts/Active Alerts'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 

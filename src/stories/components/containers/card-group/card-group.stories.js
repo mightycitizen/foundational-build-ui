@@ -3,7 +3,7 @@ import twig from './card-group.twig';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 export default {
-  title: 'Components/Containers/Card Group',
+  title: 'Audit/Components/Containers/Card Group',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     modifier: {

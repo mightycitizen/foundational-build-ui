@@ -3,7 +3,7 @@ import twig from './glance-list.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Glance List',
+  title: 'Demos/Components/Modules/Glance List',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {}
 };

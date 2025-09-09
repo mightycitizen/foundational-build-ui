@@ -3,7 +3,7 @@ import twig from './list-program.twig';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 export default {
-  title: 'Components/Listing/Program List',
+  title: 'Audit/Components/Listing/Program List',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     // backgroundColor: { control: 'color' },

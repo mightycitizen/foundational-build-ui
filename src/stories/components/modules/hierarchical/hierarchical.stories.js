@@ -2,7 +2,7 @@ import twig from './hierarchical.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Content Group/Hierarchical'
+  title: 'Demos/Components/Modules/Content Group/Hierarchical'
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
 

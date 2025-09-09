@@ -2,7 +2,7 @@ import twig from './video-module.twig';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Video',
+  title: 'Demos/Components/Modules/Video',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {}
 };

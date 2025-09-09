@@ -3,7 +3,7 @@ import { placeholder } from '../../../global/placeholders/images.json';
 
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Modules/Cards/Card Carousel/Center',
+  title: 'Demos/Components/Modules/Cards/Card Carousel/Center',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {}
 };

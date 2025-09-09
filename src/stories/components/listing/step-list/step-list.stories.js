@@ -3,7 +3,7 @@ import twig from './step-list.twig';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 
 export default {
-  title: 'Components/Listing/Steps',
+  title: 'Audit/Components/Listing/Steps',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     // backgroundColor: { control: 'color' },
