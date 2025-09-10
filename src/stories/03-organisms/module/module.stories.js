@@ -9,9 +9,8 @@ import {
   card,
 } from '../../global/placeholders/components.json';
 
-export default {
-  title: 'Organisms/Modules',
-};
+import list_content from '@molecules/list-content/list-content.twig';
+import list_content_data from '@molecules/list-content/list-content-examples.stories.js';
 
 const Template = (args) => twig(args);
 
@@ -37,6 +36,18 @@ AccordionModule.args = {
   ...section_intro,
   module_type: 'accordion',
   ...accordion
+};
+
+export const AlertsModule = Template.bind({});
+AlertsModule.args = {
+  ...section_intro,
+  section_content: list_content(list_content_data.AlertsList.args),
+};
+
+export const InactiveAlertsModule = Template.bind({});
+InactiveAlertsModule.args = {
+  ...section_intro,
+  section_content: list_content(list_content_data.InactiveAlertsList.args),
 };
 
 export const CardGridModule = Template.bind({});
@@ -70,4 +81,10 @@ WysiwygModule.args = {
   ...section_intro,
   module_type: 'wysiwyg',
   wysiwyg
+};
+
+export default {
+  title: 'Organisms/Modules',
+  AlertsModule,
+  InactiveAlertsModule,
 };

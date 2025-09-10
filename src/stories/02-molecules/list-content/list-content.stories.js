@@ -1,7 +1,7 @@
 import twig from './list-content.twig';
 
 export default {
-  title: 'Base/List Content',
+  title: 'Molecules/List Content',
 };
 
 const ListsTemplate = (args) => twig(args);

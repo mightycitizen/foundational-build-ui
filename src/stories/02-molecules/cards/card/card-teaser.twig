@@ -13,7 +13,7 @@
 <div class="card card--horizontal {% if no_outline is empty | default %}md:shadow-lg bg-white {% endif %}{{ modifier | default }} {% if clickCard | default %}card--click{% endif %}" data-scroll-show>
 
   <div {% if image_position | default != 'flush' %}class="card_section {% if no_outline is empty | default %}md:py-8 md:px-8{% endif %}"{% endif %}>
-      {% include '@base/split-content/split-content.twig' with {
+      {% include '@molecules/split-content/split-content.twig' with {
         columns: 'narrow',
         col_reverse: true,
         col_1: col_1,
