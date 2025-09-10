@@ -4,6 +4,7 @@ import { statistic } from '../../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Molecules/Cards/Statistic',
+  ...statistic,
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
     value: {
