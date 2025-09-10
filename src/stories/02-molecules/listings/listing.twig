@@ -18,7 +18,7 @@
   {% set items = items | merge([item]) %}
 {% endfor %}
 
-{% include '@base/list-content/list-content.twig' with {
+{% include '@molecules/list-content/list-content.twig' with {
   items,
   columns: columns|default(3),
 } %}

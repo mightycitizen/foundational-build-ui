@@ -1,7 +1,7 @@
 import twig from './split-content.twig';
 
 export default {
-  title: 'Base/Split Content',
+  title: 'Molecules/Split Content',
 };
 
 const ColumnsTemplate = (args) => twig(args);

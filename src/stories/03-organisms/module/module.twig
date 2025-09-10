@@ -70,7 +70,7 @@
     {% include '@molecules/panels/contact-panel/contact-panel.twig' %}
 
   {% elseif module_type == 'split-content' %}
-    {% include '@base/split-content/split-content.twig' with { columns: 'half' } %}
+    {% include '@molecules/split-content/split-content.twig' with { columns: 'half' } %}
 
   {% elseif module_type == 'statistics' %}
     {% include '@molecules/listings/listing.twig' with { view_mode: 'statistic' } %}
