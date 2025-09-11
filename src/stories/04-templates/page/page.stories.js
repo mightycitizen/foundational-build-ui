@@ -12,6 +12,8 @@ import hero_data from '@organisms/hero/hero.stories.js';
 import breadcrumbs from '@molecules/breadcrumbs/breadcrumbs.twig';
 import breadcrumb_data from '@molecules/breadcrumbs/breadcrumbs.stories.js';
 
+import module from '@organisms/module/module.stories.js';
+
 export default {
   title: 'Templates/Page',
   header: header( header_data ),
@@ -29,10 +31,14 @@ const Template = (args) => {
 const Page = Template.bind({});
 
 const defaultArgs = {
+  end_to_end: true,
   header: header( header_data ),
   footer: footer( footer_data ),
   hero_section: hero( hero_data ),
   breadcrumbs: breadcrumbs( breadcrumb_data ),
+  content: [
+    module.Template(module.CardGridModule.args),
+  ],
   modules: [
     {
       module_type: 'cta',

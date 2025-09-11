@@ -53,12 +53,8 @@ InactiveAlertsModule.args = {
 export const CardGridModule = Template.bind({});
 CardGridModule.args = {
   ...section_intro,
-  module_type: 'card-group',
-  cards: [
-    { ...card },
-    { ...card },
-    { ...card },
-  ],
+  // module_type: 'card-group',
+  section_content: list_content_data.Template(list_content_data.CardGrid.args),
 };
 
 export const TestimonialModule = Template.bind({});
@@ -85,6 +81,8 @@ WysiwygModule.args = {
 
 export default {
   title: 'Organisms/Modules',
+  Template,
   AlertsModule,
   InactiveAlertsModule,
+  CardGridModule,
 };

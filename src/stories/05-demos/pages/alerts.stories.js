@@ -6,7 +6,6 @@ import hero from '@organisms/hero/hero.twig';
 import module from '@organisms/module/module.twig';
 import module_data from '@organisms/module/module.stories.js';
 
-
 import {
   hero_secondary,
   wysiwyg,
@@ -14,6 +13,7 @@ import {
 
 export default {
   title: 'Demos/Pages/Alerts',
+  tags: ['!autodocs'],
 };
 
 // Listing Page

@@ -7,8 +7,10 @@ import alert_data from '@molecules/cards/alert/alert-content.stories.js';
 import statistic from '@molecules/cards/statistic/statistic.twig';
 import statistic_data from '@molecules/cards/statistic/statistic.stories.js';
 
+import card from '@molecules/cards/card/card.stories.js';
 
-const ListsTemplate = (args) => twig(args);
+
+const Template = (args) => twig(args);
 
 const defaultArgs = {
   items: [
@@ -19,7 +21,7 @@ const defaultArgs = {
   ],
 };
 
-export const AlertsList = ListsTemplate.bind({});
+export const AlertsList = Template.bind({});
 AlertsList.args = {
   columns: 1,
   items: [
@@ -29,7 +31,7 @@ AlertsList.args = {
   ],
 }
 
-export const InactiveAlertsList = ListsTemplate.bind({});
+export const InactiveAlertsList = Template.bind({});
 InactiveAlertsList.args = {
   columns: 1,
   items: [
@@ -39,7 +41,7 @@ InactiveAlertsList.args = {
   ],
 }
 
-export const StatisticsList = ListsTemplate.bind({});
+export const StatisticsList = Template.bind({});
 StatisticsList.args = {
   columns: 3,
   items: [
@@ -49,7 +51,7 @@ StatisticsList.args = {
   ],
 }
 
-export const StatisticsStackedList = ListsTemplate.bind({});
+export const StatisticsStackedList = Template.bind({});
 StatisticsStackedList.args = {
   columns: 1,
   items: [
@@ -59,11 +61,22 @@ StatisticsStackedList.args = {
   ],
 }
 
+export const CardGrid = Template.bind({});
+CardGrid.args = {
+  columns: 3,
+  items: [
+    card.Template(card.Default.args),
+    card.Template(card.Default.args),
+    card.Template(card.Default.args),
+  ],
+}
+
 export default {
   title: 'Molecules/List Content/Examples',
+  Template,
   AlertsList,
   InactiveAlertsList,
   StatisticsList,
   StatisticsStackedList,
-  defaultArgs,
+  CardGrid,
 };

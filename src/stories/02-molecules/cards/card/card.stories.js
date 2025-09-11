@@ -1,9 +1,9 @@
 import twig from './card.twig';
 import { card } from '../../../global/placeholders/components.json';
 //More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
-export default {
-  title: 'Molecules/Cards/Card'
-};
+// export default {
+//   title: 'Molecules/Cards/Card'
+// };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
 const Template = (args) => {
@@ -41,3 +41,9 @@ Event.args = Object.assign(
     }
   }
 );
+
+export default {
+  title: 'Molecules/Cards/Card',
+  Template,
+  Default,
+};
