@@ -1,11 +1,5 @@
 import twig from './breadcrumbs.twig';
 import { breadcrumbs } from '../../global/placeholders/components.json';
-//More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
-export default {
-  title: 'Molecules/Breadcrumbs',
-  breadcrumbs,
-  argTypes: {}
-};
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
 const Template = (args) => {
@@ -19,3 +13,12 @@ Breadcrumbs.args = {
   breadcrumbs
 };
 //
+
+//More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
+export default {
+  title: 'Molecules/Breadcrumbs',
+  Template,
+  Breadcrumbs,
+  breadcrumbs,
+  argTypes: {}
+};

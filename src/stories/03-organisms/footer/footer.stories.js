@@ -114,9 +114,15 @@ const contact = [
   },
 ];
 
-//More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
-export default {
-  title: 'Organisms/Footer',
+// More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
+const Template = (args) => {
+  // You can either use a function to create DOM elements or use a plain html string!
+  // return `<div>${label}</div>`;
+  return twig(args);
+};
+
+export const Footer = Template.bind({});
+Footer.args = {
   menu,
   social,
   ctas,
@@ -126,6 +132,13 @@ export default {
   address,
   menu_column,
   site_name
+};
+
+//More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
+export default {
+  title: 'Organisms/Footer',
+  Template,
+  Footer,
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   // argTypes: {
   //   heading: {
@@ -161,24 +174,4 @@ export default {
   //   //   options: ['small', 'medium', 'large'],
   //   // },
   // },
-};
-
-// More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
-const Template = (args) => {
-  // You can either use a function to create DOM elements or use a plain html string!
-  // return `<div>${label}</div>`;
-  return twig(args);
-};
-
-export const Footer = Template.bind({});
-Footer.args = {
-  menu,
-  social,
-  ctas,
-  contact,
-  footer_links,
-  logo,
-  address,
-  menu_column,
-  site_name
 };

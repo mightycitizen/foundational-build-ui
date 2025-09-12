@@ -5,13 +5,6 @@ import {
   breadcrumbs as breadcrumb_data
 } from '../../global/placeholders/components.json';
 
-//More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
-export default {
-  title: 'Organisms/Hero',
-  breadcrumbs: breadcrumbs_twig({ breadcrumbs: breadcrumb_data }),
-  ...hero_primary,
-};
-
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
 const Template = (args) => {
   // You can either use a function to create DOM elements or use a plain html string!
@@ -39,3 +32,13 @@ Image.args = Object.assign(
     }
   }
 );
+
+
+//More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
+export default {
+  title: 'Organisms/Hero',
+  Template,
+  Default,
+  breadcrumbs: breadcrumbs_twig({ breadcrumbs: breadcrumb_data }),
+  ...hero_primary,
+};
