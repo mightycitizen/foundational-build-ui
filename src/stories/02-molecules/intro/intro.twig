@@ -63,7 +63,7 @@
             }) only %}
           {% endif %}
           {% if section_button_tertiary | default %}
-            {% include '@atoms/links/button/button.twig' with section_button | merge({
+            {% include '@atoms/links/button/button.twig' with section_button_tertiary | merge({
               color: 'tertiary'
             }) only %}
           {% endif %}
