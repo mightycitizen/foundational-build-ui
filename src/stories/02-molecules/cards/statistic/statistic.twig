@@ -1,15 +1,33 @@
-<div class="statistic flex {% if style == 'list' %}flex-row items-center gap-x-4 mb-5 {% if stat_bg %} py-7 px-6{% endif %}{% else %}h-full flex-col {% if stat_bg %} py-8 px-5{% endif %}{% endif %}{% if stat_bg %} bg-{{ stat_bg }}{% endif %}">
+{% if style == 'list' %}
+  {% set card_classes = 'flex-row items-center gap-x-4 mb-5' %}
+{% elseif style == 'inline' %}
+  {% set card_classes = 'gap-x-10 mb-5' %}
+{% else %}
+  {% set card_classes = 'h-full flex-col' %}
+{% endif %}
+
+{% if stat_bg %}
+  {% set card_classes = card_classes ~ ' bg-' ~ stat_bg ~ ' py-7 px-6' %}
+{% endif %}
+
+{% if style == 'list' and stat_bg %}
+  {% set card_classes = card_classes ~ ' py-7 px-6' %}
+{% endif %}
+
+<div class="statistic flex {{ card_classes }}">
   {% if content_only %}
 
   {% endif %}
   {% if icon %}
-    <div class="mb-4">
+    <div class="{{ style == 'inline' ? 'self-center' : 'mb-4' }}">
       {% include '@atoms/icon/icon.twig' with {
         name: name,
         background: background
       } %}
     </div>
   {% endif %}
+
+{{ style == 'inline' ? '<div>' }}
 
   {% if value %}
     <p class="text-4xl font-bold mb-3{% if style == 'list' %} value-width{% endif %}">{{ value }}</p>
@@ -30,4 +48,7 @@
       {% endif %}
     </div>
   {% endif %}
+
+{{ style == 'inline' ? '</div>' }}
+
 </div>

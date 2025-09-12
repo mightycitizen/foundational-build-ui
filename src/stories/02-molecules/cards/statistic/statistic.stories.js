@@ -65,3 +65,13 @@ ListBg.args = Object.assign(
     stat_bg: "primary-50"
   }
 );
+
+export const Inline = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Inline.args = Object.assign(
+  { ...defaultArgs },
+  {
+    style: "inline",
+    stat_bg: "primary-50"
+  }
+);
