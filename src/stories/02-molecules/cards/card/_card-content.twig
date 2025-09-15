@@ -1,3 +1,32 @@
+{% set badges = badges ?? [] %}
+{% set publish_date = publish_date ?? null %}
+{% set type = type ?? null %}
+{% set heading = heading ?? null %}
+{% set label = label ?? null %}
+{% set authors = authors ?? [] %}
+{% set subheading = subheading ?? null %}
+{% set subheading_modifier = subheading_modifier ?? null %}
+{% set specializations = specializations ?? null %}
+{% set specializations_label = specializations_label ?? null %}
+{% set specializations_modifier = specializations_modifier ?? null %}
+{% set summary = summary ?? null %}
+{% set summary_modifier = summary_modifier ?? null %}
+{% set date = date ?? null %}
+{% set address = address ?? null %}
+{% set button = button ?? null %}
+{% set jobtitle = jobtitle ?? null %}
+{% set contact_email = contact_email ?? null %}
+{% set contact_phone = contact_phone ?? null %}
+{% set department = department ?? null %}
+{% set list_items = list_items ?? [] %}
+{% set link = link ?? null %}
+{% set clickCard = clickCard ?? false %}
+{% set campus = campus ?? false %}
+{% set online = online ?? false %}
+{% set categories = categories ?? [] %}
+{% set featured = featured ?? false %}
+
+{# Badges #}  
 {% if badges %}
   {% if featured | default %}<div class="absolute top-8 right-5 lg:top-14 lg:right-8">{% endif %}
   <ul class="list-none flex gap-x-2 mb-3">

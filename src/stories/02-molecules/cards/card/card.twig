@@ -1,5 +1,20 @@
+{% set no_outline = no_outline ?? false %}
+{% set equalize = equalize ?? false %}
+{% set clickCard = clickCard ?? false %}
+{% set modifier = modifier ?? null %}
+{% set class = class ?? null %}
+{% set background_color = background_color ?? null %}
+{% set image = image ?? null %}
+{% set icon = icon ?? null %}
+{% set header = header ?? null %}
+{% set footer = footer ?? null %}
+{% set type = type ?? null %}
+{% set flag = flag ?? null %}
+{% set date = date ?? null %}
+{% set lazyload_attr = lazyload_attr ?? null %}
+{% set disable_lazy = disable_lazy ?? false %}
 
-<div class="card {% if no_outline is empty | default %}bg-{{ background_color | default('white')}} h-full shadow-md{% endif%} {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }}{% if clickCard | default %} card--click{% endif %}" >
+<div class="card {% if no_outline is empty %}bg-{{ background_color | default('white')}} h-full shadow-md{% endif%} {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }}{% if clickCard | default %} card--click{% endif %}" >
   {% if header | default %}
   <div class="card_divider">
     {{ header }}
@@ -32,7 +47,7 @@
   </div>
   {% endif %}
 
-  <div class="card_section {% if no_outline is empty | default %}p-6 {% else %}py-6 {% endif%}bg-white" {% if equalize | default %}data-equalizer-watch{% endif %}>
+  <div class="card_section {% if no_outline is empty %}p-6 {% else %}py-6 {% endif%}bg-white" {% if equalize | default %}data-equalizer-watch{% endif %}>
     {% if image | default is empty %}
         {% if flag | default %}
           {% include '@atoms/inline-text/flag/flag.twig' with {
