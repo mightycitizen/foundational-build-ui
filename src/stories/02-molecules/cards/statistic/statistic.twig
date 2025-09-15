@@ -1,3 +1,9 @@
+{% set style = style ?? false %}
+{% set content_only = content_only ?? false %}
+{% set stat_bg = stat_bg ?? false %}
+{% set icon = icon ?? false %}
+{% set name = name ?? false %}
+{% set background = background ?? false %}
 <div class="statistic flex {% if style == 'list' %}flex-row items-center gap-x-4 mb-5 {% if stat_bg %} py-7 px-6{% endif %}{% else %}h-full flex-col {% if stat_bg %} py-8 px-5{% endif %}{% endif %}{% if stat_bg %} bg-{{ stat_bg }}{% endif %}">
   {% if content_only %}
 

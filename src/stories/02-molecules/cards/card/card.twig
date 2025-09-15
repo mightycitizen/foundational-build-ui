@@ -1,5 +1,5 @@
 
-<div class="card {% if no_outline is empty | default %}bg-{{ background_color | default('white')}} h-full shadow-md{% endif%} {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }}{% if clickCard | default %} card--click{% endif %}" >
+<div class="card {% if no_outline  | default is empty  %}bg-{{ background_color | default('white')}} h-full shadow-md{% endif%} {{ class | default }} {{ modifier | default ? 'card--' ~ modifier : '' }}{% if clickCard | default %} card--click{% endif %}" >
   {% if header | default %}
   <div class="card_divider">
     {{ header }}
@@ -32,7 +32,7 @@
   </div>
   {% endif %}
 
-  <div class="card_section {% if no_outline is empty | default %}p-6 {% else %}py-6 {% endif%}bg-white" {% if equalize | default %}data-equalizer-watch{% endif %}>
+  <div class="card_section {% if no_outline | default is empty  %}p-6 {% else %}py-6 {% endif%}bg-white" {% if equalize | default %}data-equalizer-watch{% endif %}>
     {% if image | default is empty %}
         {% if flag | default %}
           {% include '@atoms/inline-text/flag/flag.twig' with {

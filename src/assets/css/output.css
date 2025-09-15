@@ -1387,18 +1387,6 @@ input[type="radio"]:focus:not(:checked).custom,
   border-width: 0;
 }
 
-.visible {
-  visibility: visible;
-}
-
-.invisible {
-  visibility: hidden;
-}
-
-.\!collapse {
-  visibility: collapse !important;
-}
-
 .collapse {
   visibility: collapse;
 }
@@ -1908,10 +1896,6 @@ input[type="radio"]:focus:not(:checked).custom,
 
 .min-w-\[40px\] {
   min-width: 40px;
-}
-
-.max-w-20 {
-  max-width: 5rem;
 }
 
 .max-w-full {

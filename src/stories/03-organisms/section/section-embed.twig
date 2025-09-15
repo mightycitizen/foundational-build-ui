@@ -1,4 +1,6 @@
 {% set width_class = '' %}
+{% set intro = intro ?? '' %}
+
 {% if section_style | default == 'narrower'%}
   {% set width_class = 'lg:max-w-screen-lg' %}
 {% elseif section_style | default == 'narrow' %}

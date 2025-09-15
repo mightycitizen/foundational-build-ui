@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 
 
-console.log(__dirname);
+// console.log(__dirname);
 
 
 // Legacy namespace resolver plugin

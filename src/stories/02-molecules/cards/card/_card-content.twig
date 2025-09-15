@@ -1,3 +1,11 @@
+{% set badges = badges ?? [] %}
+{% set authors = authors ?? [] %}
+{% set categories = categories ?? [] %}
+{% set list_items = list_items ?? [] %}
+{# {% set heading = heading ?? {} %} #}
+{% set publish_date = publish_date ?? null %}
+
+{# Card Container #}
 {% if badges %}
   {% if featured | default %}<div class="absolute top-8 right-5 lg:top-14 lg:right-8">{% endif %}
   <ul class="list-none flex gap-x-2 mb-3">
