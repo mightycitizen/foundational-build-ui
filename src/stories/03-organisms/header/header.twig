@@ -1,4 +1,10 @@
+{% set utility_menu = utility_menu ?? null %}
+{% set logo = logo ?? null %}
+{% set cta_menu = cta_menu ?? null %}
+{% set header_dropdown = header_dropdown ?? null %}
+{% set menu = menu ?? null %}
 <script>
+
     function focusFirstFocusable() {
         const mainElement = document.getElementById('main');
         const focusableElements = mainElement.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])');

@@ -1,3 +1,32 @@
+{% set hero_inline = hero_inline ?? false %}
+{% set content_type = content_type ?? null %}
+{% set split_content = split_content ?? false %}
+{% set background_image = background_image ?? null %}
+{% set media = media ?? null %}
+{% set alert_type = alert_type ?? null %}
+{% set badge = badge ?? null %}
+{% set background_color = background_color ?? 'light' %}
+{% set categories = categories ?? null %}
+{% set date = date ?? null %}
+{% set endDate = endDate ?? null %}
+{% set eyebrow = eyebrow ?? null %}
+{% set heading = heading ?? 'Heading' %}
+{% set subheading = subheading ?? null %}
+{% set tagline = tagline ?? null %}
+{% set list = list ?? null %}
+{% set inline_links = inline_links ?? null %}
+{% set summary = summary ?? null %}
+{% set image = image ?? null %}
+{% set last_updated = last_updated ?? null %}
+{% set byline = byline ?? null %}
+{% set hero_button = hero_button ?? null %}
+{% set readmore_link = readmore_link ?? null %}
+{% set links_bar_menu = links_bar_menu ?? null %}
+{% set modifier = modifier ?? null %}
+{% set info_panel = info_panel ?? null %}
+{% set below_hero = below_hero ?? null %}
+{% set breadcrumbs = breadcrumbs ?? null %}
+
 {#
   hero.twig
 
@@ -43,7 +72,6 @@
     - breadcrumbs
     - media
 #}
-
 
 {% set background_color = background_color|default('light') %}
 {% if image | default %}{% set split_content = true %}{% endif %}
