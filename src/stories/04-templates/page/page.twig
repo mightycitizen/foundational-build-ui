@@ -1,3 +1,9 @@
+{% set header = header ?? null %}
+{% set footer = footer ?? null %}
+{% set padding = padding ?? '' %}
+{% set end_to_end = end_to_end ?? false %}
+{% set sidebar = sidebar ?? null %}
+{% set sidebar_bottom = sidebar_bottom ?? null %}
 {% block header %}
   {{ header }}
 {% endblock %}
