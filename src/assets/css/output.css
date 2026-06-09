@@ -1499,6 +1499,22 @@ input[type="radio"]:focus:not(:checked).custom,
   top: 100%;
 }
 
+.top-\[33px\] {
+  top: 33px;
+}
+
+.bottom-\[-170px\] {
+  bottom: -170px;
+}
+
+.top-\[52px\] {
+  top: 52px;
+}
+
+.bottom-\[-168px\] {
+  bottom: -168px;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -2835,6 +2851,10 @@ input[type="radio"]:focus:not(:checked).custom,
   padding-top: 2rem;
 }
 
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -4035,6 +4055,14 @@ input[type="radio"]:focus:not(:checked).custom,
 
   .lg\:pt-9 {
     padding-top: 2.25rem;
+  }
+
+  .lg\:pb-4 {
+    padding-bottom: 1rem;
+  }
+
+  .lg\:pb-3 {
+    padding-bottom: 0.75rem;
   }
 
   .lg\:text-2xl {
