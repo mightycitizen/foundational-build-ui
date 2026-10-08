@@ -1,30 +1,41 @@
-@media (min-width: 1024px) {
-  .grid-template {
-    @apply columns-2;
-    @apply gap-8;
-  }
-  .grid-template > div {
-    break-inside: avoid-column;
-  }
-  .sidebar-wrapper, .sidebar-bottom-wrapper {
-    width: 50%;
-  }
-  .hero-wrapper, .content-wrapper {
-    width: 150%;
-    margin-left: -50%;
-  }
-  .hero-wrapper {
-    break-before: column;
-  }
-}
+@reference "../../../assets/css/app.css";
 
-@media (max-width: 1023px) {
-  .grid-template {
-    display: flex;
-    flex-direction: column;
+/*
+  Same layer as Tailwind utilities, declared before output.css loads, so the
+  cascade matches Tailwind CSS v3: more specific selectors here win, and
+  utilities win ties.
+*/
+@layer theme, base, components, utilities;
+
+@layer utilities {
+  @media (min-width: 1024px) {
+    .grid-template {
+      @apply columns-2;
+      @apply gap-8;
+    }
+    .grid-template > div {
+      break-inside: avoid-column;
+    }
+    .sidebar-wrapper, .sidebar-bottom-wrapper {
+      width: 50%;
+    }
+    .hero-wrapper, .content-wrapper {
+      width: 150%;
+      margin-left: -50%;
+    }
+    .hero-wrapper {
+      break-before: column;
+    }
   }
-  .sidebar-wrapper { order: 2 }
-  .sidebar-bottom-wrapper { order: 4 }
-  .hero-wrapper { order: 1 }
-  .content-wrapper { order: 3 }
+
+  @media (max-width: 1023px) {
+    .grid-template {
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar-wrapper { order: 2 }
+    .sidebar-bottom-wrapper { order: 4 }
+    .hero-wrapper { order: 1 }
+    .content-wrapper { order: 3 }
+  }
 }

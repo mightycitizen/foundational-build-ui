@@ -1,6 +1,17 @@
+@reference "../../../assets/css/app.css";
 
-.section:not(.section--tight) {
-    .section:not(.section--tight):not([class*=bg-])+&:not([class*=bg-]) {
-        @apply lg:-mt-10;
-    }
+/*
+  Same layer as Tailwind utilities, declared before output.css loads, so the
+  cascade matches Tailwind CSS v3: more specific selectors here win, and
+  utilities win ties.
+*/
+@layer theme, base, components, utilities;
+
+@layer utilities {
+
+  .section:not(.section--tight) {
+      .section:not(.section--tight):not([class*=bg-])+&:not([class*=bg-]) {
+          @apply lg:-mt-10;
+      }
+  }
 }

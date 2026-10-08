@@ -1,3 +1,14 @@
-.sidebar-bottom .read-more {
-  @apply text-base;
+@reference "../../../assets/css/app.css";
+
+/*
+  Same layer as Tailwind utilities, declared before output.css loads, so the
+  cascade matches Tailwind CSS v3: more specific selectors here win, and
+  utilities win ties.
+*/
+@layer theme, base, components, utilities;
+
+@layer utilities {
+  .sidebar-bottom .read-more {
+    @apply text-base;
+  }
 }

@@ -15,13 +15,13 @@
   {% set modifiers = modifiers | merge([button_modifiers]) %}
 {% endif %}
 {% if outline | default %}
-  {% set modifiers = modifiers | merge(['outline']) %}
+  {% set modifiers = modifiers | merge(['outline-solid']) %}
 {% endif %}
 {% if block | default %}
   {% set modifiers = modifiers | merge(['block']) %}
 {% endif %}
 {% if rounded | default %}
-  {% set modifiers = modifiers | merge(['rounded']) %}
+  {% set modifiers = modifiers | merge(['rounded-sm']) %}
 {% endif %}
 {% if disabled | default %}
   {% set modifiers = modifiers | merge(['disabled']) %}

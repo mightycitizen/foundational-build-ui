@@ -17,7 +17,7 @@
     - title
     - text
 #}
-<div {{ attributes }} class="alert-bar bg-white py-6 px-6 shadow {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
+<div {{ attributes }} class="alert-bar bg-white py-6 px-6 shadow-sm {{ class | default }}" {% if closable | default %}data-closable{% endif %}>
   <div class="container flex gap-6 justify-between md:justify-center flex-wrap md:flex-nowrap items-center md:items-start">
     {% if alert_type %}
       <div class="alert-type-icon order-1">

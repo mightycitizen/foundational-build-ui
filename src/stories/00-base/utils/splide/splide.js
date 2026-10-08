@@ -1,7 +1,7 @@
 // import '@splidejs/splide/css';
 // import '@splidejs/splide/css/skyblue';
 // import '@splidejs/splide/css/sea-green';
-import '@splidejs/splide/css/core';
+// Splide core CSS is imported in splide.css, inside a cascade layer
 import Splide from '@splidejs/splide';
 import breakpoints from '../../../00-base/breakpoints.json';
 // remove px from breakpoints

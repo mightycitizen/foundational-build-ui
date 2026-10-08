@@ -1,10 +1,21 @@
-.glance-list {
-  > div {
-    @apply pb-4 lg:pb-0 border-b-[1px] border-b-primary-300 md:border-b-0 md:border-r-2 md:border-r-primary-400;
-  }
-  > div:nth-child(3),
-  > div:nth-child(4){
-    border-right: 0px none;
-  }
+@reference "../../../../assets/css/app.css";
 
+/*
+  Same layer as Tailwind utilities, declared before output.css loads, so the
+  cascade matches Tailwind CSS v3: more specific selectors here win, and
+  utilities win ties.
+*/
+@layer theme, base, components, utilities;
+
+@layer utilities {
+  .glance-list {
+    > div {
+      @apply pb-4 lg:pb-0 border-b-[1px] border-b-primary-300 md:border-b-0 md:border-r-2 md:border-r-primary-400;
+    }
+    > div:nth-child(3),
+    > div:nth-child(4){
+      border-right: 0px none;
+    }
+
+  }
 }

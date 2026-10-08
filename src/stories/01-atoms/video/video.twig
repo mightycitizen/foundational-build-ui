@@ -163,7 +163,7 @@
 	      }
 	    }
 	  }" x-init="init">
-	{% set overlay_class = 'bg-opacity-30 bg-black' %}
+	{% set overlay_class = 'bg-black/30' %}
 	<div class="video_wrapper relative" data-video-trigger="{{ trigger | default('click') }}" data-video-type="{{ video_type }}">
 		<button @click="handleClick" x-show="!loading && !playing" class="absolute left-0 top-0 z-20 w-full h-full cursor-pointer {{ overlay_class }}">
 			<span class="icon-play text-white text-8xl"></span>

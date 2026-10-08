@@ -1,23 +1,34 @@
-.section--wysiwyg .section_content {
-  figure img {
-    width: auto;
-  }
-  figure.image {
-    display: table;
+@reference "../../../../assets/css/app.css";
 
-    figcaption {
-      caption-side: bottom;
-      display: table-caption;
-      width: 100%;
+/*
+  Same layer as Tailwind utilities, declared before output.css loads, so the
+  cascade matches Tailwind CSS v3: more specific selectors here win, and
+  utilities win ties.
+*/
+@layer theme, base, components, utilities;
+
+@layer utilities {
+  .section--wysiwyg .section_content {
+    figure img {
+      width: auto;
     }
-  }
-  figure.image {
-    @apply md:ml-auto md:mr-auto;
-  }
-  figure.image-style-align-right {
-    @apply md:ml-6 md:mr-0 md:float-right;
-  }
-  figure.image-style-align-left {
-    @apply md:mr-6 md:ml-0 md:float-left;
+    figure.image {
+      display: table;
+
+      figcaption {
+        caption-side: bottom;
+        display: table-caption;
+        width: 100%;
+      }
+    }
+    figure.image {
+      @apply md:ml-auto md:mr-auto;
+    }
+    figure.image-style-align-right {
+      @apply md:ml-6 md:mr-0 md:float-right;
+    }
+    figure.image-style-align-left {
+      @apply md:mr-6 md:ml-0 md:float-left;
+    }
   }
 }

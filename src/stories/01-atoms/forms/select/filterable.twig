@@ -50,12 +50,12 @@
 
                   }
               }" class="relative w-64" >
-          <button @keydown="keydown($event)"  @click="toggle"      class="border rounded p-2 bg-white cursor-pointer w-full text-left">
+          <button @keydown="keydown($event)"  @click="toggle"      class="border rounded-sm p-2 bg-white cursor-pointer w-full text-left">
               <span x-text="selected.length ? selected.join(', ') : 'Select options'"></span>
           </button>
 
           <input type="hidden" name="{{ name }}" x-model="selectedString">
-          <div @keydown="keydown($event)"  x-show="open" @click.away="close" class="absolute z-10 mt-1 w-full bg-white border rounded shadow-lg">
+          <div @keydown="keydown($event)"  x-show="open" @click.away="close" class="absolute z-10 mt-1 w-full bg-white border rounded-sm shadow-lg">
               <input x-ref="searchInput" type="text" placeholder="Add or select..." x-model="search" class="w-full p-2 border-b" />
               <div class="max-h-48 overflow-y-auto flex flex-col" >
                   <template x-for="option in filteredOptions" :key="option" x-ref="dropdown">

@@ -106,7 +106,7 @@
                     {% if alert_type %}
                       {% include '@atoms/icon/icon.twig' with {
                         icon: alert_type.icon,
-                        modifiers: 'inline-block w-[40px] h-[40px] rounded-full flex items-center justify-center ' ~ alert_type.icon_colors
+                        modifiers: 'w-[40px] h-[40px] rounded-full flex items-center justify-center ' ~ alert_type.icon_colors
                       } %}
                       <span class="font-bold text-lg">{{ alert_type.label }}</span>
                       <span class="border-r-2 border-r-neutrals-900">&nbsp;</span>
@@ -219,7 +219,7 @@
     {% endif %}
   </div>
   {% if links_bar_menu | default %}
-  <div class="links-bar {% if background_color == 'dark' %}bg-neutrals-50 text-primary-500 shadow{% else %}bg-primary-500 text-white{% endif %}">
+  <div class="links-bar {% if background_color == 'dark' %}bg-neutrals-50 text-primary-500 shadow-sm{% else %}bg-primary-500 text-white{% endif %}">
     <div class="container">
       <ul class="menu lg:flex lg:gap-x-3 py-4 lg:py-4 space-y-3 lg:space-y-0 list-none lg:justify-between lg:text-lg items-center">
         {% for item in links_bar_menu %}

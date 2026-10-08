@@ -33,7 +33,7 @@
 {% endif %}
 
 <div class="flex items-center gap-x-4 mb-3">
-  <span class="bg-{{ alert_icon_bg }} inline-block w-[40px] h-[40px] rounded-full flex items-center justify-center">
+  <span class="bg-{{ alert_icon_bg }} w-[40px] h-[40px] rounded-full flex items-center justify-center">
     {% include '@atoms/icon/icon.twig' with {
       icon: { name: alert_type.icon.name | default(alert_icon) },
       modifiers: 'text-' ~ alert_icon_color,
@@ -42,7 +42,7 @@
   <span class="font-bold text-lg text-{{ alert_type_color }}">{{ alert_type.label }}</span>
 </div>
 
-<h2 class="!mt-0"><a class="text-black text-lg md:text-xl" href="{{ heading.url }}">{{ heading.text }}</a></h2>
+<h2 class="mt-0!"><a class="text-black text-lg md:text-xl" href="{{ heading.url }}">{{ heading.text }}</a></h2>
 
 {% if last_updated | default %}
   <p class="md:text-lg font-bold mb-4">Last Updated: {{ last_updated }}</p>

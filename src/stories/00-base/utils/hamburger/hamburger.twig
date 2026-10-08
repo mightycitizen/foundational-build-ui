@@ -1,9 +1,9 @@
-{% set hamburger_class = 'bg-primary h-[3px] rounded absolute w-full' %}
+{% set hamburger_class = 'bg-primary h-[3px] rounded-sm absolute w-full' %}
 {% if is_demo | default %}
 <div x-data="{ {{ toggle }}: false }">
 {% endif %}
   <button class="hamburger flex items-center flex-col" type="button" id="hamburger" @click="{{ toggle }} = !{{ toggle }}" aria-label="Toggle navigation">
-    <span class="icon icon-list text-lg ml-2 rounded-full p-2 shadow mr-1"
+    <span class="icon icon-list text-lg ml-2 rounded-full p-2 shadow-sm mr-1"
           :class="{{ toggle }} ? ' icon-x bg-secondary-600 text-primary-500' : 'icon-search bg-white'"
     ></span>
 {#    <div class="relative w-8 h-5">#}

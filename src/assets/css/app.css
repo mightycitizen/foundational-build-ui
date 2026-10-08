@@ -1,6 +1,87 @@
-@tailwind base;
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
 
+@config '../../../tailwind.config.js';
+
+/* Classes built dynamically in templates that the scanner can't see */
+@source inline("mb-1 font-display font-body text-tertiary-700 text-tertiary-900 bg-secondary-100 bg-primary-50 bg-tertiary-50 aspect-video z-40");
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: theme(colors.gray.200, currentcolor);
+  }
+
+  /* Tailwind CSS v4 dropped the pointer cursor on buttons */
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/*
+  Tailwind CSS v4 font sizes use relative line heights. Keep the fixed v3 line
+  heights so headings and text sized with arbitrary values don't change.
+*/
+@theme {
+  --text-xs--line-height: 1rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl--line-height: 1.75rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl--line-height: 2.25rem;
+  --text-4xl--line-height: 2.5rem;
+}
+
+/*
+  Tailwind CSS v4 space-* utilities put the margin on the bottom of each child
+  with zero specificity, so a child's own margin classes override them. Restore
+  the v3 behaviour: margin on the top of every child after the first, specific
+  enough to win over child margin utilities.
+*/
+@utility space-y-* {
+  & > :not([hidden]) ~ :not([hidden]) {
+    margin-top: --spacing(--value(number));
+    margin-bottom: 0;
+  }
+}
+
+@utility space-x-* {
+  & > :not([hidden]) ~ :not([hidden]) {
+    margin-left: --spacing(--value(number));
+    margin-right: 0;
+  }
+}
+
+/* Full width below lg, capped at 1362px from lg up */
+@utility container {
+  max-width: 100%;
+
+  @media (width >= theme(screens.lg)) {
+    max-width: 1362px;
+  }
+}
+
+
+/*
+  Custom base and component styles share the utilities layer and come before
+  the generated utilities, matching the Tailwind CSS v3 cascade: utilities win
+  ties, and more specific selectors here (like p:last-child) still win.
+*/
+@layer utilities {
     h1,
     h2,
     h3,
@@ -189,10 +270,9 @@ hr {
 
 }
 
-@tailwind components;
 
 
-@layer components {
+@layer utilities {
 
 
     /* FORM STYLES */
@@ -233,7 +313,7 @@ hr {
         &:checked {
             +label {
                 &:after {
-                    @apply !opacity-100;
+                    @apply opacity-100!;
                 }
             }
         }
@@ -347,27 +427,39 @@ hr {
 
 }
 
-@tailwind utilities;
 
+@import 'tailwindcss/utilities.css' layer(utilities) source(none);
 
+/*
+  Cancel the v4 space-* bottom/right margins. Zero specificity and placed after
+  the generated utilities, so it beats only those rules: a child's own margin
+  classes and base styles still apply, as they did in v3.
+*/
+@layer utilities {
+  :where([class*='space-y-'] > *) {
+    margin-block-end: 0;
+  }
+
+  :where([class*='space-x-'] > *) {
+    margin-inline-end: 0;
+  }
+}
 
 /* add the code bellow */
-@layer utilities {
 
-    .font-icomoon {
-        font-family: 'icomoon';
-    }
+@utility font-icomoon {
+  font-family: 'icomoon';
+}
 
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
+@utility no-scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        /* IE and Edge */
-        scrollbar-width: none;
-        /* Firefox */
-    }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

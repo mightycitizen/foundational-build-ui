@@ -1,6 +1,17 @@
-.local-tasks-nav {
-  @apply list-none flex !pl-0 !mb-0;
-}
-.local-tasks-nav a {
-  @apply font-bold bg-primary-500 text-white hover:bg-primary-900 px-4 py-3 no-underline;
+@reference "../../../assets/css/app.css";
+
+/*
+  Same layer as Tailwind utilities, declared before output.css loads, so the
+  cascade matches Tailwind CSS v3: more specific selectors here win, and
+  utilities win ties.
+*/
+@layer theme, base, components, utilities;
+
+@layer utilities {
+  .local-tasks-nav {
+    @apply list-none flex pl-0! mb-0!;
+  }
+  .local-tasks-nav a {
+    @apply font-bold bg-primary-500 text-white hover:bg-primary-900 px-4 py-3 no-underline;
+  }
 }

@@ -4,7 +4,7 @@
     <span class="font-bold text-lg text-left">{{ heading|default('In this section') }}</span>
     <span class="icon-plus text-2xl text-primary-500 ml-auto" :class="{ 'icon-minus': open, 'icon-plus' : !open }"></span>
   </button>
-  <div class="lg:shadow px-6 py-5" x-show="open" >
+  <div class="lg:shadow-sm px-6 py-5" x-show="open" >
     {% if parent_item|default %}
       <p class="text-primary-900 font-bold text-2xl mb-5"><a href="{{ parent_item.url }}">{{ parent_item.text }}</a></p>
     {% endif %}
@@ -19,7 +19,7 @@
     </ul>
   </div>
 </div>
-<div class="lg:shadow px-6 py-5 hidden lg:block">
+<div class="lg:shadow-sm px-6 py-5 hidden lg:block">
   {% if parent_item|default %}
     <p class="text-primary-900 font-bold text-2xl mb-5"><a href="{{ parent_item.url }}">{{ parent_item.text }}</a></p>
   {% endif %}

@@ -49,12 +49,12 @@
     </div>
 
     {% set sidebar %}
-      <div x-show="open" x-transition class="filters-wrapper md:!block">
+      <div x-show="open" x-transition class="filters-wrapper md:block!">
         <h2>Filter results</h2>
 
         <div>
           <div data-active-filters="" data-active-filters-clearable="" class="active-filters" data-once="active-filters-removable active-filters-clear-all">
-            <button class="bg-primary border-[1px] border-neutrals-300 rounded-[4px] px-2 py-2 text-xs text-white hover:bg-primary-700">Clear All Filters <span class="icon-x"></span></button>
+            <button class="bg-primary border border-neutrals-300 rounded-[4px] px-2 py-2 text-xs text-white hover:bg-primary-700">Clear All Filters <span class="icon-x"></span></button>
           </div>
         </div>
 

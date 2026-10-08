@@ -255,7 +255,7 @@ const defaultArgs = {
     {
       module_type: 'card-carousel-center',
       section_class:
-        'bg-gradient-to-b lg:bg-gradient-to-r from-primary-200 to-white',
+        'bg-linear-to-b lg:bg-linear-to-r from-primary-200 to-white',
       section_heading: 'Center Carousel',
       section_description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -314,7 +314,7 @@ const defaultArgs = {
       section_description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       section_class:
-        'bg-gradient-to-b lg:bg-gradient-to-r from-secondary-200 to-white',
+        'bg-linear-to-b lg:bg-linear-to-r from-secondary-200 to-white',
       links
     }
   ]
@@ -377,7 +377,7 @@ SectionTest.args = {
     {
       module_type: 'card-group',
       section_class:
-        'bg-gradient-to-b lg:bg-gradient-to-r from-secondary-200 to-white',
+        'bg-linear-to-b lg:bg-linear-to-r from-secondary-200 to-white',
       section_heading: 'Bg Gradient Secondary',
       cards: Array.from({ length: 3 }, (v, i) => card)
     },
@@ -390,7 +390,7 @@ SectionTest.args = {
     {
       module_type: 'card-group',
       section_class:
-        'bg-gradient-to-b lg:bg-gradient-to-r from-primary-200 to-white',
+        'bg-linear-to-b lg:bg-linear-to-r from-primary-200 to-white',
       section_heading: 'Bg Solid Primary Lightest',
       cards: Array.from({ length: 3 }, (v, i) => card)
     }

@@ -27,12 +27,12 @@
 
       {% if type.handle | default == 'events' and date | default %}
         {% include '@atoms/inline-text/date/date.twig' with date | merge({
-          class: 'absolute top-0 left-0 z-2'
+          class: 'absolute top-0 left-0'
         }) %}
       {% endif %}
       {% if flag | default %}
         {% include '@atoms/inline-text/flag/flag.twig' with {
-          class: 'absolute top-0 right-0 z-2',
+          class: 'absolute top-0 right-0',
           flag_text: flag
         }%}
       {% endif %}
@@ -41,7 +41,7 @@
 
   {% if icon | default %}
   <div class="card_icon bg-primary-100 w-full relative text-center py-8">
-    <div class="bg-white p-[8px] rounded-full inline-block border-[13px] border-primary">
+    <div class="bg-white p-[8px] rounded-full inline-block border-13 border-primary">
       {% include '@atoms/icon/icon.twig' with { modifiers: 'text-[2.75rem] align-middle' }%}
     </div>
   </div>

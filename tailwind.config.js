@@ -45,18 +45,6 @@ export default {
     '../templates/**/*.twig',
     './src/stories/{00-base,01-atoms,02-molecules,03-organisms}/**/*.{twig,js,css}',
   ],
-  safelist: [
-    'mb-1',
-    'font-display',
-    'font-body',
-    'text-tertiary-700',
-    'text-tertiary-900',
-    'bg-secondary-100',
-    'bg-primary-50',
-    'bg-tertiary-50',
-    'aspect-video',
-    'z-40',
-  ],
   theme: {
     container: {
       center: true,
@@ -84,26 +72,6 @@ export default {
     forms({
       strategy: 'base', // only generate global styles
 
-    }),
-    // require('@tailwindcss/typography'),
-    function ({ addComponents }) {
-      addComponents({
-        '.container': {
-          maxWidth: '100%',
-          '@screen sm': {
-            maxWidth: '100%',
-          },
-          '@screen md': {
-            maxWidth: '100%',
-          },
-          '@screen lg': {
-            maxWidth: '1362px',
-          },
-          '@screen xl': {
-            maxWidth: '1362px',
-          },
-        }
-      })
-    }
+    })
   ]
 }

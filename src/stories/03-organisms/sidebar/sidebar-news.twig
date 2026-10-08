@@ -1,11 +1,11 @@
-<div class="bg-neutrals-50 lg:shadow space-y-6 px-6 py-5">
+<div class="bg-neutrals-50 lg:shadow-sm space-y-6 px-6 py-5">
   <div class="text-right">
     {% include '@base/utils/add2any/add2any.twig' with {
       class: 'mb-0'
     } %}
   </div>
   {% if topics | default %}
-  <div class="topics border-b-[1px] border-b-neutrals-200 pb-6">
+  <div class="topics border-b border-b-neutrals-200 pb-6">
     <h2 class="text-lg font-semibold">Topics</h2>
     <ul class="list-none flex flex-wrap gap-2.5">
     {% for item in topics %}
@@ -17,13 +17,13 @@
   </div>
   {% endif %}
   {% if publication | default %}
-  <div class="publication border-b-[1px] border-b-neutrals-200 pb-6">
+  <div class="publication border-b border-b-neutrals-200 pb-6">
     <h2 class="text-lg font-semibold">Publication</h2>
     <a href="{{ publication.url }}">{{ publication.text }}</a>
   </div>
   {% endif %}
   {% if authors | default %}
-  <div class="authors border-b-[1px] border-b-neutrals-200 pb-6">
+  <div class="authors border-b border-b-neutrals-200 pb-6">
     <ul class="list-none space-y-3.5">
       {% for item in authors %}
         <li class="space-y-3">
@@ -37,7 +37,7 @@
   </div>
   {% endif %}
   {% if media_name | default %}
-    <div class="media-contact border-b-[1px] border-b-neutrals-200 pb-6">
+    <div class="media-contact border-b border-b-neutrals-200 pb-6">
       <h2 class="text-lg font-semibold">Media contact</h2>
       <ul class="list-none space-y-2.5">
         <li>{{ media_name }}</li>

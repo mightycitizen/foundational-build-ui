@@ -1,57 +1,69 @@
+@import '@splidejs/splide/css/core' layer(utilities);
+@reference "../../../../assets/css/app.css";
 
-.splide__list {
-    @apply transition-all duration-300;
-}
+/*
+  Same layer as Tailwind utilities, declared before output.css loads, so the
+  cascade matches Tailwind CSS v3: more specific selectors here win, and
+  utilities win ties.
+*/
+@layer theme, base, components, utilities;
 
-.splide__pagination{
+@layer utilities {
 
-    button{
-        @apply bg-neutrals-200 w-2 h-2 aspect-square rounded-full;
-        &.is-active{
-            @apply bg-primary w-[1.5rem] h-[0.5rem];
-        }
-    }
-}
+  .splide__list {
+      @apply transition-all duration-300;
+  }
 
-.splide__arrow:hover span.ph {
-  @apply text-white;
-}
+  .splide__pagination{
 
+      button{
+          @apply bg-neutrals-200 w-2 h-2 aspect-square rounded-full;
+          &.is-active{
+              @apply bg-primary w-[1.5rem] h-[0.5rem];
+          }
+      }
+  }
 
-.splide[data-type="center"] {
-    --slide-width: 500px;
-    --slide-width-curr: 700px;
-
-    .splide__slide .card {
-        @apply w-[90vw];
-    }
-
-    @media (min-width: 1024px) {
-        .splide__slide .card {
-            @apply shadow-none bg-transparent w-[var(--slide-width)];
-        }
+  .splide__arrow:hover span.ph {
+    @apply text-white;
+  }
 
 
-        .card_section {
-            @apply transition-all duration-300 shadow-md bg-white;
-        }
+  .splide[data-type="center"] {
+      --slide-width: 500px;
+      --slide-width-curr: 700px;
 
-        .splide__slide.is-active {
-            @apply z-20 relative m-0;
+      .splide__slide .card {
+          @apply w-[90vw];
+      }
+
+      @media (min-width: 1024px) {
+          .splide__slide .card {
+              @apply shadow-none bg-transparent w-[var(--slide-width)];
+          }
 
 
-            .card {
-                @apply w-[var(--slide-width-curr)] -ml-24 -mr-24 shadow-lg text-white;
+          .card_section {
+              @apply transition-all duration-300 shadow-md bg-white;
+          }
+
+          .splide__slide.is-active {
+              @apply z-20 relative m-0;
 
 
-                a:not(.button) {
-                    @apply text-inherit;
-                }
-            }
+              .card {
+                  @apply w-[var(--slide-width-curr)] -ml-24 -mr-24 shadow-lg text-white;
 
-            .card_section {
-                @apply bg-primary p-6;
-            }
-        }
-    }
+
+                  a:not(.button) {
+                      @apply text-inherit;
+                  }
+              }
+
+              .card_section {
+                  @apply bg-primary p-6;
+              }
+          }
+      }
+  }
 }

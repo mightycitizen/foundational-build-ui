@@ -1,17 +1,28 @@
-.accordion-title {
-  &:hover {
-    .accordion-title-icon {
-      @apply text-white;
-    }
-    .accordion-step,
-    .accordion-badge {
-      @apply bg-primary-200 text-black;
+@reference "../../../assets/css/app.css";
+
+/*
+  Same layer as Tailwind utilities, declared before output.css loads, so the
+  cascade matches Tailwind CSS v3: more specific selectors here win, and
+  utilities win ties.
+*/
+@layer theme, base, components, utilities;
+
+@layer utilities {
+  .accordion-title {
+    &:hover {
+      .accordion-title-icon {
+        @apply text-white;
+      }
+      .accordion-step,
+      .accordion-badge {
+        @apply bg-primary-200 text-black;
+      }
     }
   }
-}
-.accordion-badge-wrapper {
-  @media (max-width: 960px) {
-    flex: 1 100%;
-    width: 100%;
+  .accordion-badge-wrapper {
+    @media (max-width: 960px) {
+      flex: 1 100%;
+      width: 100%;
+    }
   }
 }
