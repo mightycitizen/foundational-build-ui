@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-import palettes from './src/stories/00-base/colors/colors.json';
-import fonts from './src/stories/00-base/fonts/fonts.json';
-import breakpoints from './src/stories/00-base/breakpoints.json';
+import { readFileSync } from 'node:fs';
 import phosphorIcons from "phosphor-icons-tailwindcss";
+import forms from "@tailwindcss/forms";
+
+const readJson = (file) => JSON.parse(readFileSync(new URL(file, import.meta.url), 'utf8'));
+const palettes = readJson('./src/stories/00-base/colors/colors.json');
+const fonts = readJson('./src/stories/00-base/fonts/fonts.json');
+const breakpoints = readJson('./src/stories/00-base/breakpoints.json');
 
 let colors = {
   transparent: 'transparent',
@@ -34,7 +38,7 @@ colors = {
 };
 
 
-module.exports = {
+export default {
   content: [
     './src/assets/js/**/*.js',
     './src/stories/{components,layout,pages}/**/*.{twig,js,css}',
@@ -77,7 +81,7 @@ module.exports = {
   },
   plugins: [
     phosphorIcons(),
-    require('@tailwindcss/forms')({
+    forms({
       strategy: 'base', // only generate global styles
 
     }),
