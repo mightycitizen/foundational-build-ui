@@ -1,0 +1,5 @@
+import{t as r}from"./contact-block-CAqZvsmX.js";import"./iframe-krW4WiQS.js";import"./preload-helper-PPVm8Dsz.js";import"./twig-OXX08FiC.js";import"./info-panel-CBNvUHQu.js";import"./section-embed-btII73HD.js";import"./intro-CCZRR58b.js";import"./video-DWwHaWhA.js";import"./loader-B41Kef4N.js";import"./icon-7aXboSWf.js";import"./button-uXfrrMM2.js";import"./read-more-BHFNuWut.js";import"./link-Cwb-4-pJ.js";const h={title:"Demos/Components/Modules/Contact Block"},e=o=>r(o),i={contact_email:"example@mightyu.edu",contact_phone:"123-456-7890",contact_fax:"123-456-7890",contact_locations:[{address:"1234 Mighty Building</br>Austin, TX 78745"}],contact_information:[{icon:"link",text:"Faculty Website",url:"#"},{icon:"file-doc",text:"Curriculum Vitae",url:"#"}]},t=e.bind({});t.args=i;const k=["ContactBlock"];t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`args => {
+  // You can either use a function to create DOM elements or use a plain html string!
+  // return \`<div>\${label}</div>\`;
+  return twig(args);
+}`,...t.parameters?.docs?.source}}};export{t as ContactBlock,k as __namedExportsOrder,h as default};

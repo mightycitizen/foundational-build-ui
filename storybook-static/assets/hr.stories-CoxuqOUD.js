@@ -1,0 +1,5 @@
+import{t as o,T as i}from"./iframe-krW4WiQS.js";import{D as n,a as u}from"./twig-OXX08FiC.js";import"./preload-helper-PPVm8Dsz.js";u(i);i.cache(!1);const a=r=>r,l=(r={})=>{const s=o.twig({id:"/Users/mc_davidvasquez/Mighty_Citizen/fb-ui/src/stories/01-atoms/hr/hr.twig",data:[{type:"raw",value:"<hr />",position:{start:0,end:0}}],precompiled:!0});s.options.allowInlineIncludes=!0;try{let t=r.defaultAttributes?r.defaultAttributes:[];return Array.isArray(t)||(t=Object.entries(t)),a(s.render({attributes:new n(t),...r}))}catch(t){return a("An error occurred whilst rendering /Users/mc_davidvasquez/Mighty_Citizen/fb-ui/src/stories/01-atoms/hr/hr.twig: "+t.toString())}},g={title:"Atoms/Horizontal Rule"},c=r=>l(r),e=c.bind({}),f=["HorizontalRule"];e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`args => {
+  // You can either use a function to create DOM elements or use a plain html string!
+  // return \`<div>\${label}</div>\`;
+  return twig(args);
+}`,...e.parameters?.docs?.source}}};export{e as HorizontalRule,f as __namedExportsOrder,g as default};

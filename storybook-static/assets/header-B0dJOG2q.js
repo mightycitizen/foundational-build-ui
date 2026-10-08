@@ -1,0 +1,487 @@
+import{t,T as p}from"./iframe-krW4WiQS.js";import{D as s,a}from"./twig-OXX08FiC.js";import"./utility-menu-BbAn0RCz.js";import"./icon-7aXboSWf.js";import"./menu-5OdVl4Ih.js";import"./hamburger-C4C9uhVR.js";import"./logo-CfSh28Fi.js";a(p);p.cache(!1);t.twig({id:"@molecules/navigation/menu/menu.twig",data:[{type:"raw",value:`
+<div id="main-menu" x-data="{
+	    breakpoint: 1024,
+	    dropdownOpen: { sm: null, lg: null },
+      align: 'left',
+      timeout: null,
+	    toggleDropdown(index) {
+	      if (window.innerWidth <= this.breakpoint) {
+	        this.dropdownOpen.sm = this.dropdownOpen.sm === index ? null : index;
+	      }else{
+          this.dropdownOpen.lg = this.dropdownOpen.lg === index ? null : index;
+          setTimeout(() => {
+            this.checkDropdownPosition();
+          }, 10);
+        }
+	    },
+      checkDropdownPosition() {
+        if (window.innerWidth > this.breakpoint) {
+          const dropdown = document.querySelector('.dropdown:not(.hidden)');
+
+          if (!dropdown) {
+            console.warn('Dropdown reference not found');
+            return;
+          }
+
+          const dropdownWidth = dropdown.offsetWidth; // Get the width of the dropdown
+          const dropdownPosition = dropdown.getBoundingClientRect().left; // Get the left position of the dropdown
+          const windowWidth = window.innerWidth; // Get the full width of the viewport
+          const windowRight = windowWidth - dropdownPosition - dropdownWidth; // Calculate space on the right side of the dropdown
+
+          // Determine alignment based on available space
+          if (windowRight < 0) {
+            this.align = 'right'; // Not enough space on the right
+          } else {
+            this.align = 'left'; // Enough space, align left
+          }
+
+
+        }
+      },
+	    handleMouseEnter(index) {
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => {
+          this.align = 'left';
+          if (window.innerWidth > this.breakpoint) this.dropdownOpen['lg'] = index;
+          setTimeout(() => {
+            this.checkDropdownPosition();
+          }, 10);
+        }, 100);
+
+
+	    },
+	    handleMouseLeave() {
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => {
+	        if (window.innerWidth > this.breakpoint) this.dropdownOpen['lg'] = null;
+        }, 100);
+	    },
+      handleDirection(direction){
+        if (direction === 'left') {
+          if (this.dropdownOpen.lg > 0) {
+            this.dropdownOpen.lg--;
+          }else{
+            this.dropdownOpen.lg = $refs.topbar.children.length - 1;
+          }
+        } else {
+          if (this.dropdownOpen.lg < $refs.topbar.children.length - 1) {
+            this.dropdownOpen.lg++;
+          }else{
+            this.dropdownOpen.lg = 0;
+          }
+        }
+        $refs.topbar.children[this.dropdownOpen.lg].querySelector('a').focus();
+      }
+	  }" class="absolute z-20 bg-primary-900 w-full py-4 lg:relative lg:block shadow-md lg:shadow-none lg:py-0" :class="(mainMenu ? '' : 'hidden')">
+	<div class="container">
+		<ul role="menubar"
+      x-ref="topbar"
+      @keydown.left="handleDirection('left')"
+      @keydown.right="handleDirection('right')"
+      class="flex flex-col justify-between gap-x-3 list-none lg:-mx-6 lg:flex-row" >
+			`,position:{start:0,end:2953}},{type:"logic",token:{type:"Twig.logic.type.for",keyVar:null,valueVar:"link",expression:[{type:"Twig.expression.type.variable",value:"menu",match:["menu"]}],position:{start:2953,end:2975},output:[{type:"raw",value:`				<li
+          @focusin="if (window.innerWidth > this.breakpoint) dropdownOpen.lg = `,position:{start:2976,end:3063}},{type:"output",position:{start:3063,end:3080},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:3063,end:3080}},{type:"Twig.expression.type.key.period",position:{start:3063,end:3080},key:"index0"}]},{type:"raw",value:`"
+          role="presentation" class="relative lg:border-0 `,position:{start:3080,end:3140}},{type:"output",position:{start:3140,end:3198},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:3140,end:3198}},{type:"Twig.expression.type.key.period",position:{start:3140,end:3198},key:"last"},{type:"Twig.expression.type.bool",value:!1,position:{start:3140,end:3198}},{type:"Twig.expression.type.operator.binary",value:"==",position:{start:3140,end:3198},precidence:9,associativity:"leftToRight",operator:"=="},{type:"Twig.expression.type.string",value:"border-b border-gray-200",position:{start:3140,end:3198}},{type:"Twig.expression.type.string",value:"",position:{start:3140,end:3198}},{type:"Twig.expression.type.operator.binary",value:"?",position:{start:3140,end:3198},precidence:16,associativity:"rightToLeft",operator:"?"}]},{type:"raw",value:`"
+          `,position:{start:3198,end:3210}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"}],position:{start:3210,end:3232},output:[{type:"raw",value:'            @mouseenter="handleMouseEnter(',position:{start:3233,end:3275}},{type:"output",position:{start:3275,end:3292},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:3275,end:3292}},{type:"Twig.expression.type.key.period",position:{start:3275,end:3292},key:"index0"}]},{type:"raw",value:`)"
+            @mouseleave="handleMouseLeave()"
+          `,position:{start:3292,end:3350}}]},position:{open:{start:3210,end:3232},close:{start:3350,end:3361}}},{type:"raw",value:`          >
+
+					`,position:{start:3362,end:3380}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.filter",value:"length",match:["| length","length"]}],position:{start:3380,end:3411},output:[{type:"raw",value:`						<button
+              @click="toggleDropdown(`,position:{start:3412,end:3463}},{type:"output",position:{start:3463,end:3480},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:3463,end:3480}},{type:"Twig.expression.type.key.period",position:{start:3463,end:3480},key:"index0"}]},{type:"raw",value:`)"
+              class="py-3 text-white no-underline w-full font-bold flex items-center gap-2 justify-between leading-5 lg:hidden " `,position:{start:3480,end:3612}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"new_window"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:3612,end:3646},output:[{type:"raw",value:' target="_blank" rel="noopener" ',position:{start:3646,end:3678}}]},position:{open:{start:3612,end:3646},close:{start:3678,end:3689}}},{type:"raw",value:` role="menuitem">
+							`,position:{start:3689,end:3714}},{type:"output",position:{start:3714,end:3790},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:3714,end:3790}},{type:"Twig.expression.type.key.period",position:{start:3714,end:3790},key:"parent_text"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:3714,end:3790}},{type:"Twig.expression.type.test",position:{start:3714,end:3790},filter:"empty",modifier:"not"},{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:3714,end:3790}},{type:"Twig.expression.type.key.period",position:{start:3714,end:3790},key:"parent_text"},{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:3714,end:3790}},{type:"Twig.expression.type.key.period",position:{start:3714,end:3790},key:"text"},{type:"Twig.expression.type.operator.binary",value:"?",position:{start:3714,end:3790},precidence:16,associativity:"rightToLeft",operator:"?"}]},{type:"raw",value:`
+							<span :class="(dropdownOpen.sm === `,position:{start:3790,end:3833}},{type:"output",position:{start:3833,end:3850},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:3833,end:3850}},{type:"Twig.expression.type.key.period",position:{start:3833,end:3850},key:"index0"}]},{type:"raw",value:" ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === ",position:{start:3850,end:3901}},{type:"output",position:{start:3901,end:3918},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:3901,end:3918}},{type:"Twig.expression.type.key.period",position:{start:3901,end:3918},key:"index0"}]},{type:"raw",value:` ? 'lg:text-white' : 'lg:text-white')" class="icon-caret-down text-xs text-primary"></span>
+						</button>
+					`,position:{start:3918,end:4031}}]},position:{open:{start:3380,end:3411},close:{start:4031,end:4042}}},{type:"raw",value:`
+					<a @keydown.enter="toggleDropdown(`,position:{start:4043,end:4083}},{type:"output",position:{start:4083,end:4100},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:4083,end:4100}},{type:"Twig.expression.type.key.period",position:{start:4083,end:4100},key:"index0"}]},{type:"raw",value:')"  role="menuitem" :class="dropdownOpen.lg === ',position:{start:4100,end:4148}},{type:"output",position:{start:4148,end:4165},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:4148,end:4165}},{type:"Twig.expression.type.key.period",position:{start:4148,end:4165},key:"index0"}]},{type:"raw",value:` ? 'bg-primary text-white' : ''" class="`,position:{start:4165,end:4205}},{type:"output",position:{start:4205,end:4266},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:4205,end:4266}},{type:"Twig.expression.type.key.period",position:{start:4205,end:4266},key:"children"},{type:"Twig.expression.type.string",value:"hidden lg:inline-flex",position:{start:4205,end:4266}},{type:"Twig.expression.type.string",value:"inline-flex",position:{start:4205,end:4266}},{type:"Twig.expression.type.operator.binary",value:"?",position:{start:4205,end:4266},precidence:16,associativity:"rightToLeft",operator:"?"}]},{type:"raw",value:" text-white font-bold px-6 py-3 gap-2 leading-5 items-center lg:inline-flex no-underline ",position:{start:4266,end:4355}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"url"},{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.test",filter:"empty"},{type:"Twig.expression.type.operator.binary",value:"and",precidence:13,associativity:"leftToRight",operator:"and"}],position:{start:4355,end:4399},output:[{type:"raw",value:"hover:underline",position:{start:4399,end:4414}}]},position:{open:{start:4355,end:4399},close:{start:4414,end:4425}}},{type:"raw",value:'" ',position:{start:4425,end:4427}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"url"}],position:{start:4427,end:4444},output:[{type:"raw",value:' href="',position:{start:4444,end:4451}},{type:"output",position:{start:4451,end:4465},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:4451,end:4465}},{type:"Twig.expression.type.key.period",position:{start:4451,end:4465},key:"url"}]},{type:"raw",value:'"',position:{start:4465,end:4466}}]},position:{open:{start:4427,end:4444},close:{start:4466,end:4477}}},{type:"raw",value:`>
+            `,position:{start:4477,end:4491}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"icon"}],position:{start:4491,end:4509},output:[{type:"raw",value:"              ",position:{start:4510,end:4524}},{type:"logic",token:{type:"Twig.logic.type.include",only:!1,ignoreMissing:!1,stack:[{type:"Twig.expression.type.string",value:"@atoms/icon/icon.twig"}],withStack:[{type:"Twig.expression.type.object.start",value:"{",match:["{"]},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"icon"},{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"icon"},{type:"Twig.expression.type.object.end",value:"}",match:["}"]}],position:{start:4524,end:4586}},position:{start:4524,end:4586}},{type:"raw",value:"              ",position:{start:4587,end:4601}},{type:"output",position:{start:4601,end:4616},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:4601,end:4616}},{type:"Twig.expression.type.key.period",position:{start:4601,end:4616},key:"text"}]},{type:"raw",value:`
+            `,position:{start:4616,end:4629}}]},position:{open:{start:4491,end:4509},close:{start:4629,end:4639}}},{type:"logic",token:{type:"Twig.logic.type.else",match:["else"],position:{start:4629,end:4639},output:[{type:"raw",value:'              <span class="my-px">',position:{start:4640,end:4674}},{type:"output",position:{start:4674,end:4689},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:4674,end:4689}},{type:"Twig.expression.type.key.period",position:{start:4674,end:4689},key:"text"}]},{type:"raw",value:`</span>
+            `,position:{start:4689,end:4709}}]},position:{open:{start:4629,end:4639},close:{start:4709,end:4720}}},{type:"raw",value:"            ",position:{start:4721,end:4733}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"}],position:{start:4733,end:4755},output:[{type:"raw",value:'						  <span :class="(dropdownOpen.sm === ',position:{start:4756,end:4799}},{type:"output",position:{start:4799,end:4816},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:4799,end:4816}},{type:"Twig.expression.type.key.period",position:{start:4799,end:4816},key:"index0"}]},{type:"raw",value:" ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === ",position:{start:4816,end:4867}},{type:"output",position:{start:4867,end:4884},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:4867,end:4884}},{type:"Twig.expression.type.key.period",position:{start:4867,end:4884},key:"index0"}]},{type:"raw",value:` ? 'lg:text-white' : 'lg:text-white')" class="icon-caret-down text-xs text-white"></span>
+            `,position:{start:4884,end:4986}}]},position:{open:{start:4733,end:4755},close:{start:4986,end:4997}}},{type:"raw",value:`					</a>
+
+					`,position:{start:4998,end:5014}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:5014,end:5046},output:[{type:"raw",value:'						<ul role="presentation" class="list-none lg:absolute lg:bg-white lg:py-3 w-full lg:w-80 lg:shadow-md dropdown" :class="(dropdownOpen.sm === ',position:{start:5047,end:5193}},{type:"output",position:{start:5193,end:5210},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:5193,end:5210}},{type:"Twig.expression.type.key.period",position:{start:5193,end:5210},key:"index0"}]},{type:"raw",value:" || dropdownOpen.lg === ",position:{start:5210,end:5234}},{type:"output",position:{start:5234,end:5251},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:5234,end:5251}},{type:"Twig.expression.type.key.period",position:{start:5234,end:5251},key:"index0"}]},{type:"raw",value:` ? '' : 'hidden') + ' ' + (align + '-0')" x-data=" {
+								    breakpoint: 1024,
+								    childOpen: { sm: null, lg: null },
+                    childAlign: 'left',
+								    toggleChildDropdown(index) {
+								      if (window.innerWidth <= this.breakpoint) {
+                        this.childOpen.sm = this.childOpen.sm === index ? null : index;
+                      }else{
+                        this.childOpen.lg = this.childOpen.lg === index ? null : index;
+                        setTimeout(() => {
+                          this.checkDropdownPosition();
+                        }, 25);
+                      }
+
+								    },
+                    checkDropdownPosition() {
+                      if (window.innerWidth > this.breakpoint) {
+                        const dropdown = $el.querySelector('.dropdown:not(.hidden)');
+
+                        if (!dropdown) {
+                          console.warn('Dropdown reference not found');
+                          return;
+                        }
+
+                        const dropdownWidth = dropdown.offsetWidth; // Get the width of the dropdown
+                        const dropdownPosition = dropdown.getBoundingClientRect().left; // Get the left position of the dropdown
+                        const windowWidth = window.innerWidth; // Get the full width of the viewport
+                        const windowRight = windowWidth - dropdownPosition - dropdownWidth; // Calculate space on the right side of the dropdown
+
+                        // Determine alignment based on available space
+                        if (windowRight < 0) {
+                          this.childAlign = 'right'; // Not enough space on the right
+                        } else {
+                          this.childAlign = 'left'; // Enough space, align left
+                        }
+                      }
+                    },
+								    handleChildMouseEnter(index) {
+                      this.timeout = setTimeout(() => {
+                        this.childAlign = 'left';
+                        if (window.innerWidth > this.breakpoint) this.childOpen.lg = index;
+                        setTimeout(() => {
+                          this.checkDropdownPosition();
+                        }, 25);
+                      }, 100);
+								    },
+								    handleChildMouseLeave() {
+                      this.timeout = setTimeout(() => {
+								        if (window.innerWidth > this.breakpoint) this.childOpen.lg = null;
+                      }, 100);
+								    }
+								  }">
+`,position:{start:5251,end:7790}},{type:"raw",value:`
+							`,position:{start:8053,end:8061}},{type:"logic",token:{type:"Twig.logic.type.for",keyVar:null,valueVar:"child",expression:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"}],position:{start:8061,end:8093},output:[{type:"raw",value:`								<li
+                  @focusin="if (window.innerWidth > this.breakpoint) childOpen.lg = `,position:{start:8094,end:8190}},{type:"output",position:{start:8190,end:8207},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:8190,end:8207}},{type:"Twig.expression.type.key.period",position:{start:8190,end:8207},key:"index0"}]},{type:"raw",value:`"
+                  class="py-1 lg:px-6"
+                  `,position:{start:8207,end:8266}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"children"}],position:{start:8266,end:8289},output:[{type:"raw",value:'                    :class="childOpen.lg === ',position:{start:8290,end:8335}},{type:"output",position:{start:8335,end:8352},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:8335,end:8352}},{type:"Twig.expression.type.key.period",position:{start:8335,end:8352},key:"index0"}]},{type:"raw",value:` ? 'lg:bg-primary-100' : ''"
+                    @mouseenter="handleChildMouseEnter(`,position:{start:8352,end:8436}},{type:"output",position:{start:8436,end:8453},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:8436,end:8453}},{type:"Twig.expression.type.key.period",position:{start:8436,end:8453},key:"index0"}]},{type:"raw",value:`)"
+                    @mouseleave="handleChildMouseLeave()"
+                  `,position:{start:8453,end:8532}}]},position:{open:{start:8266,end:8289},close:{start:8532,end:8543}}},{type:"raw",value:`>
+									`,position:{start:8543,end:8554}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:8554,end:8587},output:[{type:"raw",value:'										<button @click="toggleChildDropdown(',position:{start:8588,end:8634}},{type:"output",position:{start:8634,end:8651},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:8634,end:8651}},{type:"Twig.expression.type.key.period",position:{start:8634,end:8651},key:"index0"}]},{type:"raw",value:')" role="menuitem" href="',position:{start:8651,end:8676}},{type:"output",position:{start:8676,end:8691},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:8676,end:8691}},{type:"Twig.expression.type.key.period",position:{start:8676,end:8691},key:"url"}]},{type:"raw",value:`" class="flex items-center gap-2 justify-between w-full lg:hidden text-primary">
+                      <span class="underline hover:no-underline flex w-full">
+											  `,position:{start:8691,end:8863}},{type:"output",position:{start:8863,end:8879},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:8863,end:8879}},{type:"Twig.expression.type.key.period",position:{start:8863,end:8879},key:"text"}]},{type:"raw",value:`
+                      </span>
+
+                      <span :class="childOpen.sm === `,position:{start:8879,end:8964}},{type:"output",position:{start:8964,end:8981},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:8964,end:8981}},{type:"Twig.expression.type.key.period",position:{start:8964,end:8981},key:"index0"}]},{type:"raw",value:` ? 'rotate-180' : ''" class="icon-caret-down lg:hidden text-primary text-xs no-underline"></span>
+                      <span class="icon-caret-right hidden lg:block text-primary text-xs no-underline"></span>
+
+										</button>
+									`,position:{start:8981,end:9220}}]},position:{open:{start:8554,end:8587},close:{start:9220,end:9231}}},{type:"raw",value:'									<a @keydown.enter="toggleChildDropdown(',position:{start:9232,end:9280}},{type:"output",position:{start:9280,end:9297},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:9280,end:9297}},{type:"Twig.expression.type.key.period",position:{start:9280,end:9297},key:"index0"}]},{type:"raw",value:')" role="menuitem" class="no-underline ',position:{start:9297,end:9336}},{type:"output",position:{start:9336,end:9433},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:9336,end:9433}},{type:"Twig.expression.type.key.period",position:{start:9336,end:9433},key:"children"},{type:"Twig.expression.type.string",value:"hidden lg:flex justify-between gap-2 items-center w-full",position:{start:9336,end:9433}},{type:"Twig.expression.type.string",value:"inline-flex",position:{start:9336,end:9433}},{type:"Twig.expression.type.operator.binary",value:"?",position:{start:9336,end:9433},precidence:16,associativity:"rightToLeft",operator:"?"}]},{type:"raw",value:'" href="',position:{start:9433,end:9441}},{type:"output",position:{start:9441,end:9456},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:9441,end:9456}},{type:"Twig.expression.type.key.period",position:{start:9441,end:9456},key:"url"}]},{type:"raw",value:`">
+                    <span class="underline flex w-full hover:no-underline">
+                      `,position:{start:9456,end:9557}},{type:"output",position:{start:9557,end:9573},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:9557,end:9573}},{type:"Twig.expression.type.key.period",position:{start:9557,end:9573},key:"text"}]},{type:"raw",value:`
+                    </span>
+                    `,position:{start:9573,end:9622}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:9622,end:9655},output:[{type:"raw",value:`                      <span class="icon-caret-right hidden lg:block text-primary text-xs no-underline"></span>
+                    `,position:{start:9656,end:9787}}]},position:{open:{start:9622,end:9655},close:{start:9787,end:9798}}},{type:"raw",value:`                  </a>
+
+									`,position:{start:9799,end:9832}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:9832,end:9865},output:[{type:"raw",value:'										<ul role="presentation" class="list-none dropdown lg:absolute my-3 lg:my-0 top-0 bg-primary-100 w-full lg:w-80 p-3 md:px-6 flex flex-col space-y-2 lg:shadow-md" :class="(childOpen.sm === ',position:{start:9866,end:10063}},{type:"output",position:{start:10063,end:10080},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:10063,end:10080}},{type:"Twig.expression.type.key.period",position:{start:10063,end:10080},key:"index0"}]},{type:"raw",value:" || childOpen.lg === ",position:{start:10080,end:10101}},{type:"output",position:{start:10101,end:10118},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:10101,end:10118}},{type:"Twig.expression.type.key.period",position:{start:10101,end:10118},key:"index0"}]},{type:"raw",value:` ? '' : 'hidden') + ' ' + (childAlign === 'right' ? 'lg:right-full' : 'lg:left-full')">
+											<li role="presentation" class="font-bold">
+												<a `,position:{start:10118,end:10275}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"new_window"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:10275,end:10310},output:[{type:"raw",value:' target="_blank" rel="noopener" ',position:{start:10310,end:10342}}]},position:{open:{start:10275,end:10310},close:{start:10342,end:10353}}},{type:"raw",value:' href="',position:{start:10353,end:10360}},{type:"output",position:{start:10360,end:10375},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:10360,end:10375}},{type:"Twig.expression.type.key.period",position:{start:10360,end:10375},key:"url"}]},{type:"raw",value:'">',position:{start:10375,end:10377}},{type:"output",position:{start:10377,end:10393},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:10377,end:10393}},{type:"Twig.expression.type.key.period",position:{start:10377,end:10393},key:"text"}]},{type:"raw",value:`
+													Overview</a>
+											</li>
+											`,position:{start:10393,end:10448}},{type:"logic",token:{type:"Twig.logic.type.for",keyVar:null,valueVar:"grandchild",expression:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"children"}],position:{start:10448,end:10486},output:[{type:"raw",value:`												<li role="presentation">
+													<a role="menuitem" href="`,position:{start:10487,end:10562}},{type:"output",position:{start:10562,end:10582},stack:[{type:"Twig.expression.type.variable",value:"grandchild",match:["grandchild"],position:{start:10562,end:10582}},{type:"Twig.expression.type.key.period",position:{start:10562,end:10582},key:"url"}]},{type:"raw",value:'">',position:{start:10582,end:10584}},{type:"output",position:{start:10584,end:10605},stack:[{type:"Twig.expression.type.variable",value:"grandchild",match:["grandchild"],position:{start:10584,end:10605}},{type:"Twig.expression.type.key.period",position:{start:10584,end:10605},key:"text"}]},{type:"raw",value:`</a>
+												</li>
+											`,position:{start:10605,end:10639}}]},position:{open:{start:10448,end:10486},close:{start:10639,end:10651}}},{type:"raw",value:`										</ul>
+									`,position:{start:10652,end:10677}}]},position:{open:{start:9832,end:9865},close:{start:10677,end:10688}}},{type:"raw",value:`								</li>
+							`,position:{start:10689,end:10710}}]},position:{open:{start:8061,end:8093},close:{start:10710,end:10722}}},{type:"raw",value:`						</ul>
+					`,position:{start:10723,end:10740}}]},position:{open:{start:5014,end:5046},close:{start:10740,end:10751}}},{type:"raw",value:`				</li>
+			`,position:{start:10752,end:10765}}]},position:{open:{start:2953,end:2975},close:{start:10765,end:10777}}},{type:"raw",value:`		</ul>
+		<div class="lg:hidden search-wrapper mt-4">
+			`,position:{start:10778,end:10835}},{type:"logic",token:{type:"Twig.logic.type.include",only:!1,ignoreMissing:!1,stack:[{type:"Twig.expression.type.string",value:"@atoms/forms/simple-form/simple-form.twig"}],withStack:[{type:"Twig.expression.type.object.start",value:"{",match:["{"]},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"input_id"},{type:"Twig.expression.type.string",value:"keywords_mobile"},{type:"Twig.expression.type.object.end",value:"}",match:["}"]}],position:{start:10835,end:10929}},position:{start:10835,end:10929}},{type:"raw",value:`		</div>
+	</div>
+</div>
+`,position:{start:10930,end:10930}}],precompiled:!0});t.twig({id:"@atoms/logo/logo.twig",data:[{type:"raw",value:'<a href="',position:{start:0,end:9}},{type:"output",position:{start:9,end:88},stack:[{type:"Twig.expression.type.variable",value:"homepage",match:["homepage"],position:{start:9,end:88}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:9,end:88},params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("],position:{start:9,end:88}},{type:"Twig.expression.type.string",value:"/iframe.html?path=/story/pages-templates--templates",position:{start:9,end:88}},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:9,end:88},expression:!1}]}]},{type:"raw",value:`" class="logo">
+  <img `,position:{start:88,end:111}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"logo",match:["logo"]},{type:"Twig.expression.type.key.period",key:"height"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:111,end:141},output:[{type:"raw",value:'height="',position:{start:141,end:149}},{type:"output",position:{start:149,end:166},stack:[{type:"Twig.expression.type.variable",value:"logo",match:["logo"],position:{start:149,end:166}},{type:"Twig.expression.type.key.period",position:{start:149,end:166},key:"height"}]},{type:"raw",value:'"',position:{start:166,end:167}}]},position:{open:{start:111,end:141},close:{start:167,end:178}}},{type:"raw",value:" ",position:{start:178,end:179}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"logo",match:["logo"]},{type:"Twig.expression.type.key.period",key:"width"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:179,end:208},output:[{type:"raw",value:'width="',position:{start:208,end:215}},{type:"output",position:{start:215,end:231},stack:[{type:"Twig.expression.type.variable",value:"logo",match:["logo"],position:{start:215,end:231}},{type:"Twig.expression.type.key.period",position:{start:215,end:231},key:"width"}]},{type:"raw",value:'"',position:{start:231,end:232}}]},position:{open:{start:179,end:208},close:{start:232,end:243}}},{type:"raw",value:' class="logo_image ',position:{start:243,end:262}},{type:"output",position:{start:262,end:292},stack:[{type:"Twig.expression.type.variable",value:"logo",match:["logo"],position:{start:262,end:292}},{type:"Twig.expression.type.key.period",position:{start:262,end:292},key:"class"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:262,end:292},params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("],position:{start:262,end:292}},{type:"Twig.expression.type.string",value:"",position:{start:262,end:292}},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:262,end:292},expression:!1}]}]},{type:"raw",value:'" src="',position:{start:292,end:299}},{type:"output",position:{start:299,end:313},stack:[{type:"Twig.expression.type.variable",value:"logo",match:["logo"],position:{start:299,end:313}},{type:"Twig.expression.type.key.period",position:{start:299,end:313},key:"src"}]},{type:"raw",value:'" alt="',position:{start:313,end:320}},{type:"output",position:{start:320,end:334},stack:[{type:"Twig.expression.type.variable",value:"logo",match:["logo"],position:{start:320,end:334}},{type:"Twig.expression.type.key.period",position:{start:320,end:334},key:"alt"}]},{type:"raw",value:`"/>
+</a>
+`,position:{start:334,end:334}}],precompiled:!0});t.twig({id:"@base/utils/hamburger/hamburger.twig",data:[{type:"logic",token:{type:"Twig.logic.type.set",key:"hamburger_class",expression:[{type:"Twig.expression.type.string",value:"bg-primary h-[3px] rounded-sm absolute w-full"}],position:{start:0,end:75}},position:{start:0,end:75}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"is_demo",match:["is_demo"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:76,end:102},output:[{type:"raw",value:'<div x-data="{ ',position:{start:103,end:118}},{type:"output",position:{start:118,end:130},stack:[{type:"Twig.expression.type.variable",value:"toggle",match:["toggle"],position:{start:118,end:130}}]},{type:"raw",value:`: false }">
+`,position:{start:130,end:142}}]},position:{open:{start:76,end:102},close:{start:142,end:153}}},{type:"raw",value:'  <button class="hamburger flex items-center flex-col" type="button" id="hamburger" @click="',position:{start:154,end:246}},{type:"output",position:{start:246,end:258},stack:[{type:"Twig.expression.type.variable",value:"toggle",match:["toggle"],position:{start:246,end:258}}]},{type:"raw",value:" = !",position:{start:258,end:262}},{type:"output",position:{start:262,end:274},stack:[{type:"Twig.expression.type.variable",value:"toggle",match:["toggle"],position:{start:262,end:274}}]},{type:"raw",value:`" aria-label="Toggle navigation">
+    <span class="icon icon-list text-lg ml-2 rounded-full p-2 shadow-sm mr-1"
+          :class="`,position:{start:274,end:404}},{type:"output",position:{start:404,end:416},stack:[{type:"Twig.expression.type.variable",value:"toggle",match:["toggle"],position:{start:404,end:416}}]},{type:"raw",value:` ? ' icon-x bg-secondary-600 text-primary-500' : 'icon-search bg-white'"
+    ></span>
+`,position:{start:416,end:502}},{type:"raw",value:`
+`,position:{start:540,end:541}},{type:"raw",value:`
+`,position:{start:689,end:690}},{type:"raw",value:`
+`,position:{start:777,end:778}},{type:"raw",value:`
+`,position:{start:932,end:933}},{type:"raw",value:`
+    <span class="sr-only hamburger-text mt-2 uppercase font-bold text-xs tracking-wider" x-text="`,position:{start:947,end:1045}},{type:"output",position:{start:1045,end:1057},stack:[{type:"Twig.expression.type.variable",value:"toggle",match:["toggle"],position:{start:1045,end:1057}}]},{type:"raw",value:` ? 'Close' : 'Menu'">Menu</span>
+  </button>
+`,position:{start:1057,end:1102}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"is_demo",match:["is_demo"]},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:1102,end:1128},output:[{type:"raw",value:`</div>
+`,position:{start:1129,end:1136}}]},position:{open:{start:1102,end:1128},close:{start:1136,end:1147}}}],precompiled:!0});t.twig({id:"@atoms/forms/simple-form/simple-form.twig",data:[{type:"raw",value:'<form action="',position:{start:0,end:14}},{type:"output",position:{start:14,end:47},stack:[{type:"Twig.expression.type.variable",value:"action",match:["action"],position:{start:14,end:47}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:14,end:47},params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("],position:{start:14,end:47}},{type:"Twig.expression.type.string",value:"/search",position:{start:14,end:47}},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:14,end:47},expression:!1}]}]},{type:"raw",value:`">
+  <div class="relative">
+    <label for="`,position:{start:47,end:91}},{type:"output",position:{start:91,end:127},stack:[{type:"Twig.expression.type.variable",value:"input_id",match:["input_id"],position:{start:91,end:127}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:91,end:127},params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("],position:{start:91,end:127}},{type:"Twig.expression.type.string",value:"keywords",position:{start:91,end:127}},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:91,end:127},expression:!1}]}]},{type:"raw",value:`" class="text-2xl mb-5">Site Search</label>
+    <input class="w-full pr-6 shadow-sm rounded-sm" placeholder="Enter your search term" type="search" id="`,position:{start:127,end:278}},{type:"output",position:{start:278,end:314},stack:[{type:"Twig.expression.type.variable",value:"input_id",match:["input_id"],position:{start:278,end:314}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:278,end:314},params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("],position:{start:278,end:314}},{type:"Twig.expression.type.string",value:"keywords",position:{start:278,end:314}},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:278,end:314},expression:!1}]}]},{type:"raw",value:'" name="',position:{start:314,end:322}},{type:"output",position:{start:322,end:347},stack:[{type:"Twig.expression.type.variable",value:"name",match:["name"],position:{start:322,end:347}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:322,end:347},params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("],position:{start:322,end:347}},{type:"Twig.expression.type.string",value:"q",position:{start:322,end:347}},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:322,end:347},expression:!1}]}]},{type:"raw",value:`">
+    <div class="absolute right-0 bottom-0 flex items-center pl-3">
+      <button class="button m-0" type="submit"  value="Submit">
+        <span class="">`,position:{start:347,end:504}},{type:"output",position:{start:504,end:541},stack:[{type:"Twig.expression.type.variable",value:"button_text",match:["button_text"],position:{start:504,end:541}},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:504,end:541},params:[{type:"Twig.expression.type.parameter.start",value:"(",match:["("],position:{start:504,end:541}},{type:"Twig.expression.type.string",value:"Search",position:{start:504,end:541}},{type:"Twig.expression.type.parameter.end",value:")",match:[")"],position:{start:504,end:541},expression:!1}]}]},{type:"raw",value:`</span>
+      </button>
+    </div>
+  </div>
+</form>
+`,position:{start:541,end:541}}],precompiled:!0});t.twig({id:"@atoms/icon/icon.twig",data:[{type:"logic",token:{type:"Twig.logic.type.set",key:"modifiers",expression:[{type:"Twig.expression.type.variable",value:"modifiers",match:["modifiers"]},{type:"Twig.expression.type.string",value:""},{type:"Twig.expression.type.operator.binary",value:"??",precidence:15,associativity:"rightToLeft",operator:"??"}],position:{start:0,end:37}},position:{start:0,end:37}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"icon",match:["icon"]},{type:"Twig.expression.type.key.period",key:"background"}],position:{start:38,end:62},output:[{type:"raw",value:"  ",position:{start:63,end:65}},{type:"logic",token:{type:"Twig.logic.type.set",key:"background_classes",expression:[{type:"Twig.expression.type.subexpression.end",value:")",match:[")"],expression:!0,params:[{type:"Twig.expression.type.variable",value:"icon",match:["icon"]},{type:"Twig.expression.type.key.period",key:"background"},{type:"Twig.expression.type.string",value:"light"},{type:"Twig.expression.type.operator.binary",value:"==",precidence:9,associativity:"leftToRight",operator:"=="}]},{type:"Twig.expression.type.string",value:"text-primary bg-primary-50"},{type:"Twig.expression.type.string",value:"text-white bg-primary"},{type:"Twig.expression.type.operator.binary",value:"?",precidence:16,associativity:"rightToLeft",operator:"?"}],position:{start:65,end:181}},position:{start:65,end:181}}]},position:{open:{start:38,end:62},close:{start:182,end:193}}},{type:"raw",value:'<span class="text-2xl leading-0',position:{start:194,end:225}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"icon",match:["icon"]},{type:"Twig.expression.type.key.period",key:"background"}],position:{start:225,end:249},output:[{type:"raw",value:" inline-flex items-center justify-center rounded-full py-4 px-4 ",position:{start:249,end:313}},{type:"output",position:{start:313,end:337},stack:[{type:"Twig.expression.type.variable",value:"background_classes",match:["background_classes"],position:{start:313,end:337}}]}]},position:{open:{start:225,end:249},close:{start:337,end:348}}},{type:"raw",value:" ",position:{start:348,end:349}},{type:"output",position:{start:349,end:364},stack:[{type:"Twig.expression.type.variable",value:"modifiers",match:["modifiers"],position:{start:349,end:364}}]},{type:"raw",value:`">
+  <span class="`,position:{start:364,end:382}},{type:"output",position:{start:382,end:397},stack:[{type:"Twig.expression.type.variable",value:"icon",match:["icon"],position:{start:382,end:397}},{type:"Twig.expression.type.key.period",position:{start:382,end:397},key:"name"}]},{type:"raw",value:`"></span>
+</span>
+`,position:{start:397,end:397}}],precompiled:!0});t.twig({id:"@molecules/navigation/utility-menu/utility-menu.twig",data:[{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"menu_type",match:["menu_type"]},{type:"Twig.expression.type.string",value:"cta"},{type:"Twig.expression.type.operator.binary",value:"==",precidence:9,associativity:"leftToRight",operator:"=="}],position:{start:0,end:27},output:[{type:"raw",value:"  ",position:{start:28,end:30}},{type:"logic",token:{type:"Twig.logic.type.set",key:"menu_options",expression:[{type:"Twig.expression.type.object.start",value:"{",match:["{"]},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"menu_id"},{type:"Twig.expression.type.string",value:"cta-menu"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"menu_wrapper_modifiers"},{type:"Twig.expression.type.string",value:"z-30 bg-primary lg:relative inline-block shadow-md lg:shadow-none lg:py-0 pr-4"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"menu_bar_modifiers"},{type:"Twig.expression.type.string",value:"flex flex-col justify-end items-center gap-x-8 list-none lg:-mx-1 lg:flex-row"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"parent_link_mobile_button_modifiers"},{type:"Twig.expression.type.string",value:"py-3 text-white no-underline w-full font-bold flex items-center gap-2 justify-between leading-5 lg:hidden"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"parent_link_mobile_button_icon_modifiers"},{type:"Twig.expression.type.string",value:"icon-caret-down text-xs text-primary"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"parent_link_modifiers"},{type:"Twig.expression.type.string",value:"text-white text-2xl font-bold pl-4 pt-3 pb-5 gap-2 leading-5 items-center lg:inline-flex no-underline"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"parent_link_hover_modifiers"},{type:"Twig.expression.type.string",value:"bg-primary hover text-white"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"parent_link_icon_modifiers"},{type:"Twig.expression.type.string",value:"icon-caret-down text-lg text-white"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.object.end",value:"}",match:["}"]}],position:{start:30,end:802}},position:{start:30,end:802}}]},position:{open:{start:0,end:27},close:{start:803,end:813}}},{type:"logic",token:{type:"Twig.logic.type.else",match:["else"],position:{start:803,end:813},output:[{type:"raw",value:"  ",position:{start:814,end:816}},{type:"logic",token:{type:"Twig.logic.type.set",key:"menu_options",expression:[{type:"Twig.expression.type.object.start",value:"{",match:["{"]},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"menu_id"},{type:"Twig.expression.type.string",value:"eyebrow-menu"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"menu_wrapper_modifiers"},{type:"Twig.expression.type.string",value:"z-40 bg-primary w-full py-4 lg:mt-4 lg:relative lg:block shadow-md lg:shadow-none lg:py-0"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"menu_bar_modifiers"},{type:"Twig.expression.type.string",value:"flex flex-col justify-end items-center gap-x-1 list-none lg:-mx-1 lg:flex-row"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"parent_link_mobile_button_modifiers"},{type:"Twig.expression.type.string",value:"py-3 text-white no-underline w-full font-bold flex items-center gap-2 justify-between leading-5 lg:hidden"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"parent_link_mobile_button_icon_modifiers"},{type:"Twig.expression.type.string",value:"icon-caret-down text-xs text-primary"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"parent_link_modifiers"},{type:"Twig.expression.type.string",value:"text-white pl-4 py-3 gap-2 leading-5 items-center lg:inline-flex no-underline"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"parent_link_hover_modifiers"},{type:"Twig.expression.type.string",value:"bg-primary hover text-white"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"parent_link_icon_modifiers"},{type:"Twig.expression.type.string",value:"icon-caret-down text-xs text-white"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.object.end",value:"}",match:["}"]}],position:{start:816,end:1579}},position:{start:816,end:1579}}]},position:{open:{start:803,end:813},close:{start:1580,end:1591}}},{type:"raw",value:'<div id="',position:{start:1592,end:1601}},{type:"output",position:{start:1601,end:1627},stack:[{type:"Twig.expression.type.variable",value:"menu_options",match:["menu_options"],position:{start:1601,end:1627}},{type:"Twig.expression.type.key.period",position:{start:1601,end:1627},key:"menu_id"}]},{type:"raw",value:`" x-data="{
+	    breakpoint: 1024,
+	    dropdownOpen: { sm: null, lg: null },
+      align: 'left',
+      timeout: null,
+	    toggleDropdown(index) {
+	      if (window.innerWidth <= this.breakpoint) {
+	        this.dropdownOpen.sm = this.dropdownOpen.sm === index ? null : index;
+	      }else{
+          this.dropdownOpen.lg = this.dropdownOpen.lg === index ? null : index;
+          setTimeout(() => {
+            this.checkDropdownPosition();
+          }, 10);
+        }
+	    },
+      checkDropdownPosition() {
+        if (window.innerWidth > this.breakpoint) {
+          const dropdown = document.querySelector('.dropdown:not(.hidden)');
+
+          if (!dropdown) {
+            console.warn('Dropdown reference not found');
+            return;
+          }
+
+          const dropdownWidth = dropdown.offsetWidth; // Get the width of the dropdown
+          const dropdownPosition = dropdown.getBoundingClientRect().left; // Get the left position of the dropdown
+          const windowWidth = window.innerWidth; // Get the full width of the viewport
+          const windowRight = windowWidth - dropdownPosition - dropdownWidth; // Calculate space on the right side of the dropdown
+
+          // Determine alignment based on available space
+          if (windowRight < 0) {
+            this.align = 'right'; // Not enough space on the right
+          } else {
+            this.align = 'left'; // Enough space, align left
+          }
+
+
+        }
+      },
+	    handleMouseEnter(index) {
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => {
+          this.align = 'left';
+          if (window.innerWidth > this.breakpoint) this.dropdownOpen['lg'] = index;
+          setTimeout(() => {
+            this.checkDropdownPosition();
+          }, 10);
+        }, 100);
+
+
+	    },
+	    handleMouseLeave() {
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => {
+	        if (window.innerWidth > this.breakpoint) this.dropdownOpen['lg'] = null;
+        }, 100);
+	    },
+      handleDirection(direction){
+        if (direction === 'left') {
+          if (this.dropdownOpen.lg > 0) {
+            this.dropdownOpen.lg--;
+          }else{
+            this.dropdownOpen.lg = $refs.topbar.children.length - 1;
+          }
+        } else {
+          if (this.dropdownOpen.lg < $refs.topbar.children.length - 1) {
+            this.dropdownOpen.lg++;
+          }else{
+            this.dropdownOpen.lg = 0;
+          }
+        }
+        $refs.topbar.children[this.dropdownOpen.lg].querySelector('a').focus();
+      }
+	  }" class="absolute `,position:{start:1627,end:4188}},{type:"output",position:{start:4188,end:4229},stack:[{type:"Twig.expression.type.variable",value:"menu_options",match:["menu_options"],position:{start:4188,end:4229}},{type:"Twig.expression.type.key.period",position:{start:4188,end:4229},key:"menu_wrapper_modifiers"}]},{type:"raw",value:`" :class="(mainMenu ? '' : '')">
+
+    <ul role="menubar"
+        x-ref="topbar"
+        @keydown.left="handleDirection('left')"
+        @keydown.right="handleDirection('right')"
+        class="`,position:{start:4229,end:4422}},{type:"output",position:{start:4422,end:4459},stack:[{type:"Twig.expression.type.variable",value:"menu_options",match:["menu_options"],position:{start:4422,end:4459}},{type:"Twig.expression.type.key.period",position:{start:4422,end:4459},key:"menu_bar_modifiers"}]},{type:"raw",value:`">
+      `,position:{start:4459,end:4468}},{type:"logic",token:{type:"Twig.logic.type.for",keyVar:null,valueVar:"link",expression:[{type:"Twig.expression.type.variable",value:"links",match:["links"]}],position:{start:4468,end:4491},output:[{type:"raw",value:`        <li
+          @focusin="if (window.innerWidth > this.breakpoint) dropdownOpen.lg = `,position:{start:4492,end:4583}},{type:"output",position:{start:4583,end:4600},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:4583,end:4600}},{type:"Twig.expression.type.key.period",position:{start:4583,end:4600},key:"index0"}]},{type:"raw",value:`"
+          role="presentation" class="relative lg:border-0 `,position:{start:4600,end:4660}},{type:"output",position:{start:4660,end:4718},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:4660,end:4718}},{type:"Twig.expression.type.key.period",position:{start:4660,end:4718},key:"last"},{type:"Twig.expression.type.bool",value:!1,position:{start:4660,end:4718}},{type:"Twig.expression.type.operator.binary",value:"==",position:{start:4660,end:4718},precidence:9,associativity:"leftToRight",operator:"=="},{type:"Twig.expression.type.string",value:"border-b border-gray-200",position:{start:4660,end:4718}},{type:"Twig.expression.type.string",value:"",position:{start:4660,end:4718}},{type:"Twig.expression.type.operator.binary",value:"?",position:{start:4660,end:4718},precidence:16,associativity:"rightToLeft",operator:"?"}]},{type:"raw",value:`"
+          `,position:{start:4718,end:4730}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"}],position:{start:4730,end:4752},output:[{type:"raw",value:'            @mouseenter="handleMouseEnter(',position:{start:4753,end:4795}},{type:"output",position:{start:4795,end:4812},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:4795,end:4812}},{type:"Twig.expression.type.key.period",position:{start:4795,end:4812},key:"index0"}]},{type:"raw",value:`)"
+            @mouseleave="handleMouseLeave()"
+          `,position:{start:4812,end:4870}}]},position:{open:{start:4730,end:4752},close:{start:4870,end:4881}}},{type:"raw",value:`        >
+
+          `,position:{start:4882,end:4903}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.filter",value:"length",match:["| length","length"]}],position:{start:4903,end:4934},output:[{type:"raw",value:`            <button
+              @click="toggleDropdown(`,position:{start:4935,end:4992}},{type:"output",position:{start:4992,end:5009},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:4992,end:5009}},{type:"Twig.expression.type.key.period",position:{start:4992,end:5009},key:"index0"}]},{type:"raw",value:`)"
+              class="`,position:{start:5009,end:5033}},{type:"output",position:{start:5033,end:5087},stack:[{type:"Twig.expression.type.variable",value:"menu_options",match:["menu_options"],position:{start:5033,end:5087}},{type:"Twig.expression.type.key.period",position:{start:5033,end:5087},key:"parent_link_mobile_button_modifiers"}]},{type:"raw",value:' " ',position:{start:5087,end:5090}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"new_window"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:5090,end:5124},output:[{type:"raw",value:' target="_blank" rel="noopener" ',position:{start:5124,end:5156}}]},position:{open:{start:5090,end:5124},close:{start:5156,end:5167}}},{type:"raw",value:` role="menuitem">
+              `,position:{start:5167,end:5199}},{type:"output",position:{start:5199,end:5275},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:5199,end:5275}},{type:"Twig.expression.type.key.period",position:{start:5199,end:5275},key:"parent_text"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"],position:{start:5199,end:5275}},{type:"Twig.expression.type.test",position:{start:5199,end:5275},filter:"empty",modifier:"not"},{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:5199,end:5275}},{type:"Twig.expression.type.key.period",position:{start:5199,end:5275},key:"parent_text"},{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:5199,end:5275}},{type:"Twig.expression.type.key.period",position:{start:5199,end:5275},key:"text"},{type:"Twig.expression.type.operator.binary",value:"?",position:{start:5199,end:5275},precidence:16,associativity:"rightToLeft",operator:"?"}]},{type:"raw",value:`
+              <span :class="(dropdownOpen.sm === `,position:{start:5275,end:5325}},{type:"output",position:{start:5325,end:5342},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:5325,end:5342}},{type:"Twig.expression.type.key.period",position:{start:5325,end:5342},key:"index0"}]},{type:"raw",value:" ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === ",position:{start:5342,end:5393}},{type:"output",position:{start:5393,end:5410},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:5393,end:5410}},{type:"Twig.expression.type.key.period",position:{start:5393,end:5410},key:"index0"}]},{type:"raw",value:` ? 'lg:text-gray' : 'lg:text-white')" class="`,position:{start:5410,end:5455}},{type:"output",position:{start:5455,end:5514},stack:[{type:"Twig.expression.type.variable",value:"menu_options",match:["menu_options"],position:{start:5455,end:5514}},{type:"Twig.expression.type.key.period",position:{start:5455,end:5514},key:"parent_link_mobile_button_icon_modifiers"}]},{type:"raw",value:`"></span>
+            </button>
+          `,position:{start:5514,end:5556}}]},position:{open:{start:4903,end:4934},close:{start:5556,end:5567}}},{type:"raw",value:`
+          <a @keydown.enter="toggleDropdown(`,position:{start:5568,end:5613}},{type:"output",position:{start:5613,end:5630},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:5613,end:5630}},{type:"Twig.expression.type.key.period",position:{start:5613,end:5630},key:"index0"}]},{type:"raw",value:')"  role="menuitem" :class="dropdownOpen.lg === ',position:{start:5630,end:5678}},{type:"output",position:{start:5678,end:5695},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:5678,end:5695}},{type:"Twig.expression.type.key.period",position:{start:5678,end:5695},key:"index0"}]},{type:"raw",value:" ? '",position:{start:5695,end:5699}},{type:"output",position:{start:5699,end:5745},stack:[{type:"Twig.expression.type.variable",value:"menu_options",match:["menu_options"],position:{start:5699,end:5745}},{type:"Twig.expression.type.key.period",position:{start:5699,end:5745},key:"parent_link_hover_modifiers"}]},{type:"raw",value:`' : ''" class="`,position:{start:5745,end:5760}},{type:"output",position:{start:5760,end:5821},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:5760,end:5821}},{type:"Twig.expression.type.key.period",position:{start:5760,end:5821},key:"children"},{type:"Twig.expression.type.string",value:"hidden lg:inline-flex",position:{start:5760,end:5821}},{type:"Twig.expression.type.string",value:"inline-flex",position:{start:5760,end:5821}},{type:"Twig.expression.type.operator.binary",value:"?",position:{start:5760,end:5821},precidence:16,associativity:"rightToLeft",operator:"?"}]},{type:"raw",value:" ",position:{start:5821,end:5822}},{type:"output",position:{start:5822,end:5861},stack:[{type:"Twig.expression.type.variable",value:"menu_options",match:["menu_options"],position:{start:5822,end:5861}},{type:"Twig.expression.type.key.period",position:{start:5822,end:5861},key:"parent_link_modifiers"}]},{type:"raw",value:" ",position:{start:5861,end:5862}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"url"},{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.test",filter:"empty"},{type:"Twig.expression.type.operator.binary",value:"and",precidence:13,associativity:"leftToRight",operator:"and"}],position:{start:5862,end:5906},output:[{type:"raw",value:"hover:underline",position:{start:5906,end:5921}}]},position:{open:{start:5862,end:5906},close:{start:5921,end:5932}}},{type:"raw",value:'" ',position:{start:5932,end:5934}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"url"}],position:{start:5934,end:5951},output:[{type:"raw",value:' href="',position:{start:5951,end:5958}},{type:"output",position:{start:5958,end:5972},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:5958,end:5972}},{type:"Twig.expression.type.key.period",position:{start:5958,end:5972},key:"url"}]},{type:"raw",value:'"',position:{start:5972,end:5973}}]},position:{open:{start:5934,end:5951},close:{start:5973,end:5984}}},{type:"raw",value:`>
+            `,position:{start:5984,end:5998}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"icon"}],position:{start:5998,end:6016},output:[{type:"raw",value:"              ",position:{start:6017,end:6031}},{type:"logic",token:{type:"Twig.logic.type.include",only:!1,ignoreMissing:!1,stack:[{type:"Twig.expression.type.string",value:"@atoms/icon/icon.twig"}],withStack:[{type:"Twig.expression.type.object.start",value:"{",match:["{"]},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"icon"},{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"icon"},{type:"Twig.expression.type.object.end",value:"}",match:["}"]}],position:{start:6031,end:6093}},position:{start:6031,end:6093}},{type:"raw",value:"            ",position:{start:6094,end:6106}}]},position:{open:{start:5998,end:6016},close:{start:6106,end:6117}}},{type:"raw",value:"            ",position:{start:6118,end:6130}},{type:"output",position:{start:6130,end:6145},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:6130,end:6145}},{type:"Twig.expression.type.key.period",position:{start:6130,end:6145},key:"text"}]},{type:"raw",value:`
+            `,position:{start:6145,end:6158}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"}],position:{start:6158,end:6180},output:[{type:"raw",value:'              <span :class="(dropdownOpen.sm === ',position:{start:6181,end:6230}},{type:"output",position:{start:6230,end:6247},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:6230,end:6247}},{type:"Twig.expression.type.key.period",position:{start:6230,end:6247},key:"index0"}]},{type:"raw",value:" ? 'rotate-180' : '') + ' ' + (dropdownOpen.lg === ",position:{start:6247,end:6298}},{type:"output",position:{start:6298,end:6315},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:6298,end:6315}},{type:"Twig.expression.type.key.period",position:{start:6298,end:6315},key:"index0"}]},{type:"raw",value:` ? 'lg:text-white' : 'lg:text-white')" class="`,position:{start:6315,end:6361}},{type:"output",position:{start:6361,end:6406},stack:[{type:"Twig.expression.type.variable",value:"menu_options",match:["menu_options"],position:{start:6361,end:6406}},{type:"Twig.expression.type.key.period",position:{start:6361,end:6406},key:"parent_link_icon_modifiers"}]},{type:"raw",value:`"></span>
+            `,position:{start:6406,end:6428}}]},position:{open:{start:6158,end:6180},close:{start:6428,end:6439}}},{type:"raw",value:`          </a>
+
+          `,position:{start:6440,end:6466}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:6466,end:6498},output:[{type:"raw",value:'            <ul role="presentation" class="list-none lg:absolute lg:bg-white lg:py-3 w-full lg:w-80 lg:shadow-md dropdown" :class="(dropdownOpen.sm === ',position:{start:6499,end:6651}},{type:"output",position:{start:6651,end:6668},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:6651,end:6668}},{type:"Twig.expression.type.key.period",position:{start:6651,end:6668},key:"index0"}]},{type:"raw",value:" || dropdownOpen.lg === ",position:{start:6668,end:6692}},{type:"output",position:{start:6692,end:6709},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:6692,end:6709}},{type:"Twig.expression.type.key.period",position:{start:6692,end:6709},key:"index0"}]},{type:"raw",value:` ? '' : 'hidden') + ' ' + (align + '-0')" x-data=" {
+								    breakpoint: 1024,
+								    childOpen: { sm: null, lg: null },
+                    childAlign: 'left',
+								    toggleChildDropdown(index) {
+								      if (window.innerWidth <= this.breakpoint) {
+                        this.childOpen.sm = this.childOpen.sm === index ? null : index;
+                      }else{
+                        this.childOpen.lg = this.childOpen.lg === index ? null : index;
+                        setTimeout(() => {
+                          this.checkDropdownPosition();
+                        }, 25);
+                      }
+
+								    },
+                    checkDropdownPosition() {
+                      if (window.innerWidth > this.breakpoint) {
+                        const dropdown = $el.querySelector('.dropdown:not(.hidden)');
+
+                        if (!dropdown) {
+                          console.warn('Dropdown reference not found');
+                          return;
+                        }
+
+                        const dropdownWidth = dropdown.offsetWidth; // Get the width of the dropdown
+                        const dropdownPosition = dropdown.getBoundingClientRect().left; // Get the left position of the dropdown
+                        const windowWidth = window.innerWidth; // Get the full width of the viewport
+                        const windowRight = windowWidth - dropdownPosition - dropdownWidth; // Calculate space on the right side of the dropdown
+
+                        // Determine alignment based on available space
+                        if (windowRight < 0) {
+                          this.childAlign = 'right'; // Not enough space on the right
+                        } else {
+                          this.childAlign = 'left'; // Enough space, align left
+                        }
+                      }
+                    },
+								    handleChildMouseEnter(index) {
+                      this.timeout = setTimeout(() => {
+                        this.childAlign = 'left';
+                        if (window.innerWidth > this.breakpoint) this.childOpen.lg = index;
+                        setTimeout(() => {
+                          this.checkDropdownPosition();
+                        }, 25);
+                      }, 100);
+								    },
+								    handleChildMouseLeave() {
+                      this.timeout = setTimeout(() => {
+								        if (window.innerWidth > this.breakpoint) this.childOpen.lg = null;
+                      }, 100);
+								    }
+								  }">
+              <li role="presentation" class="parent-link font-bold lg:px-6 py-1">
+                <a `,position:{start:6709,end:9349}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"new_window"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:9349,end:9383},output:[{type:"raw",value:' target="_blank" rel="noopener" ',position:{start:9383,end:9415}}]},position:{open:{start:9349,end:9383},close:{start:9415,end:9426}}},{type:"raw",value:' href="',position:{start:9426,end:9433}},{type:"output",position:{start:9433,end:9447},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:9433,end:9447}},{type:"Twig.expression.type.key.period",position:{start:9433,end:9447},key:"url"}]},{type:"raw",value:'" class="text-primary">',position:{start:9447,end:9470}},{type:"output",position:{start:9470,end:9485},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:9470,end:9485}},{type:"Twig.expression.type.key.period",position:{start:9470,end:9485},key:"text"}]},{type:"raw",value:`
+                  Overview</a>
+              </li>
+              `,position:{start:9485,end:9551}},{type:"logic",token:{type:"Twig.logic.type.for",keyVar:null,valueVar:"child",expression:[{type:"Twig.expression.type.variable",value:"link",match:["link"]},{type:"Twig.expression.type.key.period",key:"children"}],position:{start:9551,end:9583},output:[{type:"raw",value:`                <li
+                  @focusin="if (window.innerWidth > this.breakpoint) childOpen.lg = `,position:{start:9584,end:9688}},{type:"output",position:{start:9688,end:9705},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:9688,end:9705}},{type:"Twig.expression.type.key.period",position:{start:9688,end:9705},key:"index0"}]},{type:"raw",value:`"
+                  class="py-1 lg:px-6"
+                  `,position:{start:9705,end:9764}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"children"}],position:{start:9764,end:9787},output:[{type:"raw",value:'                  :class="childOpen.lg === ',position:{start:9788,end:9831}},{type:"output",position:{start:9831,end:9848},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:9831,end:9848}},{type:"Twig.expression.type.key.period",position:{start:9831,end:9848},key:"index0"}]},{type:"raw",value:` ? 'lg:bg-primary-100' : ''"
+                  @mouseenter="handleChildMouseEnter(`,position:{start:9848,end:9930}},{type:"output",position:{start:9930,end:9947},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:9930,end:9947}},{type:"Twig.expression.type.key.period",position:{start:9930,end:9947},key:"index0"}]},{type:"raw",value:`)"
+                  @mouseleave="handleChildMouseLeave()"
+                  `,position:{start:9947,end:10024}}]},position:{open:{start:9764,end:9787},close:{start:10024,end:10035}}},{type:"raw",value:`>
+                  `,position:{start:10035,end:10055}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:10055,end:10088},output:[{type:"raw",value:'                    <button @click="toggleChildDropdown(',position:{start:10089,end:10145}},{type:"output",position:{start:10145,end:10162},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:10145,end:10162}},{type:"Twig.expression.type.key.period",position:{start:10145,end:10162},key:"index0"}]},{type:"raw",value:')" role="menuitem" href="',position:{start:10162,end:10187}},{type:"output",position:{start:10187,end:10202},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:10187,end:10202}},{type:"Twig.expression.type.key.period",position:{start:10187,end:10202},key:"url"}]},{type:"raw",value:`" class="flex items-center gap-2 justify-between w-full lg:hidden text-primary">
+                      <span class="underline hover:no-underline flex w-full">
+											  `,position:{start:10202,end:10374}},{type:"output",position:{start:10374,end:10390},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:10374,end:10390}},{type:"Twig.expression.type.key.period",position:{start:10374,end:10390},key:"text"}]},{type:"raw",value:`
+                      </span>
+
+                      <span :class="childOpen.sm === `,position:{start:10390,end:10475}},{type:"output",position:{start:10475,end:10492},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:10475,end:10492}},{type:"Twig.expression.type.key.period",position:{start:10475,end:10492},key:"index0"}]},{type:"raw",value:` ? 'rotate-180' : ''" class="icon-caret-down lg:hidden text-primary text-xs no-underline"></span>
+                      <span class="icon-caret-right hidden lg:block text-primary text-xs no-underline"></span>
+
+                    </button>
+                  `,position:{start:10492,end:10750}}]},position:{open:{start:10055,end:10088},close:{start:10750,end:10761}}},{type:"raw",value:'                  <a @keydown.enter="toggleChildDropdown(',position:{start:10762,end:10819}},{type:"output",position:{start:10819,end:10836},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:10819,end:10836}},{type:"Twig.expression.type.key.period",position:{start:10819,end:10836},key:"index0"}]},{type:"raw",value:')" role="menuitem" class="no-underline ',position:{start:10836,end:10875}},{type:"output",position:{start:10875,end:10972},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:10875,end:10972}},{type:"Twig.expression.type.key.period",position:{start:10875,end:10972},key:"children"},{type:"Twig.expression.type.string",value:"hidden lg:flex justify-between gap-2 items-center w-full",position:{start:10875,end:10972}},{type:"Twig.expression.type.string",value:"inline-flex",position:{start:10875,end:10972}},{type:"Twig.expression.type.operator.binary",value:"?",position:{start:10875,end:10972},precidence:16,associativity:"rightToLeft",operator:"?"}]},{type:"raw",value:'" href="',position:{start:10972,end:10980}},{type:"output",position:{start:10980,end:10994},stack:[{type:"Twig.expression.type.variable",value:"link",match:["link"],position:{start:10980,end:10994}},{type:"Twig.expression.type.key.period",position:{start:10980,end:10994},key:"url"}]},{type:"raw",value:`">
+                    <span class="underline flex w-full hover:no-underline">
+                      `,position:{start:10994,end:11095}},{type:"output",position:{start:11095,end:11111},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:11095,end:11111}},{type:"Twig.expression.type.key.period",position:{start:11095,end:11111},key:"text"}]},{type:"raw",value:`
+                    </span>
+                    `,position:{start:11111,end:11160}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:11160,end:11193},output:[{type:"raw",value:`                      <span class="icon-caret-right hidden lg:block text-primary text-xs no-underline"></span>
+                    `,position:{start:11194,end:11325}}]},position:{open:{start:11160,end:11193},close:{start:11325,end:11336}}},{type:"raw",value:`                  </a>
+
+                  `,position:{start:11337,end:11379}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"children"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:11379,end:11412},output:[{type:"raw",value:'                    <ul role="presentation" class="list-none dropdown lg:absolute my-3 lg:my-0 top-0 bg-primary-100 w-full lg:w-80 p-3 md:px-6 flex flex-col space-y-2 lg:shadow-md" :class="(childOpen.sm === ',position:{start:11413,end:11620}},{type:"output",position:{start:11620,end:11637},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:11620,end:11637}},{type:"Twig.expression.type.key.period",position:{start:11620,end:11637},key:"index0"}]},{type:"raw",value:" || childOpen.lg === ",position:{start:11637,end:11658}},{type:"output",position:{start:11658,end:11675},stack:[{type:"Twig.expression.type.variable",value:"loop",match:["loop"],position:{start:11658,end:11675}},{type:"Twig.expression.type.key.period",position:{start:11658,end:11675},key:"index0"}]},{type:"raw",value:` ? '' : 'hidden') + ' ' + (childAlign === 'right' ? 'lg:right-full' : 'lg:left-full')">
+                      <li role="presentation" class="font-bold">
+                        <a `,position:{start:11675,end:11855}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"new_window"},{type:"Twig.expression.type.filter",value:"default",match:["| default","default"]}],position:{start:11855,end:11890},output:[{type:"raw",value:' target="_blank" rel="noopener" ',position:{start:11890,end:11922}}]},position:{open:{start:11855,end:11890},close:{start:11922,end:11933}}},{type:"raw",value:' href="',position:{start:11933,end:11940}},{type:"output",position:{start:11940,end:11955},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:11940,end:11955}},{type:"Twig.expression.type.key.period",position:{start:11940,end:11955},key:"url"}]},{type:"raw",value:'">',position:{start:11955,end:11957}},{type:"output",position:{start:11957,end:11973},stack:[{type:"Twig.expression.type.variable",value:"child",match:["child"],position:{start:11957,end:11973}},{type:"Twig.expression.type.key.period",position:{start:11957,end:11973},key:"text"}]},{type:"raw",value:`
+                          Overview</a>
+                      </li>
+                      `,position:{start:11973,end:12063}},{type:"logic",token:{type:"Twig.logic.type.for",keyVar:null,valueVar:"grandchild",expression:[{type:"Twig.expression.type.variable",value:"child",match:["child"]},{type:"Twig.expression.type.key.period",key:"children"}],position:{start:12063,end:12101},output:[{type:"raw",value:`                        <li role="presentation">
+                          <a role="menuitem" href="`,position:{start:12102,end:12202}},{type:"output",position:{start:12202,end:12222},stack:[{type:"Twig.expression.type.variable",value:"grandchild",match:["grandchild"],position:{start:12202,end:12222}},{type:"Twig.expression.type.key.period",position:{start:12202,end:12222},key:"url"}]},{type:"raw",value:'">',position:{start:12222,end:12224}},{type:"output",position:{start:12224,end:12245},stack:[{type:"Twig.expression.type.variable",value:"grandchild",match:["grandchild"],position:{start:12224,end:12245}},{type:"Twig.expression.type.key.period",position:{start:12224,end:12245},key:"text"}]},{type:"raw",value:`</a>
+                        </li>
+                      `,position:{start:12245,end:12302}}]},position:{open:{start:12063,end:12101},close:{start:12302,end:12314}}},{type:"raw",value:`                    </ul>
+                  `,position:{start:12315,end:12359}}]},position:{open:{start:11379,end:11412},close:{start:12359,end:12370}}},{type:"raw",value:`                </li>
+              `,position:{start:12371,end:12407}}]},position:{open:{start:9551,end:9583},close:{start:12407,end:12419}}},{type:"raw",value:`            </ul>
+          `,position:{start:12420,end:12448}}]},position:{open:{start:6466,end:6498},close:{start:12448,end:12459}}},{type:"raw",value:`        </li>
+      `,position:{start:12460,end:12480}}]},position:{open:{start:4468,end:4491},close:{start:12480,end:12492}}},{type:"raw",value:`    </ul>
+
+</div>
+`,position:{start:12493,end:12493}}],precompiled:!0});const o=i=>i,w=(i={})=>{const n=t.twig({id:"/Users/mc_davidvasquez/Mighty_Citizen/fb-ui/src/stories/03-organisms/header/header.twig",data:[{type:"logic",token:{type:"Twig.logic.type.set",key:"utility_menu",expression:[{type:"Twig.expression.type.variable",value:"utility_menu",match:["utility_menu"]},{type:"Twig.expression.type.null",value:null},{type:"Twig.expression.type.operator.binary",value:"??",precidence:15,associativity:"rightToLeft",operator:"??"}],position:{start:0,end:45}},position:{start:0,end:45}},{type:"logic",token:{type:"Twig.logic.type.set",key:"logo",expression:[{type:"Twig.expression.type.variable",value:"logo",match:["logo"]},{type:"Twig.expression.type.null",value:null},{type:"Twig.expression.type.operator.binary",value:"??",precidence:15,associativity:"rightToLeft",operator:"??"}],position:{start:46,end:75}},position:{start:46,end:75}},{type:"logic",token:{type:"Twig.logic.type.set",key:"cta_menu",expression:[{type:"Twig.expression.type.variable",value:"cta_menu",match:["cta_menu"]},{type:"Twig.expression.type.null",value:null},{type:"Twig.expression.type.operator.binary",value:"??",precidence:15,associativity:"rightToLeft",operator:"??"}],position:{start:76,end:113}},position:{start:76,end:113}},{type:"logic",token:{type:"Twig.logic.type.set",key:"header_dropdown",expression:[{type:"Twig.expression.type.variable",value:"header_dropdown",match:["header_dropdown"]},{type:"Twig.expression.type.null",value:null},{type:"Twig.expression.type.operator.binary",value:"??",precidence:15,associativity:"rightToLeft",operator:"??"}],position:{start:114,end:165}},position:{start:114,end:165}},{type:"logic",token:{type:"Twig.logic.type.set",key:"menu",expression:[{type:"Twig.expression.type.variable",value:"menu",match:["menu"]},{type:"Twig.expression.type.null",value:null},{type:"Twig.expression.type.operator.binary",value:"??",precidence:15,associativity:"rightToLeft",operator:"??"}],position:{start:166,end:195}},position:{start:166,end:195}},{type:"raw",value:`<script>
+
+    function focusFirstFocusable() {
+        const mainElement = document.getElementById('main');
+        const focusableElements = mainElement.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])');
+
+        if (focusableElements.length > 0) {
+            focusableElements[0].focus();
+        }
+    }
+<\/script>
+<a href="#main" @keydown.enter.prevent="focusFirstFocusable" class="opacity-0 focus:opacity-100 fixed left-0 top-0 bg-primary text-white p-1" >Skip to main</a>
+<header class="l-header bg-primary py-3 lg:py-0" id="header" x-data="`,position:{start:196,end:763}},{type:"output",position:{start:763,end:770},stack:[{type:"Twig.expression.type.string",value:"{",position:{start:763,end:770}}]},{type:"raw",value:" mainMenu: false, dropdownOpen: {sm: null, lg: null} ",position:{start:770,end:823}},{type:"output",position:{start:823,end:830},stack:[{type:"Twig.expression.type.string",value:"}",position:{start:823,end:830}}]},{type:"raw",value:`">
+  <div class="container relative">
+    <div class="grid grid-cols-12 gap-6 items-center align-middle justify-between">
+      `,position:{start:830,end:958}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"utility_menu",match:["utility_menu"]}],position:{start:958,end:979},output:[{type:"raw",value:`        <div class="col-span-12 lg:block hidden">
+          `,position:{start:980,end:1040}},{type:"logic",token:{type:"Twig.logic.type.include",only:!1,ignoreMissing:!1,stack:[{type:"Twig.expression.type.string",value:"@molecules/navigation/utility-menu/utility-menu.twig"}],withStack:[{type:"Twig.expression.type.object.start",value:"{",match:["{"]},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"menu_type"},{type:"Twig.expression.type.string",value:"utility"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"links"},{type:"Twig.expression.type.variable",value:"utility_menu",match:["utility_menu"]},{type:"Twig.expression.type.object.end",value:"}",match:["}"]}],position:{start:1040,end:1193}},position:{start:1040,end:1193}},{type:"raw",value:`        </div>
+      `,position:{start:1194,end:1215}}]},position:{open:{start:958,end:979},close:{start:1215,end:1226}}},{type:"raw",value:"      ",position:{start:1227,end:1233}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"logo",match:["logo"]}],position:{start:1233,end:1246},output:[{type:"raw",value:`        <div class="col-span-10 lg:col-span-3 leading-0 lg:pb-3">
+          `,position:{start:1247,end:1323}},{type:"logic",token:{type:"Twig.logic.type.include",only:!1,ignoreMissing:!1,stack:[{type:"Twig.expression.type.string",value:"@atoms/logo/logo.twig"}],withStack:[{type:"Twig.expression.type.variable",value:"logo",match:["logo"]}],position:{start:1323,end:1370}},position:{start:1323,end:1370}},{type:"raw",value:`        </div>
+      `,position:{start:1371,end:1392}}]},position:{open:{start:1233,end:1246},close:{start:1392,end:1403}}},{type:"raw",value:`      <div class="col-span-12 lg:col-span-9 lg:block hidden">
+        <div class="flex items-center justify-end gap-4">
+          `,position:{start:1404,end:1534}},{type:"logic",token:{type:"Twig.logic.type.include",only:!1,ignoreMissing:!1,stack:[{type:"Twig.expression.type.string",value:"@molecules/navigation/utility-menu/utility-menu.twig"}],withStack:[{type:"Twig.expression.type.object.start",value:"{",match:["{"]},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"menu_type"},{type:"Twig.expression.type.string",value:"cta"},{type:"Twig.expression.type.comma"},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"links"},{type:"Twig.expression.type.variable",value:"cta_menu",match:["cta_menu"]},{type:"Twig.expression.type.object.end",value:"}",match:["}"]}],position:{start:1534,end:1679}},position:{start:1534,end:1679}},{type:"raw",value:`
+          <div class="search-form inline-block pb-5" x-data="{ open: false }" @mouseleave="open = false">
+            <button x-on:click="open = ! open" class="no-underline text-primary-700 inline-block relative z-30">
+              <span class="icon icon-magnifying-glass text-lg ml-2 rounded-full p-2 shadow-sm mr-1" :class="{ 'icon-x bg-secondary-600 text-primary-500': open, 'icon-magnifying-glass bg-white' : !open }"></span>
+              <span class="text-white text-2xl font-bold">Search</span>
+
+            </button>
+            <div class="search-form-wrapper bg-neutrals-50 absolute z-30 bottom-[-168px] right-0 rounded-b shadow-sm lg:px-10 lg:pt-10 lg:pb-9" x-show="open">
+              `,position:{start:1680,end:2380}},{type:"logic",token:{type:"Twig.logic.type.include",only:!1,ignoreMissing:!1,stack:[{type:"Twig.expression.type.string",value:"@atoms/forms/simple-form/simple-form.twig"}],position:{start:2380,end:2437}},position:{start:2380,end:2437}},{type:"raw",value:`            </div>
+          </div>
+
+          <div class="header-menu-popup inline-block relative pb-5" x-data="{ open: false }" @mouseleave="open = false">
+            <button x-on:click="open = ! open" class="no-underline text-primary-700 inline-block relative z-30">
+              <span class="icon icon-list text-lg ml-2 rounded-full p-2 shadow-sm mr-1"
+                    :class="{ 'icon-x bg-secondary-600 text-primary-500': open, 'icon-search bg-white' : !open }"
+              ></span>
+              <span class="text-white text-2xl font-bold">Menu</span>
+            </button>
+            <div class="header-menu-popup-wrapper bg-white w-[315px] shadow-sm absolute absolute z-30 top-[52px] right-0 lg:px-12 lg:pt-9 lg:pb-7 z-30" x-show="open">
+              <span class="h5 block mb-4">Sample Dropdown</span>
+              <p>This menu is for demonstration purposes only and will require custom development per project.</p>
+              `,position:{start:2438,end:3387}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"header_dropdown",match:["header_dropdown"]}],position:{start:3387,end:3411},output:[{type:"raw",value:`                <ul class="menu flex flex-col gap-x-3 gap-y-3 list-none">
+                  `,position:{start:3412,end:3504}},{type:"logic",token:{type:"Twig.logic.type.for",keyVar:null,valueVar:"item",expression:[{type:"Twig.expression.type.variable",value:"header_dropdown",match:["header_dropdown"]}],position:{start:3504,end:3537},output:[{type:"raw",value:`                    <li>
+                      <a class="font-bold no-underline hover:underline" href="`,position:{start:3538,end:3641}},{type:"output",position:{start:3641,end:3655},stack:[{type:"Twig.expression.type.variable",value:"item",match:["item"],position:{start:3641,end:3655}},{type:"Twig.expression.type.key.period",position:{start:3641,end:3655},key:"url"}]},{type:"raw",value:'">',position:{start:3655,end:3657}},{type:"output",position:{start:3657,end:3672},stack:[{type:"Twig.expression.type.variable",value:"item",match:["item"],position:{start:3657,end:3672}},{type:"Twig.expression.type.key.period",position:{start:3657,end:3672},key:"text"}]},{type:"raw",value:`</a>
+                    </li>
+                  `,position:{start:3672,end:3721}}]},position:{open:{start:3504,end:3537},close:{start:3721,end:3733}}},{type:"raw",value:`                </ul>
+              `,position:{start:3734,end:3770}}]},position:{open:{start:3387,end:3411},close:{start:3770,end:3781}}},{type:"raw",value:`            </div>
+          </div>
+
+
+          `,position:{start:3782,end:3830}},{type:"raw",value:`
+        </div>
+      </div>
+      <div class="col-span-2 lg:hidden flex justify-end items-center">
+        <div class="search-form inline-block leading-0" x-data="{ open: false }">
+          <button x-on:click="open = ! open" class="no-underline text-primary-700 inline-block relative z-30">
+            <span class="icon icon-magnifying-glass text-lg ml-2 rounded-full p-2 shadow-sm mr-1" :class="{ 'icon-x bg-secondary-600 text-primary-500': open, 'icon-magnifying-glass bg-white' : !open }"></span>
+            <span class="text-white text-2xl font-bold sr-only">Search</span>
+
+          </button>
+          <div class="search-form-wrapper leading-6 bg-neutrals-50 absolute z-50 bottom-[-145px] right-0 rounded-b shadow-sm pt-5 pb-5 px-5 lg:px-10 lg:pt-10 lg:pb-9" x-show="open">
+            `,position:{start:4239,end:5035}},{type:"logic",token:{type:"Twig.logic.type.include",only:!1,ignoreMissing:!1,stack:[{type:"Twig.expression.type.string",value:"@atoms/forms/simple-form/simple-form.twig"}],position:{start:5035,end:5092}},position:{start:5035,end:5092}},{type:"raw",value:`          </div>
+        </div>
+        `,position:{start:5093,end:5133}},{type:"logic",token:{type:"Twig.logic.type.include",only:!1,ignoreMissing:!1,stack:[{type:"Twig.expression.type.string",value:"@base/utils/hamburger/hamburger.twig"}],withStack:[{type:"Twig.expression.type.object.start",value:"{",match:["{"]},{type:"Twig.expression.type.operator.binary",value:":",precidence:16,associativity:"rightToLeft",operator:":",key:"toggle"},{type:"Twig.expression.type.string",value:"mainMenu"},{type:"Twig.expression.type.object.end",value:"}",match:["}"]}],position:{start:5133,end:5232}},position:{start:5133,end:5232}},{type:"raw",value:`      </div>
+    </div>
+
+  </div>
+  `,position:{start:5233,end:5269}},{type:"logic",token:{type:"Twig.logic.type.if",stack:[{type:"Twig.expression.type.variable",value:"menu",match:["menu"]}],position:{start:5269,end:5282},output:[{type:"raw",value:"    ",position:{start:5283,end:5287}},{type:"logic",token:{type:"Twig.logic.type.include",only:!1,ignoreMissing:!1,stack:[{type:"Twig.expression.type.string",value:"@molecules/navigation/menu/menu.twig"}],withStack:[{type:"Twig.expression.type.variable",value:"menu",match:["menu"]}],position:{start:5287,end:5349}},position:{start:5287,end:5349}},{type:"raw",value:"  ",position:{start:5350,end:5352}}]},position:{open:{start:5269,end:5282},close:{start:5352,end:5363}}},{type:"raw",value:`</header>
+`,position:{start:5364,end:5364}}],precompiled:!0});n.options.allowInlineIncludes=!0;try{let e=i.defaultAttributes?i.defaultAttributes:[];return Array.isArray(e)||(e=Object.entries(e)),o(n.render({attributes:new s(e),...i}))}catch(e){return o("An error occurred whilst rendering /Users/mc_davidvasquez/Mighty_Citizen/fb-ui/src/stories/03-organisms/header/header.twig: "+e.toString())}};export{w as t};

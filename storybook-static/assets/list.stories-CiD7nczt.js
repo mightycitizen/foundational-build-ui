@@ -1,0 +1,5 @@
+import{t as i}from"./list-Bkx7pqEU.js";import"./iframe-krW4WiQS.js";import"./preload-helper-PPVm8Dsz.js";import"./twig-OXX08FiC.js";import"./date-JAJI1S2U.js";import"./meta-8D0w8Q5r.js";import"./inline-label-BUVdEFb4.js";const g={title:"Audit/Components/Listing/List",argTypes:{}},a=t=>i(t),s=[...Array(5)].map((t,l)=>({heading:"Event Title",url:"#",summary:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel aliquam aliquam, nunc nisl aliquam nisl, vel aliquam nisl nunc vel nisl. Sed euismod, nisl vel aliquam aliquam, nunc nisl aliquam nisl, vel aliquam nisl nunc vel nisl.",image:{src:"https://placehold.co/400x360",alt:"Image alt text"},label:"Label",categories:[{url:"#",title:"Category"}]})),r={list:s},e=a.bind({});e.args=r;const v=["List"];e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`args => {
+  // You can either use a function to create DOM elements or use a plain html string!
+  // return \`<div>\${label}</div>\`;
+  return twig(args);
+}`,...e.parameters?.docs?.source}}};export{e as List,v as __namedExportsOrder,g as default};
