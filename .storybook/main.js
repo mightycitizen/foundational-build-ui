@@ -14,10 +14,7 @@ export default {
     "../src/stories/**/**/*.stories.js"
   ],
 
-  addons: [
-    "@storybook/addon-a11y",
-    "@storybook/addon-essentials"
-  ],
+  addons: ["@storybook/addon-a11y", '@storybook/addon-docs'],
 
   framework: {
     name: '@storybook/html-vite',
@@ -26,6 +23,7 @@ export default {
 
   async viteFinal(config) {
     // Add JS import alias for stories
+    config.resolve = config.resolve || {};
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       '@base': join(__dirname, '../', 'src/stories/00-base'),
