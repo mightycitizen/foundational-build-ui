@@ -12,30 +12,6 @@ const __dirname = path.dirname(__filename);
 console.log(__dirname);
 
 
-// Legacy namespace resolver plugin
-class LegacyNsResolverPlugin {
-  apply(resolver) {
-    const target = resolver.ensureHook('resolve');
-    resolver
-      .getHook('resolve')
-      .tapAsync('LegacyNsResolverPlugin', (request, resolveContext, callback) => {
-        const requestPath = request.request;
-        const LEGACY_REGEXP = /^(\w+)::/;
-        if (!requestPath.match(LEGACY_REGEXP)) {
-          callback();
-          return;
-        }
-
-        const newRequest = {
-          ...request,
-          request: requestPath.replace(LEGACY_REGEXP, '@$1/'),
-        };
-
-        resolver.doResolve(target, newRequest, null, resolveContext, callback);
-      });
-  }
-}
-
 export default {
   staticDirs: ['../public'],
 
@@ -54,11 +30,6 @@ export default {
   },
 
   async viteFinal(config) {
-    // Add legacy resolver plugin
-    config.resolve.plugins = [
-      new LegacyNsResolverPlugin()
-    ];
-
     // Add JS import alias for stories
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
